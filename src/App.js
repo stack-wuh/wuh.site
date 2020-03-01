@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect} from 'react';
 import './App.css';
+import Header from 'components/header'
+import BasicLayout from 'layout/basic'
+import Footer from 'layout/footer'
+import { connect } from 'react-redux'
+import Pupop from 'utils/pupop'
 
-function App() {
+function App({route}) {
+  useEffect(() => {
+    let myPopup = new Pupop()
+    window.addEventListener('click', (e) => { 
+      let { pageX, pageY } = e
+      myPopup.init({ pageX, pageY })
+    }, false)
+  }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <BasicLayout route={route}></BasicLayout>
+      <Footer></Footer>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = ({ CountRoot: { counter, asyncCounter } }) => {
+  return { counter, asyncCounter }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatch
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);
