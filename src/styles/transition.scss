@@ -1,0 +1,11 @@
+@import './var.scss';
+@import './color.scss';
+
+.fade_in_background_transition {
+    background-color: inherit;
+    transition: $transition-background;
+    &:hover {
+        background-color: $theme-background-less-more;
+        transition: $transition-background;
+    }
+}

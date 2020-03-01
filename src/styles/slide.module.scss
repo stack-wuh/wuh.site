@@ -1,0 +1,24 @@
+@import './color.scss';
+@import './mixin.scss';
+@import './var.scss';
+
+.slide_wrap {
+    &__list {}
+    &__item {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        padding: 0 10px;
+        font-size: $text-size-less + 1;
+        border-radius: $border-radius-normal;
+        &:hover {
+            cursor: pointer;
+        }
+        &__icon {
+            font-size: 20px;
+        }
+        &__text {
+            margin-left: 10px;
+        }
+    }
+}

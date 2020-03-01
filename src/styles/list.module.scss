@@ -1,0 +1,68 @@
+@import './color.scss';
+@import './var.scss';
+@import './mixin.scss';
+
+.list_wrap {
+    width: 100%;
+    height: 140px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: $theme-background-light;
+    border-radius: $border-radius-none;
+    transition: $transition-all;
+    overflow: hidden;
+    &:hover {
+        cursor: pointer;
+        background-color: $theme-background-less-more;
+        border-radius: $border-radius-less;
+        transition: $transition-all;
+
+        .list_wrap__outer__rg {
+            transform: translateX(4px);
+            transition: $transition-all;
+        }
+    }
+
+    &:not(:last-of-type) {
+        margin-bottom: 20px;
+    }
+
+    &__outer {
+        @include flexWrap($align: stretch);
+        width: 100%;
+        height: 100%;
+        &__lf {
+            width: 33%;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center center;
+        }
+        &__rg {
+            @include flexWrap($dir: column);
+            flex: 1;
+            margin-left: 10px;
+            .pre__title {
+                @include line-over;
+                width: 100%;
+                font-size: $text-size-default;
+                line-height: 1.5em;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                    transition: all .3s linear;
+                }
+            }
+            .pre__sub {
+                @include lines-over;
+                flex: 1;
+                width: 100%;
+                word-break: normal;
+                font-size: $text-size-default - 1;
+                line-height: 1.5em;
+            }
+            transform: translateX(0);
+            transition: $transition-all;
+        }
+    }
+}

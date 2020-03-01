@@ -1,0 +1,50 @@
+@import './mixin.scss';
+@import './var.scss';
+
+.controls {
+    @include flexWrap($align: center);
+    height: inherit;
+    width: inherit;
+    padding: 10px 15px;
+    box-sizing: border-box;
+
+    & > button {
+        width: 60px;
+        height: 40px;
+        border: none;
+        outline: none;
+        border-right: 1px solid $theme-drak-under;
+        transition: background .3s linear;
+
+        &:hover {
+            background-color: $theme-background-default;
+            cursor: pointer;
+            transition: background .3s linear;
+        }
+    }
+
+    &>button:first-of-type {
+        border-top-left-radius: $border-radius-less;
+        border-bottom-left-radius: $border-radius-less;
+    }
+
+    &>button:last-of-type {
+        border-right: none;
+        border-top-right-radius: $border-radius-less;
+        border-bottom-right-radius: $border-radius-less;
+    }
+}
+
+.circle {
+    --percent: 0;
+    @include flexWrap($align: center, $justify: center);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid red;
+    &__paint {
+        width: 100%;
+        height: 100%;
+        background: conic-gradient(#fff var(--percent, 0), black);
+    }
+}

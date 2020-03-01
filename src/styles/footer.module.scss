@@ -1,0 +1,25 @@
+@import './color.scss';
+@import './var.scss';
+@import './mixin.scss';
+
+.footer_wrap {
+    width: 100%;
+    height: 60px;
+    background-color: $theme-background-light;
+    font-size: $text-size-less;
+    user-select: none;
+    &__outer {
+        @include flexWrap($align: center, $justify: center);
+        height: 100%;
+    }
+    &__text {
+        font-weight: inherit !important;
+    }
+    &__copy {
+        margin: 0 15px;
+        padding: 0 15px;
+        border: 1px solid $theme-dark-less;
+        border-top: none;
+        border-bottom: none;
+    }
+}

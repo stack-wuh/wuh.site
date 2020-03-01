@@ -1,0 +1,40 @@
+@import './mixin.scss';
+@import './var.scss';
+
+.location_wrap {}
+.item_outer_wrap {
+    @include flexWrap($align: center);
+    padding: 2px 4px;
+    font-size: $text-size-less;
+    box-sizing: border-box;
+    
+    &:not(:last-of-type) {
+        margin-bottom: 10px;
+    }
+
+    .outer_icon {
+        margin-right: 15px;
+        font-size: 1.2em;
+    }
+    .inner_wrap {
+        
+    }
+}
+.social_wrap {
+    @include flexWrap($align: center);
+    .icon {
+        font-size: 1.2em;
+        &:not(:last-of-type) {
+            margin-right: 10px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.custom_map {
+    width: 100%;
+    height: 300px;
+    margin-top: 15px;
+}

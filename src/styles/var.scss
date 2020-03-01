@@ -1,0 +1,26 @@
+/** transition **/
+$transition-all: all .3s cubic-bezier(.645,.045,.355,1) !default;
+$transition-background: background .3s linear !default ;
+$transition-fade--linear: opacity 200ms linear !default;
+$--border-transition-base: border-color .2s cubic-bezier(.645,.045,.355,1) !default;
+$--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
+$transition-transform-linear: transform .5s ubic-bezier(.645,.045,.355,1) !default;
+
+/** TEXT **/
+$text-size-default: 16px;
+$text-size-less: 14px;
+$text-size-less-more: 12px;
+$text-size-large: 18px;
+$text-size-large-more: 20px;
+$text-size-bigger: 22px;
+$text-size-bigger-more: 24px;
+
+$title-primary-default: 20px;
+$title-sub-default: 18px;
+$title-large: 24px;
+
+/** border **/
+$border-radius-none: none;
+$border-radius-normal: 4px;
+$border-radius-less: 8px;
+$border-radius-large: 20px;

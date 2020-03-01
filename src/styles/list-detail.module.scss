@@ -1,0 +1,34 @@
+@import './mixin.scss';
+@import './var.scss';
+@import './color.scss';
+
+.list_detail {
+    @include flexWrap($dir: column);
+    .header {
+        width: 100%;
+        @include flexWrap($dir: column, $align: stretch);
+        &_title {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: $text-size-large;
+        }
+        &_group_box {
+            @include flexWrap($align: center, $justify: center);
+            .time {
+                margin: 0 15px;
+            }
+            .time,
+            .location,
+            .look {
+                font-size: $text-size-less;
+                color: $theme-dark-less;
+            }
+        }
+    }
+    .article {
+        width: 100%;
+        height: 100%;
+        font-size: $text-size-default;
+        line-height: 1.6em;
+    }
+}

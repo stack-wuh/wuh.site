@@ -1,0 +1,35 @@
+@import './mixin.scss';
+@import './var.scss';
+
+.header_wrap {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    padding: 0 15%;
+    box-sizing: border-box;
+    background-color: $theme-background-light;
+    opacity: .8;
+    z-index: 100;
+    &__outer {
+        @include flexWrap($align: center);
+        height: inherit;
+        font-size: $text-size-less;
+        color: $theme-base-less;
+        background-color: inherit;
+    }
+    .outer__left {
+        width: 140px;
+        margin-right: 15px;
+        text-align: left;
+        img {
+            height: 60px;
+            object-fit: contain;
+        }
+    }
+    .outer__left,
+    .outer__right {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,79 @@
+@import './color.scss';
+
+$dir: row;
+$align: flex-start;
+$justify: flex-start;
+$wrap: nowrap;
+
+@mixin flexWrap ($dir: $dir, $align: $align, $justify: $justify, $wrap: $wrap) {
+    display: flex;
+    flex-direction: $dir;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+}
+
+@mixin abCenter () {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+$type: img;
+$line-height: 2;
+@mixin inline-vertical ($type: $type, $height: $line-height) {
+    @if $type == img {
+        vertical-align: middle;
+    } @else {
+        line-height: $height;
+    }
+}
+
+/*
+ * scroll-bar
+ */
+
+@mixin scroll-bar{
+  $--scrollbar-thumb-background: $theme-background-scroll-thumb;
+  $--scrollbar-track-background: $theme-background-scroll-track;
+
+  &::-webkit-scrollbar {
+    z-index: 11;
+    width: 6px;
+
+    &:horizontal {
+      height: 6px;
+    }
+
+    &-thumb {
+      border-radius: 5px;
+      width: 6px;
+      background: $--scrollbar-thumb-background;
+    }
+    &-corner {
+      background: $--scrollbar-track-background;
+    }
+    &-track {
+      background: $--scrollbar-track-background;
+
+      &-piece {
+        background: $--scrollbar-track-background;
+        width: 6px;
+      }
+    }
+  }
+}
+
+/** text overflow **/
+@mixin line-over {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+@mixin lines-over {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
