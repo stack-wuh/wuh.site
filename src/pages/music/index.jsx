@@ -6,7 +6,7 @@ import Controls from './components/Controls'
 
 const songUrl = 'https://m801.music.126.net/20200301152737/6c6186549fcbc96fa49231d2cc45d93b/jdyyaac/025a/0e59/0e5a/502e41fec3936446506e90598afbe772.m4a'
 function MusicIndex () {
-    useTitle('不识五音，唯爱五谷', true)
+    useTitle('不识五音，唯爱五谷', false)
     const audioRef = useRef(null)
     const [isPlayed, setPlayState] = useState(false)
     const [songInfo, setSongInfo] = useState({})
