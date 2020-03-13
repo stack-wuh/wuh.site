@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL: 'http://wuh.site/api/' ,
+    baseURL: 'https://wuh.site/api/' ,
     timeout: 5e3,
 })
 
