@@ -30,5 +30,19 @@
         height: 100%;
         font-size: $text-size-default;
         line-height: 1.6em;
+        overflow: hidden;
+
+        p {
+            display: flex;
+            flex-direction: column;
+        }
+        p > img {
+            width: auto;
+            max-width: 100%;
+            margin: 10px;
+            align-self: center;
+            box-sizing: border-box;
+            object-fit: contain;
+        }
     }
 }
