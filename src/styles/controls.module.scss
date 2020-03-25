@@ -34,17 +34,3 @@
         border-bottom-right-radius: $border-radius-less;
     }
 }
-
-.circle {
-    --percent: 0;
-    @include flexWrap($align: center, $justify: center);
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 1px solid red;
-    &__paint {
-        width: 100%;
-        height: 100%;
-        background: conic-gradient(#fff var(--percent, 0), black);
-    }
-}

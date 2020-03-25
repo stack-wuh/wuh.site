@@ -1,13 +1,15 @@
 .music_wrap {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: calc(100vh - 180px);
     overflow: hidden;
     
     &__cover {
-        position: absolute;
-        width: 44vw;
-        height: 44vw;
+        position: relative;
+        width: 460px;
+        height: 460px;
         border-radius: 50%;
         background-image: url(../assets//image/bg_app_default.jpg);
         background-size: cover;
@@ -18,8 +20,8 @@
             top: 50%;
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background-color: #fff;
         }
@@ -32,24 +34,58 @@
         transform: translateX(-50%) translateY(-50%);
     }
 }
-.is_move {
-    animation: rotate_circle 10s linear infinite;
-}
-.is_move_pause {
-    animation-fill-mode: forwards;
-}
-
-@keyframes rotate_circle {
-    from {
-        transform: rotate(0);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
 
 .music_controls {
     position: absolute;
     top: 10%;
     right: 0;
+}
+
+.music_circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.music__wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 180px);
+    overflow: hidden;
+
+    &__cover {
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       width: 460px;
+       height: 460px;
+       margin-top: -230px;
+       margin-left: -230px;
+       border-radius: 50%;
+       background-image: url(../assets//image/bg_app_default.jpg);
+       background-size: cover;
+
+       &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #fff;
+    }
+    }
+    &__progress {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 480px;
+        height: 480px;
+        margin-top: -240px;
+        margin-left: -240px;
+    }
 }
