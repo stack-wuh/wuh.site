@@ -36,6 +36,14 @@
             overflow: hidden;
             background-size: cover;
             background-position: center center;
+            &_img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center center;
+                transform: rotate(0) scale(1);
+                transition:  all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+            }
         }
         &__rg {
             @include flexWrap($dir: column);
@@ -63,6 +71,12 @@
             }
             transform: translateX(0);
             transition: $transition-all;
+        }
+        &:hover {
+            img[alt='cover'] {
+               transform: scale(1.4) rotate(-4deg);
+               transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+            }
         }
     }
 }

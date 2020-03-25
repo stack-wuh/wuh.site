@@ -5,7 +5,7 @@ import defaultImage from 'assets/image/bg_default_empty.jpeg'
 import IconGroup from 'components/icon-group'
 
 function listItem ({data, history, ...args}) {
-    const { title, sub_title, ...props } = data
+    const { title, sub_title, cover_img, ...props } = data
 
     const handleGoDetail = () => {
         const { _id } = props
@@ -19,7 +19,9 @@ function listItem ({data, history, ...args}) {
             <div className={styles.list_wrap__outer}>
                 <div 
                     className={styles.list_wrap__outer__lf} 
-                    style={{backgroundImage: `url(${defaultImage})`}}>
+                    // style={{backgroundImage: `url(${defaultImage})`}}
+                    >
+                        <img src={cover_img || defaultImage} alt="cover" className={styles.list_wrap__outer__lf_img}/>
                 </div>
                 <div 
                     className={styles.list_wrap__outer__rg}>

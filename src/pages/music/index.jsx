@@ -5,7 +5,7 @@ import styles from '../../styles/music.module.scss'
 import Controls from './components/Controls'
 import { Circle } from '../../components/Progress'
 
-const songUrl = 'http://src.wuh.site/media/brave.mp3'
+const songUrl = 'https://src.wuh.site/media/brave.mp3'
 let GlobalId = null
 function MusicIndex () {
     useTitle('不识五音，唯爱五谷', false)
