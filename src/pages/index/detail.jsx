@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import { useFetch, useTitle } from '../../hooks'
 import { mainDetailBy } from '../../api/map'
 import PageLoading from '../../components/PageLoading'
+import ShareBtns from 'components/ShareBtns'
 
 function ArtDetail ({dispatch, match, detailer, ...args}) {
     const [isMarkdown, setMarkType] = useState(2)
@@ -36,14 +37,7 @@ function ArtDetail ({dispatch, match, detailer, ...args}) {
                      </>
                     )
             }
-            <div className={styles.header}>
-                {/* <h3 className={styles.header_title}>{detailer.info.title}</h3> */}
-            </div>
-            {/* {
-                isMarkdown === 2 
-                    ? <ReactMarkdown source={content} /> 
-                        : (<article className={styles.article}  dangerouslySetInnerHTML={{__html: detailer.info.content}}></article>)
-            } */}
+            <ShareBtns></ShareBtns>
         </div>
     </Fragment>)
 }

@@ -1,7 +1,14 @@
 @import './mixin.scss';
 @import './var.scss';
 
-.location_wrap {}
+.location_wrap {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 8px;
+}
 .item_outer_wrap {
     @include flexWrap($align: center);
     padding: 2px 4px;
@@ -15,9 +22,6 @@
     .outer_icon {
         margin-right: 15px;
         font-size: 1.2em;
-    }
-    .inner_wrap {
-        
     }
 }
 .social_wrap {

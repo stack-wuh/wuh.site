@@ -5,13 +5,34 @@
     min-height: calc(100% - 120px);
     margin-top: 60px;
 
+    &__staple {
+        position: absolute;
+        top: 10%;
+    }
+    &__func {
+        position: absolute;
+        right: 5%;
+        bottom: 15%;
+    }
+
     .layout_outer {
+        position: relative;
         @include flexWrap($align: stretch);        
-        padding: 20px 15%;
+        padding: 20px 12%;
+
         &__slide {
             width: 140px;
+            min-width: 120px;
             height: auto;
             margin-right: 15px;
+        }
+        &__slide:first-of-type {
+            width: 120px;
+        }
+        &__slide:last-of-type {
+            width: 220px;
+            margin: 0;
+            margin-left: 15px;
         }
         &__main {
             flex: 1;

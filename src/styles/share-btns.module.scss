@@ -1,0 +1,29 @@
+@import 'styles/var.scss';
+@import 'styles/mixin.scss';
+@import 'styles/color.scss';
+
+.share {
+    width: 100%;
+    height: 100%;
+    margin: 8px 0;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    background-color: $theme-background-light;
+    border-radius: $border-radius-less;
+
+    &__list {
+        @include flexWrap($align: center, $justify: space-between);
+        font-size: 20px;
+
+        &_item {
+            padding: 4px 8px;
+            font-size: inherit;
+            background-color: rgba($theme-background-less, .6);
+            &:hover {
+                cursor: pointer;
+                color: $theme-background-light;
+                background-color: $theme-dark-default;
+            }
+        }
+    }
+}

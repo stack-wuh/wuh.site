@@ -1,6 +1,5 @@
 import React, { Fragment, useRef, useState, useEffect } from 'react'
 import { useTitle } from '../../hooks'
-import classnames from 'classnames'
 import styles from '../../styles/music.module.scss'
 import Controls from './components/Controls'
 import { Circle } from '../../components/Progress'

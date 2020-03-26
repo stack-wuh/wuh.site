@@ -5,8 +5,10 @@ import BasicLayout from 'layout/basic'
 import Footer from 'layout/footer'
 import { connect } from 'react-redux'
 import Pupop from 'utils/pupop'
+import useTitleVisible from 'hooks/useTitleVisible'
 
 function App({route}) {
+  useTitleVisible()
   useEffect(() => {
     let myPopup = new Pupop()
     window.addEventListener('click', (e) => { 

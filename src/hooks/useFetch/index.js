@@ -13,6 +13,7 @@ const dataFetchReducer = (state, action) => {
 
 const getUrl = url => {
     const [method, _url] = url.split(' ')
+    // eslint-disable-next-line no-unused-vars
     const [_, query] = _url.split('?')
     return {method, _url, query: qs.parse(query)}
 }

@@ -7,11 +7,13 @@ const useTitle = (title, restoreOnUnmount = false) => {
     useEffect(() => {
         if (restoreOnUnmount) {
             return () => {
+                // eslint-disable-next-line react-hooks/exhaustive-deps
                 document.title = prevTitle.current
             }
         } else {
             return
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 }
 
