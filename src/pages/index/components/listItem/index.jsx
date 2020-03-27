@@ -3,8 +3,9 @@ import { withRouter } from 'react-router'
 import styles from 'styles/list.module.scss'
 import defaultImage from 'assets/image/bg_default_empty.jpeg'
 import IconGroup from 'components/icon-group'
+import LazyImage from 'components/LazyImage'
 
-function listItem ({data, history, ...args}) {
+function listItem ({data, history}) {
     const { title, sub_title, cover_img, ...props } = data
 
     const handleGoDetail = () => {
@@ -14,14 +15,19 @@ function listItem ({data, history, ...args}) {
         })
     }
 
-    return (<>
-        <div className={styles.list_wrap}>
+    return (<React.Fragment>
+        <div data-box='list-wrap' className={styles.list_wrap}>
             <div className={styles.list_wrap__outer}>
                 <div 
                     className={styles.list_wrap__outer__lf} 
                     // style={{backgroundImage: `url(${defaultImage})`}}
                     >
-                        <img src={cover_img || defaultImage} alt="cover" className={styles.list_wrap__outer__lf_img}/>
+                    <LazyImage data-src={cover_img} className={styles.list_wrap__outer__lf_img} />
+                        {/* <img
+                            alt='lazy'
+                            data-src={defaultImage} 
+                            src={cover_img || defaultImage}
+                            className={styles.list_wrap__outer__lf_img}/> */}
                 </div>
                 <div 
                     className={styles.list_wrap__outer__rg}>
@@ -31,7 +37,7 @@ function listItem ({data, history, ...args}) {
                 </div>
             </div>
         </div>
-    </>)
+    </React.Fragment>)
 }
 
 export default withRouter(listItem)

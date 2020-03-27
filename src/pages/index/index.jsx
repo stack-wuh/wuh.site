@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { connect } from 'react-redux'
 import ListItem from './components/listItem'
 import { fetchArtList } from '../../redux/action/article'
@@ -6,10 +6,14 @@ import { renderRoutes } from 'react-router-config'
 import { useFetch, useTitle } from '../../hooks'
 import { mainList } from '../../api/map'
 import PageLoading from '../../components/PageLoading'
+import lazy from 'utils/lazy'
 
 function Index ({ fetcher, fetchArtList, dispatch, route, ...args}) {
     const { data: { data }, isLoading } = useFetch(mainList)
     useTitle('吾生而有涯，而知无涯', false)
+    useEffect(() => {
+        lazy()
+    })
     return (<Fragment>
         {
             isLoading ?
