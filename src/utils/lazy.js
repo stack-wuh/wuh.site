@@ -1,6 +1,5 @@
 const lazy = () => {
     const elem = document.querySelector('.App')
-    // let nodes = elem.querySelectorAll('[data-src]')
 
     const getNodes = () => elem.querySelectorAll('[data-src]')
 
