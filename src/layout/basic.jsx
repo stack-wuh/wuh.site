@@ -5,6 +5,7 @@ import { renderRoutes } from 'react-router-config'
 import styles from 'styles/layout.module.scss'
 import staple from 'styles/staple.module.scss'
 import Slide from './slide'
+// import SlideRight from './slideR'
 import Staple from 'components/Staple'
 import { func_list } from 'utils/share'
 
@@ -23,12 +24,14 @@ function BasicLayout ({route}) {
             </Staple>
             <div className={styles.layout_outer}>
                 <div className={styles.layout_outer__slide}>
-                    <Slide></Slide>
+                    <Slide className={styles.layout_outer__slide_inner}></Slide>
                 </div>
                 <div className={styles.layout_outer__main}>
                     {renderRoutes(route.routes)}
                 </div>
-                <div className={styles.layout_outer__slide}></div>
+                {/* <div className={styles.layout_outer__slide}>
+                    <SlideRight></SlideRight>
+                </div> */}
             </div>
         </div>
     </>)

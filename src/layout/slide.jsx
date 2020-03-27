@@ -17,10 +17,10 @@ const renderMenuItem = ({ label, icon, path }, history) => {
     </Link>)
 }
 
-function Slide () {
+function Slide ({ className }) {
     const {data, isLoading} = useFetch(slideMenus)
     return (<>
-        <div className={styles.slide_wrap}>
+        <div className={classnames(styles.slide_wrap, className)}>
             <ul className={styles.slide_wrap__list}>
                 {
                     isLoading ? 

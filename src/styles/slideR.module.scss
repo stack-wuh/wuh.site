@@ -1,0 +1,77 @@
+@import './color.scss';
+@import './var.scss';
+@import './mixin.scss';
+
+.slide_r {
+    width: 100%;
+    height: 100%;
+}
+
+.search {
+    width: 100%;
+    height: 30px;
+    background-color: $theme-background-light;
+    border-radius: $border-radius-normal;
+    box-sizing: border-box;
+    &__outer {
+        @include flexWrap($align: center);
+        height: inherit;
+    }
+    &__input {
+        width: 100%;
+        height: inherit;
+        padding: 4px 10px;
+        outline: none;
+        border: none;
+        box-sizing: border-box;
+        font-size: 14px;
+        color: $theme-dark-default;
+        background-color: $theme-background-default;
+    }
+    &__search {
+        height: inherit;
+        padding: 4px 8px;
+        font-size: 20px;
+        background-color: $theme-dark-less;
+        color: $theme-dark-default;
+        box-sizing: border-box;
+        overflow: hidden;
+        user-select: none;
+    }
+}
+
+.list_wrapper {
+    width: inherit;
+    height: auto;
+    padding: 6px 8px;
+    background-color: $theme-background-light;
+    box-sizing: border-box;
+    border-radius: $border-radius-normal;
+    &__title {
+        padding: 5px 0;
+        margin-bottom: 8px;
+    }
+    &__list {
+        padding-left: 5px;
+        counter-reset: list-item;
+    }
+    &__item {
+        position: relative;
+        @include line-over;
+        
+        // padding-left: 14px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        user-select: none;
+
+        // &::before {
+        //     content: counter(list-item);
+        //     position: absolute;
+        //     display: inline-block;
+        //     width: 10px;
+        //     height: 10px;
+        //     left: 0;
+        //     background-color: $theme-background-default;
+        // }
+    }
+}

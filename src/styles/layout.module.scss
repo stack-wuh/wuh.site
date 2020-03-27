@@ -21,16 +21,20 @@
         padding: 20px 12%;
 
         &__slide {
+            position: relative;
             width: 140px;
             min-width: 120px;
             height: auto;
             margin-right: 15px;
+            &_inner {
+                position: fixed;
+            }
         }
         &__slide:first-of-type {
             width: 120px;
         }
         &__slide:last-of-type {
-            width: 220px;
+            width: 280px;
             margin: 0;
             margin-left: 15px;
         }
