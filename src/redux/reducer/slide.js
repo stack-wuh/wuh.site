@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 const store = {
-    data: []
+    data: [],
+    isShowDialog: false
 }
 
 export const fetcher = (state = store, action) => {
@@ -11,8 +12,21 @@ export const fetcher = (state = store, action) => {
     }
 }
 
+export const toggleDialog = (state = store, action) => {
+    switch (action.type) {
+        case 'SLIDE_CHANGE': return {
+            ...state,
+            isShowDialog: !state.isShowDialog
+        }
+        default: return {
+            ...state
+        }
+    }
+}
+
 const SLIDE = combineReducers({
-    fetcher
+    fetcher,
+    toggleDialog
 })
 
 export default SLIDE

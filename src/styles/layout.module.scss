@@ -43,3 +43,27 @@
         }
     }
 }
+
+@media (max-width: 769px) {
+    .layout_wrap {
+        position: relative;
+        padding: 20px 15px !important;
+
+        &__staple {
+            display: none !important;
+        }
+        &__func {
+            display: none !important;
+        }
+        .layout_outer {
+            padding: 0;
+            &__slide {
+                display: none !important;
+                box-sizing: border-box;
+            }
+            &__main {
+              flex: 1;  
+            }
+        }
+    }
+}

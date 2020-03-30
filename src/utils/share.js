@@ -11,8 +11,9 @@ const share = {
         return window.open(url)
     },
     //分享到朋友圈
+    // 调用wxjdk
     toWechat: function () {
-        const { wx } = window
+        // const { wx } = window
     },
     toSina: function () {},
 }

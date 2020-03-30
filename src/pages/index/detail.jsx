@@ -6,7 +6,7 @@ import { mainDetailBy } from '../../api/map'
 import PageLoading from '../../components/PageLoading'
 import ShareBtns from 'components/ShareBtns'
 
-function ArtDetail ({dispatch, match, detailer, ...args}) {
+function ArtDetail ({dispatch, match, detailer}) {
     const [isMarkdown, setMarkType] = useState(2)
     const { params } = match
 
@@ -15,6 +15,7 @@ function ArtDetail ({dispatch, match, detailer, ...args}) {
     useTitle(`${_info.title || ''} ${_info.sub_title || ''}`, false)
     useEffect(() => {
         setMarkType(_info.type)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (<Fragment>

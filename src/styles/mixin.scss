@@ -71,9 +71,10 @@ $line-height: 2;
   text-overflow: ellipsis;
   white-space: normal;
 }
-@mixin lines-over {
+$clamp: 3;
+@mixin lines-over($clamp: $clamp) {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: $clamp;
   overflow: hidden;
 }

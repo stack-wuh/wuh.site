@@ -26,10 +26,30 @@
             object-fit: contain;
         }
     }
+    .outer__left__menu {
+        display: none;
+    }
     .outer__left,
     .outer__right {
         &:hover {
             cursor: pointer;
+        }
+    }
+}
+@media (max-width: 769px) {
+    .header_wrap {
+        padding: 0 20px;
+        overflow: hidden;
+        .outer__left {
+            display: none;
+        }
+        .outer__left__menu {
+            display: block;
+            font-size: 2rem;
+        }
+        .outer__right {
+            text-align: center;
+            margin: 0 auto;
         }
     }
 }

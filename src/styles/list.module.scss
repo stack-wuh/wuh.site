@@ -80,3 +80,19 @@
         }
     }
 }
+
+@media (max-width: 791px) {
+    .list_wrap {
+        height: 100px;
+        &__outer {
+            &__lf {
+                display: none;
+            }
+            &__rg {
+                .pre__sub {
+                    @include lines-over(1);
+                }
+            }
+        }
+    }
+}

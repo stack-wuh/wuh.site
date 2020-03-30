@@ -1,7 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router'
 import styles from 'styles/list.module.scss'
-import defaultImage from 'assets/image/bg_default_empty.jpeg'
 import IconGroup from 'components/icon-group'
 import LazyImage from 'components/LazyImage'
 
@@ -19,15 +18,8 @@ function listItem ({data, history}) {
         <div data-box='list-wrap' className={styles.list_wrap}>
             <div className={styles.list_wrap__outer}>
                 <div 
-                    className={styles.list_wrap__outer__lf} 
-                    // style={{backgroundImage: `url(${defaultImage})`}}
-                    >
+                    className={styles.list_wrap__outer__lf}>
                     <LazyImage data-src={cover_img} className={styles.list_wrap__outer__lf_img} />
-                        {/* <img
-                            alt='lazy'
-                            data-src={defaultImage} 
-                            src={cover_img || defaultImage}
-                            className={styles.list_wrap__outer__lf_img}/> */}
                 </div>
                 <div 
                     className={styles.list_wrap__outer__rg}>

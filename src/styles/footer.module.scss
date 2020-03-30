@@ -24,3 +24,15 @@
         border-bottom: none;
     }
 }
+
+@media (max-width: 791px) {
+    .footer_wrap {
+        padding: 0 20px;
+        &__text {
+            display: none;
+        }
+        &__copy {
+            border: none;
+        }
+    }
+}

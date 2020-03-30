@@ -9,6 +9,7 @@ const openHref = props => {
     if (props.label === 'link') {
         return clipboard({value: props.target_url})
     } else if (props.label === 'qqQzone') {
+        console.log('is clicked')
         return share.toQzone()
     } else if (props.label === 'up') {
         return handler.onScrollTop(props)
@@ -59,6 +60,7 @@ Staple.defaultProps = {
         {
             label: 'qqQzone',
             icon: '&#xe61f;',
+            target_url: 'undefined'
         },
         {
             label: 'github',
