@@ -16,7 +16,8 @@ import * as actions from 'redux/action/slide'
 function BasicLayout ({ route, history, slide, dispatch, fetchSlideList }) {
     const { toggleDialog } = slide
     // 是否展示功能组件
-    const isShowFuncBtn = history.location.pathname === '/blog'
+    const list = ['/', '/blog']
+    const isShowFuncBtn = list.includes(history.location.pathname)
 
     useEffect(() => {
         dispatch(fetchSlideList())

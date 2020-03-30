@@ -47,7 +47,9 @@
 @media (max-width: 769px) {
     .layout_wrap {
         position: relative;
+        width: 100%;
         padding: 20px 15px !important;
+        box-sizing: border-box;
 
         &__staple {
             display: none !important;
@@ -62,7 +64,7 @@
                 box-sizing: border-box;
             }
             &__main {
-              flex: 1;  
+                width: 100%;
             }
         }
     }
