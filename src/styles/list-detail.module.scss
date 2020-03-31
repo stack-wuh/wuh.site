@@ -64,5 +64,27 @@
             box-sizing: border-box;
             object-fit: contain;
         }
+
+        ol, ul, li {
+            list-style: decimal;
+            list-style-position: inside;
+            text-indent: 2em;
+        }
+        a {
+            position: relative;
+            &:hover {
+                &::before {
+                    position: absolute;
+                    top: -1.5em;
+                    content: attr(href);
+                    display: inline-bloc;
+                    padding: 2px 4px;
+                    border-radius: 4px;
+                    background-color: rgba(0, 0, 0, .6);
+                    color: #fff;
+                    @include line-over;
+                }
+            }
+        }
     }
 }
