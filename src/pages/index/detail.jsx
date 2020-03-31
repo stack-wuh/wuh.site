@@ -27,6 +27,9 @@ function ArtDetail ({dispatch, match, detailer}) {
                         <div className={styles.header}>
                             <h3 className={styles.header_title}>{_info.title}</h3>
                         </div>
+                        <div className={styles.box_wrapper}>
+                            <img className={styles.box_wrapper_cover} src={_info.cover_img} alt="thumb"/>
+                        </div>
                         {
                             isMarkdown === 2  ?
                                 <ReactMarkdown source={_info.content} /> : 
