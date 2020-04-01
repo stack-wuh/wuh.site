@@ -20,7 +20,7 @@ function Index ({ fetcher, fetchArtList, dispatch, route, ...args}) {
         return (<PageLoading />)
     }
 
-    if (!isLoading && Array.isArray(data) && !data.length) {
+    if (!isLoading && !data) {
         return <ListItemEmpty />
     }
 
