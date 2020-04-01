@@ -21,6 +21,7 @@ function BasicLayout ({ route, history, slide, dispatch, fetchSlideList }) {
 
     useEffect(() => {
         dispatch(fetchSlideList())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (<>
