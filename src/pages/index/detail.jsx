@@ -36,10 +36,10 @@ function ArtDetail ({ match }) {
                             _info.type === 2 &&
                             (<Markdown source={_info.content} />)
                         }
+                        <ShareBtns />
                      </>
                     )
             }
-            <ShareBtns></ShareBtns>
         </div>
     </Fragment>)
 }

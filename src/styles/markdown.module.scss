@@ -8,4 +8,26 @@
     box-sizing: border-box;
     background-color: $theme-background-light;
     border-radius: $border-radius-less;
+
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 2;
+    }
+    p {
+        line-height: 1.5;
+    }
+    a {
+        width: auto;
+        padding: 0 4px;
+        color: $theme-base-less;
+    }
+    img {
+        position: relative;
+        width: auto;
+        max-width: 100%;
+        margin: 5px 0;
+        border-radius: 4px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }

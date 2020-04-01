@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import './App.css';
 import Header from 'components/header'
 import BasicLayout from 'layout/basic'
 import Footer from 'layout/footer'
