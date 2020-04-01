@@ -13,7 +13,10 @@
 
     &__list {
         @include flexWrap($align: center, $justify: space-between);
+        padding: 0;
+        margin: 0;
         font-size: 20px;
+        list-style-type: none;
 
         &_item {
             padding: 4px 8px;

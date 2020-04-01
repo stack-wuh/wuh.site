@@ -3,6 +3,11 @@
 @import './var.scss';
 
 .slide_wrap {
+    ul, ol, li {
+        margin: 0;
+        padding: 0;
+    }
+
     &__list {}
     &__item {
         display: flex;
