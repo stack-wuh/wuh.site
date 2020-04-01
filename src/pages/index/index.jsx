@@ -7,6 +7,7 @@ import { useFetch, useTitle } from '../../hooks'
 import { mainList } from '../../api/map'
 import PageLoading from '../../components/PageLoading'
 import lazy from 'utils/lazy'
+import { ListItemEmpty } from 'components/List'
 
 function Index ({ fetcher, fetchArtList, dispatch, route, ...args}) {
     const { data: { data }, isLoading } = useFetch(mainList)
@@ -14,11 +15,18 @@ function Index ({ fetcher, fetchArtList, dispatch, route, ...args}) {
     useEffect(() => {
         lazy()
     })
+
+    if (isLoading) {
+        return (<PageLoading />)
+    }
+
+    if (!isLoading && Array.isArray(data) && !data.length) {
+        return <ListItemEmpty />
+    }
+
     return (<Fragment>
         {
-            isLoading ?
-                (<PageLoading />) :
-                Array.isArray(data) && data.map(v => (<ListItem data={v} key={v._id}></ListItem>))
+            Array.isArray(data) && data.map(v => (<ListItem data={v} key={v._id}></ListItem>))
         }
         {
             renderRoutes(route.routes)

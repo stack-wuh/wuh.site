@@ -9,18 +9,18 @@ const Preview = ({
     const wrapRef = useRef()
 
     const handleClick = () => {
-        const imgs = wrapRef.current.querySelectorAll('img[alt=codeblock]')
+        const imgs = wrapRef.current.querySelectorAll('img')
         const getElemList = () => [...imgs]
         getElemList().forEach(node => {
-            node.onclick = function () {
+            node.onclick = (function () {
                 let url = new URL(node.src)
                 window.open(url)
-            }
+            })()
         })
     }
 
     return (
-        <div onClick={handleClick} ref={wrapRef} className={styles.markdown}>
+        <div onClick={() => handleClick()} ref={wrapRef} className={styles.markdown}>
             <ReactMarkdown
             source={source}
             renderers={{ code: CodeBlock }} />
