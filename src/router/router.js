@@ -1,9 +1,16 @@
+import React from 'react'
 import Root from '../App'
 
-import IndexPage from 'pages/index/index'
-import IndexDetail from 'pages/index/detail'
-import LocationPage from 'pages/location/index'
-import MusicPage from 'pages/music/index'
+// import IndexPage from 'pages/index/index'
+// import IndexDetail from 'pages/index/detail'
+// import LocationPage from 'pages/location/index'
+// import MusicPage from 'pages/music/index'
+
+const IndexPage_c = React.lazy(() => import('pages/index/index'))
+const IndexDetail_c = React.lazy(() => import('pages/index/detail'))
+const LocationPage_c = React.lazy(() => import('pages/location/index'))
+const MusicPage_c = React.lazy(() => import('pages/music/index'))
+const NotFound = React.lazy(() => import('components/List/Empty'))
 
 const routes = [
     {
@@ -13,29 +20,33 @@ const routes = [
                 path: '/',
                 label: '首页',
                 exact: true,
-                component: IndexPage
+                component: IndexPage_c
             },
             {
                 path: '/blog',
                 label: '博客',
-                component: IndexPage,
+                component: IndexPage_c,
                 exact: true
             },
             {
                 path: '/blog/detail/:id',
                 label: 'detail',
-                component: IndexDetail,
+                component: IndexDetail_c,
                 exact: true
             },
             {
                 path: '/music',
                 label: '音乐馆',
-                component: MusicPage
+                component: MusicPage_c
             },
             {
                 path: '/location',
                 label: '我的位置',
-                component: LocationPage
+                component: LocationPage_c
+            },
+            {
+                path: '*',
+                component: NotFound
             }
         ]
     }

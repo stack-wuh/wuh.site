@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, Suspense } from 'react'
 import classnames from 'classnames'
 import { withRouter } from 'react-router'
 import { renderRoutes } from 'react-router-config'
@@ -12,6 +12,7 @@ import { func_list } from 'utils/share'
 import Dialog from 'components/Dialog'
 import { connect } from 'react-redux'
 import * as actions from 'redux/action/slide'
+import ListItemEmpty from 'components/List/Empty'
 
 function BasicLayout ({ route, history, slide, dispatch, fetchSlideList }) {
     const { toggleDialog } = slide
@@ -49,9 +50,11 @@ function BasicLayout ({ route, history, slide, dispatch, fetchSlideList }) {
                 <div className={styles.layout_outer__slide}>
                     <Slide className={styles.layout_outer__slide_inner}></Slide>
                 </div>
-                <div className={styles.layout_outer__main}>
-                    {renderRoutes(route.routes)}
-                </div>
+                <Suspense fallback={<ListItemEmpty />}>
+                    <div className={styles.layout_outer__main}>
+                        {renderRoutes(route.routes)}
+                    </div>
+                </Suspense>
                 {/* <div className={styles.layout_outer__slide}>
                     <SlideRight></SlideRight>
                 </div> */}
