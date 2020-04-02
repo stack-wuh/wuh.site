@@ -26,7 +26,6 @@ const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpack
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const WebpackBundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
-const UgligyWebpacPlugin  = require('uglifyjs-webpack-plugin');
 
 const postcssNormalize = require('postcss-normalize');
 
