@@ -1,0 +1,132 @@
+/*** 配置全局变量方便自定义格式化 ***/
+:root {
+    --background-color: #fff;
+    --border-radius: 8px;
+    --line-height-base: 24px;
+    --font-size-base: 16px;
+    --color-base: #2f3542;
+    --font-weight: 400;
+}
+
+/*** base styles ***/
+
+.markdown {
+    width: 100%;
+    height: 100%;
+    padding: 15px 15px 20px;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    color: var(--color-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+}
+
+/*** h1,h2,h3,h4,h5,h6 ***/
+.markdown
+h1,h2,h3,h4,h5,h6 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: var(--font-size-base);
+    font-weight: var(--font-weight);
+}
+.markdown
+h1 {
+    font-size: calc(var(--font-size-base) + 12px);
+    line-height: calc(var(--line-height-base) + 12px);
+}
+
+.markdown
+h2 {
+    font-size: calc(var(--font-size-base) + 10px);
+    line-height: calc(var(--line-height-base) + 10px);
+}
+.markdown
+h3 {
+    font-size: calc(var(--font-size-base) + 8px);
+    line-height: calc(var(--line-height-base) + 8px);
+}
+.markdown
+h4 {
+    font-size: calc(var(--font-size-base) + 6px);
+    line-height: calc(var(--line-height-base) + 6px);
+}
+.markdown
+h5 {
+    font-size: calc(var(--font-size-base) + 4px);
+    line-height: calc(var(--line-height-base) + 4px);
+}
+.markdown
+h6 {
+    font-size: calc(var(--font-size-base) + 2px);
+    line-height: calc(var(--line-height-base) + 2px);
+}
+
+/*** img styles ***/
+
+.markdown
+img,img[alt='preview'] {
+    width: auto;
+    max-width: 100%;
+    border-radius: calc(var(--border-radius) - 2px);
+}
+
+/*** p styles - block ***/
+.markdown
+p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+}
+.markdown
+p + h1, h2, h3, h4, h5, h6 {
+    margin-top: 1em;
+}
+
+.markdown
+p > img {
+    margin: 1em 0;
+}
+.markdown
+p strong {
+    display: inline-block;
+    margin: 1em 0;
+    font-size: calc(var(--font-size-base));
+    line-height: calc(var(--line-height-base));
+}
+.markdown 
+p strong:last-of-type {
+    margin-bottom: 0;
+}
+.markdown
+img + p {
+    margin-top: var(--line-height-base);
+}
+.markdown 
+blockquote {
+    padding: 0 1em;
+    margin: .5em 0;
+    color: #6a737d;
+    border-left: .25em solid #dfe2e5;
+    box-sizing: border-box;
+}
+
+/*** table style***/
+.markdown 
+table {
+    width: auto;
+    margin-bottom: 1em;
+    border-collapse: collapse;
+    border: 1px solid #d8dce0;
+}
+.markdown
+table thead tr th {
+    padding: 6px 10px;
+    border: 1px solid #d8dce0;
+    /* background-color: #ccc; */
+}
+.markdown
+table tbody tr td {
+    padding: 6px 10px;
+    border: 1px solid #d8dce0;
+    /* background-color: rgb(231, 228, 228); */
+}
