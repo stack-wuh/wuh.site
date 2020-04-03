@@ -17,6 +17,8 @@
         margin: 0;
         font-size: 20px;
         list-style-type: none;
+        border-radius: 0;
+        transition: border-radius .5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 
         &_item {
             padding: 4px 8px;
@@ -26,6 +28,8 @@
                 cursor: pointer;
                 color: $theme-background-light;
                 background-color: $theme-dark-default;
+                border-radius: $border-radius-less;
+                transition: border-radius .5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
             }
         }
     }

@@ -13,6 +13,17 @@ function ArtDetail ({ match }) {
     const _info = info.length && info[0]
     useTitle(`${_info.title || ''} ${_info.sub_title || ''}`, false)
 
+    const shareBtnProps = {
+        qqzone: {
+            url: 'https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?' + 
+            'url=https://wuh.site/blog/'+ _info.id +'&title=山河入梦来 | WUH.SITE | 你一定也想起舞吧&' + 
+            'sharesource=qzone&' +
+            'pics=' + _info.cover_img + '&' +
+            'summary=' + _info.sub_title + '&' + 
+            'site=https://wuh.site'
+        }
+    }
+
     return (<Fragment>
         <div className={styles.list_detail}>
             {
@@ -36,7 +47,7 @@ function ArtDetail ({ match }) {
                             _info.type === 2 &&
                             (<Markdown source={_info.content} />)
                         }
-                        <ShareBtns />
+                        <ShareBtns payload={shareBtnProps} />
                      </>
                     )
             }

@@ -2,7 +2,7 @@ import React from 'react'
 import styles from 'styles/icon-group.module.scss'
 
 function IconGroup ({data}) {
-    const { update_at, look, location } = data
+    const { update_at, location } = data
     return (<>
         <div className={styles.icon_group_wrap}>
             <ul className={styles.list}>
@@ -16,12 +16,12 @@ function IconGroup ({data}) {
                         <span>{location}</span>
                     </li>)
                 }
-                {
+                {/* {
                     look && (<li className={styles.item}>
                         <i className="iconfont">&#xe755;</i>
                         <span>{look}</span>
                     </li>)
-                }
+                } */}
             </ul>
         </div>
     </>)

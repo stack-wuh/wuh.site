@@ -17,7 +17,7 @@ import ListItemEmpty from 'components/List/Empty'
 function BasicLayout ({ route, history, slide, dispatch, fetchSlideList }) {
     const { toggleDialog } = slide
     // 是否展示功能组件
-    const reg = /\/?blog/gi
+    const reg = /(\/)?(\/?blog\/?)/gi
     const isShowFuncBtn = reg.test(history.location.pathname)
 
     useEffect(() => {

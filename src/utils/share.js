@@ -1,6 +1,6 @@
 const share = {
     // 分享至qq空间
-    toQzone: function () {
+    toQzone: function (target_url) {
         const url = 'https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?' + 
                     'url=https://wuh.site/&title=山河入梦来 | WUH.SITE | 你一定也想起舞吧&' + 
                     'sharesource=qzone&' +
@@ -8,7 +8,7 @@ const share = {
                     'summary=见贤思齐焉, 见不贤而内自省也&' + 
                     'site=https://wuh.site/' + 
                     'site=https://baidu.com'
-        return window.open(url)
+        return window.open(target_url || url)
     },
     //分享到朋友圈
     // 调用wxjdk
@@ -54,7 +54,7 @@ const handler = {
         }
         scrollId = window.requestAnimationFrame(() => handler.onMouseEnter(data))
     },
-    onMouseLeave: function (data) {
+    onMouseLeave: function () {
         window.cancelAnimationFrame(scrollId)
     },
     onScrollTop: function () {

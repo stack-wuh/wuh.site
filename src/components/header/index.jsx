@@ -6,7 +6,7 @@ import classnames from 'classnames'
 import { connect } from 'react-redux'
 import * as actions from 'redux/action/slide'
 
-function Header ({ slide, toggleDialogState, dispatch }) {
+function Header ({ dispatch }) {
     return (<>
         <div className={styles.header_wrap}>
             <div className={styles.header_wrap__outer}>

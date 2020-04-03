@@ -4,9 +4,9 @@ import classnames from 'classnames'
 import share from 'utils/share'
 import copy from 'utils/copy'
 
-const shareTo = ({ label }) => {
+const shareTo = ({ label }, payload) => {
     switch (label) {
-        case 'qqzone': return share.toQzone()
+        case 'qqzone': return share.toQzone(payload.qqzone.url)
         case 'wechat': return share.toWechat()
         case 'link': return (() => {
             let url = new URL(window.location.href)
@@ -15,7 +15,7 @@ const shareTo = ({ label }) => {
         default: return {}
     }
 }
-const ShareBtns = ({list}) => {
+const ShareBtns = ({list, payload}) => {
     return (<React.Fragment>
         <div className={styles.share}>
             <ul className={styles.share__list}>
@@ -26,7 +26,7 @@ const ShareBtns = ({list}) => {
                          dangerouslySetInnerHTML={{
                              __html: v.icon
                          }}
-                         onClick={() => shareTo(v)}>
+                         onClick={() => shareTo(v, payload)}>
                     </li>))
                 }
             </ul>

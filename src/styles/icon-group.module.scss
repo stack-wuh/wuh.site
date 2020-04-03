@@ -8,6 +8,7 @@
     .list {
         @include flexWrap($align: center, $justify: space-between);
         height: 100%;
+        padding: 0;
         padding-right: 25px;
         font-size: $text-size-less;
         color: $theme-dark-less;
