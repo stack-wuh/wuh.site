@@ -36,10 +36,9 @@
 
         &_cover {
             width: 100%;
-            // width: auto;
-            // max-width: 100%;
-            // object-fit: contain;
-            // object-position: center center;
+            height: 180px;
+            object-fit: cover;
+            object-position: center center;
         }
     }
     .article {

@@ -1,5 +1,6 @@
 /*** 配置全局变量方便自定义格式化 ***/
 :root {
+    --link-color: #0366d6;
     --background-color: #fff;
     --border-radius: 8px;
     --line-height-base: 24px;
@@ -129,4 +130,15 @@ table tbody tr td {
     padding: 6px 10px;
     border: 1px solid #d8dce0;
     /* background-color: rgb(231, 228, 228); */
+}
+
+/** a **/
+.markdown 
+a {
+    color: var(--link-color);
+}
+.markdown
+p a {
+    display: inline-block;
+    line-height: var(--line-height-base);
 }
