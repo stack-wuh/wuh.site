@@ -1,8 +1,8 @@
 import React, { Fragment, useRef, useState, useEffect } from 'react'
-import { useTitle } from '../../hooks'
-import styles from '../../styles/music.module.scss'
+import { useTitle } from 'hooks'
+import styles from 'styles/music.module.scss'
 import Controls from './components/Controls'
-import { Circle } from '../../components/Progress'
+import { Circle } from 'components/Progress'
 
 const songUrl = 'https://src.wuh.site/media/brave.mp3'
 let GlobalId = null

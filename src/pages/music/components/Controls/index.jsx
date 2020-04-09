@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import classnames from 'classnames'
 import propTypes from 'prop-types'
-import styles from '../../../../styles/controls.module.scss'
+import styles from 'styles/controls.module.scss'
 
 const Controls = ({ isPlayed, onPlay, onPause }) => {
     return (<Fragment>

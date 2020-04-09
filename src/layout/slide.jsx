@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from 'styles/slide.module.scss'
 import classnames from 'classnames'
-import PageLoading from '../components/PageLoading'
+import PageLoading from 'components/PageLoading'
 import { withRouter } from 'react-router'
 import { connect } from 'react-redux'
 

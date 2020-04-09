@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import styles from 'styles/list-detail.module.scss'
-import { useFetch, useTitle } from '../../hooks'
-import { mainDetailBy } from '../../api/map'
-import PageLoading from '../../components/PageLoading'
+import { useFetch, useTitle } from 'hooks'
+import { mainDetailBy } from 'api/map'
+import PageLoading from 'components/PageLoading'
 import ShareBtns from 'components/ShareBtns'
 import Markdown from 'components/Markdown'
 

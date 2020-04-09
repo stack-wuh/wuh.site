@@ -1,9 +1,10 @@
 import { useRef, useEffect } from 'react'
-const config = require('../../utils/config')
+const config = require('utils/config')
 
 const useTitle = (title, restoreOnUnmount = false) => {
     const prevTitle = useRef(document.title)
     document.title = config.title.prefix + title + config.title.suffix
+    localStorage.setItem('docTitle', document.title)
     useEffect(() => {
         if (restoreOnUnmount) {
             return () => {

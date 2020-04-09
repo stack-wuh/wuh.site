@@ -1,5 +1,5 @@
 import { useState, useEffect, useReducer } from 'react'
-import request from '../../utils/request'
+import request from 'utils/request'
 import qs from 'querystring'
 
 const dataFetchReducer = (state, action) => {

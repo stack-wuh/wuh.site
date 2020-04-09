@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from 'styles/location.module.scss'
 import ListItem from './components/listItem'
-import CustomAMap from '../../components/AMap'
+import CustomAMap from 'components/AMap'
 import { Marker } from 'react-amap'
 import { useTitle } from 'hooks'
-const config = require('../../utils/config')
+const config = require('utils/config')
 
 const menuMaps = [
     {
