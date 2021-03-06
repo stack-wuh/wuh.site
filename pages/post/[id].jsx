@@ -1,5 +1,6 @@
-import fetch from '../../lib/fetch'
-import markdownToHtml from '../../lib/markdownToHtml'
+import fetch from '@/lib/fetch'
+import markdownToHtml from '@/lib/markdownToHtml'
+import PostBody from '@/components/post-body'
 
 const Post = ({
   post
@@ -8,7 +9,7 @@ const Post = ({
   return (<div>
       <article>
         <h4>{title}</h4>
-        <div dangerouslySetInnerHTML={{ __html: body }} />
+        <PostBody body={body} />
       </article>
   </div>)
 }

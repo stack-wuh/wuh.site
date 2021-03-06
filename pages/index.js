@@ -1,26 +1,29 @@
 import Head from 'next/head'
-import Post from '../components/post'
+import Post from '@/components/post'
+import Footer from '@/components/footer'
+import Header from '@/components/header'
 
 const Home = () => (
   <div className="container">
     <Head>
-      <title>Create Next App</title>
+      <title>wuh.site - 你一定也想起舞吧 | wuh.site</title>
       <link rel="icon" href="/favicon.ico" />
+      <meta charset='utf-8' />
+      <meta keywords="前端技术博客, React 博客, Javascript, Nodejs, MongoDB, Taro, wuh, wuh.site" />
+      <meta name='description' content='自小多才俊,向来志气高.别人有宝剑,我有笔如刀' />
+      <meta name='author' content="shadow, wuh131420@foxmail.com" />
+      <meta name='copyright' content='© shadow' />
+      <meta name='renderer' content='webkit' />
+      <meta http-equiv="cache-control" content="no-cache"></meta>
     </Head>
+
+    <Header />
 
     <main>
       <Post />
     </main>
 
-    <footer>
-      <a
-        href="https://zeit.co?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
-      </a>
-    </footer>
+    <Footer />
 
     <style jsx>{`
       .container {
@@ -33,32 +36,14 @@ const Home = () => (
       }
 
       main {
-        padding: 1rem 0;
+        padding-top: 75px;
+        padding-bottom: 1rem;
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
-      }
-
-      footer {
-        width: 100%;
-        height: 100px;
-        border-top: 1px solid #eaeaea;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      footer img {
-        margin-left: 0.5rem;
-      }
-
-      footer a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
 
       a {
