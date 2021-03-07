@@ -1,10 +1,14 @@
 import Image from 'next/image'
+import Head from 'next/head'
 
 const Header = () => {
   return (<>
     <header className='header'>
+      <Head>
+        <link rel="icon" href="/image/avatar.jpeg" />
+      </Head>
       <div className='container'>
-        <Image src="http://shadow-web.oss-cn-beijing.aliyuncs.com/web/logo.png" width={50} height={50} />
+        <Image src="/favicon.ico" width={50} height={50} />
 
         <strong className='title'>自小多才俊, 向来志气高</strong>
       </div>

@@ -1,14 +1,16 @@
 import fetch from '@/lib/fetch'
 import markdownToHtml from '@/lib/markdownToHtml'
 import PostBody from '@/components/post-body'
+import PostHeader from '@/components/post-header'
+import withLayout from '@/layout/withLayout'
 
 const Post = ({
   post
 }) => {
-  const { title, body } = post
+  const { body } = post
   return (<div>
       <article>
-        <h4>{title}</h4>
+        <PostHeader {...post} />
         <PostBody body={body} />
       </article>
   </div>)
@@ -28,4 +30,4 @@ export async function getServerSideProps (context) {
     }
   }
 }
-export default Post
+export default withLayout(Post)
