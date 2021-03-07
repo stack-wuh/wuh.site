@@ -20,11 +20,15 @@ const Header = () => {
         height: 60px;
         display: flex;
         align-items: center;
-        background-color: #fbf7f7;
+        background-color: rgb(255 255 255 / 51%);
         top: 0;
         left: 0;
         right: 0;
         z-index: 100;
+        -webkit-backdrop-filter: blur(5px);    
+        backdrop-filter: blur(5px); 
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 2px 2px 2px rgb(238 238 238 / 30%);
       }
 
       .header .container {

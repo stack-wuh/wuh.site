@@ -9,9 +9,11 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin }) => {
     <div className='b__post-header'>
       <Head>
         <title>{formatTitle}</title>
-        <meta name='description' content={sub_title} />
+        <meta name='description' content={keywordsStr} />
         <meta name='author' content='shadow, wuh131420@foxmail.com' />
         <meta keywords={keywordsStr} />
+        <meta name='renderer' content='webkit' />
+        <meta httpEquiv="cache-control" content="no-cache"></meta>
       </Head>
 
       <h1 className='b__post-header--title'>{title}</h1>
