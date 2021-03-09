@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useSWRInfinite } from 'swr'
 import fetcher from '@/lib/fetch'
-import LoadmoreButton from '@/components/button-loadmore'
+import LoadmoreButton from '@/components/button/loadmore'
 
 const PAGE_SIZE = 10
 
@@ -11,9 +11,9 @@ export function usePostPages () {
     if (previousPageData && previousPageData.data.rows.length === 0) return null
 
     if (index === 0) {
-      return `http://api.wuh.site/articles?p=1`
+      return `https://api.wuh.site/articles?p=1`
     }
-    return `http://api.wuh.site/articles?p=${index+1}`
+    return `https://api.wuh.site/articles?p=${index+1}`
   }, fetcher)
 }
 

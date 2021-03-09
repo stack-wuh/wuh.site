@@ -17,7 +17,7 @@ const Post = ({
 }
 
 export async function getServerSideProps (context) {
-  const res = await fetch('http://api.wuh.site/articles?_id='+context.query.id)
+  const res = await fetch('https://api.wuh.site/articles?_id='+context.query.id)
   const row = res.data.rows[0]
   const body = await markdownToHtml(row.content || '')
 

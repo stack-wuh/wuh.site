@@ -1,11 +1,17 @@
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import Menu from '@/components/menu'
 
 const Layout = (Wrapper) => {
   return (props) => (<div className='b-layout'>
     <Header />
     <main className='main'>
-      <Wrapper {...props} />
+      <div className='slide-menu'>
+        <Menu />
+      </div>
+      <div className='main-container'>
+        <Wrapper {...props} />
+      </div>
     </main>
     <Footer />
     <style jsx global>{`
@@ -19,7 +25,16 @@ const Layout = (Wrapper) => {
       }
       .header {}
       .main {
+        display: flex;
+        justify-content: space-between;
         margin-top: 75px;
+        width: 80%;
+      }
+      .slide-menu {
+        width: 15%;
+      }
+      .main-container {
+        flex: 1;
         width: 80%;
       }
       .footer {}
