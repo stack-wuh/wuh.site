@@ -6,7 +6,7 @@ import LoadmoreButton from '@/components/button/loadmore'
 
 const PAGE_SIZE = 10
 
-export function usePostPages () {
+export function usePostPages ({ initialData }) {
   return useSWRInfinite((index, previousPageData) => {
     if (previousPageData && previousPageData.data.rows.length === 0) return null
 
@@ -14,14 +14,14 @@ export function usePostPages () {
       return `https://api.wuh.site/articles?p=1`
     }
     return `https://api.wuh.site/articles?p=${index+1}`
-  }, fetcher)
+  }, fetcher, { initialData })
 }
 
 const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href={`post/${_id}`}>
   <div>
     <li className='e-item'>
       <div className="e-left" data-origin={origin}>
-        <Image loading="lazy" src={`${cover_img}?w=160&h=108&q=75`} width={160} height={108} />
+        <Image loading="lazy" src={`${cover_img}?w=160&h=108&q=75`} width={160} height={108} alt="cover-lazy" />
       </div>
       <div className="e-body">
         <h4 className='e-body__title'>{title}</h4>
@@ -110,9 +110,10 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
     </div>
   </Link>)
 
-const Post = () => {
-  const { data, error, size, setSize } = usePostPages()
-
+const Post = ({
+  initialData
+}) => {
+  const { data, error, size, setSize } = usePostPages(initialData)
   const posts = data ? data.reduce((acc, curr) => [...acc, ...curr.data.rows], []) : []
   const isLoadingInitial = !error && !data
   const isLoadingMore = isLoadingInitial || (data&& typeof data[size-1] === 'undefined')

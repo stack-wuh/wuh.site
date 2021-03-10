@@ -9,7 +9,19 @@ const Menu = () => {
   }, 'menu-item')
 
   return (<nav className='menu'>
-    <ul className='menu-list'>
+    <Link href="/">
+      <a className={itemClass('/')}>
+        <i className='iconfont icon-code' />
+        <span>前端</span>
+      </a>
+    </Link>
+    <Link href='/about'>
+      <a className={itemClass('/about')}>
+        <i className='iconfont icon-bussiness-man' />
+        <span>关于</span>
+      </a>
+    </Link>
+    {/* <ul className='menu-list'>
       <li className={itemClass('/')}>
         <Link href="/">
           <a>
@@ -26,7 +38,7 @@ const Menu = () => {
           </a>
         </Link>
       </li>
-    </ul>
+    </ul> */}
     <style jsx global>{`
       .icon {
         width: 1em;
@@ -59,12 +71,7 @@ const Menu = () => {
         font-size: 20px;
       }
 
-      ul.menu-list {
-        padding: 0;
-        list-style: none;
-      }
-
-      li.menu-item {
+      a.menu-item {
         height: 46px;
         padding: 0 12px;
         border-bottom: 6px solid #fff;
@@ -78,7 +85,7 @@ const Menu = () => {
         box-sizing: border-box;
       }
 
-      .menu-item:hover {
+      a.menu-item:hover {
         background-color: rgb(100 100 100 / 40%);
         cursor: pointer;
         border-radius: 4px;
