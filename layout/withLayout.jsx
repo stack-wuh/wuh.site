@@ -3,9 +3,10 @@ import Footer from '@/components/footer'
 import Menu from '@/components/menu'
 
 const Layout = (Wrapper) => {
+
   return (props) => (<div className='b-layout'>
     <Header />
-    <main className='main'>
+    <main className='main'>   
       <div className='slide-menu'>
         <Menu />
       </div>
@@ -20,7 +21,7 @@ const Layout = (Wrapper) => {
         padding: 0 0.5rem;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
       }
       .header {}
@@ -32,6 +33,7 @@ const Layout = (Wrapper) => {
       }
       .slide-menu {
         width: 15%;
+        margin-right: 20px;
       }
       .main-container {
         flex: 1;

@@ -30,4 +30,4 @@ export async function getServerSideProps (context) {
     }
   }
 }
-export default withLayout(Post)
+export default withLayout(Post, { allowSlide: false })

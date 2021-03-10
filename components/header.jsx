@@ -8,7 +8,7 @@ const Header = () => {
         <link rel="icon" href="/image/avatar.jpeg" />
       </Head>
       <div className='container'>
-        <Image src="/favicon.ico" width={50} height={50} />
+        <Image src="/favicon.ico" width={50} height={50} alt="favicon" />
 
         <strong className='title'>自小多才俊, 向来志气高</strong>
       </div>

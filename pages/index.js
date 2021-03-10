@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import Post from '@/components/post'
 import withLayout from '@/layout/withLayout'
+import fetcher from '@/lib/fetch'
 
-const Home = () => (
+const Home = ({
+  posts
+}) => (
   <div>
     <Head>
       <title>wuh.site - 你一定也想起舞吧 - wuh.site</title>
@@ -15,7 +18,7 @@ const Home = () => (
       <meta httpEquiv="cache-control" content="no-cache"></meta>
     </Head>
 
-    <Post />
+    <Post initialData={posts} />
 
     <style jsx global>{`
       html,
@@ -32,5 +35,13 @@ const Home = () => (
     `}</style>
   </div>
 )
+
+export async function getStaticProps () {
+  const posts = await fetcher('https://api.wuh.site/articles')
+
+  return {
+    props: { posts }
+  }
+}
 
 export default withLayout(Home)

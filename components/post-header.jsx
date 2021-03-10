@@ -31,6 +31,7 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin }) => {
       }
       .b__post-header--title {
         margin: 0;
+        padding-bottom: 10px;
         font-size: 28px;
       }
       .b__post-header--head {
