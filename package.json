@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "compression-webpack-plugin": "^4.0.0",
     "dayjs": "^1.10.4",
     "isomorphic-fetch": "^3.0.0",
     "next": "10.0.8",
