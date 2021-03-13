@@ -1,4 +1,7 @@
 import withLayout from '@/layout/withLayout'
+import LocationMap from '@/components/amap'
+import Divider from '@/components/divider'
+import Empty from '@/components/empty'
 
 const About = () => {
   return (<div className='about'>
@@ -18,6 +21,12 @@ const About = () => {
         </li>
       </ul>
     </div>
+    <Divider />
+    <div className="about-map">
+      <LocationMap />
+    </div>
+    <Divider />
+    <Empty style={{ marginBottom: 16 }} />
     <style jsx>{`
       .about {
         padding: 0 1rem;
