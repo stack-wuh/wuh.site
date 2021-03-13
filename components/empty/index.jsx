@@ -10,6 +10,8 @@ const Empty = ({ style }) => {
         border: 1px solid #ccc;
         box-sizing: border-box;
         border-radius: 3px;
+        background-color: rgba(239, 229, 229, .5);
+        user-select: none;
       }
       .nothing {
         height: 4rem;

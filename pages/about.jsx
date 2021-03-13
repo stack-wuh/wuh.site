@@ -2,6 +2,7 @@ import withLayout from '@/layout/withLayout'
 import LocationMap from '@/components/amap'
 import Divider from '@/components/divider'
 import Empty from '@/components/empty'
+import Space from '@/components/space'
 
 const About = () => {
   return (<div className='about'>
@@ -31,7 +32,6 @@ const About = () => {
       .about {
         padding: 0 1rem;
         font-size: 30px;
-        line-height: 10em;
         overflow: hidden;
         font-size: 14px;
       }

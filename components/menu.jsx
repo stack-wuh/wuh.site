@@ -15,7 +15,7 @@ const Menu = () => {
       </a>
     </ActiveNav>
 
-    <style jsx global>{`
+    <style jsx>{`
       .icon {
         width: 1em;
         height: 1em;

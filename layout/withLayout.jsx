@@ -1,6 +1,7 @@
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Menu from '@/components/menu'
+import ShareButton from '@/components/button/share'
 
 const Layout = (Wrapper) => {
 
@@ -11,6 +12,7 @@ const Layout = (Wrapper) => {
         <Menu />
       </div>
       <div className='main-container'>
+        <ShareButton />
         <Wrapper {...props} />
       </div>
     </main>
