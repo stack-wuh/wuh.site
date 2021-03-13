@@ -1,7 +1,7 @@
 const Footer = () => {
   return (<>
     <footer className='footer'>
-      <p>你也想起舞吗 | 由NextJS、MongoDB和Express驱动 | <strong>水滴石穿</strong> 闻鸡起舞</p>
+      <p>你也想起舞吗 | 由NextJS、MongoDB和Express驱动 | <strong>水滴石穿&nbsp;&nbsp;滴水穿石</strong></p>
       <p className='footer__copyright'>
         <span>Copyright© 2021 Shadow.</span>
         <span>鄂ICP备20001814号 - 1</span>

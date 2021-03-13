@@ -19,7 +19,7 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin }) => {
       <h1 className='b__post-header--title'>{title}</h1>
       <p className='b__post-header--head'>
         <time>{formatDate}</time>&nbsp;&nbsp;
-        <span>发布于 {origin}</span>
+        <span>发布于 <strong>{origin}</strong></span>
       </p>
     </div>
     <style jsx>{`

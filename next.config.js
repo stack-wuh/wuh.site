@@ -9,11 +9,10 @@ module.exports = {
       algorithm: "gzip",
       test: /\.js$|\.css$/,
       threshold: 10240,
-      deleteOriginalAssets: true
     }))
     return config
   },
   compress: true,
   generateEtags: false,
-  distDir: 'dist'
+  // distDir: 'dist'
 }
