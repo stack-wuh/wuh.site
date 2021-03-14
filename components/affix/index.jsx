@@ -20,8 +20,6 @@ const Affix = ({
     <style jsx>{`
       .affix {
         position: fixed;
-        left: 2rem;
-        top: 4rem;
         width: auto;
         height: auto;
         padding: 0;

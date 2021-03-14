@@ -5,12 +5,12 @@ const Menu = () => {
     <ActiveNav href="/" activeClassName="is-active">
       <a className='menu-item'>
         <i className='iconfont icon-code' />
-        <span>前端</span>
+        <span>集合</span>
       </a>
     </ActiveNav>
     <ActiveNav href="/about" activeClassName="is-active">
       <a className='menu-item'>
-        <i className='iconfont icon-code' />
+        <i className='iconfont icon-bussiness-man' />
         <span>关于</span>
       </a>
     </ActiveNav>

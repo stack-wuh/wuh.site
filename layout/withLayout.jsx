@@ -2,6 +2,7 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Menu from '@/components/menu'
 import ShareButton from '@/components/button/share'
+import LeaveButton from '@/components/button/leave'
 
 const Layout = (Wrapper) => {
 
@@ -11,8 +12,9 @@ const Layout = (Wrapper) => {
       <div className='slide-menu'>
         <Menu />
       </div>
-      <div className='main-container'>
+      <div className='main-container' >
         <ShareButton />
+        <LeaveButton />
         <Wrapper {...props} />
       </div>
     </main>
@@ -25,6 +27,7 @@ const Layout = (Wrapper) => {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        background-color: #fffcfa;
       }
       .header {}
       .main {

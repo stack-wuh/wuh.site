@@ -6,11 +6,12 @@ const Header = () => {
     <header className='header'>
       <Head>
         <link rel="icon" href="/image/avatar.jpeg" />
+        <meta name='desciption' content="柴门闻犬吠, 风雪夜归人" />
       </Head>
       <div className='container'>
         <Image src="/favicon.ico" width={50} height={50} alt="favicon" />
 
-        <strong className='title'>自小多才俊, 向来志气高</strong>
+        <strong className='title'>柴门闻犬吠, 风雪夜归人</strong>
       </div>
     </header>
     <style jsx>{`

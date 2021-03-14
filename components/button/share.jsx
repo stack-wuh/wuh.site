@@ -28,21 +28,20 @@ const shareMaps = [
   },
   {
     name: 'twitter',
-    icon: 'iconfont icon-link',
+    icon: 'iconfont icon-ttww',
     href: 'https://twitter.com/wuh131420',
     name: 'twitter'
   },
   {
     name: 'link',
-    icon: 'iconfont icon-email',
-    href: 'mailto:wuh131420@foxmail.com',
+    icon: 'iconfont icon-link',
     name: 'link'
   },
 ]
 
 const Share = () => {
   const childs = shareMaps.map(share => {
-    return (<span>
+    return (<span key={share.name}>
       <a href={share.href} data-theme-name={share.name} className={`${share.icon} share-item`} target="_blank" />
     </span>)
   })
@@ -74,6 +73,7 @@ const Share = () => {
         transition: all .5s ease;
       }
       a.share-item:hover {
+        cursor: pointer;
         padding-left: .5em;
         padding-right: .3em;
         color: #fff;

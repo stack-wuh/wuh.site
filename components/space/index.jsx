@@ -4,7 +4,8 @@ const Space = ({
   children,
   size,
   direction,
-  style
+  style,
+  bordered
 }) => {
   const initialSize = size ?? 8
   const initialDirection = direction ?? 'row'
@@ -26,7 +27,8 @@ const Space = ({
 
   const childs = Children.map(children, (item, index) => {
     const child = React.cloneElement(item, {
-      className: 'space-item ' + item.className??null,
+      className: ['space-item ', item.props.className??null, bordered && 'space-item-border'].join(" "),
+      key: Math.random() ?? item.key,
       style: index === children.length - 1 ? lastChildStyle : childStyle
     })
     
@@ -48,6 +50,14 @@ const Space = ({
       .space-item {
         flex: 1 1 auto;
         display: inline-block;
+      }
+      .space-item-border {
+        border: 1px solid #eee;
+        flex: 1 1 auto;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        border: 1px solid #eee;
       }
     `}</style>
   </div>)

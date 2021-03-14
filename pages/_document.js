@@ -24,6 +24,7 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+          <link rel='preload' href='https://at.alicdn.com/t/font_1587964_s71sqc1na8s.css' as="style" />
         </Head>
         <body>
           <Main />
