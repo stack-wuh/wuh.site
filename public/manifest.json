@@ -1,0 +1,15 @@
+{
+  "short_name": "shadow -- wuh.site",
+  "name": "shadow -- wuh.site",
+  "icons": [
+    {
+      "src": "/image/avatar.jpeg",
+      "type": "image/png",
+      "sizes": "192*192"
+    }
+  ],
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#005af0",
+  "background_color": "#fff"
+}
