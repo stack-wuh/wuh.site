@@ -1,45 +1,21 @@
-import Link from 'next/link'
-import classnames from 'classnames'
-import { useRouter } from 'next/router'
+import ActiveNav from '@/components/active-class-name/ActiveLink'
 
 const Menu = () => {
-  const router = useRouter()
-  const itemClass = url => classnames({
-    'is-active': router.pathname === url
-  }, 'menu-item')
-
   return (<nav className='menu'>
-    <Link href="/">
-      <a className={itemClass('/')}>
+    <ActiveNav href="/" activeClassName="is-active">
+      <a className='menu-item'>
         <i className='iconfont icon-code' />
-        <span>前端</span>
+        <span>集合</span>
       </a>
-    </Link>
-    <Link href='/about'>
-      <a className={itemClass('/about')}>
+    </ActiveNav>
+    <ActiveNav href="/about" activeClassName="is-active">
+      <a className='menu-item'>
         <i className='iconfont icon-bussiness-man' />
         <span>关于</span>
       </a>
-    </Link>
-    {/* <ul className='menu-list'>
-      <li className={itemClass('/')}>
-        <Link href="/">
-          <a>
-            <i className='iconfont icon-code' />
-            <span>前端</span>
-          </a>
-        </Link>
-      </li>
-      <li className={itemClass('/about')}>
-        <Link href='/about'>
-          <a>
-            <i className='iconfont icon-bussiness-man' />
-            <span>关于</span>
-          </a>
-        </Link>
-      </li>
-    </ul> */}
-    <style jsx global>{`
+    </ActiveNav>
+
+    <style jsx>{`
       .icon {
         width: 1em;
         height: 1em;

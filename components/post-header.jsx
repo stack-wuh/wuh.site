@@ -14,12 +14,18 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin }) => {
         <meta keywords={keywordsStr} />
         <meta name='renderer' content='webkit' />
         <meta httpEquiv="cache-control" content="no-cache"></meta>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@wuh131420" />
+        <meta name="twitter:creator" content="@wuh131420" />
+        <meta name='twitter:image' content="https://wuh.site/image/avatar.jpeg" />
+        <meta name='twitter:title' content={title} />
+        <meta name='twitter:description' content={sub_title} />
       </Head>
 
       <h1 className='b__post-header--title'>{title}</h1>
       <p className='b__post-header--head'>
         <time>{formatDate}</time>&nbsp;&nbsp;
-        <span>发布于 {origin}</span>
+        <span>发布于 <strong>{origin}</strong></span>
       </p>
     </div>
     <style jsx>{`

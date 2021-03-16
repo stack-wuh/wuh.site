@@ -9,12 +9,13 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
+    "compression-webpack-plugin": "^4.0.0",
     "dayjs": "^1.10.4",
     "isomorphic-fetch": "^3.0.0",
     "next": "10.0.8",
     "next-sitemap": "^1.5.16",
     "react": "17.0.1",
+    "react-amap": "^1.2.8",
     "react-dom": "17.0.1",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
