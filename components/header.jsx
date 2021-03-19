@@ -41,7 +41,8 @@ const Header = () => {
 
       .header .container .title {
         font-size: 14px;
-        color: #1890ff;
+        // color: #1890ff;
+        color: var(--primary-color);
         font-weight: normal;
       }
     `}</style>

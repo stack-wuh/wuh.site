@@ -44,6 +44,7 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin }) => {
         margin: 0;
         font-size: 14px;
         color: #888484;
+        color: var(--primary-color);
       }
     `}</style>
   </>)

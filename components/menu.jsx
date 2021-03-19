@@ -3,13 +3,13 @@ import ActiveNav from '@/components/active-class-name/ActiveLink'
 const Menu = () => {
   return (<nav className='menu'>
     <ActiveNav href="/" activeClassName="is-active">
-      <a className='menu-item'>
+      <a className='menu-item' href="https://wuh.site">
         <i className='iconfont icon-code' />
         <span>集合</span>
       </a>
     </ActiveNav>
     <ActiveNav href="/about" activeClassName="is-active">
-      <a className='menu-item'>
+      <a className='menu-item' href="https://wuh.site/about">
         <i className='iconfont icon-bussiness-man' />
         <span>关于</span>
       </a>

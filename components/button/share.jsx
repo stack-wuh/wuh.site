@@ -5,19 +5,19 @@ const shareMaps = [
   {
     label: '知乎',
     icon: 'iconfont icon-zhihu',
-    href: 'https://www.zhihu.com/people/mei-you-chuan-de-hai-zei-wang',
+    href: 'https://www.zhihu.com/people/wuhong.site',
     name: 'zhihu'
   },
   {
     label: 'QQ',
     icon: 'iconfont icon-qq',
-    href: 'https://shadow-web.oss-cn-beijing.aliyuncs.com/web/qq.jpg',
+    href: 'https://src.wuh.site/web/qq.jpg',
     name: 'qq'
   },
   {
     name: 'wechat',
     icon: 'iconfont icon-wechat',
-    href: 'https://shadow-web.oss-cn-beijing.aliyuncs.com/web/wechat.jpeg',
+    href: 'https://src.wuh.site/web/wechat.jpeg',
     name: 'wechat'
   },
   {
@@ -31,6 +31,12 @@ const shareMaps = [
     icon: 'iconfont icon-ttww',
     href: 'https://twitter.com/wuh131420',
     name: 'twitter'
+  },
+  {
+    name: 'yuque',
+    icon: 'iconfont icon-yuque',
+    href: 'https://www.yuque.com/shadow.wu',
+    name: 'yuque'
   },
   {
     name: 'link',
@@ -93,6 +99,9 @@ const Share = () => {
       }
       a[data-theme-name='github']:hover {
         background-color: #181616
+      }
+      a[data-theme-name='yuque']:hover {
+        background-color: #31cc79;
       }
       a[data-theme-name='link']:hover {
         background-color: #181616

@@ -1,16 +1,12 @@
-import { useRef, useEffect, useMemo, useLayoutEffect } from 'react'
+import { useRef, useEffect } from 'react'
 
-const DURATION_TIME = 500
-const DURATION_STEP = 7
 const useScroll = ({
   getContainer,
-  duration = DURATION_TIME,
-  step = DURATION_STEP
 }) => {
   const containerRef = useRef()
   const raf = useRef({ id: null })
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     containerRef.current = getContainer()
   })
 

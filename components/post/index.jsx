@@ -21,7 +21,7 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
   <div>
     <li className='e-item'>
       <div className="e-left" data-origin={origin}>
-        <Image loading="lazy" src={`${cover_img}?w=160&h=108&q=75`} width={160} height={108} alt="cover-lazy" />
+        <Image loading="lazy" src="https://src.wuh.site/cover.png" width={160} height={108} alt="cover-lazy" />
       </div>
       <div className="e-body">
         <h4 className='e-body__title'>{title}</h4>
@@ -78,7 +78,8 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
         font-size: 15px;
         margin-bottom: 0;
         margin-top: 10px;
-        color: #000;
+        color: var(--color-text-primary) !important;
+       
       }
       .e-body__desc {
         margin: 0;

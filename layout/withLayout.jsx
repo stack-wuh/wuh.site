@@ -3,6 +3,7 @@ import Footer from '@/components/footer'
 import Menu from '@/components/menu'
 import ShareButton from '@/components/button/share'
 import LeaveButton from '@/components/button/leave'
+import ThemeSwithButton from '@/components/button/theme'
 
 const Layout = (Wrapper) => {
 
@@ -15,6 +16,7 @@ const Layout = (Wrapper) => {
       <div className='main-container' >
         <ShareButton />
         <LeaveButton />
+        <ThemeSwithButton />
         <Wrapper {...props} />
       </div>
     </main>
@@ -27,7 +29,7 @@ const Layout = (Wrapper) => {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        background-color: #fffcfa;
+        background-color: var(--color-background-primary);
       }
       .header {}
       .main {

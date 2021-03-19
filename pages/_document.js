@@ -5,7 +5,7 @@ import { GA_TRACKING_ID } from '@/lib/gtag'
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="zh-cn">
+      <Html lang="zh-cn" data-theme-mode='light'>
         <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
@@ -24,7 +24,28 @@ export default class MyDocument extends Document {
           `,
             }}
           />
-          <link rel='preload' href='https://at.alicdn.com/t/font_1587964_s71sqc1na8s.css' as="style" />
+          <style dangerouslySetInnerHTML={{
+            __html: `[data-theme-mode='light'] {
+              --primary-color: #0875e6;
+
+             /*** 文字类型 ***/
+              --color-text-primary: #24292e;
+
+              /**** 背景色 *****/
+              --color-background-primary: #fffcfa;
+            }
+            
+            [data-theme-mode='dark'] {
+              --primary-color: #002766;
+              
+              /******* 文字类型 *******/
+              --color-text-primary: #c9d1d9;
+
+              /******* 背景色 *******/
+              --color-background-primary: #090c10;
+            }
+            `
+          }} />
         </Head>
         <body>
           <Main />

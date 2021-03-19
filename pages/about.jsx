@@ -2,7 +2,6 @@ import withLayout from '@/layout/withLayout'
 import LocationMap from '@/components/amap'
 import Divider from '@/components/divider'
 import Empty from '@/components/empty'
-import Space from '@/components/space'
 
 const About = () => {
   return (<div className='about'>
