@@ -17,11 +17,21 @@ export function usePostPages ({ initialData }) {
   }, fetcher, { initialData })
 }
 
+const ImageLoader = ({ src, width, quality }) => {
+  return `${src}?w=${width}&q=${quality || 75}`
+}
+
 const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href={`post/${_id}`}>
   <div>
     <li className='e-item'>
       <div className="e-left" data-origin={origin}>
-        <Image loading="lazy" src="https://src.wuh.site/cover.png" width={160} height={108} alt="cover-lazy" />
+        <Image 
+          loader={ImageLoader}
+          loading="lazy" 
+          src={cover_img}
+          width={160} 
+          height={108} 
+          alt="cover-lazy" />
       </div>
       <div className="e-body">
         <h4 className='e-body__title'>{title}</h4>
