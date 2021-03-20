@@ -23,7 +23,7 @@ const LoadmoreButton = ({
         overflow: hidden;
       }
       button {
-        background-color: #fff;
+        background-color: var(--color-background-primary);
         outline: none;
         border: 1px solid #eee;
         text-align: left;

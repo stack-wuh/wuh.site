@@ -1,3 +1,6 @@
+.markdown-body {
+  color: var(--color-text-less) !important;
+}
 .markdown-body .octicon {
   display: inline-block;
   fill: currentColor;
@@ -776,6 +779,7 @@
   max-width: 100%;
   box-sizing: initial;
   background-color: #fff;
+  filter: var(--contrast-img);
 }
 
 .markdown-body img[align=right] {

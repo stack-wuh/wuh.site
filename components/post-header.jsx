@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import dayjs from 'dayjs'
 
-const PostTitle = ({ title, sub_title, update_at, keywords, origin }) => {
+const PostTitle = ({ title, sub_title, update_at, keywords, origin, cover_img }) => {
   const formatTitle = `${title} - wuh.site`
   const formatDate = dayjs(update_at).format('YYYY-MM-DD HH:MM:ss')
   const keywordsStr = keywords?.toString() ?? title
@@ -17,7 +17,7 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@wuh131420" />
         <meta name="twitter:creator" content="@wuh131420" />
-        <meta name='twitter:image' content="https://wuh.site/image/avatar.jpeg" />
+        <meta name='twitter:image' content={cover_img} />
         <meta name='twitter:title' content={title} />
         <meta name='twitter:description' content={sub_title} />
       </Head>
@@ -39,12 +39,13 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin }) => {
         margin: 0;
         padding-bottom: 10px;
         font-size: 28px;
+        color: var(--color-text-less);
       }
       .b__post-header--head {
         margin: 0;
         font-size: 14px;
         color: #888484;
-        color: var(--primary-color);
+        color: var(--color-text-less);
       }
     `}</style>
   </>)

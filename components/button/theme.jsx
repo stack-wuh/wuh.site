@@ -1,29 +1,28 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Affix from '@/components/affix'
 import Space from '@/components/space'
-import { getCookie } from '@/lib/utils'
 
-const TIME_STRING = new Date('2050-01-01 12:00:00')
 const Theme = () => {
-  const [mode, setmode] = useState(getCookie('theme-mode', 'light'));
-  const [lang, setlang] = useState(getCookie('language', 'ZH'))
+  const [mode, setmode] = useState('light');
+  const [lang, setlang] = useState('ZH')
 
   const toggleTheme = (mode) => {
-    const themeMode = getCookie('theme-mode');
     const container = document.querySelector('html');
-
-    if (themeMode === mode) return
     
     setmode(mode)
-    document.cookie = `theme-mode=${mode}; expires=${TIME_STRING}; path=/;`
+    localStorage.setItem('data-theme-mode', mode)
     container.setAttribute('data-theme-mode', mode)
   }
 
   const toggleLang = (val) => {
-
-    document.cookie = `language=${val}; expires=${TIME_STRING}; path=/;`
+    localStorage.setItem('language', val)
     setlang(val)
   }
+
+  useEffect(() => {
+    const local_theme_mode = localStorage.getItem('data-theme-mode')
+    toggleTheme(local_theme_mode)
+  }, [])
 
   return (<div className="theme">
     <Affix top="10vh" right={0}>

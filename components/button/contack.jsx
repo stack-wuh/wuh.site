@@ -25,6 +25,7 @@ const Contack = ({
             line-height: 34px;
             font-size: 24px;
             color: #333;
+            text-decoration: none;
             transition: all .5s ease;
           }
           .btn:hover {

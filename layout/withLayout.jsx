@@ -4,23 +4,31 @@ import Menu from '@/components/menu'
 import ShareButton from '@/components/button/share'
 import LeaveButton from '@/components/button/leave'
 import ThemeSwithButton from '@/components/button/theme'
+import { ConfigProvider } from '@/components/ConfigProvider'
+import configProps from '../public/config.json'
 
 const Layout = (Wrapper) => {
+  const initialConfig = {
+    themeMode: 'light',
+    ...configProps
+  }
 
   return (props) => (<div className='b-layout'>
-    <Header />
-    <main className='main'>   
-      <div className='slide-menu'>
-        <Menu />
-      </div>
-      <div className='main-container' >
-        <ShareButton />
-        <LeaveButton />
-        <ThemeSwithButton />
-        <Wrapper {...props} />
-      </div>
-    </main>
-    <Footer />
+    <ConfigProvider value={initialConfig}>
+      <Header />
+      <main className='main'>   
+        <div className='slide-menu'>
+          <Menu />
+        </div>
+        <div className='main-container' >
+          <ShareButton />
+          <LeaveButton />
+          <ThemeSwithButton />
+          <Wrapper {...props} />
+        </div>
+      </main>
+      <Footer />
+    </ConfigProvider>
     <style jsx global>{`
       .b-layout {
         min-height: 100vh;

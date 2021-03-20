@@ -1,10 +1,17 @@
-const Footer = () => {
+import { withConfig } from '@/components/ConfigProvider'
+
+const Footer = ({
+  footer
+}) => {
+  const {
+    lf, main, rg, copyright, record_varchar
+  } = footer
   return (<>
     <footer className='footer'>
-      <p>你也想起舞吗 | 由NextJS、MongoDB和Express驱动 | <strong>水滴石穿&nbsp;&nbsp;滴水穿石</strong></p>
+      <p>{lf} | {main} | <strong>{rg}</strong></p>
       <p className='footer__copyright'>
-        <span>Copyright© 2021 Shadow.</span>
-        <span>鄂ICP备20001814号 - 1</span>
+        <span>{copyright}</span>
+        <span>{record_varchar}</span>
       </p>
     </footer>
     <style jsx>{`
@@ -33,4 +40,4 @@ const Footer = () => {
   </>)
 }
 
-export default Footer
+export default withConfig(Footer)

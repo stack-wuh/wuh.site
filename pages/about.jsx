@@ -12,11 +12,15 @@ const About = () => {
           <span>柴门闻犬吠, 风雪夜归人</span>
         </li>
         <li>
-          <i className="iconfont icon-email" />
+          <i className='iconfont icon-copy' />
+          <span>不愿意接触现实世界, 那里的月光太过惨白</span>
+        </li>
+        <li>
+          <i className="iconfont icon-favorites" />
           <span>周杰伦, 纯音乐, 网抑云</span>
         </li>
         <li>
-          <i className='iconfont icon-email' />
+          <i className='iconfont icon-Notvisible' />
           <span>阅读, 历史, 小说, 推理, 诗词</span>
         </li>
       </ul>
@@ -47,6 +51,15 @@ const About = () => {
       }
       li i {
         margin-right: 8px;
+      }
+      .about-list {
+        border-radius: 3px;
+        padding: .2em;
+        box-sizing: border-box;
+        background-color: var(--color-background-primary);
+        color: var(--color-text-less);
+        border: 1px solid var(--color-border);
+        transition: all .5s ease;
       }
     `}
     </style>

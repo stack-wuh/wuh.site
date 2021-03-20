@@ -39,6 +39,9 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
       </div>
     </li>
     <style jsx global>{`
+      img {
+        filter: var(--contrast-img);
+      }
       li.e-item {
         display: flex;
         align-items: strench;
@@ -48,8 +51,8 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
         border-radius: 3px;
         box-sizing: border-box;
         overflow: hidden;
-        border: 1px solid #eee;
-        background-color: rgba(238, 238, 238, 0.5);
+        border: 1px solid var(--color-border);
+        background-color: var(--color-background);
       }
 
       .e-item .e-left {
@@ -95,7 +98,7 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
         margin: 0;
         margin-top: 14px;
         font-size: 13px;
-        color: #333;
+        color: var(--color-text-less);
       }
 
       .e-item:last-of-type {
@@ -105,8 +108,9 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
         cursor: pointer;
         border-radius: 4px;
         border-color: #1e97f7;
+        border-color: var(--color-border);
         transition: all .5s ease;
-        background-color: rgba(238, 238, 238, 0.2);
+        background-color: var(--color-background-primary);
         box-shadow: 0 2px 3px 1px rgb(30 151 247 / 40%);
       }
       li.e-item:hover .e-left {

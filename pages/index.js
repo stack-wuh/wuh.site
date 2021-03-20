@@ -11,7 +11,7 @@ const Home = ({
       <title>wuh.site - 你一定也想起舞吧 - wuh.site</title>
       <meta charSet='utf-8' />
       <meta keywords="前端技术博客, React 博客, Javascript, Nodejs, MongoDB, Taro, wuh, wuh.site" />
-      <meta name='description' content='自小多才俊,向来志气高.别人有宝剑,我有笔如刀' />
+      <meta name='description' content='自小多才俊,向来志气高.别人有宝剑,我有笔如刀;' />
       <meta name='author' content="shadow, wuh131420@foxmail.com" />
       <meta name='copyright' content='© shadow' />
       <meta name='renderer' content='webkit' />

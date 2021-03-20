@@ -28,6 +28,7 @@ const Menu = () => {
         postion: fixed:
         left: 10px;
         user-select: none;
+        background-color: var(--color-background-nav);
       }
 
       a {
@@ -50,8 +51,8 @@ const Menu = () => {
       a.menu-item {
         height: 46px;
         padding: 0 12px;
-        border-bottom: 6px solid #fff;
-        background-color: #f3f3f3;
+        border-bottom: 6px solid var(--color-border-pain);
+        background-color: var(--color-background-item);
         text-align: left;
         line-height: 40px;
         border-radius: 3px;
@@ -62,14 +63,14 @@ const Menu = () => {
       }
 
       a.menu-item:hover {
-        background-color: rgb(100 100 100 / 40%);
+        background-color: var(--color-background-active-nav);
         cursor: pointer;
         border-radius: 4px;
         transition: all .3s ease-out;
       }
 
       .is-active {
-        background-color: rgb(100 100 100 / 40%) !important;
+        background-color: var(--color-background-active-nav) !important;
         border-radius: 4px !important;
         transition: all .3s ease;
       }
