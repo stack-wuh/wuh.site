@@ -30,15 +30,15 @@ const Theme = () => {
         <div className='switch'>
           {
             mode === 'light' 
-              ? (<span className='btn-switch switch-dark iconfont icon-Moon' onClick={() => toggleTheme('dark')}></span>)
-                : (<span className='btn-switch switch-light iconfont icon-Sun' onClick={() => toggleTheme('light')}></span>)
+              ? (<span role='region' tabIndex='110' className='btn-switch switch-dark iconfont icon-Moon is-focus' onClick={() => toggleTheme('dark')}></span>)
+                : (<span role='region' tabIndex='110' className='btn-switch switch-light iconfont icon-Sun is-focus' onClick={() => toggleTheme('light')}></span>)
           }
         </div>
         <div className='switch'>
           {
             lang === 'ZH' 
-              ? (<span onClick={() => toggleLang('EN')} className='btn-switch switch-zh'>ZH</span>) 
-                : (<span onClick={() => toggleLang('ZH')} className='btn-switch switch-en'>EN</span>)
+              ? (<span role='region' tabIndex='110' onClick={() => toggleLang('EN')} className='btn-switch switch-zh is-focus'>ZH</span>) 
+                : (<span role='region' tabIndex='110' onClick={() => toggleLang('ZH')} className='btn-switch switch-en is-focus'>EN</span>)
           }
         </div>
       </Space>
@@ -59,6 +59,7 @@ const Theme = () => {
         user-select: none;
         color: var(--color-text-primary);
         border-left: 2px solid transparent;
+        background-color: line
       }
       .btn-switch:hover {
         cursor: pointer;

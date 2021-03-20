@@ -1,15 +1,15 @@
 import ActiveNav from '@/components/active-class-name/ActiveLink'
 
 const Menu = () => {
-  return (<nav className='menu'>
+  return (<nav className='menu' role='menubar'>
     <ActiveNav href="/" activeClassName="is-active">
-      <a className='menu-item' href="https://wuh.site">
+      <a className='menu-item' href="https://wuh.site" role='menuitem' tabIndex="900">
         <i className='iconfont icon-code' />
         <span>集合</span>
       </a>
     </ActiveNav>
     <ActiveNav href="/about" activeClassName="is-active">
-      <a className='menu-item' href="https://wuh.site/about">
+      <a className='menu-item' href="https://wuh.site/about" role='menuitem' tabIndex='901'>
         <i className='iconfont icon-bussiness-man' />
         <span>关于</span>
       </a>
@@ -37,6 +37,8 @@ const Menu = () => {
         height: 100%;
         text-decoration: none;
         color: #333;
+        border: none;
+        outline: none;
       }
 
       a i {

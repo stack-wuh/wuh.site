@@ -10,13 +10,13 @@ const Leave = () => {
   return <div className="leave">
     <Affix right="10vh" bottom="10vh">
       <Space direction='column' size={0} bordered style={{ padding: 0 }}>
-        <button className='btn' onClick={scrollTop}>
+        <button tabIndex="300" type='button' name='up' className='btn is-focus' onClick={scrollTop}>
           <i className='iconfont icon-up' />
         </button>
-        <button className='btn' onClick={scrollTo}>
+        <button tabIndex="301" type='button' name='down' className='btn is-focus' onClick={scrollTo}>
           <i className='iconfont icon-down' />
         </button>
-        <a className='iconfont icon-email btn btn-a' href='mailto:wuh131420@foxmail.com' />
+        <a tabIndex="302" className='iconfont icon-email btn btn-a is-focus' href='mailto:wuh131420@foxmail.com' />
       </Space>
     </Affix>
     <style jsx>{`

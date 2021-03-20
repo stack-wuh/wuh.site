@@ -142,7 +142,7 @@ const Post = ({
   return (<div className='b-post'>
     <ul>
       {
-        posts.map((item, index) => (<ItemRender key={index} {...item} />))
+        posts.map((item, index) => (<ItemRender tabIndex="500" key={index} {...item} />))
       }
     </ul>
     <LoadmoreButton disabled={isReachingEnd || isLoadingMore} onClick={handleFetchNextPage} />

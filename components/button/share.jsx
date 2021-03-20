@@ -6,49 +6,56 @@ const shareMaps = [
     label: '知乎',
     icon: 'iconfont icon-zhihu',
     href: 'https://www.zhihu.com/people/wuhong.site',
-    name: 'zhihu'
+    name: 'zhihu',
+    tabIndex: 100
   },
   {
     label: 'QQ',
     icon: 'iconfont icon-qq',
     href: 'https://src.wuh.site/web/qq.jpg',
-    name: 'qq'
+    name: 'qq',
+    tabIndex: 100
   },
   {
     name: 'wechat',
     icon: 'iconfont icon-wechat',
     href: 'https://src.wuh.site/web/wechat.jpeg',
-    name: 'wechat'
+    name: 'wechat',
+    tabIndex: 100
   },
   {
     name: 'github',
     icon: 'iconfont icon-github',
     href: 'https://github.com/stack-wuh',
-    name: 'github'
+    name: 'github',
+    tabIndex: 100
   },
   {
     name: 'twitter',
     icon: 'iconfont icon-ttww',
     href: 'https://twitter.com/wuh131420',
-    name: 'twitter'
+    name: 'twitter',
+    tabIndex: 100
   },
   {
     name: 'yuque',
     icon: 'iconfont icon-yuque',
     href: 'https://www.yuque.com/shadow.wu',
-    name: 'yuque'
+    name: 'yuque',
+    tabIndex: 100
   },
   {
     name: 'link',
     icon: 'iconfont icon-link',
-    name: 'link'
+    name: 'link',
+    tabIndex: 100
   },
 ]
 
 const Share = () => {
   const childs = shareMaps.map(share => {
     return (<span key={share.name}>
-      <a href={share.href} data-theme-name={share.name} className={`${share.icon} share-item`} target="_blank" />
+      <a role="button" tabIndex={share.tabIndex} href={share.href} data-theme-name={share.name} className={`${share.icon} share-item is-focus`} target="_blank" />
     </span>)
   })
 
@@ -105,6 +112,12 @@ const Share = () => {
       }
       a[data-theme-name='link']:hover {
         background-color: #181616
+      }
+      .is-focus:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 2px 1px var(--primary-color);
+        border-radius:3px;
       }
     `}</style>
   </div>
