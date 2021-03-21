@@ -13,11 +13,11 @@ const About = () => {
         </li>
         <li>
           <i className='iconfont icon-copy' />
-          <span>不愿意接触现实世界, 那里的月光太过惨白</span>
+          <span>他是一个男孩，尽管岁数不小了，还是想继续活在理想的世界里，因为现实世界里的月光太惨白。</span>
         </li>
         <li>
           <i className="iconfont icon-favorites" />
-          <span>周杰伦, 纯音乐, 网抑云</span>
+          <span>周杰伦, 纯音乐, <a href="https://music.163.com/#/playlist?id=565717308" target='_blank'>网抑云</a></span>
         </li>
         <li>
           <i className='iconfont icon-Notvisible' />
@@ -60,6 +60,9 @@ const About = () => {
         color: var(--color-text-less);
         border: 1px solid var(--color-border);
         transition: all .5s ease;
+      }
+      a {
+        color: inherit;
       }
     `}
     </style>
