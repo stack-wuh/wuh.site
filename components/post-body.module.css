@@ -1,6 +1,11 @@
 .markdown-body {
   color: var(--color-text-less) !important;
 }
+
+.markdown-body img {
+  user-select: none;
+}
+
 .markdown-body .octicon {
   display: inline-block;
   fill: currentColor;
