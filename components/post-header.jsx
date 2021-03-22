@@ -20,6 +20,7 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin, cover_img })
         <meta name='twitter:image' content={cover_img} />
         <meta name='twitter:title' content={title} />
         <meta name='twitter:description' content={sub_title} />
+        <meta name='twitter:image:alt' content='图片太大了,没办法了' />
       </Head>
 
       <h1 className='b__post-header--title'>{title}</h1>
