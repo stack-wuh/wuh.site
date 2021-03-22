@@ -4,6 +4,7 @@ import Menu from '@/components/menu'
 import ShareButton from '@/components/button/share'
 import LeaveButton from '@/components/button/leave'
 import ThemeSwithButton from '@/components/button/theme'
+import Popup from '@/components/popup'
 import { ConfigProvider } from '@/components/ConfigProvider'
 import configProps from '../public/config.json'
 
@@ -24,6 +25,7 @@ const Layout = (Wrapper) => {
           <ShareButton />
           <LeaveButton />
           <ThemeSwithButton />
+          <Popup />
           <Wrapper {...props} />
         </div>
       </main>

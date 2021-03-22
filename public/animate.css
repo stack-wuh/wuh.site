@@ -10,3 +10,19 @@
 .fade-in {
   animation: fade 1s 1s infinite;
 }
+
+
+@keyframes reverts {
+  from {
+    opacity: 1;
+    transform: rotateX(0) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: rotateX(-90deg) translateY(-15px);
+  }
+}
+
+.revert-in {
+  animation: reverts 1s ease-out forwards;
+}
