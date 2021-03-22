@@ -79,7 +79,7 @@ const Popup = () => {
       .popup-item {
         position: fixed;
         display: inline-block;
-        width: 80px;
+        width: 60px;
         height: 30px;
         text-align: center;
         line-height: 30px;
