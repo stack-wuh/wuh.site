@@ -23,6 +23,26 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+
+          {/* 结构化数据 */}
+          
+          <script type='application/ld+json' dangerouslySetInnerHTML={{
+            __html: `
+              {
+                "@context": "https://wuh.site",
+                "@type": "NewsArticle",
+                "headline": "Article headline",
+                "image": [
+                  "https://src.wuh.site/cover.png",
+                  "https://src.wuh.site/2020-12-20-pipeline.jpg",
+                  "https://src.wuh.site/2020-12-13-083619.png"
+                ],
+                "datePublished": "2021-03-018T08:00:00+08:00",
+                "dateModified": "2021-03-018T09:20:00+08:00"
+              }
+            `
+          }} />
+          
           <style dangerouslySetInnerHTML={{
             __html: `[data-theme-mode='light'] {
               --primary-color: #0875e6;

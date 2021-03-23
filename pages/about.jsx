@@ -45,7 +45,6 @@ const About = () => {
       }
       li {
         height: 40px;
-        line-height: 40px;
         padding: 4px 0;
         vertical-align: baseline;
       }
