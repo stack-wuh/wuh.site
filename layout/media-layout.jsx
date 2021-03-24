@@ -16,7 +16,7 @@ export const Mobile = ({ children }) => {
 }
 
 export const MiddleScreen = ({ children }) => {
-  const isMiddleScreen = useMediaQuery({ minWidth: 767 })
+  const isMiddleScreen = useMediaQuery({ minWidth: 991 })
   return isMiddleScreen ? children : null
 }
 
@@ -29,5 +29,5 @@ export default {
   Tablet,
   MiddleScreen,
   Mobile,
-  Default
+  Default,
 }

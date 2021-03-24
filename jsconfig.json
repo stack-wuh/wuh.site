@@ -7,7 +7,8 @@
       "@/middlewares/*": ["middlewares/*"],
       "@/hooks/*": ["hooks/*"],
       "@/db/*": ["db/*"],
-      "@/layout/*": ["layout/*"]
+      "@/layout/*": ["layout/*"],
+      "@/styles/*": ["styles/*"]
     }
   }
 }

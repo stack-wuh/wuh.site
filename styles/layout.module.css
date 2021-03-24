@@ -1,0 +1,51 @@
+.layout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.container {
+  padding-top: 75px;
+}
+
+.layout .main {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.nav {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 20%;
+  margin-right: 1rem;
+}
+.menu {
+  position: fixed;
+  top: 80px;
+  height: auto;
+  border: 1px solid #feaaaa;
+}
+
+.layout .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  border-bottom: 1px solid #fecccc;
+}
+
+.layout .footer {
+  height: 80px;
+  border-top: 1px solid #fecccc;
+  border-bottom: 1px solid #fecccc;
+}
