@@ -3,15 +3,12 @@ import { withConfig } from '@/components/ConfigProvider'
 const Footer = ({
   footer
 }) => {
-  const {
-    lf, main, rg, copyright, record_varchar
-  } = footer
   return (<>
     <footer className='footer'>
-      <p>{lf} | {main} | <strong>{rg}</strong></p>
+      <p>{footer?.lf} | {footer?.main} | <strong>{footer?.rg}</strong></p>
       <p className='footer__copyright'>
-        <span>{copyright}</span>
-        <span>{record_varchar}</span>
+        <span>{footer?.copyright}</span>
+        <span>{footer?.record_varchar}</span>
       </p>
     </footer>
     <style jsx>{`

@@ -1,7 +1,8 @@
 import ActiveNav from '@/components/active-class-name/ActiveLink'
+import styles from '@/styles/layout.module.css'
 
 const Menu = () => {
-  return (<nav className='menu' role='menubar'>
+  return (<nav className={styles.menu} role='menubar'>
     <ActiveNav href="/" activeClassName="is-active">
       <a className='menu-item' href="https://wuh.site" role='menuitem' tabIndex="0">
         <i className='iconfont icon-code' />
@@ -27,6 +28,7 @@ const Menu = () => {
       nav.menu {
         postion: fixed:
         left: 10px;
+        top: 80px;
         user-select: none;
         background-color: var(--color-background-nav);
       }

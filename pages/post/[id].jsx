@@ -17,6 +17,7 @@ const Post = ({
       </article>
       <Divider />
       <ContackButton title={title} subTitle={sub_title} coverImage={cover_img} url={`/post/${_id}`} />
+      <Divider />
   </div>)
 }
 

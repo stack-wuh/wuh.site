@@ -2,8 +2,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
+  background-color: var(--color-background-primary);
   overflow: hidden;
 }
 
@@ -11,8 +12,7 @@
   padding-top: 75px;
 }
 
-.layout .main {
-  flex: 1;
+.main {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -21,18 +21,23 @@
   margin: 0 auto;
 }
 
+.body {
+  width: 58%;
+}
+
 .nav {
   position: relative;
   top: 0;
   left: 0;
-  width: 20%;
-  margin-right: 1rem;
+  width: 18%;
+  margin-right: 16px;
 }
 .menu {
   position: fixed;
   top: 80px;
   height: auto;
-  border: 1px solid #feaaaa;
+  user-select: none;
+  background-color: var(--color-background-nav);
 }
 
 .layout .header {
@@ -41,7 +46,6 @@
   left: 0;
   right: 0;
   height: 60px;
-  border-bottom: 1px solid #fecccc;
 }
 
 .layout .footer {

@@ -146,11 +146,10 @@ const Post = ({
       }
     </ul>
     <LoadmoreButton disabled={isReachingEnd || isLoadingMore} onClick={handleFetchNextPage} />
-    <style jsx global>
+    <style jsx>
       {
         `
           .b-post {
-            width: 80%;
             margin-bottom: 15px;
           }
           ul, li {

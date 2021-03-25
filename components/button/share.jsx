@@ -7,6 +7,7 @@ const shareMaps = [
     icon: 'iconfont icon-zhihu',
     href: 'https://www.zhihu.com/people/wuhong.site',
     name: 'zhihu',
+    title: '去知乎',
     tabIndex: 100
   },
   {
@@ -14,6 +15,7 @@ const shareMaps = [
     icon: 'iconfont icon-qq',
     href: 'https://src.wuh.site/web/qq.jpg',
     name: 'qq',
+    title: 'Share to: QQ',
     tabIndex: 100
   },
   {
@@ -21,6 +23,7 @@ const shareMaps = [
     icon: 'iconfont icon-wechat',
     href: 'https://src.wuh.site/web/wechat.jpeg',
     name: 'wechat',
+    title: 'Share to: 微信',
     tabIndex: 100
   },
   {
@@ -28,6 +31,7 @@ const shareMaps = [
     icon: 'iconfont icon-github',
     href: 'https://github.com/stack-wuh',
     name: 'github',
+    title: '去Github',
     tabIndex: 100
   },
   {
@@ -35,6 +39,7 @@ const shareMaps = [
     icon: 'iconfont icon-ttww',
     href: 'https://twitter.com/wuh131420',
     name: 'twitter',
+    title: "去twitter",
     tabIndex: 100
   },
   {
@@ -42,12 +47,14 @@ const shareMaps = [
     icon: 'iconfont icon-yuque',
     href: 'https://www.yuque.com/shadow.wu',
     name: 'yuque',
+    title: '去语雀',
     tabIndex: 100
   },
   {
     name: 'link',
     icon: 'iconfont icon-link',
     name: 'link',
+    title: '别点我',
     tabIndex: 100
   },
 ]
@@ -55,7 +62,14 @@ const shareMaps = [
 const Share = () => {
   const childs = shareMaps.map(share => {
     return (<span key={share.name}>
-      <a role="button" tabIndex={share.tabIndex} href={share.href} data-theme-name={share.name} className={`${share.icon} share-item is-focus`} target="_blank" />
+      <a 
+        role="button" 
+        tabIndex={share.tabIndex} 
+        href={share.href} 
+        data-theme-name={share.name} 
+        className={`${share.icon} share-item is-focus`} 
+        target="_blank"
+        title={share.title} />
     </span>)
   })
 

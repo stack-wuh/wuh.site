@@ -5,13 +5,13 @@ const layout = () => {
       <div className={styles.header}>
         header
       </div>
-      <main className={styles['container']}>
+      <main className={styles.container}>
         <div className={styles.main}>
           <div className={styles.nav}>
             <nav className={styles.menu}> menu-item </nav>
           </div>
 
-          <div className="body">
+          <div className={styles.body}>
             <div style={{ height: '200vh' }}>main</div>
           </div>
         </div>
