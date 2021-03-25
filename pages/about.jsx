@@ -2,29 +2,34 @@ import withLayout from '@/layout/withLayout'
 import LocationMap from '@/components/amap'
 import Divider from '@/components/divider'
 import Empty from '@/components/empty'
+import Aggrega from '@/components/card/aggrega'
+import Space from '@/components/space'
 
 const About = () => {
   return (<div className='about'>
-    <div className="about-list">
-      <ul>
-        <li>
-          <i className='iconfont icon-email' />
-          <span>柴门闻犬吠, 风雪夜归人</span>
-        </li>
-        <li>
-          <i className='iconfont icon-copy' />
-          <span>他是一个男孩，尽管岁数不小了，还是想继续活在理想的世界里，因为现实世界里的月光太惨白。</span>
-        </li>
-        <li>
-          <i className="iconfont icon-favorites" />
-          <span>周杰伦, 纯音乐, <a href="https://music.163.com/#/playlist?id=565717308" target='_blank'>网抑云</a></span>
-        </li>
-        <li>
-          <i className='iconfont icon-Notvisible' />
-          <span>阅读, 历史, 小说, 推理, 诗词</span>
-        </li>
-      </ul>
-    </div>
+      <Space>
+        <div className="about-list">
+          <ul>
+            <li>
+              <i className='iconfont icon-email' />
+              <span>柴门闻犬吠, 风雪夜归人</span>
+            </li>
+            <li>
+              <i className='iconfont icon-copy' />
+              <span>他是一个男孩, 尽管岁数不小了, 还是想继续活在理想的世界里, 因为现实世界里的月光太惨白.</span>
+            </li>
+            <li>
+              <i className="iconfont icon-favorites" />
+              <span>周杰伦, 纯音乐, <a href="https://music.163.com/#/playlist?id=565717308" target='_blank'>网抑云</a></span>
+            </li>
+            <li>
+              <i className='iconfont icon-Notvisible' />
+              <span>阅读, 历史, 小说, 推理, 诗词</span>
+            </li>
+          </ul>
+        </div>
+        <Aggrega />
+      </Space>
     <Divider />
     <div className="about-map">
       <LocationMap />
@@ -34,9 +39,8 @@ const About = () => {
     <style jsx>{`
       .about {
         padding: 0 1rem;
-        font-size: 30px;
-        overflow: hidden;
         font-size: 14px;
+        overflow: hidden;
       }
       ul {
         list-style: none;
@@ -44,14 +48,15 @@ const About = () => {
         padding: 0;
       }
       li {
-        height: 40px;
-        padding: 4px 0;
+        display: flex;
+        padding: 8px 0;
         vertical-align: baseline;
       }
       li i {
         margin-right: 8px;
       }
       .about-list {
+        width: 78%;
         border-radius: 3px;
         padding: .2em;
         box-sizing: border-box;

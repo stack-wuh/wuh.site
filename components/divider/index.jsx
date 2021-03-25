@@ -1,6 +1,11 @@
-const Divider = () => {
+const Divider = ({
+  size = 1
+}) => {
+  const style = {
+    margin: typeof(size) === 'number' ? `${size}rem 0` : size
+  }
   return <div className="divider">
-    <hr/>
+    <hr style={style} />
     <style jsx global>{`
       .divider {
         margin: 0;

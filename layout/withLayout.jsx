@@ -4,6 +4,7 @@ import Menu from '@/components/menu'
 import Leave from '@/components/button/leave'
 import Share from '@/components/button/share'
 import Theme from '@/components/button/theme'
+import Popup from '@/components/popup'
 
 
 import { ConfigProvider } from '@/components/ConfigProvider'
@@ -26,6 +27,7 @@ const Layout = (Component) => {
         <Leave />
         <Share />
         <Theme />
+        <Popup />
         <div className={styles.main}>
           <div className={styles.nav}>
             <Menu className={styles.menu} />

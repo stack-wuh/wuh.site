@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import config from '../public/config.json'
-
-const { popup_titles } = config
+import { withConfig } from '@/components/ConfigProvider'
 
 const MAX_POPUP_STACK_LENGTH = 20
-const Popup = () => {
+const Popup = ({
+  popup_titles
+}) => {
   const [popups, setpopups] = useState([])
   const currentRef = useRef({ index: 0 })
   const popupRef = useRef()
@@ -90,4 +90,4 @@ const Popup = () => {
   </div>)
 }
 
-export default Popup
+export default withConfig(Popup)
