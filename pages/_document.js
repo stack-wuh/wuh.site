@@ -24,25 +24,6 @@ export default class MyDocument extends Document {
             }}
           />
 
-          {/* 结构化数据 */}
-{/*           
-          <script type='application/ld+json' dangerouslySetInnerHTML={{
-            __html: `
-              {
-                "@context": "https://wuh.site",
-                "@type": "NewsArticle",
-                "headline": "Article headline",
-                "image": [
-                  "https://src.wuh.site/cover.png",
-                  "https://src.wuh.site/2020-12-20-pipeline.jpg",
-                  "https://src.wuh.site/2020-12-13-083619.png"
-                ],
-                "datePublished": "2021-03-018T08:00:00+08:00",
-                "dateModified": "2021-03-018T09:20:00+08:00"
-              }
-            `
-          }} /> */}
-
           {/* 结构化数据 -- 面包屑导航 */}
           <script type='application/ld+json' dangerouslySetInnerHTML={{
             __html: `{
@@ -66,7 +47,30 @@ export default class MyDocument extends Document {
               }]
             }`
           }} />
-          
+
+          {/* 结构化数据 -- LOGO */}
+          <script type='application/ld+json' dangerouslySetInnerHTML={{
+            __html : `{ 
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "url": "https://wuh.site",
+              "logo": "https://src.wuh.site/common/avatar.jpg"
+            }`
+          }} />
+
+          {/* 结构化数据 -- Search */}
+          <script type="application/ld+json" dangerouslySetInnerHTML={{
+            __html: `    {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "url": "https://wuh.site",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://wuh.site/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }`
+          }} />
           
           <style dangerouslySetInnerHTML={{
             __html: `[data-theme-mode='light'] {
