@@ -60,7 +60,7 @@ export default class MyDocument extends Document {
 
           {/* 结构化数据 -- Search */}
           <script type="application/ld+json" dangerouslySetInnerHTML={{
-            __html: `    {
+            __html: `{
               "@context": "https://schema.org",
               "@type": "WebSite",
               "url": "https://wuh.site",

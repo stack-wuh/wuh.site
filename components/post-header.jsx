@@ -34,7 +34,8 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin, cover_img, _
             "image": [
               "${cover_img}"
             ],
-            "dateModified": "${update_at}"
+            "dateModified": "${update_at}",
+            "datePublished": "${update_at}"
           }`
         }} />
       </Head>
