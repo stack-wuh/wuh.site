@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import dayjs from 'dayjs'
 
-const PostTitle = ({ title, sub_title, update_at, keywords, origin, cover_img }) => {
+const PostTitle = ({ title, sub_title, update_at, keywords, origin, cover_img, _id }) => {
   const formatTitle = `${title} - wuh.site`
   const formatDate = dayjs(update_at).format('YYYY-MM-DD HH:MM:ss')
   const keywordsStr = keywords?.toString() ?? title
@@ -21,6 +21,22 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin, cover_img })
         <meta name='twitter:title' content={title} />
         <meta name='twitter:description' content={sub_title} />
         <meta name='twitter:image:alt' content='图片太大了,没办法了' />
+        <script  type='application/ld+json' dangerouslySetInnerHTML={{
+          __html: `{
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://wuh.site/post/${_id}"
+            },
+            "headline": "${formatTitle}",
+            "author": "吴尒红 Shadow",
+            "image": [
+              "${cover_img}"
+            ],
+            "dateModified": "${update_at}"
+          }`
+        }} />
       </Head>
 
       <h1 className='b__post-header--title'>{title}</h1>
