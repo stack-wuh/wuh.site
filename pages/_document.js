@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
           />
 
           {/* 结构化数据 */}
-          
+{/*           
           <script type='application/ld+json' dangerouslySetInnerHTML={{
             __html: `
               {
@@ -41,15 +41,32 @@ export default class MyDocument extends Document {
                 "dateModified": "2021-03-018T09:20:00+08:00"
               }
             `
-          }} />
+          }} /> */}
 
           {/* 结构化数据 -- 面包屑导航 */}
-          {/* <script type='application/ld+json' dangerouslySetInnerHTML={{
+          <script type='application/ld+json' dangerouslySetInnerHTML={{
             __html: `{
-              "@content": "https://wuh.site",
-              "@type": "BreadcrumbList"
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "集合",
+                "item": "https://wuh.site"
+              },{
+                "@type": "ListItem",
+                "position": 2,
+                "name": "关于",
+                "item": "https://wuh.site/about"
+              },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Github",
+                "item": "https://github.com/stack-wuh"
+              }]
             }`
-          }} /> */}
+          }} />
+          
           
           <style dangerouslySetInnerHTML={{
             __html: `[data-theme-mode='light'] {
