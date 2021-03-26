@@ -42,6 +42,14 @@ export default class MyDocument extends Document {
               }
             `
           }} />
+
+          {/* 结构化数据 -- 面包屑导航 */}
+          {/* <script type='application/ld+json' dangerouslySetInnerHTML={{
+            __html: `{
+              "@content": "https://wuh.site",
+              "@type": "BreadcrumbList"
+            }`
+          }} /> */}
           
           <style dangerouslySetInnerHTML={{
             __html: `[data-theme-mode='light'] {

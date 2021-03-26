@@ -2,17 +2,19 @@ import ActiveNav from '@/components/active-class-name/ActiveLink'
 import styles from '@/styles/layout.module.css'
 
 const Menu = () => {
-  return (<nav className={styles.menu} role='menubar'>
-    <ActiveNav href="/" activeClassName="is-active">
-      <a className='menu-item' href="https://wuh.site" role='menuitem' tabIndex="0">
+  return (<nav itemScope itemType="https://schema.org/BreadcrumbList" className={styles.menu} role='menubar'>
+    <ActiveNav itemProp="itemListElement" itemScope="https://schema.org/ListItem" href="/" activeClassName="is-active">
+      <a itemProp="item" className='menu-item' href="https://wuh.site" role='menuitem' tabIndex="0">
         <i className='iconfont icon-code' />
-        <span>集合</span>
+        <span itemProp="name">集合</span>
+        <meta itemProp="position" content="1" />
       </a>
     </ActiveNav>
-    <ActiveNav href="/about" activeClassName="is-active">
-      <a className='menu-item' href="https://wuh.site/about" role='menuitem' tabIndex='0'>
+    <ActiveNav itemProp="itemListElement" itemScope="https://schema.org/ListItem" href="/about" activeClassName="is-active">
+      <a itemProp="item" className='menu-item' href="https://wuh.site/about" role='menuitem' tabIndex='0'>
         <i className='iconfont icon-bussiness-man' />
-        <span>关于</span>
+        <span itemProp="name">关于</span>
+        <meta itemProp="position" content="2" />
       </a>
     </ActiveNav>
 
