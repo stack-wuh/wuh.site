@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
           />
 
           {/* 结构化数据 -- 面包屑导航 */}
-          <script type='application/ld+json' dangerouslySetInnerHTML={{
+          {/* <script type='application/ld+json' dangerouslySetInnerHTML={{
             __html: `{
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
@@ -46,7 +46,7 @@ export default class MyDocument extends Document {
                 "item": "https://github.com/stack-wuh"
               }]
             }`
-          }} />
+          }} /> */}
 
           {/* 结构化数据 -- LOGO */}
           <script type='application/ld+json' dangerouslySetInnerHTML={{
@@ -59,7 +59,7 @@ export default class MyDocument extends Document {
           }} />
 
           {/* 结构化数据 -- Search */}
-          <script type="application/ld+json" dangerouslySetInnerHTML={{
+          {/* <script type="application/ld+json" dangerouslySetInnerHTML={{
             __html: `{
               "@context": "https://schema.org",
               "@type": "WebSite",
@@ -70,7 +70,7 @@ export default class MyDocument extends Document {
                 "query-input": "required name=search_term_string"
               }
             }`
-          }} />
+          }} /> */}
           
           <style dangerouslySetInnerHTML={{
             __html: `[data-theme-mode='light'] {

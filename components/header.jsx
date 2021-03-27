@@ -12,11 +12,15 @@ const Header = ({
         <link rel="icon" href="/image/avatar.jpeg" />
       </Head>
       <div className='container'>
-        <Image src="/favicon.ico" width={50} height={50} alt="favicon" />
-
-        <strong className='title'>{title}</strong>
+        <div className='lf'>
+          <Image src="/favicon.ico" width={50} height={50} alt="favicon" />
+          <strong className='title'>{title}</strong>
+        </div>
+        <div className='empty'></div>
+        <div className="rg">
+          <AudioControls />
+        </div>
       </div>
-      <AudioControls />
     </header>
     <style jsx>{`
       .header {
@@ -47,6 +51,14 @@ const Header = ({
         font-size: 14px;
         color: var(--primary-color);
         font-weight: normal;
+      }
+
+      .lf {
+        display: flex;
+        align-items: center;
+      }
+      .empty {
+        flex: 1;
       }
     `}</style>
   </>)
