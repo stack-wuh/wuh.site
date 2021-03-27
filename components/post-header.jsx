@@ -38,6 +38,24 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin, cover_img, _
             "datePublished": "${update_at}"
           }`
         }} />
+
+          <script type='application/ld+json' dangerouslySetInnerHTML={{
+            __html: `{
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "集合",
+                "item": "https://wuh.site"
+              },{
+                "@type": "ListItem",
+                "position": 2,
+                "name": ${title},
+                "item": "https://wuh.site/post/"+${_id}
+              }]
+            }`
+          }} />
       </Head>
 
       <h1 className='b__post-header--title'>{title}</h1>
