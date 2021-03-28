@@ -16,6 +16,12 @@ const Home = ({
       <meta name='copyright' content='© shadow' />
       <meta name='renderer' content='webkit' />
       <meta httpEquiv="cache-control" content="no-cache"></meta>
+      <meta property='og:type' content='webpage' />
+      <meta property='og:title' content='技术博客 -- wuh.site' />
+      <meta property='og:url' content='https://wuh.site' />
+      <meta property='og:description' content='前端技术博客, 分享我的知识' />
+      <meta property='og:image' content='https://src.wuh.site/common/avatar.jpg' />
+      <meta property='og:locale' content='zh-cn' />
     </Head>
 
     <Post initialData={posts} />

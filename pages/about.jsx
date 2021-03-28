@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import withLayout from '@/layout/withLayout'
 import LocationMap from '@/components/amap'
 import Divider from '@/components/divider'
@@ -6,7 +7,23 @@ import Aggrega from '@/components/card/aggrega'
 import Space from '@/components/space'
 
 const About = () => {
-  return (<div className='about'>
+  return (<>
+    <Head>
+      <meta keywords="吴尒红, shadow, wuh.site" />
+      <meta name='description' content='自小多才俊,向来志气高.别人有宝剑,我有笔如刀;' />
+      <meta name='author' content="shadow, wuh131420@foxmail.com" />
+      <meta name='copyright' content='© shadow' />
+      <meta name='renderer' content='webkit' />
+      <meta httpEquiv="cache-control" content="no-cache"></meta>
+      <meta property='og:type' content='webpage' />
+      <meta property='og:title' content='技术博客 -- wuh.site' />
+      <meta property='og:url' content='https://wuh.site/about' />
+      <meta property='og:description' content='前端技术博客, 分享我的知识' />
+      <meta property='og:image' content='https://src.wuh.site/common/avatar.jpg' />
+      <meta property='og:locale' content='zh-cn' />
+    </Head>
+
+    <div className='about'>
       <Space>
         <div className="about-list">
           <ul>
@@ -70,7 +87,8 @@ const About = () => {
       }
     `}
     </style>
-  </div>)
+  </div>
+  </>)
 }
 
 export default withLayout(About)

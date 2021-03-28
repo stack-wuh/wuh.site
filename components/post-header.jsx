@@ -21,6 +21,13 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin, cover_img, _
         <meta name='twitter:title' content={title} />
         <meta name='twitter:description' content={sub_title} />
         <meta name='twitter:image:alt' content='图片太大了,没办法了' />
+
+        <meta property='og:type' content='article' />
+        <meta property='og:title' content={`${title} -- wuh.site`} />
+        <meta property='og:url' content={`https://wuh.site/post/${_id}`} />
+        <meta property='og:description' content={sub_title} />
+        <meta property='og:image' content={cover_img} />
+
         <script  type='application/ld+json' dangerouslySetInnerHTML={{
           __html: `{
             "@context": "https://schema.org",

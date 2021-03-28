@@ -24,30 +24,6 @@ export default class MyDocument extends Document {
             }}
           />
 
-          {/* 结构化数据 -- 面包屑导航 */}
-          {/* <script type='application/ld+json' dangerouslySetInnerHTML={{
-            __html: `{
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              "itemListElement": [{
-                "@type": "ListItem",
-                "position": 1,
-                "name": "集合",
-                "item": "https://wuh.site"
-              },{
-                "@type": "ListItem",
-                "position": 2,
-                "name": "关于",
-                "item": "https://wuh.site/about"
-              },{
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Github",
-                "item": "https://github.com/stack-wuh"
-              }]
-            }`
-          }} /> */}
-
           {/* 结构化数据 -- LOGO */}
           <script type='application/ld+json' dangerouslySetInnerHTML={{
             __html : `{ 
