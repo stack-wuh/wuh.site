@@ -6,6 +6,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="zh-cn" data-theme-mode='light'>
         <Head>
+          <meta name='google' content='nositelinkssearchbox' />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
@@ -30,23 +31,23 @@ export default class MyDocument extends Document {
               "@context": "https://schema.org",
               "@type": "Organization",
               "url": "https://wuh.site",
-              "logo": "https://src.wuh.site/common/avatar.jpg"
+              "logo": "https://wuh.site/avatar.png"
             }`
           }} />
 
           {/* 结构化数据 -- Search */}
-          {/* <script type="application/ld+json" dangerouslySetInnerHTML={{
+          <script type="application/ld+json" dangerouslySetInnerHTML={{
             __html: `{
               "@context": "https://schema.org",
               "@type": "WebSite",
               "url": "https://wuh.site",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://wuh.site/search?q={search_term_string}",
+                "target": "https://wuh.site?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             }`
-          }} /> */}
+          }} />
           
           <style dangerouslySetInnerHTML={{
             __html: `[data-theme-mode='light'] {
