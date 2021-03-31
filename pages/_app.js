@@ -5,7 +5,7 @@ import '../public/iconfont.css'
 import '../public/animate.css'
 import '../public/nprogress.css'
 
-Router.events.on('routeChangeStart', (url) => {
+Router.events.on('routeChangeStart', () => {
   NProgress.start()
 })
 Router.events.on('routeChangeComplete', () => NProgress.done())
@@ -13,7 +13,7 @@ Router.events.on('routeChangeError', () => NProgress.done())
 
 const App = ({ Component, pageProps }) => {
   return (<>
-    <Component {...pageProps} />
+      <Component {...pageProps} />
   </>)
 }
 

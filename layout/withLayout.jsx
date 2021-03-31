@@ -5,7 +5,7 @@ import Leave from '@/components/button/leave'
 import Share from '@/components/button/share'
 import Theme from '@/components/button/theme'
 import Popup from '@/components/popup'
-
+import Transition from '@/components/transition'
 
 import { ConfigProvider } from '@/components/ConfigProvider'
 
@@ -28,15 +28,17 @@ const Layout = (Component) => {
         <Share />
         <Theme />
         <Popup />
-        <div className={styles.main}>
-          <div className={styles.nav}>
-            <Menu className={styles.menu} />
-          </div>
+          <div className={styles.main}>
+            <div className={styles.nav}>
+              <Menu className={styles.menu} />
+            </div>
 
-          <div className={styles.body}>
-            <Component {...props} />
+            <div className={styles.body}>
+              <Transition>
+                <Component {...props} />
+              </Transition>
+            </div>
           </div>
-        </div>
       </main>
       <Footer />
     </div>

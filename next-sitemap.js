@@ -9,7 +9,10 @@ module.exports = {
         allow: '/',
         disallow: [
           '/_next/static/css/*.css',
-          '/_next/static/chunks/*.js'
+          '/_next/static/chunks/*.js',
+          '/build/static/chunks/*.js',
+          '/build/static/chunks/*.css',
+          '/build/static/chunks/*.gz'
         ]
       }
     ],
