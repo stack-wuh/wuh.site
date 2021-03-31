@@ -40,11 +40,6 @@ module.exports = {
       threshold: 10240,
     }))
 
-    console.group('================== config.optimization =================')
-    console.log('config.optimization: ', config.optimization)
-    console.log('cofig.cacheGrouop.commons', config.optimization.splitChunks.cacheGroups)
-    console.groupEnd()
-
     return config
   },
   compress: true,
