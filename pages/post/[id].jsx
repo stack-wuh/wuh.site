@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import fetch from '@/lib/fetch'
 import markdownToHtml from '@/lib/markdownToHtml'
 import PostBody from '@/components/post-body'
@@ -10,6 +11,21 @@ const Post = ({
   post
 }) => {
   const { body, title, sub_title, cover_img, _id } = post
+
+  useEffect(() => {
+    if (global || window) {
+      global.addEventListener('click', e => {
+        if (e.target.nodeName.toLowerCase() === 'img') {
+          window.open(e.target.currentSrc)
+        }
+      })
+    }
+
+    return () => {
+      global.removeEventListener('click', () => {}, false)
+    }
+  }, [])
+
   return (<div>
       <article>
         <PostHeader {...post} />

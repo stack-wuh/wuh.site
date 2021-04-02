@@ -6,6 +6,10 @@
   user-select: none;
 }
 
+.markdown-body img:hover {
+  cursor: pointer;
+}
+
 .markdown-body .octicon {
   display: inline-block;
   fill: currentColor;
