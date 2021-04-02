@@ -1,6 +1,11 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /_next/static/css/*.css
+Disallow: /_next/static/chunks/*.js
+Disallow: /build/static/chunks/*.js
+Disallow: /build/static/chunks/*.css
+Disallow: /build/static/chunks/*.gz
 
 # Host
 Host: https://wuh.site
