@@ -5,6 +5,7 @@ import PostBody from '@/components/post-body'
 import PostHeader from '@/components/post-header'
 import Divider from '@/components/divider'
 import ContackButton from '@/components/button/contack'
+import Alert from '@/components/alert'
 import withLayout from '@/layout/withLayout'
 
 const Post = ({
@@ -31,6 +32,7 @@ const Post = ({
         <PostHeader {...post} />
         <PostBody body={body} />
       </article>
+      <Alert title="版权声明: 署名-非商业性使用-禁止演绎 3.0 中国大陆(CC BY-NC-ND 3.0 CN)" description="文章首发于 Shadow's Blog ， 转载文章请务必以超链接形式标明文章出处，作者信息及本版权声明。" />
       <Divider />
       <ContackButton title={title} subTitle={sub_title} coverImage={cover_img} url={`/post/${_id}`} />
       <Divider />
