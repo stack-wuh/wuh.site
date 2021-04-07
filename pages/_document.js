@@ -13,6 +13,8 @@ export default class MyDocument extends Document {
           <meta name='renderer' content='webkit' />
           <meta httpEquiv="cache-control" content="no-cache"></meta>
 
+          <link href="https://wuh.site/rss.xml" type="application/rss+xml" rel="alertnate" title="shadow's blog" />
+
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async

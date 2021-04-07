@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>吴尒红的博客</title>
+    <link>https://rss.itunes.apple.com/api/v1/cn/podcasts/top-podcasts/all/10/explicit.rss</link>
+    <lastBuildDate>Tue, 6 Apr 2021 02:04:28 -0700</lastBuildDate>
+    <atom:link rel="self" type="application/rss+xml" href="https://rss.itunes.apple.com/api/v1/cn/podcasts/top-podcasts/all/10/explicit.rss"/>
+    <atom:link rel="alternate" type="text/html" href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewTop?genreId=26&amp;popId=3"/>
+    <description>集合: 关于Docker的使用</description>
+    <category>集合</category>
+    <copyright>Copyright © 2021 Shadow Inc. All rights reserved.</copyright>
+    <item>
+      <title>从PM2到docker, 离不开的Nginx -- wuh.site</title>
+      <category domain="">集合</category>
+      <link>https://wuh.site/post/605551fe305300007f007e12</link>
+      <guid>https://wuh.site/post/605551fe305300007f007e12</guid>
+      <description>在去年我上线了一个前后端分离的博客项目, 后台服务用的是Express, 在当时我选择了PM2来启动我的Node服务. 为什么会需要PM2呢?</description>
+      <category>Docker</category>
+      <category>Nginx</category>
+      <category>Nodejs</category>
+      <pubDate>Mon, 1 Jun 2021 17:03:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
