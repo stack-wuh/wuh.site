@@ -22,7 +22,7 @@ const ImageLoader = ({ src, width, quality }) => {
 }
 
 const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href={`post/${_id}`}>
-  <div>
+  <a className="e-outer" href={`https://wuh.site/post/${_id}`}>
     <li className='e-item'>
       <div className="e-left" data-origin={origin}>
         <Image 
@@ -39,6 +39,9 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
       </div>
     </li>
     <style jsx global>{`
+      .e-outer {
+        text-decoration: none;
+      }
       img {
         filter: var(--contrast-img);
       }
@@ -122,7 +125,7 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
         transition: transform .5s ease-out;
       }
     `}</style>
-    </div>
+    </a>
   </Link>)
 
 const Post = ({
