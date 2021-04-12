@@ -1,4 +1,5 @@
-import { useEffect, useCallback, useMemo, useReducer } from 'react'
+import { useEffect, useCallback, useMemo, useReducer } from 'react';
+import createAudio from '@/lib/create-audio';
 
 const STEP_VOLUME = 10
 
@@ -62,8 +63,8 @@ function init (state) {
     process: state.process,
     volume: state.volume,
     isPlaying: state.isPlaying,
-    isVolume: state.isVolume,
-    audioStatus: state.audioStatus
+    audioStatus: state.audioStatus,
+    isMuted: state.isMuted
   }
 }
 
@@ -72,7 +73,7 @@ const initialState = {
   volume: 30,
   audioStatus: 'peddding',
   isPlaying: false,
-  isVolume: true
+  isMuted: false
 }
 
 function reducer(state, action) {
@@ -108,10 +109,10 @@ const useAudio = (options = initOps) => {
 
   const player = useMemo(() => {
     if ('window' in global) {
-      const audio = new Audio()
-
+      const audio = createAudio()
       audio.src = src
       audio.volume = getAudioVolume(config.volume)
+      audio.muted = config.isMuted
 
       return audio
     }
@@ -168,17 +169,12 @@ const useAudio = (options = initOps) => {
     onResetVolume(maxValue)
   }
 
-  const toggleVolume = () => {
-    const val = config.isVolume ? false : true
-    if (!config.isVolume) {
-      player.volume = 0
-    } else {
-      player.volume = getAudioVolume(config.volume)
-    }
+  const toggleVolumeMuted = () => {
+    const val = !config.isMuted
     setconfig({
       type: 'VOLUME',
       payload: {
-        isVolume: val,
+        isMuted: val
       }
     })
   }
@@ -195,7 +191,7 @@ const useAudio = (options = initOps) => {
     pause,
     ...config,
     togglePlayPause,
-    toggleVolume,
+    toggleVolumeMuted,
     onResetVolume
   }
 }

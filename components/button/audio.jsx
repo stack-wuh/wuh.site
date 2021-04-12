@@ -5,8 +5,8 @@ const Controls = () => {
     play, 
     pause, 
     isPlaying, 
-    toggleVolume,
-    isVolume
+    toggleVolumeMuted,
+    isMuted
   } = useAudio()
 
   return <div className="controls">
@@ -19,9 +19,9 @@ const Controls = () => {
       }
       <button className='btn-item iconfont icon-next'></button>
       {
-        isVolume 
-          ? (<button onClick={toggleVolume} className='btn-item iconfont icon-volume-x'></button>) 
-            : (<button onClick={toggleVolume} className='btn-item iconfont icon-volume-'></button>)
+        isMuted 
+          ? (<button onClick={toggleVolumeMuted} className='btn-item iconfont icon-volume-x'></button>) 
+            : (<button onClick={toggleVolumeMuted} className='btn-item iconfont icon-volume-'></button>)
       }
     </div>
     <style jsx>{`

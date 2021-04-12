@@ -6,12 +6,15 @@ import Share from '@/components/button/share'
 import Theme from '@/components/button/theme'
 import Popup from '@/components/popup'
 import Transition from '@/components/transition'
+import dynaimc from 'next/dynamic'
 
 import { ConfigProvider } from '@/components/ConfigProvider'
 
 import styles from '@/styles/layout.module.css'
 
 import config from '../global.config.json'
+
+const DynaimcHeader = dynaimc(import('../components/header'), { ssr: false })
 
 const Layout = (Component) => {
 
@@ -22,7 +25,7 @@ const Layout = (Component) => {
 
   return props => (<ConfigProvider value={initialConfig}>
     <div className={styles.layout}>
-      <Header />
+      <DynaimcHeader />
       <main className={styles.container}>
         <Leave />
         <Share />
