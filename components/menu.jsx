@@ -21,6 +21,13 @@ const Menu = () => {
       </a>
     </ActiveNav>
 
+    <ActiveNav href="https://docs.wuh.site" activeClassName="is-active">
+      <a className='menu-item is-link' href="https://docs.wuh.site" target="_blank" role='menuitem' tabIndex='0'>
+        <i className='iconfont icon-insertlink' />
+        <span>文档</span>
+      </a>
+    </ActiveNav>
+
     <style jsx>{`
       .icon {
         width: 1em;
@@ -82,6 +89,10 @@ const Menu = () => {
         background-color: var(--color-background-active-nav) !important;
         border-radius: 4px !important;
         transition: all .3s ease;
+      }
+
+      .is-link {
+        margin-top: 15px;
       }
 
     `}</style>

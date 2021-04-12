@@ -21,10 +21,15 @@ const ImageLoader = ({ src, width, quality }) => {
   return `${src}?w=${width}&q=${quality || 75}`
 }
 
+const ITEM_THEME_MAPS = {
+  'Github': 'is-github',
+  '语雀': 'is-yuque'
+}
+
 const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href={`post/${_id}`}>
   <a className="e-outer" href={`https://wuh.site/post/${_id}`}>
     <li className='e-item'>
-      <div className="e-left" data-origin={origin}>
+      <div className={["e-left", ITEM_THEME_MAPS[origin]].join(' ')} data-origin={origin} >
         <Image 
           loader={ImageLoader}
           loading="lazy" 
@@ -79,6 +84,12 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
         text-align: center;
         color: #fff;
         font-size: 13px;
+      }
+      .is-github::after {
+        background-color: #6f42c1 !important;
+      }
+      .is-yuque::after {
+        background-color: #30ca78 !important;
       }
 
       .e-body {
@@ -145,7 +156,7 @@ const Post = ({
   return (<div className='b-post'>
     <ul>
       {
-        posts.map((item, index) => (<ItemRender tabIndex="500" key={index} {...item} />))
+        posts.map((item, index) => (<ItemRender tabIndex="0" key={index} {...item} />))
       }
     </ul>
     <LoadmoreButton disabled={isReachingEnd || isLoadingMore} onClick={handleFetchNextPage} />

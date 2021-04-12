@@ -36,7 +36,7 @@ const About = () => {
           </li>
           <li>
             <i className='iconfont icon-Notvisible' />
-            <span>阅读, 历史, 小说, 推理, 诗词</span>
+            <span><a href="https://weread.qq.com/misc/booklist/74791710_7kPtxUxu0?code=021d5oFa1GAFQA0MHTIa1F8ayy1d5oF1&state=ok_userinfo" target="_blank" alt='阅读'>阅读</a>, 历史, 小说, 推理, 诗词</span>
           </li>
         </ul>
       </div>

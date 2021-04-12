@@ -171,6 +171,7 @@ const useAudio = (options = initOps) => {
 
   const toggleVolumeMuted = () => {
     const val = !config.isMuted
+    player.muted = val
     setconfig({
       type: 'VOLUME',
       payload: {
