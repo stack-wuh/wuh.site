@@ -3,13 +3,17 @@ import withLayout from '@/layout/withLayout'
 import LocationMap from '@/components/amap'
 import Divider from '@/components/divider'
 import Empty from '@/components/empty'
-import Aggrega from '@/components/card/aggrega'
-import Space from '@/components/space'
+import useTitle, { DEFAULT_OPTIONS as defaultOptions } from '@/hooks/useTitle'
 
-const About = () => {
+const About = ({
+  routerItemProps
+}) => {
+  const { title, hiddenTitle } = routerItemProps
+  useTitle({ ...defaultOptions, hiddenTitle  })
   return (<>
     <Head>
       <meta keywords="吴尒红, shadow, wuh.site" />
+      <title>wuh.site - {title} - wuh.site</title>
       <meta name='description' content='自小多才俊,向来志气高.别人有宝剑,我有笔如刀;' />
       <meta property='og:type' content='webpage' />
       <meta property='og:title' content='技术博客 -- wuh.site' />
@@ -82,5 +86,7 @@ const About = () => {
   </div>
   </>)
 }
+
+About.customName = 'about'
 
 export default withLayout(About)

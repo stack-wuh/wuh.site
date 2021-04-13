@@ -1,0 +1,42 @@
+import { useRef, useEffect, useState } from 'react'
+
+const DEFAULT_OPTIONS = {
+  restoreOnMount: true,
+  hiddenTitle: '(灬ꈍ ꈍ灬) 别走, 我在努力了',
+  prefix: ' - wuh.site',
+  suffix: 'wuh.site - ',
+  allowPrefix: true,
+  allowSuffix: true
+}
+
+export { DEFAULT_OPTIONS }
+
+const getVisible = () => {
+  if (typeof document === 'undefined') return;
+
+  return document.visibilityState
+}
+
+const useTitle = (options = DEFAULT_OPTIONS) => {
+  const [visible, setvisible] = useState(() => getVisible())
+  const raf = useRef(document.title)
+  
+  useEffect(() => {
+    if (visible === 'hidden') {
+      document.title =  `${options.allowSuffix && options.suffix}${options.hiddenTitle}${options.allowPrefix && options.prefix}`
+    }
+
+    if (visible === 'visible') {
+      document.title = raf.current
+    }
+  }, [visible])
+
+  useEffect(() => {
+    window.addEventListener('visibilitychange', () => setvisible(getVisible()))
+    return () => {
+      window.removeEventListener('visibilitychange', () => setvisible(getVisible()))
+    }
+  }, [])
+}
+
+export default typeof document !== 'undefined' ? useTitle : () => {}

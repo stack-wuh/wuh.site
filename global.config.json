@@ -7,5 +7,19 @@
     "copyright": "Copyright© 2021 Shadow.",
     "record_varchar": "鄂ICP备20001814号 - 1"
   },
-  "popup_titles": ["富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善", "富强"]
+  "popup_titles": ["富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善", "富强"],
+  "pages_title": {
+    "default": {
+      "title": "别太甘于平凡",
+      "hiddenTitle": "~~o(>_<)o ~~"
+    },
+    "post": {
+      "title": "你一定也想起舞吧",
+      "hiddenTitle": "╮(╯﹏╰）╭我等你起舞"
+    },
+    "about": {
+      "title": "于桃花源处寻我",
+      "hiddenTitle": "~~o(>_<)o ~~ 我已经在努力了"
+    }
+  }
 }

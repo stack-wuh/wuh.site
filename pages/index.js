@@ -2,13 +2,17 @@ import Head from 'next/head'
 import Post from '@/components/post'
 import withLayout from '@/layout/withLayout'
 import fetcher from '@/lib/fetch'
+import useTitle, { DEFAULT_OPTIONS as defaultTitleOptions } from '@/hooks/useTitle'
 
 const Home = ({
-  posts
-}) => (
-  <div>
+  posts,
+  routerItemProps
+}) => {
+  const { title, hiddenTitle } = routerItemProps
+  useTitle({ ...defaultTitleOptions, hiddenTitle })
+  return (<div>
     <Head>
-      <title>wuh.site - 你一定也想起舞吧 - wuh.site</title>
+      <title>{title} - wuh.site</title>
       <meta charSet='utf-8' />
       <meta keywords="前端技术博客, React 博客, Javascript, Nodejs, wuh.site" />
       <meta name='description' content='自小多才俊,向来志气高.别人有宝剑,我有笔如刀;' />
@@ -41,6 +45,7 @@ const Home = ({
     `}</style>
   </div>
 )
+}
 
 export async function getStaticProps () {
   const posts = await fetcher('https://api.wuh.site/articles')
@@ -49,5 +54,7 @@ export async function getStaticProps () {
     props: { posts }
   }
 }
+
+Home.customName = 'post'
 
 export default withLayout(Home)

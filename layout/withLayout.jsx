@@ -1,4 +1,3 @@
-import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Menu from '@/components/menu'
 import Leave from '@/components/button/leave'
@@ -23,6 +22,10 @@ const Layout = (Component) => {
     ...config
   }
 
+  const { customName = 'default' } = Component
+
+  const RouterItemProps = config['pages_title'][customName]
+
   return props => (<ConfigProvider value={initialConfig}>
     <div className={styles.layout}>
       <DynaimcHeader />
@@ -38,7 +41,7 @@ const Layout = (Component) => {
 
             <div className={styles.body}>
               <Transition>
-                <Component {...props} />
+                <Component {...props} routerItemProps={RouterItemProps} />
               </Transition>
             </div>
           </div>
