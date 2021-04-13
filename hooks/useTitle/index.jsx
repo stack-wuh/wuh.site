@@ -6,7 +6,9 @@ const DEFAULT_OPTIONS = {
   prefix: ' - wuh.site',
   suffix: 'wuh.site - ',
   allowPrefix: true,
-  allowSuffix: true
+  allowSuffix: true,
+  allowCustom: true,
+  customTitle: '你一定也想起舞吧'
 }
 
 export { DEFAULT_OPTIONS }
@@ -20,6 +22,9 @@ const getVisible = () => {
 const useTitle = (options = DEFAULT_OPTIONS) => {
   const [visible, setvisible] = useState(() => getVisible())
   const raf = useRef(document.title)
+  console.group('================== Raf =================')
+  console.log('Raf', raf)
+  console.groupEnd()
   
   useEffect(() => {
     if (visible === 'hidden') {
@@ -27,7 +32,7 @@ const useTitle = (options = DEFAULT_OPTIONS) => {
     }
 
     if (visible === 'visible') {
-      document.title = raf.current
+      document.title = options.allowCustom ? options.customTitle + options.prefix : raf.current
     }
   }, [visible])
 

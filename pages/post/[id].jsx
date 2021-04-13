@@ -7,11 +7,15 @@ import Divider from '@/components/divider'
 import ContackButton from '@/components/button/contack'
 import Alert from '@/components/alert'
 import withLayout from '@/layout/withLayout'
+import useTitle, { DEFAULT_OPTIONS as defaultOptions } from '@/hooks/useTitle'
 
 const Post = ({
-  post
+  post,
+  routerItemProps
 }) => {
   const { body, title, sub_title, cover_img, _id } = post
+  const { hiddenTitle } = routerItemProps
+  useTitle({ ...defaultOptions, hiddenTitle, customTitle: title, allowCustom: true })
 
   useEffect(() => {
     if (global || window) {
@@ -39,10 +43,12 @@ const Post = ({
   </div>)
 }
 
+Post.customName = 'post_info'
+
 export async function getServerSideProps (context) {
   const res = await fetch('https://api.wuh.site/articles/'+context.query.id)
   const row = res.data
-  const body = await markdownToHtml(row.content || '')
+  const body = await markdownToHtml(row?.content || '')
 
   return {
     props: {

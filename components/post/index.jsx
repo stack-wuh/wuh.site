@@ -27,7 +27,7 @@ const ITEM_THEME_MAPS = {
 }
 
 const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href={`post/${_id}`}>
-  <a className="e-outer" href={`https://wuh.site/post/${_id}`}>
+  <a className="e-outer" href={`https://wuh.site/post/${_id}`} role='listitem' tabIndex='0' aria-hidden="true">
     <li className='e-item'>
       <div className={["e-left", ITEM_THEME_MAPS[origin]].join(' ')} data-origin={origin} >
         <Image 
@@ -125,7 +125,6 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
         border-color: var(--color-border);
         transition: all .5s ease;
         background-color: var(--color-background-primary);
-        box-shadow: 0 2px 3px 1px rgb(30 151 247 / 40%);
       }
       li.e-item:hover .e-left {
         transform: scale3d(1.1, 1, 1.1) rotate(-5deg);
@@ -154,9 +153,9 @@ const Post = ({
   }
 
   return (<div className='b-post'>
-    <ul>
+    <ul role='list' aria-hidden="true">
       {
-        posts.map((item, index) => (<ItemRender tabIndex="0" key={index} {...item} />))
+        posts.map((item, index) => (<ItemRender key={index} {...item} />))
       }
     </ul>
     <LoadmoreButton disabled={isReachingEnd || isLoadingMore} onClick={handleFetchNextPage} />
