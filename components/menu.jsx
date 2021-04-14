@@ -22,7 +22,7 @@ const Menu = () => {
     </ActiveNav>
 
     <ActiveNav href="https://docs.wuh.site" activeClassName="is-active">
-      <a className='menu-item is-link' href="https://docs.wuh.site" target="_blank" role='menuitem' tabIndex='0'>
+      <a className='menu-item is-link' rel="external" href="https://docs.wuh.site" target="_blank" role='menuitem' tabIndex='0'>
         <i className='iconfont icon-insertlink' />
         <span>文档</span>
       </a>
