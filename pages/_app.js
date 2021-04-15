@@ -2,7 +2,6 @@ import Router from 'next/router'
 import NProgress from 'nprogress'
 import ErrorBoundary from '@/components/ErrorBoundary'
 
-import '../public/iconfont.css'
 import '../public/animate.css'
 import '../public/nprogress.css'
 

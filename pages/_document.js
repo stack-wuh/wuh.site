@@ -13,8 +13,9 @@ export default class MyDocument extends Document {
           <meta name='renderer' content='webkit' />
           <meta httpEquiv="cache-control" content="no-cache"></meta>
 
-          <link href="https://src.wuh.site/common/rss.xml" type="application/rss+xml" rel="alertnate" title="shadow's blog" />
+          <link href="https://src.wuh.site/common/rss.xml" type="application/rss+xml" rel="alertnate" title="RSS" />
           <link href="/theme-light.css" type='text/css' rel='stylesheet' />
+          <link href="https://at.alicdn.com/t/font_1587964_4i668cz7csf.css" rel='stylesheet' title='iconfont' />
           {/* <link href="/theme-light.css" rel="stylesheet" type='text/css' title='theme-light' disabled />
           <link href="/theme-dark.css" rel="alertnate stylesheet" type='text/css' title='theme-dark' disabled={false} /> */}
 
