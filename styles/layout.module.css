@@ -5,6 +5,7 @@
   width: 100%;
   box-sizing: border-box;
   background-color: var(--color-background-primary);
+  transition: all .5s ease;
   overflow: hidden;
 }
 
