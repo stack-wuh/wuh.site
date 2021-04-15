@@ -46,7 +46,8 @@ const Post = ({
 Post.customName = 'post_info'
 
 export async function getServerSideProps (context) {
-  const res = await fetch('https://api.wuh.site/articles/'+context.query.id)
+  const [_, title] = context.query.all
+  const res = await fetch('https://api.wuh.site/articles/'+ encodeURIComponent(title))
   const row = res.data
   const body = await markdownToHtml(row?.content || '')
 
