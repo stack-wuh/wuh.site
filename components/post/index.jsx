@@ -27,7 +27,7 @@ const ITEM_THEME_MAPS = {
 }
 
 const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href={`post/2021-04/${encodeURIComponent(title)}`}>
-  <a className="e-outer" rel='next' href={`https://wuh.site/post/${_id}`} role='listitem' tabIndex='0' aria-hidden="true">
+  <a className="e-outer" rel='next' href={`https://wuh.site/post/2021-04/${encodeURIComponent(title)}`} role='listitem' tabIndex='0' aria-hidden>
     <li className='e-item'>
       <div className={["e-left", ITEM_THEME_MAPS[origin]].join(' ')} data-origin={origin} >
         <Image 

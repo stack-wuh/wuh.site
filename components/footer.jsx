@@ -18,6 +18,7 @@ const Footer = ({
         border-top: 1px solid #eaeaea;
         font-size: 14px;
         text-align: center;
+        color: var(--color-text-less);
       }
 
       footer img {

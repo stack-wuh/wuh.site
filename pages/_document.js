@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '@/lib/gtag'
+import { icon as iconLink } from '@/lib/icon'
 
 export default class MyDocument extends Document {
   render() {
@@ -15,9 +16,7 @@ export default class MyDocument extends Document {
 
           <link href="https://src.wuh.site/common/rss.xml" type="application/rss+xml" rel="alertnate" title="RSS" />
           <link href="/theme-light.css" type='text/css' rel='stylesheet' />
-          <link href="https://at.alicdn.com/t/font_1587964_4i668cz7csf.css" rel='stylesheet' title='iconfont' />
-          {/* <link href="/theme-light.css" rel="stylesheet" type='text/css' title='theme-light' disabled />
-          <link href="/theme-dark.css" rel="alertnate stylesheet" type='text/css' title='theme-dark' disabled={false} /> */}
+          <link href={iconLink} rel='stylesheet' title='iconfont' />
 
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
