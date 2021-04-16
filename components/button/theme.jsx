@@ -2,9 +2,13 @@ import { useState, useEffect } from 'react'
 import Affix from '@/components/affix'
 import Space from '@/components/space'
 import { useCookie } from '@/components/CookieProvider'
+import { withConfig } from '@/components/ConfigProvider'
 import useAttribute from '@/hooks/useAttribute'
 
-const Theme = () => {
+const Theme = ({
+  default_theme_mode,
+  default_language
+}) => {
   const cookie = useCookie()
   const attribute = useAttribute()
   const [mode, setmode] = useState('light');
@@ -13,17 +17,17 @@ const Theme = () => {
   const toggleTheme = (mode) => {
     setmode(mode)
     attribute.set('data-theme-mode', mode)
-    cookie.setItem('data-theme-mode', mode)
+    cookie.setItem('data-theme-mode', mode, new Date('9999-12-31 23:59:59').toISOString(), '/')
   }
 
   const toggleLang = (val) => {
-    cookie.setItem('language', val)
+    cookie.setItem('language', val, new Date('9999-12-31 23:59:59').toISOString(), '/')
     setlang(val)
   }
 
   useEffect(() => {
-    const local_theme_mode = cookie.getItem('data-theme-mode')
-    const local_language = cookie.getItem('language')
+    const local_theme_mode = cookie.getItem('data-theme-mode') ?? default_theme_mode
+    const local_language = cookie.getItem('language') ?? default_language
     toggleTheme(local_theme_mode)
     toggleLang(local_language)
   }, [])
@@ -84,4 +88,4 @@ const Theme = () => {
   </div>)
 }
 
-export default Theme
+export default withConfig(Theme)
