@@ -24,6 +24,10 @@
   --color-border: #eee;
   --color-border-pain: rgb(255 255 255);
 
+  /* Button */
+  --color-background-button: #fff;
+  --color-default-button: #333;
+
   --contrast-img: contrast(1);
 }
 
@@ -51,6 +55,10 @@
   /***   Border    ***/
   --color-border: #8e8c8c;
   --color-border-pain: rgb(0 0 0);
+
+  /* Button */
+  --color-background-button: #333;
+  --color-default-button: #fff;
 
   --contrast-img: contrast(.5);
 }

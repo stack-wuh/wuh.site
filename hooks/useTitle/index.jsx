@@ -32,7 +32,7 @@ const useTitle = (options = DEFAULT_OPTIONS) => {
     }
 
     if (visible === 'visible') {
-      document.title = options.allowCustom ? options.customTitle + options.prefix : raf.current
+      document.title = options.allowCustom ? (options.customTitle ?? DEFAULT_OPTIONS.customTitle) + options.prefix : raf.current
     }
   }, [visible])
 

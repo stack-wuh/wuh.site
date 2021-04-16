@@ -8,7 +8,7 @@ const shareMaps = [
     href: 'https://www.zhihu.com/people/wuhong.site',
     name: 'zhihu',
     title: '去知乎',
-    tabIndex: 100
+    tabIndex: 1
   },
   {
     label: 'QQ',
@@ -16,7 +16,7 @@ const shareMaps = [
     href: 'https://src.wuh.site/web/qq.jpg',
     name: 'qq',
     title: 'Share to: QQ',
-    tabIndex: 100
+    tabIndex: 1
   },
   {
     name: 'wechat',
@@ -24,7 +24,7 @@ const shareMaps = [
     href: 'https://src.wuh.site/web/wechat.jpeg',
     name: 'wechat',
     title: 'Share to: 微信',
-    tabIndex: 100
+    tabIndex: 1
   },
   {
     name: 'github',
@@ -32,7 +32,7 @@ const shareMaps = [
     href: 'https://github.com/stack-wuh',
     name: 'github',
     title: '去Github',
-    tabIndex: 100
+    tabIndex: 1
   },
   {
     name: 'twitter',
@@ -40,7 +40,7 @@ const shareMaps = [
     href: 'https://twitter.com/wuh131420',
     name: 'twitter',
     title: "去twitter",
-    tabIndex: 100
+    tabIndex: 1
   },
   {
     name: 'yuque',
@@ -48,14 +48,14 @@ const shareMaps = [
     href: 'https://www.yuque.com/shadow.wu',
     name: 'yuque',
     title: '去语雀',
-    tabIndex: 100
+    tabIndex: 1
   },
   {
     name: 'link',
     icon: 'iconfont icon-link',
     name: 'link',
     title: '别点我',
-    tabIndex: 100
+    tabIndex: 1
   },
 ]
 
@@ -69,7 +69,8 @@ const Share = () => {
         data-theme-name={share.name} 
         className={`${share.icon} share-item is-focus`} 
         target="_blank"
-        title={share.title} />
+        title={share.title}
+        rel="external next" />
     </span>)
   })
 

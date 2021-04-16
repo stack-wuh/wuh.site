@@ -1,6 +1,7 @@
 import Router from 'next/router'
 import NProgress from 'nprogress'
 import ErrorBoundary from '@/components/ErrorBoundary'
+import CookieProvider from '@/components/CookieProvider'
 
 import '../public/animate.css'
 import '../public/nprogress.css'
@@ -14,7 +15,9 @@ Router.events.on('routeChangeError', () => NProgress.done())
 const App = ({ Component, pageProps }) => {
   return (<>
     <ErrorBoundary>
-      <Component {...pageProps} />
+      <CookieProvider>
+        <Component {...pageProps} />
+      </CookieProvider>
     </ErrorBoundary>
   </>)
 }

@@ -19,6 +19,7 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   width: 80%;
+  min-height: calc(100vh - 158px);
   margin: 0 auto;
 }
 

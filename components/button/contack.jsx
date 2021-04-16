@@ -10,11 +10,11 @@ const Contack = ({
   return (<div>
       <Card>
         <Space size={20}>
-          <a tabIndex="1" target="_blank" className='btn is-focus iconfont icon-QQkongjian' href={`https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://wuh.site${url}&sharesource=qzone&title=${title}&pics=${coverImage}&summary=${subTitle}`} />
-          <a tabIndex="1" target="_blank" className='btn is-focus iconfont icon-ttww' href={`https://twitter.com/intent/tweet?text=${subTitle}&url=https://wuh.site${url}`} target='_blank' />
-          <a tabIndex="1" target="_blank" className='btn is-focus iconfont icon-qq' href={`http://service.weibo.com/share/share.php?url=https://wuh.site${url}&sharesource=weibo&title=${title}&pic=${coverImage}`} />
-          <a tabIndex="1" className='btn is-focus iconfont icon-zhihu' href="/" />
-          <a tabIndex="1" className='btn is-focus iconfont icon-insertlink' href="/" />
+          <a role="button" aria-hidden tabIndex="1" rel="external next" target="_blank" className='btn is-focus iconfont icon-QQkongjian' href={`https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://wuh.site${url}&sharesource=qzone&title=${title}&pics=${coverImage}&summary=${subTitle}`} />
+          <a role="button" aria-hidden tabIndex="1" rel="external next" target="_blank" className='btn is-focus iconfont icon-ttww' href={`https://twitter.com/intent/tweet?text=${subTitle}&url=https://wuh.site${url}`} target='_blank' />
+          <a role="button" aria-hidden tabIndex="1" rel="external next" target="_blank" className='btn is-focus iconfont icon-qq' href={`http://service.weibo.com/share/share.php?url=https://wuh.site${url}&sharesource=weibo&title=${title}&pic=${coverImage}`} />
+          <a role="button" aria-hidden tabIndex="1" className='btn is-focus iconfont icon-zhihu' href="/" />
+          <a role="button" aria-hidden tabIndex="1" className='btn is-focus iconfont icon-insertlink' href="/" />
         </Space>
         <style jsx>{`
           .btn {

@@ -7,7 +7,7 @@ const LoadmoreButton = ({
 
   return (<>
     <div className='button'>
-      <button tabIndex="-1" disabled={disabled} onClick={onClick}>{childrenWrapper}</button>
+      <button tabIndex="0" name='loadmore' role='button' aria-hidden disabled={disabled} onClick={onClick}>{childrenWrapper}</button>
     </div>
     <style jsx>{`
       .button {

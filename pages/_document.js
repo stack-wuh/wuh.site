@@ -2,13 +2,12 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '@/lib/gtag'
 import { icon as iconLink } from '@/lib/icon'
 
-export default class MyDocument extends Document {
+export default class MyDocument extends Document {  
   render() {
     return (
       <Html lang="zh-cn" data-theme-mode='light'>
         <Head>
           <meta name='google' content='nositelinkssearchbox' />
-
           <meta name='author' content="shadow, wuh131420@foxmail.com" />
           <meta name='copyright' content='© shadow' />
           <meta name='renderer' content='webkit' />

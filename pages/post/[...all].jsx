@@ -48,12 +48,6 @@ const Post = ({
       <Divider />
       <ContackButton title={title} subTitle={sub_title} coverImage={cover_img} url={`/post/${_id}`} />
       <Divider />
-
-      <style jsx>{`
-        .post-info {
-          min-height: calc(100vh - 164px);
-        }
-      `}</style>
   </div>)
 }
 
