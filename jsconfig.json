@@ -8,7 +8,8 @@
       "@/hooks/*": ["hooks/*"],
       "@/db/*": ["db/*"],
       "@/layout/*": ["layout/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/store/*": ["store/*"]
     }
   }
 }
