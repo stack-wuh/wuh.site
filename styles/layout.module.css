@@ -4,9 +4,23 @@
   flex-direction: column;
   width: 100%;
   box-sizing: border-box;
-  background-color: var(--color-background-primary);
   transition: all .5s ease;
   overflow: hidden;
+  background-color: var(--color-background-primary);
+}
+.layout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(../public/image/redux_mbox.jpeg);
+  background-color: var(--color-background-primary);
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.15;
 }
 
 .container {
@@ -25,6 +39,10 @@
 
 .body {
   width: 58%;
+  padding: 0 var(--padding-base-2);
+  margin-bottom: var(--margin-base-2);
+  background-color: var(--color-background-primary);
+  position: relative;
 }
 
 .nav {
@@ -32,11 +50,12 @@
   top: 0;
   left: 0;
   width: 18%;
-  margin-right: 16px;
+  margin-right: var(--margin-base-2);
 }
 .menu {
   position: fixed;
   top: 80px;
+  width: 14%;
   height: auto;
   user-select: none;
   background-color: var(--color-background-nav);

@@ -14,6 +14,7 @@ export default class MyDocument extends Document {
           <meta httpEquiv="cache-control" content="no-cache"></meta>
 
           <link href="https://src.wuh.site/common/rss.xml" type="application/rss+xml" rel="alertnate" title="RSS" />
+          <link href='/reset.css' type='text/css' rel='stylesheet' />
           <link href="/theme-light.css" type='text/css' rel='stylesheet' />
           <link href={iconLink} rel='stylesheet' title='iconfont' />
 

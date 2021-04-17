@@ -28,7 +28,7 @@ const ITEM_THEME_MAPS = {
 
 const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href={`post/2021-04/${encodeURIComponent(title)}`}>
   <a className="e-outer" rel='next' href={`https://wuh.site/post/2021-04/${encodeURIComponent(title)}`} role='listitem' tabIndex='0' aria-hidden>
-    <li className='e-item'>
+    <li className='e-item' data-background={cover_img}>
       <div className={["e-left", ITEM_THEME_MAPS[origin]].join(' ')} data-origin={origin} >
         <Image 
           loader={ImageLoader}
@@ -51,6 +51,7 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
         filter: var(--contrast-img);
       }
       li.e-item {
+        position: relative;
         display: flex;
         align-items: strench;
         height: 120px;
@@ -60,7 +61,16 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
         box-sizing: border-box;
         overflow: hidden;
         border: 1px solid var(--color-border);
-        background-color: var(--color-background);
+        background-color: var(--color-background-primary);
+      }
+      li.e-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: var(--color-background-primary);
       }
 
       .e-item .e-left {
@@ -124,7 +134,7 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
         border-color: #1e97f7;
         border-color: var(--color-border);
         transition: all .5s ease;
-        background-color: var(--color-background-primary);
+        background-color: var(--color-background-revert);
       }
       li.e-item:hover .e-left {
         transform: scale3d(1.1, 1, 1.1) rotate(-5deg);

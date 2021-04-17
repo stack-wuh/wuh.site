@@ -85,6 +85,7 @@ const Popup = ({
         line-height: 30px;
         border-radius: 3px;
         background-color: #ff22aa;
+        z-index: 999;
       }
     `}</style>
   </div>)

@@ -1,0 +1,45 @@
+:root {
+  --padding-base: 8px;
+  --margin-base: 8px;
+  --border-radius-base: 3px;
+  --border-width-base: 1px;
+  --transition-base: all .5s ease;
+  --font-size-base: 14px;
+  --font-weight-base: 400;
+  --line-height-base: 22px;
+  --color-base: #0875e6;
+  --color-text-base: ##a6a6a6;
+
+
+  /* Padding */
+  --padding-base-2: calc(2 * var(--padding-base));
+  --padding-base-3: calc(3 * var(--padding-base));
+  --padding-base-4: calc(4 * var(--padding-base));
+
+  /* Margin */
+  --margin-base-2: calc(2 * var(--margin-base));
+  --margin-base-3: calc(3 * var(--margin-base));
+  --margin-base-4: calc(4 * var(--margin-base));
+
+  /** Line Height **/
+  --line-height-default: calc(var(--font-size-base) + 10 - 2);
+
+  /** Font **/
+  --font-weight-regular: var(--font-size-base);
+  --font-weight-medium: var(calc(--font-size-base + 100));
+  --font-weight-large: var(calc(--font-size-base + 200));
+
+  /** Color List **/
+  --color-1: #e6f6ff;
+  --color-2: #abdfff;
+  --color-3: #82cbff;
+  --color-4: #59b4ff;
+  --color-5: #2e93f2;
+  --color-7: #0056bf;
+  --color-8: #004099;
+  --color-9: #002c73;
+  --color-10: #001b4d;
+
+  /** Bacgkround **/
+  --color-background-primary: var(--color-base);
+}

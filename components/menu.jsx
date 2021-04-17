@@ -68,7 +68,6 @@ const Menu = () => {
         height: 46px;
         padding: 0 12px;
         border-bottom: 6px solid var(--color-border-pain);
-        background-color: var(--color-background-item);
         text-align: left;
         line-height: 40px;
         border-radius: 3px;
@@ -79,7 +78,7 @@ const Menu = () => {
       }
 
       a.menu-item:hover {
-        background-color: var(--color-background-active-nav);
+        background-color: var(--color-background-item);
         cursor: pointer;
         border-radius: 4px;
         transition: all .3s ease-out;
