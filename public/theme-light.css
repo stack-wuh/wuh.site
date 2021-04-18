@@ -50,6 +50,9 @@
   /* Button */
   --color-background-button: #fff;
   --color-default-button: #333;
+  --loadmore-button-large: var(--color-yellow-9);
+  --loadmore-button-medium: var(--color-yellow-8);
+  --loadmore-button-regular: var(--color-yellow-7);
 
   /** Link **/
   --color-text-link: var(--color-7);
@@ -109,6 +112,10 @@
   /* Button */
   --color-background-button: #333;
   --color-default-button: #fff;
+  --loadmore-button-large: var(--color-yellow-2);
+  --loadmore-button-medium: var(--color-yellow-3);
+  --loadmore-button-regular: var(--color-yellow-4);
+
 
   /** Link **/
   --color-text-link: var(--color-4);
