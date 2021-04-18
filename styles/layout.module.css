@@ -16,7 +16,6 @@
   bottom: 0;
   left: 0;
   background: url(../public/image/redux_mbox.jpeg);
-  background-color: var(--color-background-primary);
   background-size: contain;
   background-position: center;
   background-attachment: fixed;
@@ -58,7 +57,7 @@
   width: 14%;
   height: auto;
   user-select: none;
-  background-color: var(--color-background-nav);
+  /* background-color: var(--color-background-nav); */
 }
 
 .layout .header {

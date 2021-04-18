@@ -7,7 +7,7 @@
   --font-size-base: 14px;
   --font-weight-base: 400;
   --line-height-base: 22px;
-  --color-base: #0875e6;
+  --color-default: #0875e6;
   --color-text-base: ##a6a6a6;
 
 
@@ -21,13 +21,21 @@
   --margin-base-3: calc(3 * var(--margin-base));
   --margin-base-4: calc(4 * var(--margin-base));
 
-  /** Line Height **/
-  --line-height-default: calc(var(--font-size-base) + 10 - 2);
-
   /** Font **/
   --font-weight-regular: var(--font-size-base);
   --font-weight-medium: var(calc(--font-size-base + 100));
   --font-weight-large: var(calc(--font-size-base + 200));
+
+  --font-size-regular: var(--font-size-base);
+  --font-size-medium: calc(var(--font-size-base) + 1);
+  --font-size-large: calc(var(--font-size-base) + 2);
+
+
+  /** Line Height **/
+  --line-height-regular: calc(var(--font-size-regular) + 10 - 2);
+  --line-height-medium: calc(var(--font-size-medium) + 10 - 2);
+  --line-height-large: calc(var(--font-size-large) + 10 - 2);
+
 
   /** Color List **/
   --color-1: #e6f6ff;
@@ -42,4 +50,8 @@
 
   /** Bacgkround **/
   --color-background-primary: var(--color-base);
+
+  /** Nav **/
+  --nav-color-text: var(--color-base-8);
+  --nav-color-background-active: var(--color-base-2);
 }

@@ -6,16 +6,16 @@
     定义全局使用的色彩，包括 文字，border
   **/
   --color-base: #ebecec;
-  --color-text-10: #0d0d0d;
-  --color-text-9: #333333;
-  --color-text-8: #595959;
-  --color-text-7: #808080;
-  --color-text-6: #a6a6a6;
-  --color-text-5: #b3b3b3;
-  --color-text-4: #bfbfbf;
-  --color-text-3: #cccccc;
-  --color-text-2: #d9d9d9;
-  --color-text-1: #e6e6e6;
+  --color-base-10: #0d0d0d;
+  --color-base-9: #333333;
+  --color-base-8: #595959;
+  --color-base-7: #808080;
+  --color-base-6: #a6a6a6;
+  --color-base-5: #b3b3b3;
+  --color-base-4: #bfbfbf;
+  --color-base-3: #cccccc;
+  --color-base-2: #d9d9d9;
+  --color-base-1: #e6e6e6;
 
 
   --primary-color: #0875e6;
@@ -33,9 +33,9 @@
   --color-shadow: rgb(238 238 238 / 30%);
 
   /***** Nav *****/
-  --color-background-nav: rgb(255 255 255 / 50%);
+  /* --color-background-nav: rgb(255 255 255 / 50%);
   --color-background-item: #f3f3f3;;
-  --color-background-active-nav: rgb(100 100 100 / 40%);
+  --color-background-active-nav: rgb(100 100 100 / 40%); */
 
   /*****  Border  ****/
   --color-border: #eee;
@@ -56,16 +56,16 @@
     定义Dark模式下的反色
   **/
   --color-base: #141313;
-  --color-text-10: #fafafa;
-  --color-text-9: #f8f8f8;
-  --color-text-8: #f3f3f3;
-  --color-text-7: #e8e7e7;
-  --color-text-6: #dcdcdc;
-  --color-text-5: #adacac;
-  --color-text-4: #7e7d7d;
-  --color-text-3: #5b5a5a;
-  --color-text-2: #454545;
-  --color-text-1: #2c2b2b;
+  --color-base-10: #fafafa;
+  --color-base-9: #f8f8f8;
+  --color-base-8: #f3f3f3;
+  --color-base-7: #e8e7e7;
+  --color-base-6: #dcdcdc;
+  --color-base-5: #adacac;
+  --color-base-4: #7e7d7d;
+  --color-base-3: #5b5a5a;
+  --color-base-2: #454545;
+  --color-base-1: #2c2b2b;
 
 
   --primary-color: #f0f6fc;
@@ -83,8 +83,8 @@
   --color-shadow: rgb(17 17 17 / 70%);
 
   /***** Nav *****/
-  --color-background-nav: #736f6f;
-  --color-background-active-nav: rgb(255 255 255 / 60%);
+  /* --color-background-nav: #736f6f;
+  --color-background-active-nav: rgb(255 255 255 / 60%); */
 
   /***   Border    ***/
   --color-border: #8e8c8c;

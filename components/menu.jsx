@@ -21,8 +21,14 @@ const Menu = () => {
       </a>
     </ActiveNav>
 
+    <ActiveNav href="https://github.com/stack-wuh/react-router-config/tree/v2" activeClassName="is-active">
+      <a className='menu-item is-link' rel="external" href="https://github.com/stack-wuh/react-router-config/tree/v2" target="_blank" role='menuitem' tabIndex='0'>
+        <i className='iconfont icon-github' />
+        <span>源代码</span>
+      </a>
+    </ActiveNav>
     <ActiveNav href="https://docs.wuh.site" activeClassName="is-active">
-      <a className='menu-item is-link' rel="external" href="https://docs.wuh.site" target="_blank" role='menuitem' tabIndex='0'>
+      <a className='menu-item' rel="external" href="https://docs.wuh.site" target="_blank" role='menuitem' tabIndex='0'>
         <i className='iconfont icon-insertlink' />
         <span>文档</span>
       </a>
@@ -42,7 +48,6 @@ const Menu = () => {
         left: 10px;
         top: 80px;
         user-select: none;
-        background-color: var(--color-background-nav);
       }
 
       a {
@@ -50,7 +55,7 @@ const Menu = () => {
         width: 100%;
         height: 100%;
         text-decoration: none;
-        color: #333;
+        color: var(--nav-color-text);
         border: none;
         outline: none;
       }
@@ -60,38 +65,37 @@ const Menu = () => {
         width: 1em;
         height: 1em;
         margin-right: .5em;
-        color: inherit;
-        font-size: 20px;
+        font-size: 18px;
       }
 
       a.menu-item {
-        height: 46px;
+        height: 40px;
         padding: 0 12px;
-        border-bottom: 6px solid var(--color-border-pain);
+        margin-bottom: var(--margin-base);
         text-align: left;
         line-height: 40px;
-        border-radius: 3px;
-        transition: all .3s ease-in;
+        border-radius: var(--border-radius-base);
+        transition: var(--transition-base);
         font-size: 15px;
         letter-spacing: 2px;
         box-sizing: border-box;
       }
 
       a.menu-item:hover {
-        background-color: var(--color-background-item);
+        background-color: var(--nav-color-background-active);
         cursor: pointer;
         border-radius: 4px;
         transition: all .3s ease-out;
       }
 
       .is-active {
-        background-color: var(--color-background-active-nav) !important;
+        background-color: var(--nav-color-background-active) !important;
         border-radius: 4px !important;
         transition: all .3s ease;
       }
 
       .is-link {
-        margin-top: 15px;
+        margin-top: var(--margin-base-2);
       }
 
     `}</style>
