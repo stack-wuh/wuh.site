@@ -6,15 +6,14 @@ const LoadmoreButton = ({
   const childrenWrapper = children ?? '远眺山河'
 
   return (<>
-    <div className='button'>
+    <div className='button' onClick={onClick}>
       <i className='iconfont icon-costoms-alearance fade-color' />
       <button
         tabIndex="0" 
         name='loadmore' 
         role='button' 
         aria-hidden 
-        disabled={disabled} 
-        onClick={onClick}>
+        disabled={disabled}>
           {childrenWrapper}
       </button>
     </div>
