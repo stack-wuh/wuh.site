@@ -23,25 +23,20 @@ const Leave = () => {
       </Space>
     </Affix>
     <style jsx>{`
-      .leave {
-        background-color: var(--color-text-less);
-        color: var(--color-text-less);
-        transition: all .5s ease;
-      }
       .btn {
         display: inline-block;
         width: 40px;
         height: 40px;
         padding: 0;
         margin: 0;
-        background-color: var(--color-background-button);
-        color: var(--color-text-less);
-        transition: all .5s ease;
+        color: var(--color-base-7);
+        background-color: var(--color-gray-1);
         font-size: 24px;
         text-align: center;
         line-height: 40px;
         outline: none;
         border: none;
+        transition: var(--transition-base);
       }
       .btn-a {
         text-align: center;
@@ -50,6 +45,8 @@ const Leave = () => {
       }
       .btn:hover {
         cursor: pointer;
+        background-color: var(--color-gray-6);
+        transition: var(--transition-base);
       }
     `}</style>
   </div>
