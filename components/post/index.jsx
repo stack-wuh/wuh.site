@@ -60,8 +60,6 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
         border-radius: 3px;
         box-sizing: border-box;
         overflow: hidden;
-        border: 1px solid var(--color-border);
-        background-color: var(--color-background-primary);
       }
       li.e-item::before {
         content: '';
@@ -70,7 +68,9 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: var(--color-background-primary);
+        border: 1px solid var(--color-gray-4);
+        background-color: var(--color-gray-3);
+        transition: var(--transition-base);
       }
 
       .e-item .e-left {
@@ -116,7 +116,9 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
         margin-bottom: 0;
         margin-top: 10px;
         color: var(--color-text-primary) !important;
-       
+      }
+      .e-body__title:hover {
+        text-decoration: underline;
       }
       .e-body__desc {
         margin: 0;
@@ -124,17 +126,22 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
         font-size: 13px;
         color: var(--color-text-less);
       }
+      .e-body__desc:hover {
+        text-decoration: underline;
+      }
 
       .e-item:last-of-type {
         margin-bottom: 10px;
       }
       li.e-item:hover {
         cursor: pointer;
-        border-radius: 4px;
-        border-color: #1e97f7;
-        border-color: var(--color-border);
-        transition: all .5s ease;
-        background-color: var(--color-background-revert);
+        border-radius: calc(var(--border-radius-base) + 1);
+       
+      }
+      li.e-item:hover::before {
+        border-color: var(--color-gray-3);
+        background-color: var(--color-gray-2);
+        transition: var(--transition-base);
       }
       li.e-item:hover .e-left {
         transform: scale3d(1.1, 1, 1.1) rotate(-5deg);
@@ -163,7 +170,7 @@ const Post = ({
   }
 
   return (<div className='b-post'>
-    <ul role='list' aria-hidden="true">
+    <ul className='b-post__list' role='list' aria-hidden="true" style={{ listStyle: 'none' }}>
       {
         posts.map((item, index) => (<ItemRender key={index} {...item} />))
       }
@@ -175,7 +182,8 @@ const Post = ({
           .b-post {
             margin-bottom: 15px;
           }
-          ul, li {
+          ul, ol, li,
+          .p-post__list {
             padding: 0;
             margin: 0;
             list-style: none;

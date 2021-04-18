@@ -77,3 +77,7 @@ small {
 p {
   margin: var(--margin-base-2) 0;
 }
+
+ul, ol, li {
+  list-style: none;
+}

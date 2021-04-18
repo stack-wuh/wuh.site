@@ -19,11 +19,12 @@
   background-size: contain;
   background-position: center;
   background-attachment: fixed;
+  background-repeat: repeat;
   opacity: 0.15;
 }
 
 .container {
-  padding-top: 75px;
+  padding-top: 56px;
 }
 
 .main {
@@ -38,10 +39,11 @@
 
 .body {
   width: 58%;
-  padding: 0 var(--padding-base-2);
+  padding: var(--padding-base-2);
   margin-bottom: var(--margin-base-2);
-  background-color: var(--color-background-primary);
+  background-color: rgba(var(--color-background-primary), .75);
   position: relative;
+  transition: var(--transition-base);
 }
 
 .nav {
