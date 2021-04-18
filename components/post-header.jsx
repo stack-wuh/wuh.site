@@ -74,21 +74,23 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin, cover_img, _
     <style jsx>{`
       .b__post-header {
         width: 100%;
-        margin-bottom: 15px;
+        margin-bottom: calc(var(--margin-base) * 2);
         display: flex;
         flex-direction: column;
       }
       .b__post-header--title {
         margin: 0;
-        padding-bottom: 10px;
+        padding-bottom: var(--padding-base);
         font-size: 28px;
-        color: var(--color-text-less);
+        color: var(--color-base-10);
+        font-weight: var(--font-weight-large);
+        line-height: 36px;
       }
       .b__post-header--head {
         margin: 0;
         font-size: 14px;
-        color: #888484;
-        color: var(--color-text-less);
+        line-height: 22px;
+        color: var(--color-base-6);
       }
     `}</style>
   </>)

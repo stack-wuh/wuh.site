@@ -91,6 +91,13 @@ ul, ol, li {
   list-style: none;
 }
 
+[data-theme-mode='light'] a{
+  color: var(--color-5);
+}
+[data-theme-mode='dark'] a{
+  color: var(--color-1);
+}
+
 .text-overflow {
   overflow: hidden;
   text-overflow: ellipsis;

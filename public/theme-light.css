@@ -51,6 +51,9 @@
   --color-background-button: #fff;
   --color-default-button: #333;
 
+  /** Link **/
+  --color-text-link: var(--color-7);
+
   --contrast-img: contrast(1);
 }
 
@@ -107,5 +110,8 @@
   --color-background-button: #333;
   --color-default-button: #fff;
 
-  --contrast-img: contrast(.5);
+  /** Link **/
+  --color-text-link: var(--color-4);
+
+  --contrast-img: contrast(.85);
 }
