@@ -40,7 +40,7 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
       </div>
       <div className="e-body">
         <h4 className='e-body__title'>{title}</h4>
-        <p className='e-body__desc'>{sub_title}</p>
+        <p className='e-body__desc text-overflow-multi'>{sub_title}</p>
       </div>
     </li>
     <style jsx global>{`
@@ -111,20 +111,24 @@ const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href
       }
 
       .e-body__title {
-        font-weight: 400;
-        font-size: 15px;
+        font-weight: var(--font-weight-medium);
+        font-size: var(--font-size-medium);
         margin-bottom: 0;
-        margin-top: 10px;
+        margin-top: 0;
+        line-height: var(--line-height-medium);
         color: var(--color-text-primary) !important;
+        transition: var(--transition-base);
       }
       .e-body__title:hover {
         text-decoration: underline;
       }
       .e-body__desc {
         margin: 0;
-        margin-top: 14px;
+        margin-top: var(--margin-base);
         font-size: 13px;
-        color: var(--color-text-less);
+        line-height: 21px;
+        color: var(--color-base-8);
+        transition: var(--transition-base);
       }
       .e-body__desc:hover {
         text-decoration: underline;

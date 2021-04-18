@@ -27,8 +27,8 @@
   --font-weight-large: var(calc(--font-size-base + 200));
 
   --font-size-regular: var(--font-size-base);
-  --font-size-medium: calc(var(--font-size-base) + 1);
-  --font-size-large: calc(var(--font-size-base) + 2);
+  --font-size-medium: calc(var(--font-size-base) + 2);
+  --font-size-large: calc(var(--font-size-base) + 4);
 
 
   /** Line Height **/
@@ -80,4 +80,17 @@ p {
 
 ul, ol, li {
   list-style: none;
+}
+
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-overflow-multi {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
