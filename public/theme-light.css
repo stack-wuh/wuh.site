@@ -40,10 +40,8 @@
   --color-background-header: rgb(255 255 255 / 52%);
   --color-shadow: rgb(238 238 238 / 30%);
 
-  /***** Nav *****/
-  /* --color-background-nav: rgb(255 255 255 / 50%);
-  --color-background-item: #f3f3f3;;
-  --color-background-active-nav: rgb(100 100 100 / 40%); */
+  /** Alert **/
+  --alert-color-background: var(--color-yellow-4);
 
   /*****  Border  ****/
   --color-border: #eee;
@@ -98,13 +96,12 @@
   --color-background-header: rgb(0 0 0 / 52%);
   --color-shadow: rgb(17 17 17 / 70%);
 
-  /***** Nav *****/
-  /* --color-background-nav: #736f6f;
-  --color-background-active-nav: rgb(255 255 255 / 60%); */
-
   /***   Border    ***/
   --color-border: #8e8c8c;
   --color-border-pain: rgb(0 0 0);
+
+  /** Alert **/
+  --alert-color-background: var(--color-yellow-9);
 
   /* Button */
   --color-background-button: #333;

@@ -24,15 +24,16 @@ const Contack = ({
             text-align: center;
             line-height: 34px;
             font-size: 24px;
-            color: #333;
+            color: var(--color-base-7);
             text-decoration: none;
-            transition: all .5s ease;
+            transition: var(--transition-base);
           }
           .btn:hover {
             cursor: pointer;
-            color: #666;
-            border-radius: 3px;
-            background-color: #ccc;
+            color: var(--color-base-8);
+            border-radius: var(--border-radius-base);
+            background-color: var(--color-base-2);
+            transition: var(--transition-base);
           }
         `}</style>
       </Card>

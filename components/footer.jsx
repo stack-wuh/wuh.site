@@ -13,7 +13,6 @@ const Footer = ({
     </footer>
     <style jsx>{`
       footer {
-        z-index: 9999;
         width: 100%;
         height: 80px;
         border-top: var(--border-base);

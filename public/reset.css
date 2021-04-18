@@ -51,15 +51,24 @@
   --color-9: #002c73;
   --color-10: #001b4d;
 
+  /** Sunrise Colors **/
+  --color-yellow-1: #feffe6;
+  --color-yellow-2: #ffffb8;
+  --color-yellow-3: #fffb8f;
+  --color-yellow-4: #fff566;
+  --color-yellow-5: #ffec3d;
+  --color-yellow-6: #fadb14;
+  --color-yellow-7: #d4b106;
+  --color-yellow-8: #ad8b00;
+  --color-yellow-9: #876800;
+  --color-yellow-10: #614700;
+
   /** Bacgkround **/
   --color-background-primary: var(--color-base);
 
   /** Nav **/
   --nav-color-text: var(--color-base-8);
   --nav-color-background-active: var(--color-base-2);
-
-  /** Header **/
-  /** Footer **/
 
 }
 

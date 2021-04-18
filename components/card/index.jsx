@@ -9,10 +9,11 @@ const Card = ({
       .card {
         width: 100%;
         height: 100%;
-        padding: 8px;
+        padding: var(--padding-base);
         box-sizing: border-box;
-        background-color: #fff;
-        border-radius: 3px;
+        background-color: var(--color-gray-1);
+        border-radius: var(--border-radius-base);
+        transition: var(--transition-base);
       }
     `}</style>
   </div>

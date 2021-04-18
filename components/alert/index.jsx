@@ -12,10 +12,12 @@ const Alert = ({
     </div>
     <style jsx global>{`
       .alert {
-        padding: 8px;
-        border-radius: 3px;
+        padding: var(--padding-base);
+        border-radius: var(--border-radius-base);
         box-sizing: border-box;
-        background-color: #ffe58f;
+        color: var(color-base-8);
+        background-color: var(--alert-color-background);
+        transition: var(--transition-base);
       }
        
       .alert-desc {
