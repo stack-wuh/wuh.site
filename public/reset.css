@@ -36,6 +36,9 @@
   --line-height-medium: calc(var(--font-size-medium) + 10 - 2);
   --line-height-large: calc(var(--font-size-large) + 10 - 2);
 
+  /** Border **/
+  --border-base: var(--border-width-base) solid var(--color-base-4);
+
 
   /** Color List **/
   --color-1: #e6f6ff;
@@ -54,4 +57,23 @@
   /** Nav **/
   --nav-color-text: var(--color-base-8);
   --nav-color-background-active: var(--color-base-2);
+
+  /** Header **/
+  /** Footer **/
+
+}
+
+html, body {
+  color: var(--color-base-9);
+}
+
+strong {
+  font-weight: var(--font-weight-large);
+}
+small {
+  font-weight: var(--font-weight-regular);
+}
+
+p {
+  margin: var(--margin-base-2) 0;
 }

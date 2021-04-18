@@ -74,6 +74,7 @@ const Menu = () => {
         margin-bottom: var(--margin-base);
         text-align: left;
         line-height: 40px;
+        color: var(--nav-color-text);
         border-radius: var(--border-radius-base);
         transition: var(--transition-base);
         font-size: 15px;

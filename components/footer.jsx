@@ -5,24 +5,24 @@ const Footer = ({
 }) => {
   return (<>
     <footer className='footer'>
-      <p>{footer?.lf} | {footer?.main} | <strong>{footer?.rg}</strong></p>
-      <p className='footer__copyright'>
+      <p className="f__row">{footer?.lf} | {footer?.main} | <strong>{footer?.rg}</strong></p>
+      <p className='footer__copyright f__row'>
         <span>{footer?.copyright}</span>
         <span>{footer?.record_varchar}</span>
       </p>
     </footer>
     <style jsx>{`
       footer {
+        z-index: 9999;
         width: 100%;
         height: 80px;
-        border-top: 1px solid #eaeaea;
+        border-top: var(--border-base);
         font-size: 14px;
         text-align: center;
-        color: var(--color-text-less);
+        transition: var(--transition-base);
       }
-
-      footer img {
-        margin-left: 0.5rem;
+      .f__row {
+        margin: var(--margin-base-2) 0;
       }
 
       footer a {
@@ -32,7 +32,7 @@ const Footer = ({
       }
 
       .footer__copyright span:not(:last-of-type) {
-        margin-right: 10px;
+        margin-right: var(--margin-base);
       }
     `}</style>
   </>)
