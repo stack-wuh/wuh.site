@@ -18,7 +18,7 @@ const Divider = ({
         margin: 1rem 0;
         outline: 0;
         border: none;
-        background-color: #ccc;
+        background-color: var(--color-base-5);
       }
     `}</style>
   </div>

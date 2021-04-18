@@ -19,11 +19,13 @@ const Empty = ({ style, title, center, children, goast }) => {
         min-height: 4rem;
         padding: 8px;
         margin: 8px 0;
-        border: 1px solid #ccc;
+        color: var(--color-base-7);
+        border: 1px solid var(--color-gray-1);
         box-sizing: border-box;
         border-radius: 3px;
-        background-color: rgba(239, 229, 229, .5);
+        background-color: var(--color-gray-2);
         user-select: none;
+        transition: var(--transition-base);
       }
       .nothing {
         height: 4rem;

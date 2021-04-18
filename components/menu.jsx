@@ -20,7 +20,6 @@ const Menu = () => {
         <span >关于</span>
       </a>
     </ActiveNav>
-
     <ActiveNav href="https://github.com/stack-wuh/react-router-config/tree/v2" activeClassName="is-active">
       <a className='menu-item is-link' rel="external" href="https://github.com/stack-wuh/react-router-config/tree/v2" target="_blank" role='menuitem' tabIndex='0'>
         <i className='iconfont icon-github' />

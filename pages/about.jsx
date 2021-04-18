@@ -28,7 +28,7 @@ const About = ({
         <ul>
           <li>
             <i className='iconfont icon-email' />
-            <span>柴门闻犬吠, 风雪夜归人</span>
+            <span>关山难越，谁悲失路之人。萍水相逢，尽是他乡之人。</span>
           </li>
           <li>
             <i className='iconfont icon-copy' />
@@ -53,7 +53,7 @@ const About = ({
     <style jsx>{`
       .about {
         padding: 0 1rem;
-        font-size: 14px;
+        font-size: var(--font-size-base);
         overflow: hidden;
       }
       ul {
@@ -73,9 +73,9 @@ const About = ({
         border-radius: 3px;
         padding: .2em;
         box-sizing: border-box;
-        background-color: var(--color-background-primary);
-        color: var(--color-text-less);
-        border: 1px solid var(--color-border);
+        background-color: var(--color-gray-2);
+        color: var(--color-base-8);
+        border: 1px solid var(--color-gray-1);
         transition: all .5s ease;
       }
       a {

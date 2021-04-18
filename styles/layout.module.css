@@ -40,7 +40,6 @@
 .body {
   width: 58%;
   padding: var(--padding-base-2);
-  margin-bottom: var(--margin-base-2);
   background-color: rgba(var(--color-background-primary), .75);
   position: relative;
   transition: var(--transition-base);
