@@ -28,7 +28,7 @@ const Controls = () => {
       .controls {
         width: auto;
         height: auto;
-        padding: 8px;
+        padding: var(--padding-base);
         box-sizing: border-box;
       }
 
@@ -48,11 +48,13 @@ const Controls = () => {
       .btn-item {
         border: none;
         outline: none;
-        background-color: #fff;
+        color: var(--color-base-8);
+        background-color: var(--color-gray-2);
+        transition: var(--transition-base);
       }
 
       .btn-item+.btn-item {
-        margin-left: 8px;
+        margin-left: var(--margin-base);
       }
 
       .btn-item:hover {
