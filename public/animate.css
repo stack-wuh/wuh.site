@@ -13,11 +13,16 @@
 
 
 @keyframes reverts {
-  from {
+  0% {
     opacity: 1;
     transform: rotateX(0) translateY(0);
   }
-  to {
+
+  70% {
+    opacity: 1;
+    transform: rotateX(0) translateY(-2em);
+  }
+  100% {
     opacity: 0;
     transform: rotateX(-90deg) translateY(-15px);
   }

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { withConfig } from '@/components/ConfigProvider'
 
-const MAX_POPUP_STACK_LENGTH = 20
+const MAX_POPUP_STACK_LENGTH = 40
 const Popup = ({
   popup_titles
 }) => {
@@ -62,7 +62,7 @@ const Popup = ({
     if (!popups.length) return
     if (popups.length >= MAX_POPUP_STACK_LENGTH) {
       setTimeout(() => {
-        setpopups([])
+        setpopups(list => list = list.slice(30))
       }, 600)
     }
   }, [popups])
