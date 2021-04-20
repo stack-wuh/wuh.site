@@ -4,6 +4,7 @@ import Space from '@/components/space'
 import { useCookie } from '@/components/CookieProvider'
 import { withConfig } from '@/components/ConfigProvider'
 import useAttribute from '@/hooks/useAttribute'
+import { SwitchTransition, CSSTransition } from 'react-transition-group'
 
 const Theme = ({
   default_theme_mode,
@@ -34,22 +35,29 @@ const Theme = ({
 
   return (<div className="theme">
     <Affix top="10vh" right={0}>
-      <Space direction="column" size={0}>
-        <div className='switch'>
-          {
-            mode === 'light' 
-              ? (<span role='region' tabIndex='1' className='btn-switch switch-dark iconfont icon-Moon is-focus' onClick={() => toggleTheme('dark')}></span>)
-                : (<span role='region' tabIndex='1' className='btn-switch switch-light iconfont icon-Sun is-focus' onClick={() => toggleTheme('light')}></span>)
-          }
-        </div>
-        <div className='switch'>
-          {
-            lang === 'ZH' 
-              ? (<span role='region' tabIndex='1' onClick={() => toggleLang('EN')} className='btn-switch switch-zh is-focus'>ZH</span>) 
-                : (<span role='region' tabIndex='1' onClick={() => toggleLang('ZH')} className='btn-switch switch-en is-focus'>EN</span>)
-          }
-        </div>
-      </Space>
+      <div className="switch">
+        <SwitchTransition mode="out-in">
+          <CSSTransition classNames="fade" key={mode} addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}>
+            {
+              mode === 'light' 
+                ? (<span role='region' tabIndex='1' className='btn-switch switch-dark iconfont icon-Moon is-focus' onClick={() => toggleTheme('dark')}></span>)
+                  : (<span role='region' tabIndex='1' className='btn-switch switch-light iconfont icon-Sun is-focus' onClick={() => toggleTheme('light')}></span>)
+            }
+          </CSSTransition>
+        </SwitchTransition>
+      </div>
+
+      <div className="switch">
+        <SwitchTransition mode="out-in">
+          <CSSTransition classNames="fade" key={lang} addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}>
+            {
+              lang === 'ZH' 
+                ? (<span role='region' tabIndex='1' onClick={() => toggleLang('EN')} className='btn-switch switch-zh is-focus'>ZH</span>) 
+                  : (<span role='region' tabIndex='1' onClick={() => toggleLang('ZH')} className='btn-switch switch-en is-focus'>EN</span>)
+            }
+          </CSSTransition>
+        </SwitchTransition>
+      </div>
     </Affix>
 
     <style jsx>{`
@@ -84,6 +92,30 @@ const Theme = ({
       .switch-en {
         border-left-color: blue;
       }
+
+      .fade-enter {
+        opacity: 0;
+        transform: translateX(-50%);
+      }
+      .fade-enter-active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .fade-exit {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .fade-exit-active {
+        opacity: 0;
+        transform: tranxlateX(-100%);
+      }
+
+      .fade-enter-active, 
+      .fade-exit-active {
+        transition: all .3s;
+      }
+
     `}</style>
   </div>)
 }
