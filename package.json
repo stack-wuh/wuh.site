@@ -19,7 +19,6 @@
     "react": "17.0.1",
     "react-amap": "^1.2.8",
     "react-dom": "17.0.1",
-    "react-motion": "^0.5.2",
     "react-responsive": "^8.2.0",
     "react-transition-group": "^4.4.1",
     "recoil": "^0.2.0",
