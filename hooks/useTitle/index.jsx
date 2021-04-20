@@ -22,9 +22,6 @@ const getVisible = () => {
 const useTitle = (options = DEFAULT_OPTIONS) => {
   const [visible, setvisible] = useState(() => getVisible())
   const raf = useRef(document.title)
-  console.group('================== Raf =================')
-  console.log('Raf', raf)
-  console.groupEnd()
   
   useEffect(() => {
     if (visible === 'hidden') {

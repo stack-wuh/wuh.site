@@ -27,8 +27,9 @@
   --font-weight-large: var(calc(--font-size-base + 200));
 
   --font-size-regular: var(--font-size-base);
-  --font-size-medium: calc(var(--font-size-base) + 2);
-  --font-size-large: calc(var(--font-size-base) + 4);
+  --font-size-medium: calc(var(--font-size-base) + 2px);
+  --font-size-large: calc(var(--font-size-base) + 4px);
+  --font-size-less: calc(var(--font-size-base) - 2px);
 
 
   /** Line Height **/
