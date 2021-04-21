@@ -59,15 +59,6 @@ export default class MyDocument extends Document {
               }
             }`
           }} />
-          
-          <style dangerouslySetInnerHTML={{
-            __html: `
-            html, body {
-              margin: 0;
-              padding: 0;
-            }
-            `
-          }} />
         </Head>
         <body>
           <Main />
