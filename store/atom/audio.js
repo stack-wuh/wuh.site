@@ -29,18 +29,18 @@ const DEFAULT_AUDIO = {
   currentTime: 0
 }
 
-export const audioState = atom({
+export const A_AudioState = atom({
   key: 'audioState',
   default: DEFAULT_AUDIO
 })
 
-export const setAudioAttr = selector({
-  key: 'SET_AUDIO_ATTR',
-  get ({ get, ...props }) {
-    console.group('================== SET_AUDIO_ATTR =================')
-    console.log('SET_AUDIO_ATTR', props)
-    console.groupEnd()
-    const audioState = get(audioState)
-    return audioState
+const getAudioVolume = value => Number((value/100).toFixed(2))
+export const S_Audio_Volume = selector({
+  key: 'S_Audio_Volume',
+  get: ({ get }) => {
+    const result = get(A_AudioState)
+    result.volume = getAudioVolume(result.volume)
+
+    return result
   }
 })
