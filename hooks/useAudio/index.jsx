@@ -104,11 +104,7 @@ const useAudio = (options = initOps) => {
   const audioRef = useRef()
   audioRef.current = new createAudio({ src: 'https://src.wuh.site/media/renjianbuzhide.mp3' })
   const [config, setconfig] = useReducer(reducer, initialState, init)
-  console.log(audioRef.current)
-
-  const {
-    src
-  } = options
+  console.log('aaaaaaaaaaa', audioRef.current.audio)
 const player = {
   name: 'audio',
   src: 'https://baidu.com'
@@ -145,11 +141,11 @@ const player = {
   )
 
   const play = () => {
-    return player.play()
+    return audioRef.current.onPlay()
   }
 
   const pause = () => {
-    return player.pause()
+    return audioRef.current.onPause()
   }
 
   const onResetVolume = value => {
@@ -191,15 +187,15 @@ const player = {
   }, [options])
 
   return {
-    player,
+    // player,
     play,
-    incrementVolume,
-    decrementVolume,
+    // incrementVolume,
+    // decrementVolume,
     pause,
-    ...config,
-    togglePlayPause,
-    toggleVolumeMuted,
-    onResetVolume
+    // ...config,
+    // togglePlayPause,
+    // toggleVolumeMuted,
+    // onResetVolume
   }
 }
 
