@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useMemo, useReducer } from 'react';
+import { useEffect, useCallback, useRef, useReducer } from 'react';
 import createAudio from '@/lib/create-audio';
 
 const STEP_VOLUME = 10
@@ -101,23 +101,29 @@ function reducer(state, action) {
 const getAudioVolume = value => Number((value/100).toFixed(2))
 
 const useAudio = (options = initOps) => {
+  const audioRef = useRef()
+  audioRef.current = new createAudio({ src: 'https://src.wuh.site/media/renjianbuzhide.mp3' })
   const [config, setconfig] = useReducer(reducer, initialState, init)
+  console.log(audioRef.current)
 
   const {
     src
   } = options
+const player = {
+  name: 'audio',
+  src: 'https://baidu.com'
+}
+  // const player = useMemo(() => {
+  //   if ('window' in global) {
+  //     const audio = createAudio()
+  //     audio.src = src
+  //     audio.volume = getAudioVolume(config.volume)
+  //     audio.muted = config.isMuted
 
-  const player = useMemo(() => {
-    if ('window' in global) {
-      const audio = createAudio()
-      audio.src = src
-      audio.volume = getAudioVolume(config.volume)
-      audio.muted = config.isMuted
-
-      return audio
-    }
-    return {}
-  }, [])
+  //     return audio
+  //   }
+  //   return {}
+  // }, [])
 
   const togglePlayPause = useCallback(
     () => {
@@ -181,7 +187,7 @@ const useAudio = (options = initOps) => {
   }
 
   useEffect(() => {
-    emit()
+    // emit()
   }, [options])
 
   return {
