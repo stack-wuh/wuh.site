@@ -1,11 +1,11 @@
 import useAudio from '@/hooks/useAudio'
 
 const Controls = () => {
-  const audio = useAudio()
+  // const audio = useAudio()
 
   return <div className="controls">
-    <button onClick={() => audio.play()}>play</button>
-    <button onClick={() => audio.pause()}>pause</button>
+    {/* <button onClick={() => audio.play()}>play</button>
+    <button onClick={() => audio.pause()}>pause</button> */}
     {/* 按钮功能区 */}
     {/* <div className="menu">
       <button className='btn-item iconfont icon-prev1'></button>
