@@ -1,8 +1,8 @@
 // 来自于MDN target: https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie
 
 class Cookies {
-  getItem (sKey) {
-    return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[-.+*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+  getItem (sKey, cookies) {
+    return decodeURIComponent((cookies ||document.cookie).replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[-.+*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
   }
 
   setItem (sKey, sValue, vEnd, sPath, sDomain, bSecure) {
