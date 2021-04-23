@@ -1,11 +1,23 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '@/lib/gtag'
 import { icon as iconLink } from '@/lib/icon'
+import jsCookies from '@/components/CookieProvider/js-cookie'
 
 export default class MyDocument extends Document {  
+
+  static async getInitialProps(ctx) {
+    const intialProps = await Document.getInitialProps(ctx)
+    const cookie = new jsCookies()
+    const dataThemeMode = cookie.getItem('data-theme-mode', ctx.req.headers.cookie) || 'light'
+    return {
+      ...intialProps,
+      dataThemeMode
+    }
+  }
+
   render() {
     return (
-      <Html lang="zh-cn">
+      <Html lang="zh-cn" data-theme-mode={this.props.dataThemeMode}>
         <Head>
           <meta name='google' content='nositelinkssearchbox' />
           <meta name='author' content="shadow, wuh131420@foxmail.com" />

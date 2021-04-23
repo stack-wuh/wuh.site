@@ -1,17 +1,13 @@
 import useAudio from '@/hooks/useAudio'
 
 const Controls = () => {
-  const { 
-    play, 
-    pause, 
-    isPlaying, 
-    toggleVolumeMuted,
-    isMuted
-  } = useAudio()
+  const audio = useAudio()
 
   return <div className="controls">
+    <button onClick={() => audio.play()}>play</button>
+    <button onClick={() => audio.pause()}>pause</button>
     {/* 按钮功能区 */}
-    <div className="menu">
+    {/* <div className="menu">
       <button className='btn-item iconfont icon-prev1'></button>
       {
         isPlaying 
@@ -24,7 +20,7 @@ const Controls = () => {
           ? (<button onClick={toggleVolumeMuted} className='btn-item iconfont icon-volume-x'></button>) 
             : (<button onClick={toggleVolumeMuted} className='btn-item iconfont icon-volume-'></button>)
       }
-    </div>
+    </div> */}
 
     {/* 附加说明区域 -- 歌手信息 */}
     <div className="desc is-empty">
