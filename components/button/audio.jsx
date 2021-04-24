@@ -1,18 +1,17 @@
-import withAudio from '@/components/AudioProvider/withAudio'
+import useAudio from '@/components/AudioProvider/useAudio'
 
 const Controls = () => {
-  // const audio = useAudio()
+  const context = useAudio()
+  const { isMuted, toggleVolumeMuted, isPlaying, play, pause, allowReady } = context
 
   return <div className="controls">
-    {/* <button onClick={() => audio.play()}>play</button>
-    <button onClick={() => audio.pause()}>pause</button> */}
     {/* 按钮功能区 */}
-    {/* <div className="menu">
+    <div className="menu">
       <button className='btn-item iconfont icon-prev1'></button>
       {
         isPlaying 
         ? (<button className='btn-item iconfont icon-pause' onClick={pause}></button>) 
-        : (<button className='btn-item iconfont icon-play1' onClick={play}></button>)
+        : (<button className='btn-item iconfont icon-play1' disabled={!allowReady} onClick={play}></button>)
       }
       <button className='btn-item iconfont icon-next'></button>
       {
@@ -20,7 +19,7 @@ const Controls = () => {
           ? (<button onClick={toggleVolumeMuted} className='btn-item iconfont icon-volume-x'></button>) 
             : (<button onClick={toggleVolumeMuted} className='btn-item iconfont icon-volume-'></button>)
       }
-    </div> */}
+    </div>
 
     {/* 附加说明区域 -- 歌手信息 */}
     <div className="desc is-empty">
@@ -92,4 +91,4 @@ const Controls = () => {
   </div>
 }
 
-export default withAudio(Controls)
+export default Controls
