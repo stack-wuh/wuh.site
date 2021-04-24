@@ -34,6 +34,7 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   width: 80%;
+  min-width: 980px;
   min-height: calc(100vh - 140px);
   margin: 0 auto;
 }
@@ -59,7 +60,6 @@
   width: 14%;
   height: auto;
   user-select: none;
-  /* background-color: var(--color-background-nav); */
 }
 
 .layout .header {
