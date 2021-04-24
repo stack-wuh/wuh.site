@@ -89,4 +89,10 @@ const About = ({
 
 About.customName = 'about'
 
+export async function getStaticProps () {
+  return {
+    props: {}
+  }
+}
+
 export default withLayout(About)

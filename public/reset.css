@@ -89,6 +89,8 @@
 html, body, #__next {
   color: var(--color-base-9);
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 strong {
