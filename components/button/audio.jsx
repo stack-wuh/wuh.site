@@ -1,4 +1,4 @@
-import useAudio from '@/hooks/useAudio'
+import withAudio from '@/components/AudioProvider/withAudio'
 
 const Controls = () => {
   // const audio = useAudio()
@@ -92,4 +92,4 @@ const Controls = () => {
   </div>
 }
 
-export default Controls
+export default withAudio(Controls)
