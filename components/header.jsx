@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Head from 'next/head'
-import AudioControls from '@/components/button/audio'
+// import AudioControls from '@/components/button/audio'
 import { withConfig } from '@/components/ConfigProvider'
 
 const Header = ({
@@ -17,9 +17,9 @@ const Header = ({
           <strong className='title'>{title}</strong>
         </div>
         <div className='empty'></div>
-        <div className="rg">
+        {/* <div className="rg">
           <AudioControls />
-        </div>
+        </div> */}
       </div>
     </header>
     <style jsx>{`
