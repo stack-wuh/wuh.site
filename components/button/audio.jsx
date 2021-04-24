@@ -1,11 +1,8 @@
-import useAudio from '@/hooks/useAudio'
+import withAudio from '@/components/AudioProvider/withAudio'
 
 const Controls = () => {
-  const audio = useAudio()
 
   return <div className="controls">
-    <button onClick={() => audio.play()}>play</button>
-    <button onClick={() => audio.pause()}>pause</button>
     {/* 按钮功能区 */}
     {/* <div className="menu">
       <button className='btn-item iconfont icon-prev1'></button>
@@ -92,4 +89,4 @@ const Controls = () => {
   </div>
 }
 
-export default Controls
+export default withAudio(Controls)

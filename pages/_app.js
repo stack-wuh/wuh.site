@@ -2,6 +2,7 @@ import Router from 'next/router'
 import NProgress from 'nprogress'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import CookieProvider from '@/components/CookieProvider'
+import AudioProvider from '@/components/AudioProvider'
 import { RecoilRoot } from 'recoil'
 
 import '../public/animate.css'
@@ -18,7 +19,9 @@ const App = ({ Component, pageProps }) => {
     <ErrorBoundary>
       <RecoilRoot>
         <CookieProvider>
-          <Component {...pageProps} />
+          <AudioProvider>
+            <Component {...pageProps} />
+          </AudioProvider>
         </CookieProvider>
       </RecoilRoot>
     </ErrorBoundary>
