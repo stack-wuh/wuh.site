@@ -1,17 +1,16 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '@/lib/gtag'
 import { icon as iconLink } from '@/lib/icon'
-import jsCookies from '@/components/CookieProvider/js-cookie'
+import qs from 'querystring'
 
 export default class MyDocument extends Document {  
-
   static async getInitialProps(ctx) {
     const intialProps = await Document.getInitialProps(ctx)
-    const cookie = new jsCookies()
-    const dataThemeMode = cookie.getItem('data-theme-mode', ctx.req.headers.cookie) || 'light'
+    const cookies = qs.parse(ctx.req.headers.cookie, ';')
+    
     return {
       ...intialProps,
-      dataThemeMode
+      dataThemeMode: cookies[' data-theme-mode']
     }
   }
 
