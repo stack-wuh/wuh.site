@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Affix from '@/components/affix'
+import Space from '@/components/space'
 import { useCookie } from '@/components/CookieProvider'
 import { withConfig } from '@/components/ConfigProvider'
 import useAttribute from '@/hooks/useAttribute'
@@ -11,7 +12,7 @@ const Theme = ({
 }) => {
   const cookie = useCookie()
   const attribute = useAttribute()
-  const [mode, setmode] = useState();
+  const [mode, setmode] = useState('light');
   const [lang, setlang] = useState('ZH');
 
   const toggleTheme = (mode) => {
@@ -28,7 +29,7 @@ const Theme = ({
   useEffect(() => {
     const local_theme_mode = cookie.getItem('data-theme-mode') ?? default_theme_mode
     const local_language = cookie.getItem('language') ?? default_language
-    setmode(local_theme_mode)
+    toggleTheme(local_theme_mode)
     toggleLang(local_language)
   }, [])
 
