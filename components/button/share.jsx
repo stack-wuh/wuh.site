@@ -44,7 +44,7 @@ const shareMaps = [
   },
   {
     name: 'yuque',
-    icon: 'iconfont icon-yuque',
+    icon: 'iconfont icon-yuque-fill',
     href: 'https://www.yuque.com/shadow.wu',
     name: 'yuque',
     title: '去语雀',
