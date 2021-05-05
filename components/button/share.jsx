@@ -27,6 +27,14 @@ const shareMaps = [
     tabIndex: 1
   },
   {
+    name: '微信公众号',
+    icon: 'iconfont icon-wechat-platform',
+    href: 'https://src.wuh.site/web/wechat-platform.jpg',
+    name: 'wechat',
+    title: 'Share to: 微信公众号',
+    tabIndex: 1
+  },
+  {
     name: 'github',
     icon: 'iconfont icon-github',
     href: 'https://github.com/stack-wuh',
