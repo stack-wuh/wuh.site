@@ -33,7 +33,6 @@ const Empty = ({ style, title, center, children, goast }) => {
         padding: 1em 0;
         font-size: 22px;
         text-align: center;
-        line-height: 4rem;
       }
 
       .is-center {
