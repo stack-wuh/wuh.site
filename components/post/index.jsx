@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useSWRInfinite } from 'swr'
 import fetcher from '@/lib/fetch'
 import LoadmoreButton from '@/components/button/loadmore'
+import dayjs from 'dayjs'
 
 const PAGE_SIZE = 10
 
@@ -26,8 +27,10 @@ const ITEM_THEME_MAPS = {
   '语雀': 'is-yuque'
 }
 
-const ItemRender = ({ title, sub_title, cover_img, origin, _id }) => (<Link href={`post/2021-04/${encodeURIComponent(title)}`}>
-  <a className="e-outer" rel='next' href={`https://wuh.site/post/2021-04/${encodeURIComponent(title)}`} role='listitem' tabIndex='0' aria-hidden>
+const getYearAndMonth = str => dayjs(str).format('YYYY-MM')
+
+const ItemRender = ({ title, sub_title, cover_img, origin, update_at }) => (<Link href={`post/${getYearAndMonth(update_at)}/${encodeURIComponent(title)}`}>
+  <a className="e-outer" rel='next' href={`https://wuh.site/post/${getYearAndMonth(update_at)}/${encodeURIComponent(title)}`} role='listitem' tabIndex='0' aria-hidden>
     <li className='e-item' data-background={cover_img}>
       <div className={["e-left", ITEM_THEME_MAPS[origin]].join(' ')} data-origin={origin} >
         <Image 
