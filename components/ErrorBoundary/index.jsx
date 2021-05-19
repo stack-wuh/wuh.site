@@ -4,7 +4,7 @@ class ErrorBoundary extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      hasError: false
+      hasError: false,
     }
   }
 
@@ -13,6 +13,9 @@ class ErrorBoundary extends React.Component {
     console.error('ErrorBoundary error', error)
     console.error('ErrorBoundary errorInfo', errorInfo)
     console.groupEnd()
+    this.setState({
+      hasError: true
+    })
   }
 
   render () {
