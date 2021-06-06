@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '@/lib/gtag'
-import { icon as iconLink } from '@/lib/icon'
+import { icon as iconLink, iconColor as iconColorLink } from '@/lib/icon'
 import qs from 'querystring'
 
 export default class MyDocument extends Document {  
@@ -28,6 +28,7 @@ export default class MyDocument extends Document {
           <link href='/reset.css' type='text/css' rel='stylesheet' />
           <link href="/theme-light.css" type='text/css' rel='stylesheet' />
           <link href={iconLink} rel='stylesheet' title='iconfont' />
+          <link href={iconColorLink} type='text/css' rel="stylesheet" />
 
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script

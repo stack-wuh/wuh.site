@@ -130,3 +130,18 @@ p {
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
+
+.icon-symbol {
+  /* width: 2em;  */
+  /* height: 2em; */
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.margin-right-4 {
+  margin-right: 4px;
+}
+.margin-right-8 {
+  margin-right: 8px;
+}
