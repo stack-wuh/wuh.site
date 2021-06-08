@@ -2,7 +2,7 @@ import useAudio from '@/components/AudioProvider/useAudio'
 
 const Controls = () => {
   const context = useAudio()
-  const { isMuted, toggleVolumeMuted, isPlaying, play, pause, allowReady } = context
+  const { isMuted, toggleVolumeMuted, isPlaying, play, pause } = context
 
   return <div className="controls">
     {/* 按钮功能区 */}
@@ -11,7 +11,7 @@ const Controls = () => {
       {
         isPlaying 
         ? (<button className='btn-item iconfont icon-pause' onClick={pause}></button>) 
-        : (<button className='btn-item iconfont icon-play1' disabled={!allowReady} onClick={play}></button>)
+        : (<button className='btn-item iconfont icon-play1' onClick={play}></button>)
       }
       <button className='btn-item iconfont icon-next'></button>
       {

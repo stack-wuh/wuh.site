@@ -103,7 +103,7 @@ const getAudioVolume = value => Number((value/100).toFixed(2))
 const useAudio = (options = initOps) => {
   const audioRef = useRef()
   audioRef.current = new createAudio({ src: 'https://src.wuh.site/media/renjianbuzhide.mp3' })
-  console.log('aaaaaaaaaaa', audioRef.current.audio)
+  console.log('audio ref.current.audio', audioRef.current.audio)
 
   return {
     // player,

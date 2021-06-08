@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { AudioContext } from './index'
 
 const useAudio = () => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useCallback, useState } from 'react'
 import CreateAudio from '@/lib/create-audio'
 import useForceupdate from '@/hooks/forceUpdata'
 
@@ -25,6 +25,7 @@ const singleAudio = (() => {
 const AudioProvider = ({
   children
 }) => {
+  const [audioProps, setAudioProps] = useState(null)
   const audioRef = useRef()
   const forceUpdate = useForceupdate()
 
@@ -37,6 +38,10 @@ const AudioProvider = ({
     }
   }, [])
 
+  useEffect(() => {
+    setAudioProps(audioProps)
+  }, [audioRef.current])
+
   const toggleVolumeMuted = () => {
     if (audioRef.current) {
       audioRef.current.onToggleMuted()
@@ -44,23 +49,23 @@ const AudioProvider = ({
     forceUpdate()
   }
 
-  const play = () => {
+  const play = useCallback(() => {
     if (audioRef.current) {
       audioRef.current.onPlay()
     }
     forceUpdate()
-  }
+  }, [audioRef.current])
 
-  const pause = () => {
+  const pause = useCallback(() => {
     if (audioRef.current) {
       audioRef.current.onPause()
     }
-
     forceUpdate()
-  }
+  }, [audioRef.current])
 
   const value = {
     ...audioRef.current,
+    ...audioProps,
     toggleVolumeMuted,
     play,
     pause
