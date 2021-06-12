@@ -18,11 +18,11 @@ const Theme = ({
   const toggleTheme = (mode) => {
     setmode(mode)
     attribute.set('data-theme-mode', mode)
-    cookie.setItem('data-theme-mode', mode, new Date('9999-12-31 23:59:59').toISOString(), '/')
+    cookie.setItem('data-theme-mode', mode, new Date('9999-12-31 23:59:59').toString(), '/')
   }
 
   const toggleLang = (val) => {
-    cookie.setItem('language', val, new Date('9999-12-31 23:59:59').toISOString(), '/')
+    cookie.setItem('language', val, new Date('9999-12-31 23:59:59').toString(), '/')
     setlang(val)
   }
 

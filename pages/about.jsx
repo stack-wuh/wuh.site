@@ -37,7 +37,7 @@ const About = ({
           </li>
           <li>
             <i className="iconfont-color iconmusic-on-white-copy" />
-            <span>周杰伦,&nbsp; 李宗盛,&nbsp; 纯音乐,&nbsp; <a className='text-link' href="https://music.163.com/#/playlist?id=565717308" target='_blank' rel='external' alt='网易云'>网抑云</a></span>
+            <span>周杰伦,&nbsp;李宗盛,&nbsp;纯音乐,&nbsp;<a className='text-link' href="https://music.163.com/#/playlist?id=565717308" target='_blank' rel='external' alt='网易云'>网抑云</a></span>
           </li>
           <li>
             <i className='iconfont-color iconshuji' />
