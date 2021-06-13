@@ -80,13 +80,14 @@ const Carousel = ({
         border: var(--border-base);
         border-radius: var(--border-radius-base);
         box-sizing: border-box;
-        color: var(--color-base-4);
+        color: var(--color-1);
       }
       .b-btn-wrapper .btn:hover {
         cursor: pointer;
-        color: var(--color-base-1);
+        color: var(--color-2);
         transform: scale3d(1.1, 1.1, 1.1);
-        border-color: var(--color-base-3);
+        border-color: var(--color-2);
+        transition: var(--transition-base);
       }
       .b-btn-wrapper .btn-position,
       .b-btn-wrapper .btn:not(:last-of-type) {
@@ -105,15 +106,14 @@ const Carousel = ({
         left: 0;
         right: 0;
         padding: .6em 2em;
-        color: var(--color-base-9);
+        color: var(--color-1);
         background-color: rgba(0, 0, 0, .4);
         transition: var(--transition-base);
       }
-      .b-description {
+      .b-carousel .b-description {
         bottom: 3.1em;
-        border-bottom: 1px solid var(--color-base-3);
+        border-bottom: 1px solid var(--color-1);
         padding: .2em 2em;
-        color: var(--color-base-1);
       }
     `}</style>
   </div>

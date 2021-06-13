@@ -4,7 +4,9 @@ const Dialog = ({ children, visible, onCancel, allowCloseIcon, title, bodyStyle,
   const outerRender =  (<dialog id="dialog" className="dialog" open={visible} style={dialogStyle}>
     <div className="dialog__outer" style={wrapperStyle}>
       <div className="dialog__header">
-        <span role='label' aria-label='Dialog' className="dh__title">{title}</span>
+        <span role='label' aria-label='Dialog' className="dh__title">
+          <i className='iconfont-color iconhangkonghangtian-leidaradars' />&nbsp;{title}&nbsp;<i className='iconfont-color iconhangkonghangtian-leidaradars' />
+        </span>
         {
           allowCloseIcon && (<span onClick={onCancel} role='button' className="dh__icon iconfont icon-searchclose" />)
         }
@@ -43,6 +45,7 @@ const Dialog = ({ children, visible, onCancel, allowCloseIcon, title, bodyStyle,
         background-color: var(--color-base-1);
         transition: var(--transition-base);
         overflow: hidden;
+        border: 1px solid var(--color-base-5);
       }
 
       .dialog__header {
@@ -52,6 +55,7 @@ const Dialog = ({ children, visible, onCancel, allowCloseIcon, title, bodyStyle,
         height: 60px;
         width: 100%;
         padding: 18px;
+        border-bottom: 1px solid var(--color-base-5);
         box-sizing: border-box;
         background-color: var(--color-gray-3);
       }
