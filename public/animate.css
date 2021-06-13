@@ -51,3 +51,24 @@
 .fade-color {
   animation: fade-color 2s linear infinite;
 }
+
+@keyframes fade-bgc {
+  0% {
+    background-color: rgb(230, 124, 124);
+    transform: translateY(10px);
+  }
+  50% {
+    background-color: rgb(108, 209, 108);
+    transform: translateY(0);
+  }
+  100% {
+    background-color: rgb(114, 114, 231);
+    transform: translateY(10px);
+  }
+}
+.fade-bgc {
+  animation: fade-bgc 2s ease-out infinite;
+}
+.fade-bgc-revert {
+  animation: fade-bgc 2s ease-in reverse infinite;
+}

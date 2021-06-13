@@ -1,15 +1,15 @@
 import ReactDom from 'react-dom'
 
-const Dialog = ({ children, visible, onCancel, allowCloseIcon, title }) => {
-  const outerRender =  (<dialog id="dialog" className="dialog" open={visible}>
-    <div className="dialog__outer">
+const Dialog = ({ children, visible, onCancel, allowCloseIcon, title, bodyStyle, dialogStyle, wrapperStyle }) => {
+  const outerRender =  (<dialog id="dialog" className="dialog" open={visible} style={dialogStyle}>
+    <div className="dialog__outer" style={wrapperStyle}>
       <div className="dialog__header">
         <span role='label' aria-label='Dialog' className="dh__title">{title}</span>
         {
-          allowCloseIcon && (<span onClick={onCancel} role='button' className="dh__icon">X</span>)
+          allowCloseIcon && (<span onClick={onCancel} role='button' className="dh__icon iconfont icon-searchclose" />)
         }
       </div>
-      <div className="dialog__body">
+      <div className="dialog__body" style={bodyStyle}>
         {children}
       </div>
     </div>
@@ -23,8 +23,10 @@ const Dialog = ({ children, visible, onCancel, allowCloseIcon, title }) => {
         width: 100vw;
         height: 100vh;
         padding: 0;
+        color: var(--color-base-10);
         box-sizing: border-box;
-        background-color: rgba(var(--color-base-6), .55);
+        background-color: rgba(0, 0, 0, .4);
+        border: none;
         z-index: 999999 !important;
         transition: var(--transition-base);
       }
@@ -34,7 +36,9 @@ const Dialog = ({ children, visible, onCancel, allowCloseIcon, title }) => {
         flex-direction: column;
         width: 80%;
         height: auto;
+        min-height: calc(100vh - 36px);
         margin: 18px auto;
+        color: inherit;
         border-radius: var(--border-radius-base);
         background-color: var(--color-base-1);
         transition: var(--transition-base);
@@ -49,11 +53,12 @@ const Dialog = ({ children, visible, onCancel, allowCloseIcon, title }) => {
         width: 100%;
         padding: 18px;
         box-sizing: border-box;
-        background-color: var(--color-base-10);
+        background-color: var(--color-gray-3);
       }
 
       .dialog__header .dh__icon {
         padding: 0.5em;
+        font-size: 20px;
       }
       .dialog__header .dh__icon:hover {
         cursor: pointer;
@@ -63,8 +68,8 @@ const Dialog = ({ children, visible, onCancel, allowCloseIcon, title }) => {
         flex: 1;
         height: 80vh;
         padding: calc(var(--padding-base) * 2);
-        background-color: var(--primary--color);
-        color: var(--color-base-10);
+        background-color: var(--color-base-1);
+        color: inherit;
       }
     `}</style>
   </dialog>)

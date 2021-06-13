@@ -3,6 +3,7 @@ import Menu from '@/components/menu'
 import Leave from '@/components/button/leave'
 import Share from '@/components/button/share'
 import Theme from '@/components/button/theme'
+import Gallery from '@/components/button/gallery'
 import Popup from '@/components/popup'
 import Transition from '@/components/transition'
 import dynaimc from 'next/dynamic'
@@ -34,6 +35,7 @@ const Layout = (Component) => {
         <Share />
         <Theme />
         <Popup />
+        <Gallery />
           <div className={styles.main}>
             <div className={styles.nav}>
               <Menu className={styles.menu} />

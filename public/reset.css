@@ -144,3 +144,12 @@ p {
 .margin-right-8 {
   margin-right: 8px;
 }
+
+button {
+  width: inherit;
+  height: inherit;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  transition: var(--transition-base);
+}

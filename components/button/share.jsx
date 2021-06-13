@@ -4,7 +4,7 @@ import Affix from '@/components/affix'
 const shareMaps = [
   {
     label: '知乎',
-    icon: 'iconfont icon-zhihu',
+    icon: 'iconfont icon-zhihu1',
     href: 'https://www.zhihu.com/people/wuhong.site',
     name: 'zhihu',
     title: '去知乎',
@@ -36,7 +36,7 @@ const shareMaps = [
   },
   {
     name: 'github',
-    icon: 'iconfont icon-github',
+    icon: 'iconfont icon-github1',
     href: 'https://github.com/stack-wuh',
     name: 'github',
     title: '去Github',
