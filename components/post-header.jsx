@@ -24,7 +24,7 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin, cover_img, _
 
         <meta property='og:type' content='article' />
         <meta property='og:title' content={`${title} -- wuh.site`} />
-        <meta property='og:url' content={`https://wuh.site/post/${_id}`} />
+        <meta property='og:url' content={`${window.location}`} />
         <meta property='og:description' content={sub_title} />
         <meta property='og:image' content={cover_img} />
 
@@ -34,9 +34,9 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin, cover_img, _
             "@type": "NewsArticle",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://wuh.site/post/${_id}"
+              "@id": ${window.location}
             },
-            "headline": "${formatTitle}",
+            "headline": ${formatTitle},
             "author": "吴尒红 Shadow",
             "image": [
               "${cover_img}"
@@ -53,12 +53,17 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin, cover_img, _
               "itemListElement": [{
                 "@type": "ListItem",
                 "position": 1,
-                "name": "集合",
+                "name": "Home",
                 "item": "https://wuh.site"
               },{
                 "@type": "ListItem",
                 "position": 2,
-                "name": ${title},
+                "name": "Home·集合",
+                "item": "https://wuh.site"
+              },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": Home·集合·${title},
                 "item": "https://wuh.site/post/"+${_id}
               }]
             }`
