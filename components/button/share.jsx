@@ -43,6 +43,14 @@ const shareMaps = [
     tabIndex: 1
   },
   {
+    name: 'gitbook',
+    icon: 'iconfont icon-Gitbook',
+    href: 'https://gitbook.wuh.site',
+    name: 'gitbook',
+    title: '去Gitbook',
+    tabIndex: 1
+  },
+  {
     name: 'twitter',
     icon: 'iconfont icon-ttww',
     href: 'https://twitter.com/wuh131420',
@@ -132,6 +140,9 @@ const Share = () => {
       }
       a[data-theme-name='yuque']:hover {
         background-color: #31cc79;
+      }
+      a[data-theme-name='gitbook']:hover {
+        background-color: #3a84ff;
       }
       a[data-theme-name='link']:hover {
         background-color: #181616

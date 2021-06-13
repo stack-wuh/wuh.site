@@ -44,11 +44,8 @@ const About = ({
             <span>
               <a className='text-link margin-right-4 text-none' rel='external' href="https://weread.qq.com/misc/booklist/74791710_7kPtxUxu0?code=021d5oFa1GAFQA0MHTIa1F8ayy1d5oF1&state=ok_userinfo" target="_blank" alt='阅读'>阅读</a>,&nbsp;
               <a className='text-link margin-right-4 text-none' rel='external' href='https://www.douban.com/people/wuh-site/notes' target='_blank' alt='读书笔记'>日记</a>,&nbsp;
-              <a className='text-link margin-right-4 text-none' rel='external' href='https://www.douban.com/people/wuh-site/subject_doulists/book' target='_blank' alt='豆瓣-书单'>豆瓣-书单</a>,&nbsp;
-              <a className='text-link margin-right-4 text-none' rel='external' href='https://www.douban.com/people/wuh-site/subject_doulists/movie' target='_blank' alt='豆瓣-片单'>豆瓣-片单</a>,&nbsp;
-              <span>小说</span>,&nbsp;
-              <span>推理</span>,&nbsp;
-              <span>人间词话</span>&nbsp;
+              <a className='text-link margin-right-4 text-none' rel='external' href='https://www.douban.com/people/wuh-site/subject_doulists/book' target='_blank' alt='豆瓣-书单'>豆瓣-书/片单</a>,&nbsp;
+              <span>小说, 推理, 人间词话&nbsp;&nbsp;<a className='margin-right-4 text-none iconfont-color iconlogo' rel='external' href='https://gitbook.wuh.site' target='_blank' alt='gitbook' /></span>
             </span>
           </li>
           <li className='flex-align-center'>
