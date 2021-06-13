@@ -15,6 +15,7 @@ const About = ({
     <Head>
       <meta keywords="吴尒红, shadow, wuh.site" />
       <title>wuh.site - {title} - wuh.site</title>
+      <meta name='author' content='shadow, shadow.wu, 吴尒红, wuh131420@foxmail.com' />
       <meta name='description' content='自小多才俊,向来志气高.别人有宝剑,我有笔如刀;' />
       <meta property='og:type' content='webpage' />
       <meta property='og:title' content='技术博客 -- wuh.site' />

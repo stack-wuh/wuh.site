@@ -10,7 +10,7 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin, cover_img, _
       <Head>
         <title>{formatTitle}</title>
         <meta name='description' content={sub_title} />
-        <meta name='author' content='shadow, wuh131420@foxmail.com' />
+        <meta name='author' content='shadow, shadow.wu, 吴尒红, wuh131420@foxmail.com' />
         <meta keywords={keywordsStr} />
         <meta name='renderer' content='webkit' />
         <meta httpEquiv="cache-control" content="no-cache"></meta>

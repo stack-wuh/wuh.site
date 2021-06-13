@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
       <Html lang="zh-cn" data-theme-mode={this.props.dataThemeMode}>
         <Head>
           <meta name='google' content='nositelinkssearchbox' />
-          <meta name='author' content="shadow, wuh131420@foxmail.com" />
+          <meta name='author' content="shadow, shadow.wu, 吴尒红, wuh131420@foxmail.com" />
           <meta name='copyright' content='© shadow' />
           <meta name='renderer' content='webkit' />
           <meta httpEquiv="cache-control" content="no-cache"></meta>

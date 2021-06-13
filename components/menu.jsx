@@ -7,7 +7,7 @@ const Menu = () => {
 
   return (<nav className={styles.menu} role='menubar'>
     <ActiveNav href="/" activeClassName="is-active">
-      <a className='menu-item' href="https://wuh.site" role='menuitem' tabIndex="0">
+      <a className='menu-item' href="/" role='menuitem' tabIndex="0">
         <i className='iconfont icon-code' />
         <span >集合</span>
       </a>
@@ -15,7 +15,7 @@ const Menu = () => {
     <ActiveNav prefetch={false} href="/about" activeClassName="is-active">
       <a onMouseEnter={() => {
         router.prefetch('/about')
-      }} className='menu-item' href="https://wuh.site/about" role='menuitem' tabIndex='0'>
+      }} className='menu-item' href="/about" role='menuitem' tabIndex='0'>
         <i className='iconfont icon-bussiness-man' />
         <span >关于</span>
       </a>
