@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import fetch from '@/lib/fetch'
 import markdownToHtml from '@/lib/markdownToHtml'
 import PostBody from '@/components/post-body'
@@ -16,21 +16,18 @@ const Post = ({
   post,
   routerItemProps
 }) => {
+  const postRef = useRef(null)
   const { body, title, sub_title, cover_img, _id } = post
   const { hiddenTitle } = routerItemProps
   useTitle({ ...defaultOptions, hiddenTitle, customTitle: title, allowCustom: true })
 
   useEffect(() => {
     if (global || window) {
-      global.addEventListener('click', e => {
+      postRef.current.addEventListener('click', e => {
         if (e.target.nodeName.toLowerCase() === 'img') {
           window.open(e.target.currentSrc)
         }
       })
-    }
-
-    return () => {
-      global.removeEventListener('click', () => {}, false)
     }
   }, [])
 
@@ -39,7 +36,7 @@ const Post = ({
     <PostBody body={body} />
   </article>)
 
-  return (<div className='post-info'>
+  return (<div className='post-info' ref={postRef}>
       {
         body.length ? bodyWrapper : emptyWrapper
       }

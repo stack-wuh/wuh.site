@@ -58,6 +58,9 @@
   --color-text-link: var(--color-7);
 
   --contrast-img: contrast(1);
+
+  /** opacity **/
+  --background-text-color: rgba(0, 0, 0, .2);
 }
 
 /* Dark Theme Variable */
@@ -121,4 +124,7 @@
   --color-text-link: var(--color-4);
 
   --contrast-img: contrast(.85);
+
+    /** opacity **/
+    --background-text-color: rgba(255, 255, 225, .2);
 }

@@ -3,6 +3,7 @@ import Post from '@/components/post'
 import withLayout from '@/layout/withLayout'
 import fetcher from '@/lib/fetch'
 import useTitle, { DEFAULT_OPTIONS as defaultTitleOptions } from '@/hooks/useTitle'
+import ImageLoop from '@/components/carousel/image'
 
 const Home = ({
   posts,
@@ -28,7 +29,7 @@ const Home = ({
       <meta property='og:image' content='https://src.wuh.site/common/avatar.jpg' />
       <meta property='og:locale' content='zh-cn' />
     </Head>
-
+    <ImageLoop />
     <Post initialData={posts} />
 
   </div>

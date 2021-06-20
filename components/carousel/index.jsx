@@ -18,6 +18,7 @@ const Carousel = ({
   onClose,
   description,
   search,
+  allowFooter,
   children
 }) => {
   const [currentIndex, setcurrentIndex] = useState(0)
@@ -54,12 +55,16 @@ const Carousel = ({
       {children}
     </Slider>
     {descripWrapper}
-    <div className="b-btn-wrapper">
-      <a className='btn btn-position iconfont icon-map' aria-disabled={!search} href={search} target="_blank" alt='position 地址信息' />
-      <button onClick={() => slickRef.current.slickPrev() } className="btn btn-prev iconfont icon-arrow-lift" />
-      <button onClick={() => slickRef.current.slickNext() } className="btn btn-next iconfont icon-arrow-right" />
-      <button onClick={onClose} className="btn btn-close iconfont icon-searchclose" />
-    </div>
+    {
+      allowFooter 
+      && 
+      (<div className="b-btn-wrapper">
+        <a className='btn btn-position iconfont icon-map' aria-disabled={!search} href={search} target="_blank" alt='position 地址信息' />
+        <button onClick={() => slickRef.current.slickPrev() } className="btn btn-prev iconfont icon-arrow-lift" />
+        <button onClick={() => slickRef.current.slickNext() } className="btn btn-next iconfont icon-arrow-right" />
+        <button onClick={onClose} className="btn btn-close iconfont icon-searchclose" />
+      </div>)
+    }
     <style jsx>{`
       .b-carousel {
         position: relative;
@@ -129,6 +134,7 @@ Carousel.defaultProps = {
   slidesToScroll: 1,
   description: null,
   search: null,
+  allowFooter: false,
   nextArrow: <SimpleArrow />,
   prevArrow: <SimpleArrow />,
   onClose () {}

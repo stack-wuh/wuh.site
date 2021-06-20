@@ -62,7 +62,8 @@ const Gallery = () => {
           dots={false} 
           onClose={toggleVisible} 
           description="远处蔚蓝天空下涌动着金色的麦浪"
-          search={AMAP_POSITION}>
+          search={AMAP_POSITION}
+          allowFooter>
           {
             galleryDataJSON.map(gallery => <CarouselItem url={gallery.url} key={gallery.alt} title={gallery.title} />)
           }
