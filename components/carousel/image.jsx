@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Slider from 'react-slick'
 
 const sourceJSON = [
@@ -28,11 +29,13 @@ const ImageItem = ({
   href
 }) => {
   return <div className="e-image-item">
-    <a href={href} rel='next'>
+    <Link href={href} rel='next'>
       <img src={cover} alt={title} />
-    </a>
+    </Link>
     <div className="title">
       <span>{title}</span>
+      <span className="iconfont icon-affix icon-affix-right" />
+      <span className='iconfont icon-affix icon-affix-left' />
     </div>
     <style jsx>{`
       .e-image-item {
@@ -42,10 +45,7 @@ const ImageItem = ({
         background: url(https://src.wuh.site/cover.png?w=384&q=75) center center no-repeat;
         overflow: hidden;
       }
-      .e-image-item a:hover {
-        cursor: pointer;
-      }
-      .e-image-item a:hover img {
+      .e-image-item:hover img {
         transform: scale(1.1);
         transition: var(--transition-base);
       }
@@ -65,11 +65,30 @@ const ImageItem = ({
         background: linear-gradient(45deg, var(--background-text-color), var(--color-yellow-1));
         color: var(--color-4);
         font-size: var(--font-size-base);
+        transform: rotate(15deg) translateY(10px);
         transition: var(--transition-base);
       }
       .e-image-item:hover .title {
         background-color: var(--color-base-10);
         color: var(--color-base-1);
+        transform: rotate(0) translateY(0);
+        transition: var(--transition-base);
+      }
+      .icon-affix-right {
+        position: absolute;
+        left: -10px;
+        top: -10px;
+      }
+      .icon-affix-left {
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        opacity: 0;
+      }
+      .e-image-item:hover .icon-affix-left {
+        position: absolute;
+        right: 0;
+        opacity: 1;
         transition: var(--transition-base);
       }
     `}</style>
@@ -99,6 +118,9 @@ const ImageLoop = () => {
         margin-bottom: var(--margin-base);
         border-radius: var(--border-radius-base);
         background-color: var(--color-base);
+      }
+      .b-text-loop:hover {
+        cursor: pointer;
       }
       .b-text-loop .slick-dots {
         bottom: 0;
