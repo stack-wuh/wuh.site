@@ -27,6 +27,7 @@ const PostTitle = ({ title, sub_title, update_at, keywords, origin, cover_img, _
         <meta property='og:url' content={`${global.location?.href}`} />
         <meta property='og:description' content={sub_title} />
         <meta property='og:image' content={cover_img} />
+        <script>hljs.initHighlightingOnLoad();</script>
 
         <script  type='application/ld+json' dangerouslySetInnerHTML={{
           __html: `{

@@ -1,15 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Affix from '@/components/affix'
-import Space from '@/components/space'
 import { useCookie } from '@/components/CookieProvider'
 import { withConfig } from '@/components/ConfigProvider'
 import useAttribute from '@/hooks/useAttribute'
 import { SwitchTransition, CSSTransition } from 'react-transition-group'
 
+const prefix = `//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/`
+
 const Theme = ({
   default_theme_mode,
   default_language
 }) => {
+  const hljsThemeRef = useRef()
   const cookie = useCookie()
   const attribute = useAttribute()
   const [mode, setmode] = useState('light');
@@ -19,6 +21,9 @@ const Theme = ({
     setmode(mode)
     attribute.set('data-theme-mode', mode)
     cookie.setItem('data-theme-mode', mode, new Date('9999-12-31 23:59:59').toString(), '/')
+    if (hljsThemeRef.current) {
+      hljsThemeRef.current.href = prefix + `${mode === 'light' ? 'github' : 'github-dark'}.min.css`
+    }
   }
 
   const toggleLang = (val) => {
@@ -31,6 +36,8 @@ const Theme = ({
     const local_language = cookie.getItem('language') ?? default_language
     toggleTheme(local_theme_mode)
     toggleLang(local_language)
+
+    hljsThemeRef.current = document.querySelector('link[name="hljs"]')
   }, [])
 
   return (<div className="theme">

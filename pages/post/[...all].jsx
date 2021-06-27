@@ -54,8 +54,7 @@ export async function getServerSideProps (context) {
   const [_, title] = context.query.all
   const res = await fetch('https://api.wuh.site/articles/'+ encodeURIComponent(title))
   const row = res.data
-  const body = await markdownToHtml(row?.content || '')
-
+  const body = await markdownToHtml(row.content)
   return {
     props: {
       post: {

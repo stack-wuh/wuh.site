@@ -7,10 +7,13 @@ export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const intialProps = await Document.getInitialProps(ctx)
     const cookies = qs.parse(ctx.req.headers.cookie, ';')
+    const dataThemeMode = cookies[' data-theme-mode']
+    const hljsTheme = dataThemeMode === 'light' ? 'github' : 'github-dark'
     
     return {
       ...intialProps,
-      dataThemeMode: cookies[' data-theme-mode']
+      dataThemeMode,
+      hljsTheme
     }
   }
 
@@ -34,7 +37,9 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"></link>
           <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"></link>
-
+          <link name='hljs' rel="stylesheet" href={`//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/${this.props.hljsTheme}.min.css`} />
+          <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+          <script>hljs.initHighlightingOnLoad();</script>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
