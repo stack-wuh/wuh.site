@@ -6,7 +6,7 @@ import useTitle, { DEFAULT_OPTIONS as defaultTitleOptions } from '@/hooks/useTit
 import ImageLoop from '@/components/carousel/image'
 
 const Home = ({
-  posts,
+  init,
   routerItemProps
 }) => {
   const { title, hiddenTitle } = routerItemProps
@@ -30,17 +30,19 @@ const Home = ({
       <meta property='og:locale' content='zh-cn' />
     </Head>
     <ImageLoop />
-    <Post initialData={posts} />
+    <Post initialData={init} />
 
   </div>
 )
 }
 
 export async function getStaticProps () {
-  const posts = await fetcher('https://api.wuh.site/articles')
-
+  const data = await fetcher('https://api.wuh.site/articles')
+console.log('current is data === ', data)
   return {
-    props: { posts }
+    props: { 
+      init: data
+     }
   }
 }
 

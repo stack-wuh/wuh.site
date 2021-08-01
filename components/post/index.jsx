@@ -7,15 +7,21 @@ import dayjs from 'dayjs'
 
 const PAGE_SIZE = 10
 
-export function usePostPages ({ initialData }) {
-  return useSWRInfinite((index, previousPageData) => {
-    if (previousPageData && previousPageData.data.rows.length === 0) return null
-
-    if (index === 0) {
-      return `https://api.wuh.site/articles?p=1`
-    }
+export function usePostPages (initialData) {
+  const { count } = initialData.data
+  const { data, size, setSize, error } = useSWRInfinite(index => {
     return `https://api.wuh.site/articles?p=${index+1}`
-  }, fetcher, { initialData })
+  }, fetcher, { revalidateOnFocus: false, revalidateOnMount: false, initialData: [initialData] })
+
+  const isLoading = !data && !error
+  const isEmpty = initialData.data.rows.length
+  const allowLoadMore = size < Math.ceil(count / PAGE_SIZE)
+
+  const hits = (data||[]).reduce((acc, curr) => acc.concat(curr.data.rows), [])
+
+  return {
+    size, setSize, error, isLoading, isEmpty, allowLoadMore, hits
+  }
 }
 
 const ImageLoader = ({ src, width, quality }) => {
@@ -165,24 +171,21 @@ const ItemRender = ({ title, sub_title, cover_img, origin, update_at }) => (<Lin
 const Post = ({
   initialData
 }) => {
-  const { data, error, size, setSize } = usePostPages(initialData)
-  const posts = data ? data.reduce((acc, curr) => [...acc, ...curr.data.rows], []) : []
-  const isLoadingInitial = !error && !data
-  const isLoadingMore = isLoadingInitial || (data&& typeof data[size-1] === 'undefined')
-  const isEmpty = data?.[0]?.data?.rows?.[0].length === 0
-  const isReachingEnd = isEmpty || (data && data[data.length - 1]?.data.rows.length < PAGE_SIZE)
+  const { hits, size, setSize, allowLoadMore, isLoading } = usePostPages(initialData)
 
   const handleFetchNextPage = () => {
     setSize(size + 1)
   }
 
+  if (isLoading) return <div>Loading...</div>
+
   return (<div className='b-post'>
     <ul className='b-post__list' role='list' aria-hidden="true" style={{ listStyle: 'none' }}>
       {
-        posts.map((item, index) => (<ItemRender key={index} {...item} />))
+        hits.map((item, index) => (<ItemRender key={index} {...item} />))
       }
     </ul>
-    <LoadmoreButton disabled={isReachingEnd || isLoadingMore} onClick={handleFetchNextPage} />
+    <LoadmoreButton disabled={!allowLoadMore} onClick={handleFetchNextPage} />
     <style jsx>
       {
         `
