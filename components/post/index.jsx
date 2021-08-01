@@ -174,7 +174,9 @@ const Post = ({
   const { hits, size, setSize, allowLoadMore, isLoading } = usePostPages(initialData)
 
   const handleFetchNextPage = () => {
-    setSize(size + 1)
+    if (allowLoadMore) {
+      setSize(size + 1)
+    }
   }
 
   if (isLoading) return <div>Loading...</div>
