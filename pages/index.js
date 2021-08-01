@@ -38,7 +38,6 @@ const Home = ({
 
 export async function getStaticProps () {
   const data = await fetcher('https://api.wuh.site/articles')
-console.log('current is data === ', data)
   return {
     props: { 
       init: data
