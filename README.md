@@ -41,7 +41,7 @@
   <img src='https://src.wuh.site/2021-05/2021-08-07-wuh.site_about.png' width='45%'/>
 </div>
 
-## 开原许可
+## 开源许可
 ![](https://img.shields.io/github/license/stack-wuh/react-router-config)
 
 ## 启动项目
