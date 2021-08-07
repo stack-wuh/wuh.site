@@ -28,11 +28,13 @@ const AudioProvider = ({ children }) => {
 	const forceUpdate = useForceupdate();
 
 	useEffect(() => {
-		audioRef.current = singleAudio({
-			src: "https://web-origin.oss-cn-beijing.aliyuncs.com/media/renjianbuzhide.mp3",
-		});
-		forceUpdate();
-
+    window.addEventListener('load', () => {
+      audioRef.current = singleAudio({
+        src: "https://web-origin.oss-cn-beijing.aliyuncs.com/media/renjianbuzhide.mp3",
+      });
+      forceUpdate();
+    })
+    
 		return () => {
 			audioRef.current = null;
 		};
