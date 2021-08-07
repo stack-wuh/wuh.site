@@ -1,9 +1,11 @@
-import styles from './post-body.module.css'
+import styles from "./post-body.module.css";
 
 const PostBody = ({ body }) => {
-  return (<div className={styles['markdown-body']}>
-    <article dangerouslySetInnerHTML={{ __html: body }} />
-  </div>)
-}
+	return (
+		<div className={styles["markdown-body"]}>
+			<article dangerouslySetInnerHTML={{ __html: body }} />
+		</div>
+	);
+};
 
-export default PostBody
+export default PostBody;

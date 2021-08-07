@@ -1,10 +1,10 @@
-import { useContext } from 'react'
-import { AudioContext } from './index'
+import { useContext } from "react";
+import { AudioContext } from "./index";
 
 const useAudio = () => {
-  const context = useContext(AudioContext)
+	const context = useContext(AudioContext);
 
-  return context || {}
-}
+	return context || {};
+};
 
-export default useAudio
+export default useAudio;

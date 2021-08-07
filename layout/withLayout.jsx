@@ -14,7 +14,7 @@ import styles from '@/styles/layout.module.css'
 
 import config from '../global.config.json'
 
-const DynaimcHeader = dynaimc(import('../components/header'), { ssr: false })
+const DynaimcHeader = dynaimc(import('@/components/header'), { ssr: false })
 
 const Layout = (Component) => {
 

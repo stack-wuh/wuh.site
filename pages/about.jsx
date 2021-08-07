@@ -13,18 +13,8 @@ const About = ({
   useTitle({ ...defaultOptions, hiddenTitle  })
   return (<>
     <Head>
-      <meta keywords="吴尒红, shadow, wuh.site" />
-      <title>wuh.site - {title} - wuh.site</title>
-      <meta name='author' content='shadow, shadow.wu, 吴尒红, wuh131420@foxmail.com' />
-      <meta name='description' content='自小多才俊,向来志气高.别人有宝剑,我有笔如刀;' />
-      <meta property='og:type' content='webpage' />
-      <meta property='og:title' content='技术博客 -- wuh.site' />
-      <meta property='og:url' content='https://wuh.site/about' />
-      <meta property='og:description' content='前端技术博客, 分享我的知识' />
-      <meta property='og:image' content='https://wuh.site/avatar.png' />
-      <meta property='og:locale' content='zh-cn' />
+      <title>{title}</title>
     </Head>
-
     <div className='about'>
       <div className="about-list">
         <ul>

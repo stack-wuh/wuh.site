@@ -3,10 +3,9 @@ import Head from 'next/head'
 
 const NotPage = () => {
   return (<>
-   <Head>
-      <meta keywords="吴尒红, shadow, wuh.site" />
-      <meta name='description' content='自小多才俊,向来志气高.别人有宝剑,我有笔如刀;' />
-   </Head>
+  <Head>
+    <title>吴尒红 | 资源更新了 -- wuh.site</title>
+  </Head>
    <div className="nopage">
       <div className="content">
         <h4 className='title'>404</h4>

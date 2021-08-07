@@ -1,77 +1,79 @@
-import React, { useEffect, useRef, useCallback, useState } from 'react'
-import CreateAudio from '@/lib/create-audio'
-import useForceupdate from '@/hooks/forceUpdata'
+import React, { useEffect, useRef, useCallback, useState } from "react";
+import CreateAudio from "@/lib/create-audio";
+import useForceupdate from "@/hooks/forceUpdata";
 
 const AudioContext = React.createContext({
-  key: '@@audio'
-})
+	key: "@@audio",
+});
 
-export { AudioContext }
+export { AudioContext };
 
 const singleAudio = (() => {
-  let instance = null
-  
-  const run = function (props) {
-    if (!instance) {
-      instance = new CreateAudio(props)
-    }
+	let instance = null;
 
-    return instance
-  }
+	const run = function (props) {
+		if (!instance) {
+			instance = new CreateAudio(props);
+		}
 
-  return run
-})()
+		return instance;
+	};
 
-const AudioProvider = ({
-  children
-}) => {
-  const [audioProps, setAudioProps] = useState(null)
-  const audioRef = useRef()
-  const forceUpdate = useForceupdate()
+	return run;
+})();
 
-  useEffect(() => {
-    audioRef.current = singleAudio({ src: 'https://web-origin.oss-cn-beijing.aliyuncs.com/media/renjianbuzhide.mp3' })
-    forceUpdate()
+const AudioProvider = ({ children }) => {
+	const [audioProps, setAudioProps] = useState(null);
+	const audioRef = useRef();
+	const forceUpdate = useForceupdate();
 
-    return () => {
-      audioRef.current = null
-    }
-  }, [])
+	useEffect(() => {
+		audioRef.current = singleAudio({
+			src: "https://web-origin.oss-cn-beijing.aliyuncs.com/media/renjianbuzhide.mp3",
+		});
+		forceUpdate();
 
-  useEffect(() => {
-    setAudioProps(audioProps)
-  }, [audioRef.current])
+		return () => {
+			audioRef.current = null;
+		};
+	}, []);
 
-  const toggleVolumeMuted = () => {
-    if (audioRef.current) {
-      audioRef.current.onToggleMuted()
-    }
-    forceUpdate()
-  }
+	useEffect(() => {
+		setAudioProps(audioProps);
+	}, [audioRef.current]);
 
-  const play = useCallback(() => {
-    if (audioRef.current) {
-      audioRef.current.onPlay()
-    }
-    forceUpdate()
-  }, [audioRef.current])
+	const toggleVolumeMuted = () => {
+		if (audioRef.current) {
+			audioRef.current.onToggleMuted();
+		}
+		forceUpdate();
+	};
 
-  const pause = useCallback(() => {
-    if (audioRef.current) {
-      audioRef.current.onPause()
-    }
-    forceUpdate()
-  }, [audioRef.current])
+	const play = useCallback(() => {
+		if (audioRef.current) {
+			audioRef.current.onPlay();
+		}
+		forceUpdate();
+	}, [audioRef.current]);
 
-  const value = {
-    ...audioRef.current,
-    ...audioProps,
-    toggleVolumeMuted,
-    play,
-    pause
-  }
+	const pause = useCallback(() => {
+		if (audioRef.current) {
+			audioRef.current.onPause();
+		}
+		forceUpdate();
+	}, [audioRef.current]);
 
-  return <AudioContext.Provider value={value}>{children}</AudioContext.Provider>
-}
+	const value = {
+		...audioRef.current,
+		...audioProps,
+		toggleVolumeMuted,
+		play,
+		pause,
+	};
 
-export default AudioProvider
+	return (
+		<AudioContext.Provider value={value}>{children}</AudioContext.Provider>
+	);
+};
+
+export default AudioProvider;

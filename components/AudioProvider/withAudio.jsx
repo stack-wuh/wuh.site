@@ -1,17 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext } from "react";
 
-import { AudioContext } from './index'
+import { AudioContext } from "./index";
 
 const withAudio = (Component) => {
-  const audio = useContext(AudioContext)
+	const audio = useContext(AudioContext);
 
-  return function AudioWrapper (props) {
-    return <AudioContext.Consumer>
-      {
-        context => <Component {...props} {...context} audio={audio} />
-      }
-    </AudioContext.Consumer>
-  }
-}
+	return function AudioWrapper(props) {
+		return (
+			<AudioContext.Consumer>
+				{(context) => <Component {...props} {...context} audio={audio} />}
+			</AudioContext.Consumer>
+		);
+	};
+};
 
-export default withAudio
+export default withAudio;

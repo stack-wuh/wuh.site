@@ -22,10 +22,23 @@ export default class MyDocument extends Document {
       <Html lang="zh-cn" data-theme-mode={this.props.dataThemeMode}>
         <Head>
           <meta name='google' content='nositelinkssearchbox' />
+          <meta charSet='utf-8' />
+          <meta name='keywords' content='Shadow 博客, wuh.site, 吴尒红, React & Nodejs, 前端技术博客, Javascript 技术' />
+          <meta name='description' content='自小多才俊,向来志气高.别人有宝剑,我有笔如刀;' />
           <meta name='author' content="shadow, shadow.wu, 吴尒红, wuh131420@foxmail.com" />
-          <meta name='copyright' content='© shadow' />
+          <meta name='copyright' content='©Shadow' />
           <meta name='renderer' content='webkit' />
+          <meta name='force-rendering' content='webkit' />
+          <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
           <meta httpEquiv="cache-control" content="no-cache"></meta>
+          <meta name='viewport' content='width=device-width,initial-scale=1.0,user-scalable=no' />
+
+          <meta property='og:type' content='webpage' />
+          <meta property='og:title' content='技术博客 -- wuh.site' />
+          <meta property='og:url' content='https://wuh.site' />
+          <meta property='og:description' content='前端技术博客, 分享我的知识' />
+          <meta property='og:image' content='https://src.wuh.site/common/avatar.jpg' />
+          <meta property='og:locale' content='zh-cn' />
 
           <link href="https://src.wuh.site/common/rss.xml" type="application/rss+xml" rel="alertnate" title="RSS" />
           <link href='/reset.css' type='text/css' rel='stylesheet' />
