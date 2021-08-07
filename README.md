@@ -27,11 +27,11 @@
 + **[github.project](https://github.com/stack-wuh/react-router-config/projects/1)项目管理**
 
 ## ScreenShot
-<p style="display: flex;">
-  <img src="https://src.wuh.site/2021-05/2021-08-07-wuh.site_.png" width='50%' />
+<div style="display: flex; align-items: flex-start;">
+  <img src="https://src.wuh.site/2021-05/2021-08-07-wuh.site_.png" width='45%' />
   &nbsp;&nbsp;
-  <img src='https://src.wuh.site/2021-05/2021-08-07-wuh.site_about.png' width='50%' />
-</p>
+  <img src='https://src.wuh.site/2021-05/2021-08-07-wuh.site_about.png' width='45%'/>
+</div>
 
 ## 启动项目
 1. master分支，有create-react-app创建的react项目
