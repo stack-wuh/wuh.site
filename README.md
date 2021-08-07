@@ -9,6 +9,14 @@
 </p>
 
 # wuh.site
+![](https://img.shields.io/github/v/release/stack-wuh/react-router-config)
+![](https://img.shields.io/github/commits-since/stack-wuh/react-router-config/v1.5.0/v2)
+![](https://img.shields.io/github/languages/top/stack-wuh/react-router-config)
+![](https://img.shields.io/github/contributors/stack-wuh/react-router-config)
+![](https://img.shields.io/github/last-commit/stack-wuh/react-router-config/v2)
+![](https://img.shields.io/github/package-json/version/stack-wuh/react-router-config/v2)
+![](https://img.shields.io/github/repo-size/stack-wuh/react-router-config)
+![](https://img.shields.io/github/package-json/keywords/stack-wuh/react-router-config/v2)
 > 使用Nextjs，Mongodb和Express构建的个人网站
 
 > 由Koajs提供日志分析，ant-design-prod搭建后台
@@ -32,6 +40,9 @@
   &nbsp;&nbsp;
   <img src='https://src.wuh.site/2021-05/2021-08-07-wuh.site_about.png' width='45%'/>
 </div>
+
+## 开原许可
+
 
 ## 启动项目
 1. master分支，有create-react-app创建的react项目

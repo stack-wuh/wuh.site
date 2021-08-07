@@ -1,7 +1,17 @@
 {
   "name": "next-blog-app",
-  "version": "0.1.0",
+  "version": "1.5.0",
   "private": true,
+  "keywords": [
+    "react",
+    "nextjs",
+    "docker",
+    "swr",
+    "css in js",
+    "recoil",
+    "markdown",
+    "dayjs"
+  ],
   "scripts": {
     "dev": "next dev -p 5555",
     "build": "next build",
