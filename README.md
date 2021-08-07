@@ -42,7 +42,7 @@
 </div>
 
 ## 开原许可
-
+![](https://img.shields.io/github/license/stack-wuh/react-router-config)
 
 ## 启动项目
 1. master分支，有create-react-app创建的react项目
