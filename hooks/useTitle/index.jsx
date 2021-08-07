@@ -4,7 +4,7 @@ const DEFAULT_OPTIONS = {
   restoreOnMount: true,
   hiddenTitle: '(灬ꈍ ꈍ灬) 别走, 我在努力了',
   prefix: ' - wuh.site',
-  suffix: 'wuh.site - ',
+  suffix: '吴尒红 - ',
   allowPrefix: true,
   allowSuffix: true,
   allowCustom: true,

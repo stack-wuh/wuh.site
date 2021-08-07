@@ -53,7 +53,7 @@ const handlers = {
 }
 
 const initOps = {
-  src: 'https://src.wuh.site/media/renjianbuzhide.mp3',
+  src: 'https://web-origin.oss-cn-beijing.aliyuncs.com/media/renjianbuzhide.mp3',
   autoplay: false,
   ...handlers
 }
@@ -102,7 +102,13 @@ const getAudioVolume = value => Number((value/100).toFixed(2))
 
 const useAudio = (options = initOps) => {
   const audioRef = useRef()
-  audioRef.current = new createAudio({ src: 'https://src.wuh.site/media/renjianbuzhide.mp3' })
+  useEffect(() => {
+    console.log('asdasdasd == ', options)
+    document.onreadystatechange = () => {
+      console.log(document.readyState)
+    }    
+  }, [])
+  audioRef.current = new createAudio({ src: 'https://web-origin.oss-cn-beijing.aliyuncs.com/media/renjianbuzhide.mp3' })
   console.log('audio ref.current.audio', audioRef.current.audio)
 
   return {

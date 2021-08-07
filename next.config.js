@@ -15,4 +15,5 @@ module.exports = {
   },
   compress: true,
   generateEtags: false,
+  reactStrictMode: true
 }

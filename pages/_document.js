@@ -32,13 +32,13 @@ export default class MyDocument extends Document {
           <link href="/theme-light.css" type='text/css' rel='stylesheet' />
           <link href={iconLink} rel='stylesheet' title='iconfont' />
           <link href={iconColorLink} type='text/css' rel="stylesheet" />
-          <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+          <link rel="stylesheet" type="text/css" charSet="UTF-8" href="//web-origin.oss-cn-beijing.aliyuncs.com/styles/slick.min.css" />
+          <link rel="stylesheet" type="text/css" href="//web-origin.oss-cn-beijing.aliyuncs.com/styles/slick-theme.min.css" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"></link>
           <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"></link>
-          <link name='hljs' rel="stylesheet" href={`//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/${this.props.hljsTheme}.min.css`} />
-          <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+          <link name='hljs' rel="stylesheet" href={`//web-origin.oss-cn-beijing.aliyuncs.com/styles/${this.props.hljsTheme}.min.css`} />
+          <script src="//web-origin.oss-cn-beijing.aliyuncs.com/script/highlight.min.js"></script>
           <script>hljs.initHighlightingOnLoad();</script>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script

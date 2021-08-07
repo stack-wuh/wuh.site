@@ -30,7 +30,7 @@ const AudioProvider = ({
   const forceUpdate = useForceupdate()
 
   useEffect(() => {
-    audioRef.current = singleAudio({ src: 'https://src.wuh.site/media/renjianbuzhide.mp3' })
+    audioRef.current = singleAudio({ src: 'https://web-origin.oss-cn-beijing.aliyuncs.com/media/renjianbuzhide.mp3' })
     forceUpdate()
 
     return () => {
