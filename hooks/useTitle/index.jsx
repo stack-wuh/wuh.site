@@ -25,11 +25,12 @@ const useTitle = (options = DEFAULT_OPTIONS) => {
   
   useEffect(() => {
     if (visible === 'hidden') {
-      document.title =  `${options.allowSuffix && options.suffix}${options.hiddenTitle}${options.allowPrefix && options.prefix}`
+      setTimeout(() => {
+        document.title =  `${options.allowSuffix && options.suffix}${options.hiddenTitle}${options.allowPrefix && options.prefix}`
+      });
     }
-
     if (visible === 'visible') {
-      document.title = options.allowCustom ? (options.customTitle ?? DEFAULT_OPTIONS.customTitle) + options.prefix : raf.current
+      document.title = options.allowCustom ? (options.title ?? DEFAULT_OPTIONS.customTitle) + options.prefix : raf.current
     }
   }, [visible])
 

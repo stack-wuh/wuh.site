@@ -8,7 +8,7 @@ import { RecoilRoot } from "recoil";
 import "../public/animate.css";
 import "../public/nprogress.css";
 
-Router.events.on("routeChangeStart", () => {
+Router.events.on("routeChangeStart", (...props) => {
 	NProgress.start();
 });
 Router.events.on("routeChangeComplete", () => NProgress.done());

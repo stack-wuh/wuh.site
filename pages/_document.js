@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
 					<meta name="copyright" content="©Shadow" />
 					<meta name="renderer" content="webkit" />
 					<meta name="force-rendering" content="webkit" />
-					<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+					<meta httpEquiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
 					<meta httpEquiv="cache-control" content="no-cache"></meta>
 					<meta
 						name="viewport"
@@ -74,9 +74,9 @@ export default class MyDocument extends Document {
 					/>
 					<link
 						href={iconColorLink}
-						type="text/css"
-						title="iconfont-color"
+						title="iconfont"
 						rel="stylesheet"
+            type='text/css'
 					/>
 					<link
 						rel="stylesheet"

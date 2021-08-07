@@ -9,17 +9,19 @@
   },
   "popup_titles": ["富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善", "富强"],
   "pages_title": {
+    "prefix": " -- wuh.site",
+    "suffix": "吴尒红 · ",
     "default": {
       "title": "别太甘于平凡",
-      "hiddenTitle": "~~o(>_<)o ~~"
+      "hiddenTitle": "~~o(>_<)o ~~ 别走, 小可爱"
     },
     "post": {
       "title": "你一定也想起舞吧",
-      "hiddenTitle": "╮(╯﹏╰）╭我等你起舞"
+      "hiddenTitle": "╮(╯﹏╰）╭ 快来,我等你起舞"
     },
     "about": {
       "title": "于桃花源处寻我",
-      "hiddenTitle": "~~o(>_<)o ~~ 我已经在努力了"
+      "hiddenTitle": "~~o(>_<)o ~~ 别走,我已经在努力了"
     },
     "post_info": {
       "title": "柴门闻犬吠, 风雪夜归人",

@@ -6,6 +6,7 @@ import Theme from '@/components/button/theme'
 import Gallery from '@/components/button/gallery'
 import Popup from '@/components/popup'
 import Transition from '@/components/transition'
+import CustomMeta from '@/components/custom-meta'
 import dynaimc from 'next/dynamic'
 
 import { ConfigProvider } from '@/components/ConfigProvider'
@@ -23,7 +24,7 @@ const Layout = (Component) => {
     ...config
   }
 
-  const { customName = 'default' } = Component
+  const { customName = 'default', customTitle = false } = Component
 
   const RouterItemProps = config['pages_title'][customName]
 
@@ -43,7 +44,9 @@ const Layout = (Component) => {
 
             <div className={styles.body}>
               <Transition>
-                <Component {...props} routerItemProps={RouterItemProps} />
+                  <CustomMeta {...RouterItemProps} customName={customName} customTitle={customTitle}>
+                    <Component {...props} routerItemProps={RouterItemProps} />
+                  </CustomMeta>
               </Transition>
             </div>
           </div>

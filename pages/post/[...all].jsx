@@ -49,6 +49,7 @@ const Post = ({
 }
 
 Post.customName = 'post_info'
+Post.customTitle = true
 
 export async function getServerSideProps (context) {
   const [_, title] = context.query.all

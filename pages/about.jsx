@@ -3,17 +3,11 @@ import withLayout from "@/layout/withLayout";
 import LocationMap from "@/components/amap";
 import Divider from "@/components/divider";
 import Empty from "@/components/empty";
-import useTitle, { DEFAULT_OPTIONS as defaultOptions } from "@/hooks/useTitle";
 import Space from "@/components/space";
 
-const About = ({ routerItemProps }) => {
-	const { title, hiddenTitle } = routerItemProps;
-	useTitle({ ...defaultOptions, hiddenTitle });
+const About = () => {
 	return (
 		<>
-			<Head>
-				<title>{title}</title>
-			</Head>
 			<div className="about">
 				<div className="about-list">
 					<ul>
