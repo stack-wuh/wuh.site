@@ -28,6 +28,10 @@
       "hiddenTitle": "集韵增广, 多见多闻"
     }
   },
+  "pager": {
+    "next_text": "远眺山河",
+    "disabled_text": "空空如也"
+  },
   "icon_link": "//at.alicdn.com/t/font_1587964_7d319bqcbhx.css",
   "icon_color_link": "//at.alicdn.com/t/font_2595178_wa25xow6jmp.css",
   "default_theme_mode": "light",

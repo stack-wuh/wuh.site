@@ -1,9 +1,12 @@
+import config from '../../global.config'
+const { pager } = config
+
 const LoadmoreButton = ({
   onClick,
   disabled,
   children
 }) => {
-  const childrenWrapper = children ?? '远眺山河'
+  const childrenWrapper = children ?? (disabled ? pager.disabled_text : pager.next_text)
 
   return (<>
     <div className='button' onClick={onClick}>
