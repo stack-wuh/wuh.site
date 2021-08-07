@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from 'next/router'
 import dayjs from "dayjs";
 
 const PostTitle = ({
@@ -10,6 +11,7 @@ const PostTitle = ({
 	cover_img,
 	_id,
 }) => {
+  const router = useRouter()
 	const formatTitle = `${title} - wuh.site`;
 	const formatDate = dayjs(update_at).format("YYYY-MM-DD HH:MM:ss");
 	const keywordsStr = keywords?.toString() ?? title;
@@ -29,7 +31,7 @@ const PostTitle = ({
 
 				<meta property="og:type" content="article" />
 				<meta property="og:title" content={`${title} -- wuh.site`} />
-				<meta property="og:url" content={`${global.location?.href}`} />
+				<meta property="og:url" content={`https://wuh.site${router.asPath}`} />
 				<meta property="og:description" content={sub_title} />
 				<meta property="og:image" content={cover_img} />
 				<script>hljs.initHighlightingOnLoad();</script>
@@ -42,7 +44,7 @@ const PostTitle = ({
             "@type": "NewsArticle",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": ${global.location?.href}
+              "@id": "https://wuh.site${router.asPath}"
             },
             "headline": ${formatTitle},
             "author": "吴尒红 Shadow",
