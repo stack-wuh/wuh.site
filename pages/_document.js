@@ -43,9 +43,9 @@ export default class MyDocument extends Document {
           <link href="https://src.wuh.site/common/rss.xml" type="application/rss+xml" rel="alertnate" title="RSS" />
           <link href='/reset.css' type='text/css' rel='stylesheet' />
           <link href="/theme-light.css" type='text/css' rel='stylesheet' />
-          <link href={iconLink} rel='stylesheet' title='iconfont' />
-          <link href={iconColorLink} type='text/css' rel="stylesheet" />
-          <link rel="stylesheet" type="text/css" charSet="UTF-8" href="//web-origin.oss-cn-beijing.aliyuncs.com/styles/slick.min.css" />
+          <link href={iconLink} rel='stylesheet' type='text/css' title='iconfont' />
+          <link href={iconColorLink} type='text/css' title='iconfont-color' rel="stylesheet" />
+          <link rel="stylesheet" type="text/css" href="//web-origin.oss-cn-beijing.aliyuncs.com/styles/slick.min.css" />
           <link rel="stylesheet" type="text/css" href="//web-origin.oss-cn-beijing.aliyuncs.com/styles/slick-theme.min.css" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"></link>
