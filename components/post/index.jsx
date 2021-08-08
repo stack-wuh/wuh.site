@@ -54,6 +54,7 @@ const ItemRender = ({ title, sub_title, cover_img, origin, update_at }) => (<Lin
     </li>
     <style jsx global>{`
       .e-outer {
+        color: var(--color-base-8);
         text-decoration: none;
       }
       img {
@@ -115,6 +116,7 @@ const ItemRender = ({ title, sub_title, cover_img, origin, update_at }) => (<Lin
         display: flex;
         flex: 1;
         flex-direction: column;
+        color: var(--color-base-8) !important;
         transform: translateX(0);
         transition: transform .5s ease-in;
       }
@@ -125,7 +127,6 @@ const ItemRender = ({ title, sub_title, cover_img, origin, update_at }) => (<Lin
         margin-bottom: 0;
         margin-top: 0;
         line-height: var(--line-height-medium);
-        color: var(--color-text-primary) !important;
         transition: var(--transition-base);
       }
       .e-body__title:hover {
@@ -136,7 +137,6 @@ const ItemRender = ({ title, sub_title, cover_img, origin, update_at }) => (<Lin
         margin-top: var(--margin-base);
         font-size: 13px;
         line-height: 21px;
-        color: var(--color-base-8);
         transition: var(--transition-base);
       }
       .e-body__desc:hover {

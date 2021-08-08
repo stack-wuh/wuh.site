@@ -21,6 +21,6 @@ export async function getStaticProps() {
 	};
 }
 
-Home.customName = "default";
+Home.customName = "post";
 
 export default withLayout(Home);
