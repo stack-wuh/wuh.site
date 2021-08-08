@@ -72,3 +72,21 @@
 .fade-bgc-revert {
   animation: fade-bgc 2s ease-in reverse infinite;
 }
+
+@keyframes rotate-diagonal-2 {
+  0% {
+    -webkit-transform: rotate3d(-1, 1, 0, 0deg);
+            transform: rotate3d(-1, 1, 0, 0deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(-1, 1, 0, 180deg);
+            transform: rotate3d(-1, 1, 0, 180deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(-1, 1, 0, 360deg);
+            transform: rotate3d(-1, 1, 0, 360deg);
+  }
+}
+.rotate-diagonal-2 {
+  animation: rotate-diagonal-2 5s linear infinite;
+}

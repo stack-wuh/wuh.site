@@ -34,7 +34,7 @@ const childs = DEFAULT_LINKS.map(link => (<Link href={link.href} key={link.href}
 const Post = () => {
   return (<Empty goast>
     <div className="empty-post">
-      <i className="iconfont icon-hangkonghangtian-weixingsatellite ep--m-icon" />
+      <i className="iconfont-color icon-hangkonghangtian-weixingsatellite ep--m-icon" />
       <div>
         <p>o(╥﹏╥)o 非常遗憾, 这里没有你要找的信息</p>
         <p>我会继续努力完善相关内容 ヾ(=･ω･=)o</p>
