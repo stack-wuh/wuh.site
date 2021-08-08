@@ -28,7 +28,7 @@ const ImageLoader = ({ src, width, quality }) => {
   return `${src}?w=${width}&q=${quality || 75}`
 }
 
-const ITEM_THEME_MAPS = {
+export const ITEM_THEME_MAPS = {
   'Github': 'is-github',
   '语雀': 'is-yuque'
 }

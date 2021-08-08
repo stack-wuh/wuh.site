@@ -9,7 +9,8 @@
       "@/db/*": ["db/*"],
       "@/layout/*": ["layout/*"],
       "@/styles/*": ["styles/*"],
-      "@/store/*": ["store/*"]
+      "@/store/*": ["store/*"],
+      "@/constant/*": ["constant/*"]
     }
   }
 }

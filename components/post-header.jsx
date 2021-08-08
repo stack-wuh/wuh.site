@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { useRouter } from 'next/router'
 import dayjs from "dayjs";
+import Tag from '@/components/tag'
+import { ITEM_THEME_MAPS } from '@/components/post'
 
 const PostTitle = ({
 	title,
@@ -15,6 +17,10 @@ const PostTitle = ({
 	const formatTitle = `${title} - wuh.site`;
 	const formatDate = dayjs(update_at).format("YYYY-MM-DD HH:MM:ss");
 	const keywordsStr = keywords?.toString() ?? title;
+  const color_maps = {
+    Github: '#6f42c1',
+    '语雀': '#31cc79;'
+  }
 	return (
 		<>
 			<Head>
@@ -87,9 +93,8 @@ const PostTitle = ({
 				<h1 className="b__post-header--title">{title}</h1>
 				<p className="b__post-header--head">
 					<time>{formatDate}</time>&nbsp;&nbsp;
-					<span>
-						发布于 <strong>{origin}</strong>
-					</span>
+					<span>发布于&nbsp;&nbsp;</span>
+          <Tag color={color_maps[origin]}><strong>{origin}</strong></Tag>
 				</p>
 			</div>
 			<style jsx>{`
@@ -108,6 +113,8 @@ const PostTitle = ({
 					line-height: 36px;
 				}
 				.b__post-header--head {
+          display: flex;
+          align-items: flex-start;
 					margin: 0;
 					font-size: 14px;
 					line-height: 22px;
