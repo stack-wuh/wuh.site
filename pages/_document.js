@@ -4,114 +4,113 @@ import { icon as iconLink, iconColor as iconColorLink } from "@/lib/icon";
 import qs from "querystring";
 
 export default class MyDocument extends Document {
-	static async getInitialProps(ctx) {
-		const intialProps = await Document.getInitialProps(ctx);
-		const cookies = qs.parse(ctx.req.headers.cookie, ";");
-		const dataThemeMode = cookies[" data-theme-mode"];
-		const hljsTheme = dataThemeMode === "light" ? "github" : "github-dark";
+  static async getInitialProps(ctx) {
+    const intialProps = await Document.getInitialProps(ctx);
+    const cookies = qs.parse(ctx.req.headers.cookie, ";");
+    const dataThemeMode = cookies[" data-theme-mode"];
+    const hljsTheme = dataThemeMode === "light" ? "github" : "github-dark";
 
-		return {
-			...intialProps,
-			dataThemeMode,
-			hljsTheme,
-		};
-	}
+    return {
+      ...intialProps,
+      dataThemeMode,
+      hljsTheme,
+    };
+  }
 
-	render() {
-		return (
-			<Html lang="zh-cn" data-theme-mode={this.props.dataThemeMode}>
-				<Head>
-					<meta name="google" content="nositelinkssearchbox" />
-					<meta charSet="utf-8" />
-					<meta
-						name="keywords"
-						content="Shadow 博客, wuh.site, 吴尒红, React & Nodejs, 前端技术博客, Javascript 技术"
-					/>
-					<meta
-						name="description"
-						content="自小多才俊,向来志气高.别人有宝剑,我有笔如刀;"
-					/>
-					<meta
-						name="author"
-						content="shadow, shadow.wu, 吴尒红, wuh131420@foxmail.com"
-					/>
-					<meta name="copyright" content="©Shadow" />
-					<meta name="renderer" content="webkit" />
-					<meta name="force-rendering" content="webkit" />
-					<meta httpEquiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-					<meta httpEquiv="cache-control" content="no-cache"></meta>
-					<meta
-						name="viewport"
-						content="width=device-width,initial-scale=1.0,user-scalable=no"
-					/>
+  render() {
+    return (
+      <Html lang="zh-cn" data-theme-mode={this.props.dataThemeMode}>
+        <Head>
+          <meta charSet="utf-8" />
+          <meta
+            name="keywords"
+            content="Shadow 博客, wuh.site, 吴尒红, React & Nodejs, 前端技术博客, Javascript 技术"
+          />
+          <meta
+            name="description"
+            content="自小多才俊,向来志气高.别人有宝剑,我有笔如刀;"
+          />
+          <meta
+            name="author"
+            content="shadow, shadow.wu, 吴尒红, wuh131420@foxmail.com"
+          />
+          <meta name="copyright" content="©Shadow" />
+          <meta name="renderer" content="webkit" />
+          <meta name="force-rendering" content="webkit" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+          <meta httpEquiv="cache-control" content="no-cache"></meta>
+          <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1.0,user-scalable=no"
+          />
 
-					<meta property="og:type" content="webpage" />
-					<meta property="og:title" content="技术博客 -- wuh.site" />
-					<meta property="og:url" content="https://wuh.site" />
-					<meta
-						property="og:description"
-						content="前端技术博客, 分享我的知识"
-					/>
-					<meta
-						property="og:image"
-						content="https://src.wuh.site/common/avatar.jpg"
-					/>
-					<meta property="og:locale" content="zh-cn" />
+          <meta property="og:type" content="webpage" />
+          <meta property="og:title" content="技术博客-wuh.site" />
+          <meta property="og:url" content="https://wuh.site" />
+          <meta
+            property="og:description"
+            content="前端技术博客, 分享我的知识"
+          />
+          <meta
+            property="og:image"
+            content="https://src.wuh.site/common/avatar.jpg"
+          />
+          <meta property="og:locale" content="zh-cn" />
 
-					<link
-						href="https://src.wuh.site/common/rss.xml"
-						type="application/rss+xml"
-						rel="alertnate"
-						title="RSS"
-					/>
-					<link href="/reset.css" type="text/css" rel="stylesheet" />
-					<link href="/theme-light.css" type="text/css" rel="stylesheet" />
-					<link
-						href={iconLink}
-						rel="stylesheet"
-						type="text/css"
-						title="iconfont"
-					/>
-					<link
-						href={iconColorLink}
-						title="iconfont"
-						rel="stylesheet"
+          <link
+            href="https://src.wuh.site/common/rss.xml"
+            type="application/rss+xml"
+            rel="alertnate"
+            title="RSS"
+          />
+          <link href="/reset.css" type="text/css" rel="stylesheet" />
+          <link href="/theme-light.css" type="text/css" rel="stylesheet" />
+          <link
+            href={iconLink}
+            rel="stylesheet"
+            type="text/css"
+            title="iconfont"
+          />
+          <link
+            href={iconColorLink}
+            title="iconfont"
+            rel="stylesheet"
             type='text/css'
-					/>
-					<link
-						rel="stylesheet"
-						type="text/css"
-						href="//web-origin.oss-cn-beijing.aliyuncs.com/styles/slick.min.css"
-					/>
-					<link
-						rel="stylesheet"
-						type="text/css"
-						href="//web-origin.oss-cn-beijing.aliyuncs.com/styles/slick-theme.min.css"
-					/>
-					<link rel="preconnect" href="https://fonts.gstatic.com" />
-					<link
-						href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
-						rel="stylesheet"
-					></link>
-					<link
-						href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap"
-						rel="stylesheet"
-					></link>
-					<link
-						name="hljs"
-						rel="stylesheet"
-						href={`//web-origin.oss-cn-beijing.aliyuncs.com/styles/${this.props.hljsTheme}.min.css`}
-					/>
-					<script src="//web-origin.oss-cn-beijing.aliyuncs.com/script/highlight.min.js"></script>
-					<script>hljs.initHighlightingOnLoad();</script>
-					{/* Global Site Tag (gtag.js) - Google Analytics */}
-					<script
-						async
-						src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-					/>
-					<script
-						dangerouslySetInnerHTML={{
-							__html: `
+          />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="//web-origin.oss-cn-beijing.aliyuncs.com/styles/slick.min.css"
+          />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="//web-origin.oss-cn-beijing.aliyuncs.com/styles/slick-theme.min.css"
+          />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+          ></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+          ></link>
+          <link
+            name="hljs"
+            rel="stylesheet"
+            href={`//web-origin.oss-cn-beijing.aliyuncs.com/styles/${this.props.hljsTheme}.min.css`}
+          />
+          <script src="//web-origin.oss-cn-beijing.aliyuncs.com/script/highlight.min.js"></script>
+          <script>hljs.initHighlightingOnLoad();</script>
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -119,13 +118,13 @@ export default class MyDocument extends Document {
               page_path: window.location.pathname,
             });
           `,
-						}}
-					/>
-					{/* 结构化数据 -- 面包屑 */}
-					<script
-						type="application/ld+json"
-						dangerouslySetInnerHTML={{
-							__html: `
+            }}
+          />
+          {/* 结构化数据 -- 面包屑 */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: `
               [{
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
@@ -184,27 +183,27 @@ export default class MyDocument extends Document {
                   "item": "https://docs.wuh.site/"
                 }]
               }]`,
-						}}
-					/>
+            }}
+          />
 
-					{/* 结构化数据 -- LOGO */}
-					<script
-						type="application/ld+json"
-						dangerouslySetInnerHTML={{
-							__html: `{ 
+          {/* 结构化数据 -- LOGO */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: `{ 
               "@context": "https://schema.org",
               "@type": "Organization",
               "url": "https://wuh.site",
               "logo": "https://wuh.site/avatar.png"
             }`,
-						}}
-					/>
+            }}
+          />
 
-					{/* 结构化数据 -- Search */}
-					<script
-						type="application/ld+json"
-						dangerouslySetInnerHTML={{
-							__html: `{
+          {/* 结构化数据 -- Search */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: `{
               "@context": "https://schema.org",
               "@type": "WebSite",
               "url": "https://wuh.site",
@@ -214,14 +213,14 @@ export default class MyDocument extends Document {
                 "query-input": "required name=search_term_string"
               }
             }`,
-						}}
-					/>
+            }}
+          />
 
-					{/* 结构化数据 -- FAQ */}
-					<script
-						type="application/ld+json"
-						dangerouslySetInnerHTML={{
-							__html: `
+          {/* 结构化数据 -- FAQ */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: `
             {
               "@context": "https://schema.org",
               "@type": "FAQPage",
@@ -260,14 +259,14 @@ export default class MyDocument extends Document {
                   }
               ]
           }`,
-						}}
-					/>
-				</Head>
-				<body>
-					<Main />
-					<NextScript />
-				</body>
-			</Html>
-		);
-	}
+            }}
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
 }

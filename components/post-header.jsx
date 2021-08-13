@@ -2,7 +2,6 @@ import Head from "next/head";
 import { useRouter } from 'next/router'
 import dayjs from "dayjs";
 import Tag from '@/components/tag'
-import { ITEM_THEME_MAPS } from '@/components/post'
 
 const PostTitle = ({
 	title,
@@ -52,7 +51,7 @@ const PostTitle = ({
               "@type": "WebPage",
               "@id": "https://wuh.site${router.asPath}"
             },
-            "headline": ${formatTitle},
+            "headline": "${formatTitle}",
             "author": "吴尒红 Shadow",
             "image": [
               "${cover_img}"
@@ -82,8 +81,8 @@ const PostTitle = ({
               },{
                 "@type": "ListItem",
                 "position": 3,
-                "name": Home·集合·${title},
-                "item": "https://wuh.site/post/"+${_id}
+                "name": "Home·集合·${title}",
+                "item": "https://wuh.site/post/${dayjs(update_at).format('YYYY-MM')}/${title}"
               }]
             }`,
 					}}
