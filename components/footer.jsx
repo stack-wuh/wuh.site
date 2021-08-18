@@ -8,7 +8,7 @@ const Footer = ({
       <p className="f__row">{footer?.lf} | {footer?.main} | <strong>{footer?.rg}</strong></p>
       <p className='footer__copyright f__row'>
         <span>{footer?.copyright}</span>
-        <span>{footer?.record_varchar}</span>
+        <span><a href="https://beian.miit.gov.cn/" target="_blank">{footer?.record_varchar}</a></span>
       </p>
     </footer>
     <style jsx>{`
@@ -22,12 +22,7 @@ const Footer = ({
       }
       .f__row {
         margin: var(--margin-base-2) 0;
-      }
-
-      footer a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        position: relative;
       }
 
       .footer__copyright span:not(:last-of-type) {
