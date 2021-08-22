@@ -93,16 +93,12 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           ></link>
           <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap"
-            rel="stylesheet"
-          ></link>
-          <link
             name="hljs"
             rel="stylesheet"
             href={`//web-origin.oss-cn-beijing.aliyuncs.com/styles/${this.props.hljsTheme}.min.css`}
           />
-          <script src="//web-origin.oss-cn-beijing.aliyuncs.com/script/highlight.min.js"></script>
-          <script>hljs.initHighlightingOnLoad();</script>
+          <script src="//web-origin.oss-cn-beijing.aliyuncs.com/script/highlight.min.js" async></script>
+          <script src='/highlight.init.js' async></script>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async

@@ -39,7 +39,7 @@ const PostTitle = ({
 				<meta property="og:url" content={`https://wuh.site${router.asPath}`} />
 				<meta property="og:description" content={sub_title} />
 				<meta property="og:image" content={cover_img} />
-				<script>hljs.initHighlightingOnLoad();</script>
+				<script src='/highlight.init.js' defer></script>
 
 				<script
 					type="application/ld+json"
