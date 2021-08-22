@@ -7,6 +7,7 @@ import { RecoilRoot } from "recoil";
 
 import "../public/animate.css";
 import "../public/nprogress.css";
+import "../styles/layout-v2.css";
 
 Router.events.on("routeChangeStart", (...props) => {
 	NProgress.start();

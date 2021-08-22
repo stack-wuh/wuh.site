@@ -27,7 +27,7 @@ const LoadmoreButton = ({
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        height: 4em;
+        height: 3.6em;
         padding: var(--padding-base);
         padding-right: 0;
         border: 1px solid transparent;

@@ -1,4 +1,3 @@
-import Head from "next/head";
 import withLayout from "@/layout/withLayout";
 import LocationMap from "@/components/amap";
 import Divider from "@/components/divider";
@@ -149,7 +148,6 @@ const About = () => {
 				<style jsx>
 					{`
 						.about {
-							padding: 0 1rem;
 							font-size: var(--font-size-base);
 							overflow: hidden;
 						}

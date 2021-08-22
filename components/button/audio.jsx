@@ -30,6 +30,8 @@ const Controls = () => {
 
     <style jsx>{`
       .controls {
+        position: relative;
+        z-index: 999;
         width: auto;
         height: auto;
         padding: var(--padding-base);

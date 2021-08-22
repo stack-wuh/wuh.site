@@ -23,7 +23,13 @@ const Leave = () => {
       </Space>
     </Affix>
     <style jsx>{`
+      .leave {
+        position: relative;
+        z-index: 999;
+      }
       .btn {
+        position: relative;
+        z-index: 999;
         display: inline-block;
         width: 40px;
         height: 40px;

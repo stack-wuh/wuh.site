@@ -98,6 +98,8 @@ const Share = () => {
     </Affix>
     <style jsx global>{`
       .share {
+        position: relative;
+        z-index: 999;
         color: #555;
         font-size: 18px;
         opacity: 0.7;

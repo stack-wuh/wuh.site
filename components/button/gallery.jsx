@@ -52,7 +52,7 @@ const Gallery = () => {
     setvisibleDialog(!visibleDialog)
   }
 
-  return (<Affix bottom={100}>
+  return (<Affix className='gellary' bottom={100}>
     <Dialog 
       title="山河入梦来" 
       visible={visibleDialog} 
@@ -75,6 +75,7 @@ const Gallery = () => {
       <style jsx>{`
         .gallery {
           position: relative;
+          z-index: 999;
           width: 34px;
           height: 100px;
           text-align: center;

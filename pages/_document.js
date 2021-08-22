@@ -7,7 +7,7 @@ export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const intialProps = await Document.getInitialProps(ctx);
     const cookies = qs.parse(ctx.req.headers.cookie, ";");
-    const dataThemeMode = cookies[" data-theme-mode"];
+    const dataThemeMode = cookies[" data-theme-mode"] || 'light';
     const hljsTheme = dataThemeMode === "light" ? "github" : "github-dark";
 
     return {

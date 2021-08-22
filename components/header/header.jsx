@@ -44,7 +44,7 @@ const Header = ({
       .header .container {
         display: flex;
         align-items: center;
-        width: 80%;
+        width: 1060px;
         margin: 0 auto;
       }
 

@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 const Menu = () => {
   const router = useRouter()
 
-  return (<nav className={styles.menu} role='menubar'>
+  return (<nav id='nav' className={styles.menu} role='menubar'>
     <ActiveNav href="/" activeClassName="is-active">
       <a className='menu-item' href="/" role='menuitem' tabIndex="0">
         <i className='iconfont icon-code' />

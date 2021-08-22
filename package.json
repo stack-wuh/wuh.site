@@ -19,6 +19,8 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "ahooks": "^2.10.9",
+    "classnames": "^2.3.1",
     "compression-webpack-plugin": "^4.0.0",
     "dayjs": "^1.10.4",
     "isomorphic-fetch": "^3.0.0",
@@ -38,5 +40,8 @@
     "swr": "^0.4.2",
     "unified": "^9.2.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.13.2",
+    "styled-components": "^5.0.2"
+  }
 }

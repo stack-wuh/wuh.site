@@ -68,6 +68,10 @@ const Theme = ({
     </Affix>
 
     <style jsx>{`
+      .theme {
+        position: relative;
+        z-index: 999;
+      }
       .switch {
         width: 30px;
         height: 30px;

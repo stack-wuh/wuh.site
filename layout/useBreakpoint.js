@@ -1,6 +1,6 @@
 import { useMediaQuery } from 'react-responsive'
 
-const useBreakPOint = () => {
+const useBreakPoint = () => {
 
   const isMobileSmall = useMediaQuery({ query: '(max-width: 325px)' });
   const isMobileMid = useMediaQuery({ query: '(max-width: 375px)' });
@@ -16,8 +16,7 @@ const useBreakPOint = () => {
   const isXHDFloor = useMediaQuery({ query: '(max-width: 1441px)' });
   const isXHDCeil = useMediaQuery({ query: '(max-width: 4096px)' });
 
-  
-  return {
+  const config = {
     isMobileSmall,
     isMobileMid,
     isMobileFloor,
@@ -29,6 +28,8 @@ const useBreakPOint = () => {
     isXHDFloor,
     isXHDCeil
   }
+  
+  return config
 }
 
-export default useBreakPOint
+export default useBreakPoint
