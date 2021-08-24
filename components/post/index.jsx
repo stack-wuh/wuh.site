@@ -47,7 +47,7 @@ const ItemRender = ({ title, sub_title, cover_img, origin, update_at }) => (<Lin
           height={108} 
           alt="cover-lazy" />
       </div>
-      <div className="e-body">
+      <div className="e-body" data-origin={origin}>
         <h4 className='e-body__title'>{title}</h4>
         <p className='e-body__desc text-overflow-multi'>{sub_title}</p>
       </div>
@@ -70,6 +70,7 @@ const ItemRender = ({ title, sub_title, cover_img, origin, update_at }) => (<Lin
         border-radius: 3px;
         box-sizing: border-box;
         overflow: hidden;
+        transition: height .5s ease-in;
       }
       li.e-item::before {
         content: '';
@@ -90,7 +91,8 @@ const ItemRender = ({ title, sub_title, cover_img, origin, update_at }) => (<Lin
         transition: transform .5s ease-in;
         overflow: hidden;
       }
-      .e-item .e-left::after {
+      .e-item .e-left::after,
+      .mobile-main .e-body::after {
         content: attr(data-origin);
         display: inline-block;
         position: absolute;
@@ -104,6 +106,7 @@ const ItemRender = ({ title, sub_title, cover_img, origin, update_at }) => (<Lin
         text-align: center;
         color: #fff;
         font-size: 13px;
+        transition: var(--transition-base);
       }
       .is-github::after {
         background-color: #6f42c1 !important;
@@ -113,6 +116,7 @@ const ItemRender = ({ title, sub_title, cover_img, origin, update_at }) => (<Lin
       }
 
       .e-body {
+        position: relative;
         display: flex;
         flex: 1;
         flex-direction: column;
@@ -163,6 +167,18 @@ const ItemRender = ({ title, sub_title, cover_img, origin, update_at }) => (<Lin
       li.e-item:hover .e-body {
         transform: translateX(10px);
         transition: transform .5s ease-out;
+      }
+    `}</style>
+
+    <style jsx global>{`
+      .mobile-main .e-left{
+        display: none;
+        opacity: 0;
+        transition: var(--transition-base);
+      }
+      .mobile-main .e-item {
+        height: 105px;
+        transition: var(--transition-base);
       }
     `}</style>
     </a>

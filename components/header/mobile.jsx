@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Dialog from '@/components/dialog'
 import Menu from '@/components/menu'
+import Link from 'next/link'
 
 const Mobile = () => {
   const [visible, setvisible] = useState(false)
@@ -14,7 +15,9 @@ const Mobile = () => {
       </Dialog>
 			<div className="container">
         <a className='item'><span role='button' aria-hidden onClick={toggleVisible} className='item iconfont icon-all' /></a>
-        <a href="/" role='button' className='item' aria-hidden><span className='item iconfont icon-code title'>WUH.SITE</span></a>
+        <Link href="/">
+          <a href="/" role='button' className='item' aria-hidden><span className='item iconfont icon-code title'>WUH.SITE</span></a>
+        </Link>
         <span className='item'></span>
       </div>
 			<style jsx>{`

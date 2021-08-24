@@ -73,6 +73,11 @@
   padding-bottom: 0.66rem;
 }
 
+.layout .tablet-main {
+  padding: 0 1.33rem;
+  padding-bottom: 0.66rem;
+}
+
 .layout .is-pc {
   width: 1076px;
 }

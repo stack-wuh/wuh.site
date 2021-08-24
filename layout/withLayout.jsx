@@ -66,7 +66,7 @@ const Layout = (Component) => {
 							<div className="main-nav">
 								<Menu />
 							</div>
-							<div className="main">
+							<div className="main pc-main">
 								<Transition>
 									<CustomMeta
 										{...RouterItemProps}
@@ -87,15 +87,27 @@ const Layout = (Component) => {
 			);
 		}
 
-		// if (isTablet) {
-		// 	return (
-		// 		<Provider value={initialConfig} tag="tablet">
-		// 			<p>tablet</p>
-		// 		</Provider>
-		// 	);
-		// }
+		if (isTablet) {
+			return (
+				<Provider value={initialConfig} tag="tablet">
+					<div className="app-root">
+            <header className="header">
+              <MobileHeader />
+            </header>
+						<main className="tablet-main is-tablet">
+              <Transition>
+                <Component {...props} routerItemProps={RouterItemProps} />
+              </Transition>
+            </main>
+						<footer className="footer">
+							<Footer.Mobile />
+						</footer>
+					</div>
+				</Provider>
+			);
+		}
 
-		if (isTablet || isMobile) {
+		if (isMobile) {
 			return (
 				<Provider value={initialConfig} tag="mobile">
 					<div className="app-root">
