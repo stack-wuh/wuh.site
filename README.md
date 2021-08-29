@@ -69,6 +69,6 @@ docker pull shadowu/wuh.site:1.5.0
 docker-compose up -d
 
 # 或者使用docker指令启动镜像
-docker run --name nextjs_app_container -it -p 3100:3000 --restart=always shadowu/wuh.site:tag
+docker run --name nextjs_app_container -it -p 3100:3000 --restart=always shadowu/wuh.site:latest
 ```
 
