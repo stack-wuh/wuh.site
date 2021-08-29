@@ -7,11 +7,11 @@ WORKDIR /usr/src/app
 COPY package.json /usr/src/app
 
 
-RUN yarn install
+RUN yarn
 
 COPY . /usr/src/app
 
-ENV NODE_ENV production
+# ENV NODE_ENV production
 
 # COPY  ./app/public /usr/src/app/public
 # COPY  ./app/.next /usr/src/app/.next
@@ -24,8 +24,6 @@ USER nextjs
 
 EXPOSE 3000
 # EXPOSE 3100
-
-# CMD npm run build
 
 CMD npm run build
 

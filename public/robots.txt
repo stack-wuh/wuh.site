@@ -1,14 +1,3 @@
-# Example 1: Block only Googlebot
-User-agent: Googlebot
-Disallow: /
-Allow: *
-
-# Example 2: Block Googlebot and Adsbot
-User-agent: Googlebot
-User-agent: AdsBot-Google
-Disallow: /
-Allow: *
-
 # *
 User-agent: *
 Allow: /
@@ -23,6 +12,3 @@ Host: https://wuh.site
 
 # Sitemaps
 Sitemap: https://wuh.site/sitemap.xml
-Sitemap: https://wuh.site
-Sitemap: https://gitbook.wuh.site
-Sitemap: https://docs.wuh.site
