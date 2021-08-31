@@ -1,6 +1,7 @@
 const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
+  webpack5: false,
   images: {
     domains: ['wuh.site', 'src.wuh.site']
   },

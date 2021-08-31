@@ -6,9 +6,9 @@ echo '全部入参: ' $@
 echo $PWD
 
 version=$(node -e "(function () { 
-  const path = require('path')
-  const pathname = path.resolve(__dirname, './package.json')
-  console.log(require(pathname).version) 
+  // const path = require('path')
+  // const pathname = path.resolve(__dirname, './package.json')
+  console.log(require('../package.json').version) 
 })()")
 
 echo '当前版本: '$version
