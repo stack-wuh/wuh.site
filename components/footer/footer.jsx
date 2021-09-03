@@ -9,7 +9,7 @@ const Footer = ({
       <p className="f__row">{footer?.lf} | {footer?.main} | <strong>{footer?.rg}</strong></p>
       <p className='footer__copyright f__row'>
         <span>{footer?.copyright}</span>
-        <span><a href="https://beian.miit.gov.cn/" target="_blank">{footer?.record_varchar}</a></span>
+        <span><a href="https://beian.miit.gov.cn/" rel="noreferrer" target="_blank">{footer?.record_varchar}</a></span>
       </p>
     </div>
     <style jsx>{`

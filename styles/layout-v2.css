@@ -6,7 +6,9 @@
   padding-top: 6.33rem;
   box-sizing: border-box;
   overflow: hidden;
-  transition: var(--transition-base);
+  transition: width .5s cubic-bezier(0.075, 0.82, 0.165, 1)
+              height .5s cubic-bezier(0.075, 0.82, 0.165, 1)
+              border-radius .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .layout .app-root {
@@ -37,7 +39,7 @@
   padding: 0 1.5rem;
   margin: 0 auto;
   min-height: calc(100vh - 13.66rem);
-  transition: var(--transition-base);
+  transition: width .5s ease-in;
   overflow: hidden;
 }
 

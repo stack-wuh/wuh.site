@@ -59,7 +59,7 @@ const Carousel = ({
       allowFooter 
       && 
       (<div className="b-btn-wrapper">
-        <a className='btn btn-position iconfont icon-map' aria-disabled={!search} href={search} target="_blank" alt='position 地址信息' />
+        <a className='btn btn-position iconfont icon-map' aria-disabled={!search} href={search} target="_blank" rel="noreferrer" alt='position 地址信息' />
         <button onClick={() => slickRef.current.slickPrev() } className="btn btn-prev iconfont icon-arrow-lift" />
         <button onClick={() => slickRef.current.slickNext() } className="btn btn-next iconfont icon-arrow-right" />
         <button onClick={onClose} className="btn btn-close iconfont icon-searchclose" />

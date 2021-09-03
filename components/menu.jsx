@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import ActiveNav from '@/components/active-class-name/ActiveLink'
 import styles from '@/styles/layout.module.css'
 import { useRouter } from 'next/router'
@@ -21,13 +22,13 @@ const Menu = () => {
       </a>
     </ActiveNav>
     <ActiveNav href="https://github.com/stack-wuh/react-router-config/tree/v2" activeClassName="is-active">
-      <a className='menu-item is-link' rel="external" href="https://github.com/stack-wuh/react-router-config/tree/v2" target="_blank" role='menuitem' tabIndex='0'>
+      <a className='menu-item is-link' rel="external noreferrer" href="https://github.com/stack-wuh/react-router-config/tree/v2" target="_blank" role='menuitem' tabIndex='0'>
         <i className='iconfont icon-github' />
         <span>源代码</span>
       </a>
     </ActiveNav>
     <ActiveNav href="https://docs.wuh.site" activeClassName="is-active">
-      <a className='menu-item' rel="external" href="https://docs.wuh.site" target="_blank" role='menuitem' tabIndex='0'>
+      <a className='menu-item' rel="external noreferrer" href="https://docs.wuh.site" target="_blank" role='menuitem' tabIndex='0'>
         <i className='iconfont icon-insertlink' />
         <span>文档指南</span>
       </a>

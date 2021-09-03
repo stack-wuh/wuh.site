@@ -86,7 +86,7 @@ const Share = () => {
         className={`${share.icon} share-item is-focus`} 
         target="_blank"
         title={share.title}
-        rel="external next" />
+        rel="external next noreferrer" />
     </span>)
   })
 

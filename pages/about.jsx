@@ -30,7 +30,7 @@ const About = () => {
 									className="text-link"
 									href="https://music.163.com/#/playlist?id=565717308"
 									target="_blank"
-									rel="external"
+									rel="external noreferrer"
 									alt="网易云"
 								>
 									网抑云
@@ -42,7 +42,7 @@ const About = () => {
 							<span>
 								<a
 									className="text-link margin-right-4 text-none"
-									rel="external"
+									rel="external noreferrer"
 									href="https://weread.qq.com/misc/booklist/74791710_7kPtxUxu0?code=021d5oFa1GAFQA0MHTIa1F8ayy1d5oF1&state=ok_userinfo"
 									target="_blank"
 									alt="阅读"
@@ -52,7 +52,7 @@ const About = () => {
 								,&nbsp;
 								<a
 									className="text-link margin-right-4 text-none"
-									rel="external"
+									rel="external noreferrer"
 									href="https://www.douban.com/people/wuh-site/notes"
 									target="_blank"
 									alt="读书笔记"
@@ -62,7 +62,7 @@ const About = () => {
 								,&nbsp;
 								<a
 									className="text-link margin-right-4 text-none"
-									rel="external"
+									rel="external noreferrer"
 									href="https://www.douban.com/people/wuh-site/subject_doulists/book"
 									target="_blank"
 									alt="豆瓣-书单"
@@ -74,7 +74,7 @@ const About = () => {
 									小说, 推理, 人间词话&nbsp;&nbsp;
 									<a
 										className="margin-right-4 text-none iconfont-color iconlogo"
-										rel="external"
+										rel="external noreferrer"
 										href="https://gitbook.wuh.site"
 										target="_blank"
 										alt="gitbook"
@@ -87,7 +87,7 @@ const About = () => {
 							<Space size="10px" style={{ padding: 0, alignItems: "center" }}>
 								<a
 									href="https://www.github.com/stack-wuh"
-									rel="external"
+									rel="external noreferrer"
 									target="_blank"
 									className="icon-outer icon-outer-github"
 								>
@@ -96,7 +96,7 @@ const About = () => {
 								</a>
 								<a
 									href="https://twitter.com/wuh131420"
-									rel="external"
+									rel="external noreferrer"
 									target="_blank"
 									className="icon-outer icon-outer-twitter"
 								>
@@ -105,31 +105,31 @@ const About = () => {
 								</a>
 								<a
 									href="https://www.douban.com/people/wuh-site/"
-									rel="external"
+									rel="external noreferrer"
 									target="_blank"
 									className="icon-link iconfont-color icondouban-circle"
 								/>
 								<a
 									href="https://space.bilibili.com/18414227"
-									rel="external"
+									rel="external noreferrer"
 									target="_blank"
 									className="icon-link iconfont-color iconbilibili"
 								/>
 								<a
 									href="https://weibo.com/wuerhong"
-									rel="external"
+									rel="external noreferrer"
 									target="_blank"
 									className="icon-link iconfont-color iconsina-circle"
 								/>
 								<a
 									href="https://www.linkedin.com/in/shadow-wu"
-									rel="external"
+									rel="external noreferrer"
 									target="_blank"
 									className="icon-link iconfont-color iconlinkedin-circle"
 								/>
 								<a
 									href="https://www.zhihu.com/people/wuhong.site"
-									rel="external"
+									rel="external noreferrer"
 									target="_blank"
 									className="icon-link iconfont-color iconzhihu-circle"
 								/>

@@ -11,7 +11,7 @@ const Leave = () => {
     <Affix right="10vh" bottom="10vh">
       <Space direction='column' size={0} bordered style={{ padding: 0 }}>
         <button tabIndex='1' type='button' name='rss' className='btn is-focus'>
-          <a className='iconfont icon-Rss btn btn-a' href="https://src.wuh.site/common/rss.xml" target="_blank" rel="external" />
+          <a className='iconfont icon-Rss btn btn-a' href="https://src.wuh.site/common/rss.xml" target="_blank" rel="external noreferrer" />
         </button>
         <button tabIndex="1" type='button' name='up' className='btn is-focus' onClick={scrollTop}>
           <i className='iconfont icon-up' />

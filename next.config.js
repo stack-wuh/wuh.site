@@ -1,7 +1,12 @@
 const CompressionPlugin = require('compression-webpack-plugin')
+const withPreact = require('next-plugin-preact')
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
 
-module.exports = {
+let config = withPreact({
   webpack5: false,
+  distDir: 'output',
   images: {
     domains: ['wuh.site', 'src.wuh.site']
   },
@@ -16,5 +21,15 @@ module.exports = {
   },
   compress: true,
   generateEtags: false,
-  reactStrictMode: true
-}
+  poweredByHeader: false,
+  reactStrictMode: true,
+  trailingSlash: true,
+  productionBrowserSourceMaps: false,
+  httpAgentOptions: {
+    keepAlive: true
+  }
+})
+
+config = withBundleAnalyzer(config)
+
+module.exports = config

@@ -13,7 +13,7 @@ const Header = ({
       </Head>
       <div className='container'>
         <div className='lf'>
-          <Image src="/favicon.ico" width={50} height={50} alt="favicon" />
+          <Image src="/image/avatar.jpeg" width={50} height={50} alt="favicon" />
           <strong className='title'>{title}</strong>
         </div>
         <div className='empty'></div>

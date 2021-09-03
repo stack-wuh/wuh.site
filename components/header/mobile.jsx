@@ -1,7 +1,9 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import { useState } from 'react'
 import Dialog from '@/components/dialog'
 import Menu from '@/components/menu'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Mobile = () => {
   const [visible, setvisible] = useState(false)
@@ -16,7 +18,9 @@ const Mobile = () => {
 			<div className="container">
         <a className='item'><span role='button' aria-hidden onClick={toggleVisible} className='item iconfont icon-all' /></a>
         <Link href="/">
-          <a href="/" role='button' className='item' aria-hidden><span className='item iconfont icon-code title'>WUH.SITE</span></a>
+          <a href="/" role='button' className='item center' aria-hidden>
+            <Image width="40" height="40" src="/avatar.png" alt='logo' />
+          </a>
         </Link>
         <span className='item'></span>
       </div>
@@ -49,6 +53,9 @@ const Mobile = () => {
         .container .item {
           flex: 1;
           display: inline-block;
+        }
+        .center {
+          text-align: center;
         }
         .container .title {
           width: 80%;
