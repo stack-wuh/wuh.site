@@ -18,8 +18,7 @@
     "build": "next build",
     "start": "next start -p 5555",
     "lint": "next lint",
-    "postbuild": "next-sitemap",
-    "build:docker": "./bin/docker-push.sh",
+    "build:docker": "sh ./bin/docker-push.sh",
     "build:analysis": "cross-env ANALYZE=true yarn build",
     "deploy": "yarn build && ./bin/docker-push.sh"
   },
@@ -47,14 +46,12 @@
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
     "swr": "^0.4.2",
-    "unified": "^9.2.1",
-    "webpack-cli": "^4.8.0"
+    "unified": "^9.2.1"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.13.2",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
-    "styled-components": "^5.0.2",
-    "webpack": "^5.51.2"
+    "styled-components": "^5.0.2"
   }
 }
