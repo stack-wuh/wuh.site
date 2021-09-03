@@ -10,10 +10,10 @@
 
 # wuh.site
 ![](https://img.shields.io/github/v/release/stack-wuh/react-router-config)
-![](https://img.shields.io/github/commits-since/stack-wuh/react-router-config/v1.5.0/v2)
+![GitHub last commit](https://img.shields.io/github/last-commit/stack-wuh/wuh.site)
 ![](https://img.shields.io/github/languages/top/stack-wuh/react-router-config)
 ![](https://img.shields.io/github/contributors/stack-wuh/react-router-config)
-![](https://img.shields.io/github/last-commit/stack-wuh/react-router-config/v2)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/stack-wuh/wuh.site)
 ![](https://img.shields.io/github/package-json/version/stack-wuh/react-router-config/v2)
 ![](https://img.shields.io/github/repo-size/stack-wuh/react-router-config)
 ![](https://img.shields.io/github/package-json/keywords/stack-wuh/react-router-config/v2)
