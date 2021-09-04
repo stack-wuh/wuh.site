@@ -5,17 +5,21 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 let config = withPreact({
-  webpack5: false,
+  webpack5: true,
   distDir: 'output',
   images: {
     domains: ['wuh.site', 'src.wuh.site']
   },
-  webpack: (config) => {
+  webpack: (config, { isServer } ) => {
     config.plugins.push(new CompressionPlugin({
       algorithm: "gzip",
       test: /\.js$|\.css$/,
       threshold: 10240,
     }))
+
+    if (isServer) {
+      require('./lib/generator-sitemap')
+    }
 
     return config
   },

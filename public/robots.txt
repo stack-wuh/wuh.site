@@ -6,6 +6,9 @@ Disallow: /_next/static/chunks/*.js
 Disallow: /build/static/chunks/*.js
 Disallow: /build/static/chunks/*.css
 Disallow: /build/static/chunks/*.gz
+Disallow: /output/static/chunks/*.js
+Disallow: /output/static/chunks/*.css
+Disallow: /output/static/chunks/*.gz
 
 # Host
 Host: https://wuh.site

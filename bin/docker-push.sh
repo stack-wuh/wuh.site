@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo 'welcome to shell'
+echo '======= docker push pedding ========='
 
 echo '全部入参: ' $@
 echo $PWD
@@ -15,7 +15,7 @@ echo '当前版本: '$version
 
 docker build  -f Dockerfile -t 'shadowu/wuh.site:latest' -t 'shadowu/wuh.site:'$version .
 
-# docker push 'shadowu/wuh.site:latest'
-# docker push 'shadowu/wuh.site:'$version
+docker push 'shadowu/wuh.site:latest'
+docker push 'shadowu/wuh.site:'$version
 
 docker history shadowu/wuh.site:latest

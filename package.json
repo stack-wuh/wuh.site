@@ -18,9 +18,9 @@
     "build": "next build",
     "start": "next start -p 5555",
     "lint": "next lint",
-    "build:docker": "sh ./bin/docker-push.sh",
+    "build:docker": "sh -x ./bin/docker-push.sh",
     "build:analysis": "cross-env ANALYZE=true yarn build",
-    "deploy": "yarn build && ./bin/docker-push.sh"
+    "deploy": "yarn build && yarn build:docker"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^11.1.2",
