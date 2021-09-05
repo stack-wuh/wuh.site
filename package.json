@@ -1,7 +1,7 @@
 {
   "name": "next-blog-app",
   "version": "1.6.2",
-  "private": true,
+  "private": false,
   "keywords": [
     "react",
     "nextjs",
@@ -15,7 +15,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev -p 5555",
-    "build": "next build",
+    "build": "NODE_OPTIONS=--max-old-space-size=80000 next build",
     "start": "next start -p 5555",
     "lint": "next lint",
     "build:docker": "sh -x ./bin/docker-push.sh",
@@ -31,15 +31,16 @@
     "dayjs": "^1.10.4",
     "isomorphic-fetch": "^3.0.0",
     "next": "11.1.1",
+    "next-compose-plugins": "^2.2.1",
     "next-page-transitions": "^1.0.0-beta.2",
     "next-plugin-preact": "^3.0.6",
     "nprogress": "^0.2.0",
     "preact": "^10.5.14",
     "preact-render-to-string": "^5.1.19",
+    "progress-bar-webpack-plugin": "^2.1.0",
     "react": "npm:@preact/compat",
     "react-amap": "^1.2.8",
     "react-dom": "npm:@preact/compat",
-    "react-responsive": "^8.2.0",
     "react-slick": "^0.28.1",
     "react-transition-group": "^4.4.1",
     "recoil": "^0.2.0",
@@ -50,8 +51,13 @@
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.13.2",
+    "chalk": "^4.1.2",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
-    "styled-components": "^5.0.2"
+    "speed-measure-webpack-plugin": "^1.5.0",
+    "styled-components": "^5.0.2",
+    "webpack": "5.51.2",
+    "webpack-cli": "4.8.0",
+    "webpack-dev-server": "4.1.0"
   }
 }

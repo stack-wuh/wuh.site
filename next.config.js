@@ -3,18 +3,33 @@ const withPreact = require('next-plugin-preact')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const chalk = require('chalk')
+const nextComposePlugins = require('next-compose-plugins')
 
-let config = withPreact({
+let config = {
+  // Webpack 5 is enabled by default
+  // https://nextjs.org/docs/messages/webpack5
   webpack5: true,
-  distDir: 'output',
+  // distDir: 'output',
+  cleanDistDir: false,
   images: {
-    domains: ['wuh.site', 'src.wuh.site']
+    domains: ['wuh.site', 'src.wuh.site', 'cdn.wuh.site']
   },
-  webpack: (config, { isServer } ) => {
+  webpack: (config, {
+    isServer
+  }) => {
     config.plugins.push(new CompressionPlugin({
       algorithm: "gzip",
       test: /\.js$|\.css$/,
       threshold: 10240,
+      exclude: /\/node_modules/,
+      filename: '[name][contenthash].gz',
+      deleteOriginalAssets: false
+    }))
+    config.plugins.push(new ProgressBarPlugin({
+      format: `build [:bar] ${chalk.green.bold(':percent')} (:elapsed s, :current / :total) :msg`,
+      clear: false
     }))
 
     if (isServer) {
@@ -31,9 +46,10 @@ let config = withPreact({
   productionBrowserSourceMaps: false,
   httpAgentOptions: {
     keepAlive: true
+  },
+  experimental: {
+    pageDataCollectionTimeout: 1000
   }
-})
+}
 
-config = withBundleAnalyzer(config)
-
-module.exports = config
+module.exports = nextComposePlugins([withPreact, withBundleAnalyzer], config)

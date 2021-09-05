@@ -7,13 +7,14 @@ WORKDIR /usr/src/app
 COPY package.json /usr/src/app
 COPY yarn.lock /usr/src/app/
 
-RUN npm config set registry https://registry.npm.taobao.org && yarn 
+RUN npm config set registry https://registry.npm.taobao.org
+RUN yarn
 
 COPY . /usr/src/app
 
 RUN addgroup -g 1001 -S nodejs &&\
     adduser -S nextjs -u 1001 &&\
-    chown -R nextjs:nodejs /usr/src/app/output
+    chown -R nextjs:nodejs /usr/src/app/.next
 
 USER nextjs
 
