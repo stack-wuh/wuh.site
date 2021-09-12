@@ -1,2 +1,6 @@
-/node_modules
-/output/analyze
+node_modules
+output/analyze
+.next
+README.md
+docker-compose.yml
+bin/*

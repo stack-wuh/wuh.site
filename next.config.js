@@ -17,14 +17,16 @@ let config = {
     domains: ['wuh.site', 'src.wuh.site', 'cdn.wuh.site']
   },
   webpack: (config, {
-    isServer
+    isServer,
+    webpack
   }) => {
+    console.log(webpack.version)
     config.plugins.push(new CompressionPlugin({
       algorithm: "gzip",
       test: /\.js$|\.css$/,
       threshold: 10240,
       exclude: /\/node_modules/,
-      filename: '[name][contenthash].gz',
+      filename: '[name][fragment].gz',
       deleteOriginalAssets: false
     }))
     config.plugins.push(new ProgressBarPlugin({
@@ -53,3 +55,4 @@ let config = {
 }
 
 module.exports = nextComposePlugins([withPreact, withBundleAnalyzer], config)
+// module.exports = config
