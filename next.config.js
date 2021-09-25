@@ -10,7 +10,7 @@ const nextComposePlugins = require('next-compose-plugins')
 let config = {
   // Webpack 5 is enabled by default
   // https://nextjs.org/docs/messages/webpack5
-  webpack5: true,
+  webpack5: false,
   // distDir: 'output',
   cleanDistDir: false,
   images: {

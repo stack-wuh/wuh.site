@@ -26,7 +26,7 @@ const CustomMeta = ({
     if (!customTitle) {
       document.title = config.pages_title.suffix + newTitle + config.pages_title.prefix
     }
-  }, [visible, customName])
+  }, [visible, customName, title, hiddenTitle, customTitle])
 
   useEffect(() => {
     window.addEventListener('visibilitychange', () => setvisible(getVisible()))

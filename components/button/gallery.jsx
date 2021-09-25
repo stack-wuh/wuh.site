@@ -1,37 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Affix from '@/components/affix'
 import Dialog from '@/components/dialog'
 import Carousel from '@/components/carousel'
+import fetcher from '@/lib/fetch'
+import config from '@/pages/api/config'
 
 const AMAP_POSITION = 'https://ditu.amap.com/search?query=枝江市&city=440300&geoobj=113.879277|22.559614|113.889577|22.566063&zoom=10.36&rf=0&showBackBtn=1&noreplace=1'
-
-const galleryDataJSON = [
-  {
-    url: 'https://src.wuh.site/gallery/douban/p2658084408.webp',
-    alt: 'douban zhijiang',
-    title: '美丽湖北，美丽枝江',
-  },
-  {
-    url: 'https://src.wuh.site/gallery/douban/p2658084417.webp',
-    alt: 'douban zhijiang',
-    title: '美丽湖北，美丽枝江',
-  },
-  {
-    url: 'https://src.wuh.site/gallery/douban/p2658084425.webp',
-    alt: 'douban zhijiang',
-    title: '美丽湖北，美丽枝江',
-  },
-  {
-    url: 'https://src.wuh.site/gallery/douban/p2658084428.webp',
-    alt: 'douban zhijiang',
-    title: '美丽湖北，美丽枝江',
-  },
-  {
-    url: 'https://src.wuh.site/gallery/douban/p2658084436.webp',
-    alt: 'douban zhijiang',
-    title: '美丽湖北，美丽枝江',
-  }
-]
 
 const CarouselItem = ({ url, key }) => {
   const itemKey = key ?? url
@@ -47,10 +21,20 @@ const CarouselItem = ({ url, key }) => {
 
 const Gallery = () => {
   const [visibleDialog, setvisibleDialog] = useState(false)
+  const [gallery, setgallery] = useState(() => config.gallery.data.rows)
 
   const toggleVisible = () => {
     setvisibleDialog(!visibleDialog)
   }
+
+  useEffect(() => {
+    async function getGalleryList () {
+      const { data: { rows } } = await fetcher('/api/gallery')
+      setgallery(rows)
+    }
+
+    getGalleryList()
+  }, [])
 
   return (<Affix className='gellary' bottom={100}>
     <Dialog 
@@ -65,7 +49,7 @@ const Gallery = () => {
           search={AMAP_POSITION}
           allowFooter>
           {
-            galleryDataJSON.map(gallery => <CarouselItem url={gallery.url} key={gallery.alt} title={gallery.title} />)
+            gallery.map(gallery => <CarouselItem url={gallery.url} key={gallery.alt} title={gallery.title} />)
           }
         </Carousel>
     </Dialog>

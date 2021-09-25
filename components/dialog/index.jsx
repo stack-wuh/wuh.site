@@ -18,10 +18,7 @@ const Dialog = ({
     e.stopPropagation()
     onCancel()
   }
-	const header = () =>
-		headerRender ? (
-			headerRender()
-		) : (
+	const header = (
 			<>
 				<div className="dialog__header">
 					<span role="label" aria-label="Dialog" className="dh__title">
@@ -147,6 +144,7 @@ Dialog.defaultProps = {
 	onCancel() {},
 	allowCloseIcon: true,
 	title: "Dialog",
+  headerRender: null
 };
 
 export default typeof document !== "undefined" ? Dialog : () => null;

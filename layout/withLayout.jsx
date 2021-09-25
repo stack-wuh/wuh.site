@@ -36,6 +36,7 @@ const Layout = (Component) => {
 	const RouterItemProps = config["pages_title"][customName];
 
 	return (props) => {
+		// eslint-disable-next-line react-hooks/rules-of-hooks
 		const responsive = useResponsive();
 		const {
 			xs = false,
