@@ -26,7 +26,7 @@ let config = {
       test: /\.js$|\.css$/,
       threshold: 10240,
       exclude: /\/node_modules/,
-      filename: '[name][fragment].gz',
+      filename: '[name].gz',
       deleteOriginalAssets: false
     }))
     config.plugins.push(new ProgressBarPlugin({
@@ -50,7 +50,7 @@ let config = {
     keepAlive: true
   },
   experimental: {
-    pageDataCollectionTimeout: 1000
+    pageDataCollectionTimeout: 120000
   }
 }
 
