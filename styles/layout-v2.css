@@ -95,7 +95,7 @@
   right: 0;
   bottom: 0;
   top: 0;
-  background: url(../public/image/redux_mbox.jpeg) center center repeat;
+  background: url(../public/image/redux_mbox.webp) center center repeat;
   background-attachment: fixed;
   opacity: 0.15;
 }

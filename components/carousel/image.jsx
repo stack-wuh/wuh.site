@@ -1,23 +1,8 @@
 import Link from 'next/link'
 import Slider from 'react-slick'
-
-const sourceJSON = [
-  {
-    title: 'javascript中的继承',
-    cover: 'https://src.wuh.site/2021-05/2021-05-10-102644.png',
-    href: '/post/2021-05/javascript中的继承'
-  },
-  {
-    title: '搬山计划',
-    cover: 'https://src.wuh.site/2021-05/2021-05-07/cover.jpeg',
-    href: '/post/2021-05/搬山计划'
-  },
-  {
-    title: '2021年度总结',
-    cover: 'https://src.wuh.site/2021-04-07/sss.jpg',
-    href: '/post/2021-04/2021年度总结'
-  }
-]
+import { useEffect, useState } from 'react'
+import fetcher from '@/lib/fetch'
+import config from '@/pages/api/config.json'
 
 const SimpleArrow = () => {
   return <div className="arrow" style={{ display: 'none'}} />
@@ -96,6 +81,15 @@ const ImageItem = ({
 }
 
 const ImageLoop = () => {
+  const [list, setlist] = useState(() => config.banner.data.rows)
+  useEffect(() => {
+    async function fetchList () {
+      const { data: { rows } } = await fetcher('/api/banner')
+      setlist(rows)
+    }
+
+    fetchList()
+  }, [])
   const settings = {
     dots: true,
     autoplay: true,
@@ -110,7 +104,7 @@ const ImageLoop = () => {
   return <div className="b-text-loop">
     <Slider {...settings}>
       {
-        sourceJSON.map(source => <ImageItem key={source.title} {...source} />)
+        list.map(source => <ImageItem key={source.title} {...source} />)
       }
     </Slider>
     <style global jsx>{`
