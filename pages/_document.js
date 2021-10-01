@@ -39,10 +39,6 @@ export default class MyDocument extends Document {
           <meta name="force-rendering" content="webkit" />
           <meta httpEquiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
           <meta httpEquiv="cache-control" content="no-cache"></meta>
-          <meta
-            name="viewport"
-            content="width=device-width,initial-scale=1.0,user-scalable=no"
-          />
 
           <meta property="og:type" content="webpage" />
           <meta property="og:title" content="技术博客-wuh.site" />
@@ -63,8 +59,8 @@ export default class MyDocument extends Document {
             rel="alertnate"
             title="RSS"
           />
-          <link href="/reset.css" type="text/css" rel="stylesheet" />
-          <link href="/theme-light.css" type="text/css" rel="stylesheet" />
+          <link href="/reset.css" type="text/css" rel="stylesheet preconnect" />
+          <link href="/theme-light.css" type="text/css" rel="stylesheet preconnect" />
           <link
             href={iconLink}
             rel="stylesheet"
@@ -78,12 +74,12 @@ export default class MyDocument extends Document {
             type='text/css'
           />
           <link
-            rel="stylesheet"
+            rel="stylesheet preconnect"
             type="text/css"
             href="//web-origin.oss-cn-beijing.aliyuncs.com/styles/slick.min.css"
           />
           <link
-            rel="stylesheet"
+            rel="stylesheet preconnect"
             type="text/css"
             href="//web-origin.oss-cn-beijing.aliyuncs.com/styles/slick-theme.min.css"
           />
