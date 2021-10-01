@@ -1,6 +1,6 @@
 {
   "name": "next-blog-app",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "private": false,
   "keywords": [
     "react",
@@ -15,12 +15,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev -p 5555",
-    "build": "NODE_OPTIONS=--max-old-space-size=80000 next build",
+    "build": "node --max-old-space-size=2000 --trace-deprecation & next build",
     "start": "next start -p 5544",
     "lint": "next lint",
     "build:docker": "sh -x ./bin/docker-push.sh",
     "build:analysis": "cross-env ANALYZE=true yarn build",
-    "deploy": "yarn build && yarn build:docker"
+    "deploy": "yarn build && yarn build:docker",
+    "deploy:aliyun": "ssh aliyun 'bash -x' < ./bin/deploy.sh"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^11.1.2",
