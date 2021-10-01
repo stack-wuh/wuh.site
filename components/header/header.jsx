@@ -38,7 +38,7 @@ const Header = ({
         backdrop-filter: blur(5px); 
         border-bottom: 1px solid var(--color-border);
         box-shadow: 0 2px 2px 2px var(--color-shadow);
-        transition: var(--transition-base);
+        // transition: var(--transition-base);
       }
 
       .header .container {
@@ -52,7 +52,7 @@ const Header = ({
         font-size: 14px;
         color: var(--primary-color);
         font-weight: normal;
-        transition: var(--transition-base);
+        transition: color .5s ease-in;
       }
 
       .lf {

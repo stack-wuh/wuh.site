@@ -1,21 +1,16 @@
 import Footer from "@/components/footer/index";
-import Menu from "@/components/menu";
-import Leave from "@/components/button/leave";
-import Share from "@/components/button/share";
-import Theme from "@/components/button/theme";
-import Gallery from "@/components/button/gallery";
-import Popup from "@/components/popup";
 import Transition from "@/components/transition";
 import CustomMeta from "@/components/custom-meta";
 import dynaimc from "next/dynamic";
 import { ConfigProvider } from "@/components/ConfigProvider";
 import { useResponsive } from "ahooks";
-import MobileHeader from '@/components/header/mobile';
 import classNames from "classnames";
 
 import config from "../global.config.json";
 
-const DynaimcHeader = dynaimc(import("@/components/header/header"), { ssr: false });
+const DynaimcHeader = dynaimc(import("@/components/header/header"), {
+	ssr: false,
+});
 
 const Provider = ({ value, tag, children }) => (
 	<ConfigProvider value={value}>
@@ -50,14 +45,21 @@ const Layout = (Component) => {
 		const isPc = [lg, xl].includes(true);
 
 		if (isPc) {
+			const DynamicMenu = dynaimc(import("@/components/menu"));
+			const DynamicLelve = dynaimc(import("@/components/button/leave"));
+			const DynamicShare = dynaimc(import("@/components/button/share"));
+			const DynamicTheme = dynaimc(import("@/components/button/theme"));
+			const DynamicGallery = dynaimc(import("@/components/button/gallery"));
+			const DynamicPopup = dynaimc(import("@/components/popup"));
+
 			return (
 				<Provider value={initialConfig} tag="pc">
 					<div className="config">
-						<Leave />
-						<Share />
-						<Theme />
-						<Gallery />
-						<Popup />
+						<DynamicLelve />
+						<DynamicShare />
+						<DynamicTheme />
+						<DynamicGallery />
+						<DynamicPopup />
 					</div>
 					<div className="app-root">
 						<header className="header">
@@ -65,7 +67,7 @@ const Layout = (Component) => {
 						</header>
 						<main className="main-container is-pc">
 							<div className="main-nav">
-								<Menu />
+								<DynamicMenu />
 							</div>
 							<div className="main pc-main">
 								<Transition>
@@ -89,17 +91,22 @@ const Layout = (Component) => {
 		}
 
 		if (isTablet) {
+			const DynaimcMobileHeader = dynaimc(
+				import("@/components/header/mobile"),
+				{ ssr: false }
+			);
+
 			return (
 				<Provider value={initialConfig} tag="tablet">
 					<div className="app-root">
-            <header className="header">
-              <MobileHeader />
-            </header>
+						<header className="header">
+							<DynaimcMobileHeader />
+						</header>
 						<main className="tablet-main is-tablet">
-              <Transition>
-                <Component {...props} routerItemProps={RouterItemProps} />
-              </Transition>
-            </main>
+							<Transition>
+								<Component {...props} routerItemProps={RouterItemProps} />
+							</Transition>
+						</main>
 						<footer className="footer">
 							<Footer.Mobile />
 						</footer>
@@ -109,15 +116,20 @@ const Layout = (Component) => {
 		}
 
 		if (isMobile) {
+			const DynaimcMobileHeader = dynaimc(
+				import("@/components/header/mobile"),
+				{ ssr: false }
+			);
+
 			return (
 				<Provider value={initialConfig} tag="mobile">
 					<div className="app-root">
-            <header className="header">
-              <MobileHeader />
-            </header>
+						<header className="header">
+							<DynaimcMobileHeader />
+						</header>
 						<main className="mobile-main is-mobile">
-              <Component {...props} routerItemProps={RouterItemProps} />
-            </main>
+							<Component {...props} routerItemProps={RouterItemProps} />
+						</main>
 						<footer className="footer">
 							<Footer.Mobile />
 						</footer>
