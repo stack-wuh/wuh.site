@@ -1,49 +1,18 @@
-const CompressionPlugin = require('compression-webpack-plugin')
+const nextComposePlugins = require('next-compose-plugins')
 const withPreact = require('next-plugin-preact')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-const chalk = require('chalk')
-const nextComposePlugins = require('next-compose-plugins')
+const { green } = require('chalk')
 
+/** @type {import('next').NextConfig} */
 let config = {
-  // Webpack 5 is enabled by default
-  // https://nextjs.org/docs/messages/webpack5
-  webpack5: false,
-  // distDir: 'output',
-  cleanDistDir: false,
-  images: {
-    domains: ['wuh.site', 'src.wuh.site', 'cdn.wuh.site']
-  },
-  webpack: (config, {
-    isServer,
-    webpack
-  }) => {
-    console.log(webpack.version)
-    config.plugins.push(new CompressionPlugin({
-      algorithm: "gzip",
-      test: /\.js$|\.css$/,
-      threshold: 10240,
-      exclude: /\/node_modules/,
-      filename: '[name].gz',
-      deleteOriginalAssets: false
-    }))
-    config.plugins.push(new ProgressBarPlugin({
-      format: `build [:bar] ${chalk.green.bold(':percent')} (:elapsed s, :current / :total) :msg`,
-      clear: false
-    }))
-
-    if (isServer) {
-      require('./lib/generator-sitemap')
-    }
-
-    return config
-  },
+  reactStrictMode: true,
+  webpack5: true,
   compress: true,
   generateEtags: false,
   poweredByHeader: false,
-  reactStrictMode: true,
   trailingSlash: true,
   productionBrowserSourceMaps: false,
   httpAgentOptions: {
@@ -51,8 +20,15 @@ let config = {
   },
   experimental: {
     pageDataCollectionTimeout: 120000
+  },
+  webpack: (config) => {
+    config.plugins.push(new ProgressBarPlugin({
+      format: `build [:bar] ${green.bold(':percent')} (:elapsed s, :current / :total) :msg`,
+      clear: false
+    }))
+
+    return config
   }
 }
 
 module.exports = nextComposePlugins([withPreact, withBundleAnalyzer], config)
-// module.exports = config

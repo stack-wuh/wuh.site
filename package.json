@@ -1,65 +1,34 @@
 {
-  "name": "next-blog-app",
-  "version": "1.7.0",
+  "name": "wuh.site",
+  "version": "2.0.0",
   "private": false,
-  "keywords": [
-    "react",
-    "nextjs",
-    "docker",
-    "swr",
-    "cssinjs",
-    "recoil",
-    "markdown",
-    "dayjs"
-  ],
   "license": "MIT",
   "scripts": {
-    "dev": "next dev -p 5555",
-    "build": "node --max-old-space-size=2000 --trace-deprecation & next build",
-    "start": "next start -p 5544",
-    "lint": "next lint",
-    "build:docker": "sh -x ./bin/docker-push.sh",
-    "build:analysis": "cross-env ANALYZE=true yarn build",
-    "deploy": "yarn build && yarn build:docker",
-    "deploy:aliyun": "ssh aliyun 'bash -x' < ./bin/deploy.sh"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^11.1.2",
-    "ahooks": "^2.10.9",
-    "classnames": "^2.3.1",
-    "compression-webpack-plugin": "^4.0.0",
-    "cross-env": "^7.0.3",
-    "dayjs": "^1.10.4",
-    "isomorphic-fetch": "^3.0.0",
-    "next": "11.1.1",
-    "next-compose-plugins": "^2.2.1",
-    "next-page-transitions": "^1.0.0-beta.2",
-    "next-plugin-preact": "^3.0.6",
-    "nprogress": "^0.2.0",
+    "@babel/preset-env": "^7.15.6",
+    "next": "11.1.2",
     "preact": "^10.5.14",
     "preact-render-to-string": "^5.1.19",
-    "progress-bar-webpack-plugin": "^2.1.0",
     "react": "npm:@preact/compat",
-    "react-amap": "^1.2.8",
-    "react-dom": "npm:@preact/compat",
-    "react-slick": "^0.28.1",
-    "react-transition-group": "^4.4.1",
-    "recoil": "^0.2.0",
-    "remark": "^13.0.0",
-    "remark-html": "^13.0.2",
-    "swr": "^0.4.2",
-    "unified": "^9.2.1"
+    "react-dom": "npm:@preact/compat"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.13.2",
+    "@babel/core": "^7.15.5",
+    "@next/bundle-analyzer": "^11.1.2",
+    "@types/react": "17.0.26",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
     "chalk": "^4.1.2",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
-    "speed-measure-webpack-plugin": "^1.5.0",
-    "styled-components": "^5.0.2",
-    "webpack": "5.51.1"
-  },
-  "engines": { 
-    "node": "^10 || ^12 || >=14" 
+    "next-compose-plugins": "^2.2.1",
+    "next-plugin-preact": "^3.0.6",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "typescript": "4.4.3"
   }
 }
