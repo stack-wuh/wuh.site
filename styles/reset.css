@@ -1,5 +1,51 @@
-html,
-body,
-main {
-  color: red;
+html, body, #__next {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: var(--color-base-9);
+  background-color: var(--color-background-primary);
+  font-family: '微软雅黑',-apple-system;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+strong {
+  font-weight: var(--font-weight-large);
+}
+small {
+  font-weight: var(--font-weight-regular);
+}
+
+p {
+  margin: var(--margin-base-2) 0;
+}
+
+[data-theme-mode='light'] a{
+  color: var(--color-5);
+}
+[data-theme-mode='dark'] a{
+  color: var(--color-1);
+}
+
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-overflow-multi {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.icon-symbol {
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
