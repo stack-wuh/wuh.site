@@ -5,7 +5,7 @@ html, body, #__next {
   font-size: 14px;
   color: var(--color-base-9);
   background-color: var(--color-background-primary);
-  font-family: '微软雅黑',-apple-system;
+  font-family: 'Roboto Slab';
   box-sizing: border-box;
 }
 

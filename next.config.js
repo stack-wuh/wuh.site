@@ -4,7 +4,9 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-const { green } = require('chalk')
+const {
+  green
+} = require('chalk')
 
 /** @type {import('next').NextConfig} */
 let config = {
@@ -13,7 +15,7 @@ let config = {
   compress: true,
   generateEtags: false,
   poweredByHeader: false,
-  trailingSlash: true,
+  trailingSlash: false,
   productionBrowserSourceMaps: false,
   httpAgentOptions: {
     keepAlive: true

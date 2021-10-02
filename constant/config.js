@@ -24,14 +24,16 @@ export const config = {
   popupLabels: ["富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善", "富强"],
   pagesConfig: {
     prefix: '-- wuh.site',
-    suffix: 'shadow'
+    suffix: 'shadow * '
   },
   external: {
     icons: [
       "//at.alicdn.com/t/font_1587964_7d319bqcbhx.css",
       "//at.alicdn.com/t/font_2595178_wa25xow6jmp.css"
     ],
-    fonts: []
+    fonts: [
+      '//fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap'
+    ]
   },
   stateLocale: {
     options: {

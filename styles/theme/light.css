@@ -1,86 +1,64 @@
-:root {
-  --padding-base: 8px;
-  --margin-base: 8px;
-  --border-radius-base: 3px;
-  --border-width-base: 1px;
-  --transition-base: all .5s ease;
-  --font-size-base: 14px;
-  --font-weight-base: 400;
-  --line-height-base: 22px;
-  --color-default: #0875e6;
-  --color-text-base: ##a6a6a6;
+[data-theme-mode='light'] {
+   /** 
+    Color Light List 
+    定义全局使用的色彩，包括 文字，border
+  **/
+  --color-base: #ebecec;
+  --color-base-10: #0d0d0d;
+  --color-base-9: #333333;
+  --color-base-8: #595959;
+  --color-base-7: #808080;
+  --color-base-6: #a6a6a6;
+  --color-base-5: #b3b3b3;
+  --color-base-4: #bfbfbf;
+  --color-base-3: #cccccc;
+  --color-base-2: #d9d9d9;
+  --color-base-1: #e6e6e6;
 
+  /** 中性色彩 **/
+  --color-gray-1: #ffffff;
+  --color-gray-2: #fafafa;
+  --color-gray-3: #f5f5f5;
+  --color-gray-4: #f0f0f0;
+  --color-gray-5: #d9d9d9;
+  --color-gray-6: #bfbfbf;
 
-  /* Padding */
-  --padding-base-2: calc(2 * var(--padding-base));
-  --padding-base-3: calc(3 * var(--padding-base));
-  --padding-base-4: calc(4 * var(--padding-base));
+ /*** 文字类型 ***/
+  --color-text-primary: #24292e;
+  --color-text-less: #333;
 
-  /* Margin */
-  --margin-base-2: calc(2 * var(--margin-base));
-  --margin-base-3: calc(3 * var(--margin-base));
-  --margin-base-4: calc(4 * var(--margin-base));
+  /**** 背景色 *****/
+  /* --color-background-primary: var(--color-base); */
+  --color-background-revert: #fff;
 
-  /** Font **/
-  --font-weight-regular: var(--font-size-base);
-  --font-weight-medium: var(calc(--font-size-base + 100));
-  --font-weight-large: var(calc(--font-size-base + 200));
+  /****** Header ******/
+  --color-background-header: rgb(255 255 255 / 52%);
+  --color-shadow: rgb(238 238 238 / 30%);
 
-  --font-size-regular: var(--font-size-base);
-  --font-size-medium: calc(var(--font-size-base) + 2px);
-  --font-size-large: calc(var(--font-size-base) + 4px);
-  --font-size-less: calc(var(--font-size-base) - 2px);
+  /** Alert **/
+  --alert-color-background: var(--color-yellow-4);
 
+  /*****  Border  ****/
+  --color-border: #eee;
+  --color-border-pain: rgb(255 255 255);
 
-  /** Line Height **/
-  --line-height-regular: calc(var(--font-size-regular) + 10 - 2);
-  --line-height-medium: calc(var(--font-size-medium) + 10 - 2);
-  --line-height-large: calc(var(--font-size-large) + 10 - 2);
+  /* Button */
+  --color-background-button: #fff;
+  --color-default-button: #333;
+  --loadmore-button-large: var(--color-yellow-9);
+  --loadmore-button-medium: var(--color-yellow-8);
+  --loadmore-button-regular: var(--color-yellow-7);
 
-  /** Border **/
-  --border-base: var(--border-width-base) solid var(--color-base-4);
+  /** Link **/
+  --color-text-link: var(--color-7);
 
-  /** Color List **/
-  --color-1: #e6f6ff;
-  --color-2: #abdfff;
-  --color-3: #82cbff;
-  --color-4: #59b4ff;
-  --color-5: #2e93f2;
-  --color-7: #0056bf;
-  --color-8: #004099;
-  --color-9: #002c73;
-  --color-10: #001b4d;
+  --contrast-img: contrast(1);
 
-  /** Sunrise Colors **/
-  --color-yellow-1: #feffe6;
-  --color-yellow-2: #ffffb8;
-  --color-yellow-3: #fffb8f;
-  --color-yellow-4: #fff566;
-  --color-yellow-5: #ffec3d;
-  --color-yellow-6: #fadb14;
-  --color-yellow-7: #d4b106;
-  --color-yellow-8: #ad8b00;
-  --color-yellow-9: #876800;
-  --color-yellow-10: #614700;
-
-  /** Geekblue Colors **/
-  --color-geekblue-1: #f0f5ff;
-  --color-geekblue-2: #d6e4ff;
-  --color-geekblue-3: #adc6ff;
-  --color-geekblue-4: #85a5ff;
-  --color-geekblue-5: #597ef7;
-  --color-geekblue-6: #2f54eb;
-  --color-geekblue-7: #1d39c4;
-  --color-geekblue-8: #10239e;
-  --color-geekblue-9: #061178;
-  --color-geekblue-10: #030852;
-
-
-  /** Bacgkround **/
-  --color-background-primary: var(--color-base);
+  /** opacity **/
+  --background-text-color: rgba(0, 0, 0, .2);
 
   /** Nav **/
-  --nav-color-text: var(--color-base-8);
-  --nav-color-background-active: var(--color-base-2);
-
+  --nav-color-text: #999;
+  --nav-color-background: #ccc;
+  --nav-color-background-active: #ccc;
 }

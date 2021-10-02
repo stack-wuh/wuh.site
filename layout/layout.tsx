@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import MenuNav from '@/components/menu/nav'
 import Response from './response'
 
 const BackgroundWrapper: React.FC = () => (<div className='background'></div>)
@@ -15,7 +16,7 @@ function Layout<T>(Component: React.ComponentType<T>) {
       <Header />
       <main className="main-container">
         <div className="main-nav">
-          nav
+          <MenuNav />
         </div>
         <div className="main main-pc">
           <Component {...props} />
