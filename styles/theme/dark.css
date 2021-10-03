@@ -31,7 +31,7 @@
   --color-text-less: #b3b8bd;
 
   /******* 背景色 *******/
-  /* --color-background-primary: var(--color-base); */
+  --color-background-primary: var(--color-base);
   --color-background-revert: #fffcfa;
 
   /******** Header *********/

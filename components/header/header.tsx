@@ -1,4 +1,4 @@
-import Image from '@/components/image/image'
+import Image from 'next/image'
 import withConfig from '@/hooks/withConfig'
 
 const Header = () => {

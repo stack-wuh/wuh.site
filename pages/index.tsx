@@ -1,26 +1,51 @@
 import withLayout from '@/layout/layout'
-import { useCookieState } from 'ahooks'
-import withConfig from '@/hooks/withConfig'
+import fetcher from '@/lib/fetch'
+import { API_ARTICLE_LIST } from '@/constant/api'
+import { PostList } from '@/components/post'
+import { SWRConfig } from 'swr'
 
-const Home = () => {
-  const config = withConfig()
-  const [theme, setTheme] = useCookieState('theme', config?.stateLocale.options)
-  const handleToggle = () => {
-    const val = theme === 'light' ? 'dark' : 'light'
-    setTheme(val)
+export interface IHomeItemProps {
+  state: string,
+  type: number,
+  title: string,
+  sub_title: string,
+  update_at: string,
+  types: string[],
+  keywords: string[],
+  origin: string,
+  cover_img: string,
+  look: string,
+  location: string,
+  id: null
+}
+export type IHomeProps = {
+  initialData: {
+    code: number,
+    msg: string,
+    data: {
+      count: number,
+      rows: IHomeItemProps[]
+    }
   }
-  return (
-    <div>
-      <h1>hello, Home page.{theme}</h1>
+}
 
-      <button onClick={handleToggle}>clicked</button>
-      <style jsx>{`
-        div {
-          height: 140vh;
-        }
-      `}</style>
-    </div>
-  )
+const Home = (props: IHomeProps) => {
+  const { initialData } = props
+  return <div className="ww_home">
+    <SWRConfig>
+      <PostList initialData={initialData} />
+    </SWRConfig>
+  </div>
+}
+
+export async function getStaticProps() {
+  const data = await fetcher(API_ARTICLE_LIST)
+
+  return {
+    props: {
+      initialData: data
+    }
+  }
 }
 
 export default withLayout(Home)

@@ -20,6 +20,10 @@ let config = {
   httpAgentOptions: {
     keepAlive: true
   },
+  images: {
+    domains: ['src.wuh.site'],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
   experimental: {
     pageDataCollectionTimeout: 120000
   },

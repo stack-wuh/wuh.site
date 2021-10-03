@@ -4,9 +4,7 @@
   padding-top: 6.33rem;
   box-sizing: border-box;
   overflow: hidden;
-  transition: width .5s cubic-bezier(0.075, 0.82, 0.165, 1)
-              height .5s cubic-bezier(0.075, 0.82, 0.165, 1)
-              border-radius .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: width .5s cubic-bezier(0.075, 0.82, 0.165, 1) height .5s cubic-bezier(0.075, 0.82, 0.165, 1) border-radius .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .layout .app-root {
@@ -96,11 +94,10 @@
   background: url(../public/images/redux_mbox.webp) center center repeat;
   background-attachment: fixed;
   opacity: 0.15;
-  z-index: -1;
 }
 
 @media screen and (max-width: 979px) {
-  .layout .main-nav{
+  .layout .main-nav {
     visibility: hidden;
     position: absolute;
     z-index: -1;
@@ -108,9 +105,37 @@
     transform: translateX(-1000%);
     transition: var(--transition-base);
   }
+
   .layout .main-aside {
     visibility: hidden;
     position: absolute;
     opacity: 0;
   }
+}
+
+
+.transition-line {
+  background: linear-gradient(90deg, #ffec3d, #0ebeff);
+  background-size: 0 3px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: 1s all;
+}
+
+.transition-line:hover {
+  background-size: 100% 3px;
+}
+
+.transition-text {
+  background: linear-gradient(90deg, var(--color-primary-5), var(--color-primary-3));
+  background-size: 0 100px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-clip: text;
+  color: inherit;
+  transition: .5s all linear;
+}
+.transition-text:hover {
+  background-size: 100% 100%;
+  color: transparent;
 }
