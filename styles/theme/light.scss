@@ -1,5 +1,5 @@
 [data-theme-mode='light'] {
-   /** 
+  /** 
     Color Light List 
     定义全局使用的色彩，包括 文字，border
   **/
@@ -23,7 +23,7 @@
   --color-gray-5: #d9d9d9;
   --color-gray-6: #bfbfbf;
 
- /*** 文字类型 ***/
+  /*** 文字类型 ***/
   --color-text-primary: #24292e;
   --color-text-less: #333;
 
@@ -60,7 +60,7 @@
 
   /** Nav **/
   --nav-color-text: #999;
-  --nav-color-background-active: var(--color-gray-4);
+  --nav-color-background-active: var(--color-gray-5);
 
   /** Disabled **/
   --color-disabled: #999;
