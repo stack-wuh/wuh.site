@@ -39,7 +39,7 @@
   --alert-color-background: var(--color-yellow-4);
 
   /*****  Border  ****/
-  --color-border: #eee;
+  --color-border: var(--color-base-3);
   --color-border-pain: rgb(255 255 255);
 
   /* Button */
