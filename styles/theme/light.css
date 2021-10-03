@@ -61,4 +61,8 @@
   /** Nav **/
   --nav-color-text: #999;
   --nav-color-background-active: var(--color-gray-4);
+
+  /** Disabled **/
+  --color-disabled: #999;
+  --color-disabled-less: rgba(153, 153, 153, .5);
 }

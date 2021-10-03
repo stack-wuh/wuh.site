@@ -25,7 +25,8 @@ const Button = (props: ButtonTypeProps) => {
     size = 'middle',
     icon,
     iconWithColor = false,
-    type = 'default'
+    type = 'default',
+    disabled = false
   } = props
 
   const classNames = classnames('ww_button', {
@@ -35,6 +36,7 @@ const Button = (props: ButtonTypeProps) => {
   const btnClassNames = classnames('ww_button__inner', {
     [`is-${size}`]: size,
     [`is-${type}`]: type,
+    [`is-disabled`]: disabled
   })
 
   const iconClassNames = classnames({

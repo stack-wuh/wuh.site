@@ -94,3 +94,14 @@
   position: relative;
   width: 100%;
 }
+
+.is-disabled {
+  color: var(--color-disabled) !important;
+  border-color: var(--color-disabled-less) !important;
+
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
+.ww_button__loadmore {}

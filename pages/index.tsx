@@ -35,7 +35,6 @@ const Home = (props: IHomeProps) => {
   return <div className="ww_home">
     <SWRConfig>
       <PostList initialData={initialData} />
-      <Button type='link' icon='icon-affix-left' onClick={() => { console.log('btn has clicked') }}>h</Button>
     </SWRConfig>
   </div>
 }

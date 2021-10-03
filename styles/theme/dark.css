@@ -15,17 +15,17 @@
   --color-base-2: #454545;
   --color-base-1: #2c2b2b;
 
-   /** 中性色彩 **/
-   --color-gray-1: #000000;
-   --color-gray-2: #141414;
-   --color-gray-3: #1f1f1f;
-   --color-gray-4: #262626;
-   --color-gray-5: #434343;
-   --color-gray-6: #8c8c8c;
+  /** 中性色彩 **/
+  --color-gray-1: #000000;
+  --color-gray-2: #141414;
+  --color-gray-3: #1f1f1f;
+  --color-gray-4: #262626;
+  --color-gray-5: #434343;
+  --color-gray-6: #8c8c8c;
 
 
   --primary-color: #f0f6fc;
-  
+
   /******* 文字类型 *******/
   --color-text-primary: #58a6ff;
   --color-text-less: #b3b8bd;
@@ -59,6 +59,10 @@
 
   --contrast-img: contrast(.85);
 
-    /** opacity **/
-    --background-text-color: rgba(255, 255, 225, .2);
+  /** opacity **/
+  --background-text-color: rgba(255, 255, 225, .2);
+
+  /** Disabled **/
+  --color-disabled: #999;
+  --color-disabled-less: rgba(153, 153, 153, .5);
 }
