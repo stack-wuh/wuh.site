@@ -2,7 +2,6 @@ import withLayout from '@/layout/layout'
 import fetcher from '@/lib/fetch'
 import { API_ARTICLE_LIST } from '@/constant/api'
 import { PostList } from '@/components/post'
-import { Button } from '@/components/button'
 import { SWRConfig } from 'swr'
 
 export interface IHomeItemProps {

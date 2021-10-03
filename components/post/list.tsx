@@ -2,6 +2,8 @@ import * as React from "react";
 import Link from 'next/link';
 import { IHomeProps, IHomeItemProps } from "@/pages/index";
 import Image from '@/components/image/image'
+import { LoadMoreButton } from '@/components/button'
+import withConfig from "@/hooks/withConfig";
 import fetcher from "@/lib/fetch";
 import useSWRInfinite from "swr/infinite";
 
@@ -63,6 +65,7 @@ const Item = (props: IHomeItemProps) => {
 
 const List = (props: IHomeProps) => {
   const { initialData } = props;
+  const config = withConfig()
   const { hits, size, setSize, allowLoadMore } = usePostPages(initialData);
 
   const handleFetchNextPage = () => {
@@ -76,7 +79,9 @@ const List = (props: IHomeProps) => {
       {(hits || initialData.data.rows).map((item: IHomeItemProps) => (
         <Item {...item} key={item.title} />
       ))}
-      <button onClick={handleFetchNextPage}>load more</button>
+      <LoadMoreButton disabled={!allowLoadMore} icon='icon-costoms-alearance' size='small' onClick={handleFetchNextPage}>
+        {allowLoadMore ? config?.pager.nextText : config?.pager.disableNextText}
+      </LoadMoreButton>
     </ul>
   );
 };

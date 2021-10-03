@@ -12,6 +12,7 @@
     padding: 0;
     margin: 0;
     color: inherit;
+    background-color: transparent;
   }
 
   &__inner {
@@ -95,7 +96,8 @@
   width: 100%;
 }
 
-.is-disabled {
+.is-disabled,
+button[disabled] {
   color: var(--color-disabled) !important;
   border-color: var(--color-disabled-less) !important;
 
@@ -104,4 +106,87 @@
   }
 }
 
-.ww_button__loadmore {}
+.ww_button__loadmore {
+  width: 100%;
+  padding: 0;
+
+  font-size: var(--font-size-medium);
+  box-sizing: border-box;
+  background-color: var(--color-gray-1);
+  outline: 1px solid transparent;
+  border-radius: var(--border-radius-base);
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+    outline: 1px solid var(--color-yellow-7);
+    transition: outline .5s ease;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3em;
+    padding: var(--padding-base);
+    transition: var(--transition-base);
+    overflow: hidden;
+  }
+
+  & .lf {
+    font-size: 20px;
+
+    i {
+      font-size: inherit;
+    }
+  }
+
+  & .rg {
+    position: relative;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    color: var(--color-base-1);
+    background-color: var(--loadmore-button-large);
+
+    .scroll {
+      position: absolute;
+      right: 100%;
+      width: 5%;
+      height: 100%;
+      border: 2em solid transparent;
+      border-right: 2em solid var(--loadmore-button-large);
+      border-bottom: 2em solid var(--loadmore-button-large);
+    }
+
+    .label {
+      position: absolute;
+      width: 1em;
+      height: 10em;
+      background-color: var(--loadmore-button-regular);
+      transform: rotateZ(45deg) translate(-4em);
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 1.5;
+    }
+  }
+
+  .is-small {
+    font-size: var(--font-size-less);
+    padding: 0;
+  }
+
+  .is-middle {
+    font-size: var(--font-size-medium);
+    padding: 0;
+  }
+
+  .is-large {
+    font-size: var(--font-size-large);
+    padding: 0;
+  }
+}
