@@ -1,4 +1,6 @@
-html, body, #__next {
+html,
+body,
+#__next {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -16,6 +18,7 @@ html, body, #__next {
 strong {
   font-weight: var(--font-weight-large);
 }
+
 small {
   font-weight: var(--font-weight-regular);
 }
@@ -24,12 +27,13 @@ p {
   margin: var(--margin-base-2) 0;
 }
 
-[data-theme-mode='light'] a{
-  color: var(--color-5);
-}
-[data-theme-mode='dark'] a{
-  color: var(--color-1);
-}
+// [data-theme-mode='light'] a {
+//   color: var(--color-primary-5);
+// }
+
+// [data-theme-mode='dark'] a {
+//   color: var(--color-primary-1);
+// }
 
 .text-overflow {
   overflow: hidden;

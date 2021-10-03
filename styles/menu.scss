@@ -17,19 +17,22 @@
     font-size: 15px;
     letter-spacing: 2px;
     box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
 
     &:hover {
       background-color: var(--nav-color-background-active);
       cursor: pointer;
       border-radius: 4px;
-      transition: all .3s ease-out;
+      transition: all .5s ease;
     }
   }
 
   .is-active {
+    color: var(--color-base-8);
     background-color: var(--nav-color-background-active);
-    border-radius: 4px !important;
-    transition: all .3s ease;
+    border-radius: 4px;
+    transition: all .5s ease;
   }
 
   .is-link {

@@ -1,4 +1,4 @@
-[data-theme-mode='light'] {
+[data-theme-mode='dark'] {
   /**
     Color Dark List
     定义Dark模式下的反色
@@ -55,6 +55,7 @@
 
   /** Link **/
   --color-text-link: var(--color-4);
+  --color-link-primary: var(--color-primary-4);
 
   --contrast-img: contrast(.85);
 

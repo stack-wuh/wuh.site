@@ -51,6 +51,7 @@
 
   /** Link **/
   --color-text-link: var(--color-7);
+  --color-link-primary: var(--color-primary-5);
 
   --contrast-img: contrast(1);
 
@@ -59,6 +60,5 @@
 
   /** Nav **/
   --nav-color-text: #999;
-  --nav-color-background: #ccc;
-  --nav-color-background-active: #ccc;
+  --nav-color-background-active: var(--color-gray-4);
 }
