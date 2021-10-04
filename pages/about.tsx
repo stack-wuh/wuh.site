@@ -1,5 +1,7 @@
 import withLayout from "@/layout/layout";
 import Space from "@/components/space/space";
+import AMap from "@/components/amap";
+import Divider from "@/components/divider";
 
 const AboutPage = () => {
   return (
@@ -128,6 +130,8 @@ const AboutPage = () => {
           </li>
         </ul>
       </div>
+      <Divider position='center'>Text</Divider>
+      <AMap />
     </div>
   );
 };
