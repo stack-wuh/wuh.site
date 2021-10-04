@@ -46,7 +46,7 @@ const usePostPages = (initialData: any) => {
 const Item = (props: IHomeItemProps) => {
   return (
     <>
-      <Link href="/post/detail" passHref>
+      <Link href={{ pathname: '/post/[id]', query: { id: props.title } }} passHref>
         <a>
           <li className="ww_home__item">
             <div className="lf">

@@ -1,6 +1,7 @@
 const NotFound = () => {
-  return <div className="page_400">
-    <h1>资源没找到</h1>
+  return <div className="page page_400">
+    <h1>404</h1>
+    <p>资源没找到。</p>
   </div>
 }
 

@@ -114,6 +114,7 @@
 }
 
 
+/** Transition Line **/
 .transition-line {
   background: linear-gradient(90deg, #ffec3d, #0ebeff);
   background-size: 0 3px;
@@ -135,7 +136,18 @@
   color: inherit;
   transition: .5s all linear;
 }
+
 .transition-text:hover {
   background-size: 100% 100%;
   color: transparent;
+}
+
+/** Base Layout 基础布局 **/
+.page {
+  width: inherit;
+  height: inherit;
+  padding: 4em;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: var(--background-color-primary);
 }
