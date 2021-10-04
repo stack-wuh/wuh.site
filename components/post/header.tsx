@@ -1,4 +1,5 @@
 import Space from "@/components/space/space"
+import Tag from "@/components/tag"
 import { usePostContext } from "."
 
 const Header = () => {
@@ -11,7 +12,7 @@ const Header = () => {
       <Space style={{ paddingLeft: 0 }}>
         <time>{update_at}</time>
         <span>发布于</span>
-        <span>{origin}</span>
+        <Tag icon='icon-yuque-fill1' color="yuque">{origin}</Tag>
       </Space>
     </p>
   </div>
