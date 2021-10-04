@@ -1,15 +1,16 @@
-@import './theme/root.scss';
-@import './theme/light.scss';
-@import './theme/dark.scss';
-@import './reset.scss';
-@import './nprogress.scss';
+@import './theme/root.css';
+@import './theme/light.css';
+@import './theme/dark.css';
+@import './reset.css';
+@import './nprogress.css';
 @import './layout.scss';
-@import './animate.scss';
+@import './animate.css';
 
 @import './header.scss';
 @import './footer.scss';
 @import './menu.scss';
 @import './button.scss';
+@import './space.scss';
 
 @import './home.scss';
 @import './post.scss';
