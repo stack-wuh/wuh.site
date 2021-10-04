@@ -4,11 +4,6 @@
   height: auto;
   border: none;
   outline: none;
-  background: linear-gradient(90deg, var(--color-background-primary) 29%, var(--color-yellow-3) 37%, var(--color-background-primary) 43%);
-  background-repeat: no-repeat;
-  background-size: 400% 100%;
-  background-position: 0% 100%;
-  animation: 4s fade_size 2s linear alternate infinite;
 
   &__inner {
     position: relative;
@@ -82,6 +77,11 @@
     transition: var(--transition-base);
   }
 
+  .disabled-linear-gradient {
+    .ww_divider__line {
+      background: var(--color-base-6);
+    }
+  }
 
   .is-small {
     font-size: calc(var(--font-size-base) / 2);
@@ -102,4 +102,12 @@
   }
 
   transition: var(--transition-base);
+}
+
+.is-transition {
+  background: linear-gradient(90deg, var(--color-background-primary) 29%, var(--color-yellow-3) 37%, var(--color-background-primary) 43%);
+  background-repeat: no-repeat;
+  background-size: 400% 100%;
+  background-position: 0% 100%;
+  animation: 4s fade_size 2s linear alternate infinite;
 }

@@ -130,7 +130,7 @@ const AboutPage = () => {
           </li>
         </ul>
       </div>
-      <Divider position='center'>Text</Divider>
+      <Divider />
       <AMap />
     </div>
   );
