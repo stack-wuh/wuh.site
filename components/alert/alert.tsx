@@ -26,10 +26,9 @@ const Alert: React.FC<AlertTypeProps> = props => {
     [`ww_alert__inner--${type}`]: type
   })
 
-  const iconClassnames = classnames('iconfont', {
-    [`${icon}`]: icon,
-    [`${iconWithType[type]}`]: !icon && isPatchIcons(type)
-  })
+  const iconClassnames = classnames('iconfont', [
+    !icon && isPatchIcons(type) ? iconWithType[type] : icon
+  ])
 
   return <div className="ww_alert">
     <div className={innerClassnames}>

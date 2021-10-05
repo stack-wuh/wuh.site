@@ -35,7 +35,7 @@ $name: 'ww_alert';
   }
 
   &__content {
-    width: 85%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
