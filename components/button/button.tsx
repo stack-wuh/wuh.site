@@ -1,9 +1,11 @@
-import React, { HTMLAttributeAnchorTarget } from 'react'
+import React from 'react'
 import classnames from 'classnames'
 
 type sizes = 'small' | 'middle' | 'large'
 
-type types = 'default' | 'primary' | 'circly' | 'rect' | 'text' | 'link' | 'ghost'
+type types = 'default' | 'primary' | 'text' | 'link' | 'ghost'
+
+type shapes = 'circly' | 'rect'
 
 type targets = '_blank' | '_self'
 
@@ -16,6 +18,8 @@ export type ButtonTypeProps = {
   size?: sizes,
   /** 按钮的类型 */
   type?: types,
+  /** button 控制按钮的形状 */
+  shape?: shapes,
   /** 按钮附带的图标 **/
   icon?: string,
   /** 按钮的iconfont 使用带色彩的字体 **/
@@ -33,7 +37,11 @@ export type ButtonTypeProps = {
   /**
    * 为a标签准备的一个类型
    */
-  hrefClassName?: string
+  hrefClassName?: string,
+  /** button改为幽灵模式，没有背景色，没有边框 */
+  ghost?: boolean,
+  /** button组件的重写类名 */
+  className?: string
 }
 
 const Button: React.FC<ButtonTypeProps> = (props) => {
@@ -44,23 +52,28 @@ const Button: React.FC<ButtonTypeProps> = (props) => {
     size = 'middle',
     icon,
     iconWithColor = false,
+    shape,
     type = 'default',
     disabled = false,
     htmlHref,
     target = '_blank',
     title,
-    hrefClassName
+    ghost,
+    hrefClassName,
+    className
   } = props
 
   const classNames = classnames('ww_button', {
     'is-block': block,
   })
 
-  const btnClassNames = classnames('ww_button__inner', {
+  const btnClassNames = classnames('ww_button__inner', className, {
     [`is-${size}`]: size,
     [`is-${type}`]: type,
+    [`is-${shape}`]: shape,
     [`is-disabled`]: disabled,
-    [`${hrefClassName}`]: hrefClassName
+    [`${hrefClassName}`]: hrefClassName,
+    [`is-ghost`]: ghost
   })
 
   const iconClassNames = classnames({

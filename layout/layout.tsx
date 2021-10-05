@@ -3,6 +3,7 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import MenuNav from '@/components/menu/nav'
 import LinkGroup from '@/components/button/link-group'
+import StateGroup from '@/components/button/state-group'
 
 import Response from './response'
 
@@ -10,6 +11,7 @@ const BackgroundWrapper: React.FC = () => (<div className='background'></div>)
 const ConfigWrapper: React.FC = () => (<div className='config'>
   <BackgroundWrapper />
   <LinkGroup />
+  <StateGroup />
 </div>)
 
 function Layout<T>(Component: React.ComponentType<T>) {

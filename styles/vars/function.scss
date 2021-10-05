@@ -60,3 +60,23 @@ $wrap: wrap;
     }
   }
 }
+
+@mixin getBtnStateColors ($prefix) {
+
+  @each $label,
+  $color in $color_btn_state {
+    .#{$prefix}__state {
+      border-left: 2px solid transparent;
+
+      &--#{$label} {
+        border-left: 2px solid $color !important;
+        transition: var(--transition-base);
+
+        &:hover {
+          border-left: 2px solid blue !important;
+          transition: var(--transition-base);
+        }
+      }
+    }
+  }
+}

@@ -86,6 +86,7 @@ const LinkGroup: React.FC<{}> = () => {
           {linkBtnMaps.map((item) => (
             <>
               <Button
+                ghost
                 key={item.name}
                 htmlHref={item.href}
                 hrefClassName={item.hrefClassName}
