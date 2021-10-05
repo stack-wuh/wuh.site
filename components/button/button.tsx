@@ -44,7 +44,7 @@ export type ButtonTypeProps = {
   className?: string
 }
 
-const Button: React.FC<ButtonTypeProps> = (props) => {
+const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonTypeProps> = (props, ref) => {
   const {
     children,
     onClick,
@@ -62,6 +62,8 @@ const Button: React.FC<ButtonTypeProps> = (props) => {
     hrefClassName,
     className
   } = props
+
+  const buttonRef = (ref as any) || React.createRef<HTMLElement>()
 
   const classNames = classnames('ww_button', {
     'is-block': block,
@@ -98,7 +100,7 @@ const Button: React.FC<ButtonTypeProps> = (props) => {
   }
   const achonrClassnames = classnames('ww_button__link', 'ww_button__inner--link')
 
-  return (<div onClick={onClick} className={classNames}>
+  return (<div ref={buttonRef} onClick={onClick} className={classNames}>
     <div className={btnClassNames}>
       {
         htmlHref ? <a className={achonrClassnames} {...hrefHtmlProps} href={htmlHref}>{node}</a> : node
@@ -106,5 +108,7 @@ const Button: React.FC<ButtonTypeProps> = (props) => {
     </div>
   </div>)
 }
+
+const Button = React.forwardRef<unknown, ButtonTypeProps>(InternalButton)
 
 export default Button
