@@ -211,4 +211,29 @@ button[disabled] {
   }
 }
 
-.ww_button-group {}
+.ww_button-group {
+  &__state {
+    background-color: #fff;
+
+    .btn__item {
+      border-bottom: 1px solid;
+
+      .iconfont,
+      a {
+        transform: rotateX(0);
+        transition: var(--transition-base);
+      }
+
+      &:hover {
+        background-color: var(--color-background-primary);
+        transition: var(--transition-base);
+
+        .iconfont,
+        a {
+          transform: rotateX(360deg);
+          transition: var(--transition-base);
+        }
+      }
+    }
+  }
+}

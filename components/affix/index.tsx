@@ -9,18 +9,21 @@ export type AffixTypeProps = {
   /** 指定affix固定的位置, 或左或右 **/
   position?: positions,
   /** Y轴偏移量 **/
-  offsetY?: number
+  offsetY?: number | string,
+  /** X轴偏移量 */
+  offsetX?: number | string
 }
 
 const Affix: React.FC<AffixTypeProps> = props => {
-  const { children, position, offsetY } = props
+  const { children, position, offsetY, offsetX } = props
 
   const node = React.Children.only(children)
   const innerClassname = classnames('ww_affix__inner', `ww_affix__inner--${position}`)
 
   const innerStyle: React.CSSProperties = {
     position: 'fixed',
-    top: offsetY
+    top: offsetY,
+    left: offsetX
   }
 
   return <div className="ww_affix">
