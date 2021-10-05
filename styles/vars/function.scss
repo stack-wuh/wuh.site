@@ -32,3 +32,20 @@
     }
   }
 }
+
+@mixin getBtnLinkColors ($prefix) {
+
+  @each $label,
+  $bg in $color_btn_link {
+    .#{$prefix}__link--#{$label} {
+      color: var(--color-base-5);
+
+      &:hover {
+        padding-left: 1.2em;
+        color: var(--color-base-2);
+        background-color: $bg;
+        transition: var(--transition-base);
+      }
+    }
+  }
+}

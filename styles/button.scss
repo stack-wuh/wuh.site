@@ -1,4 +1,7 @@
-.ww_button {
+@import './vars/function.scss';
+$name: 'ww_button';
+
+.#{$name} {
   position: relative;
   width: fit-content;
   padding: 0;
@@ -21,7 +24,15 @@
     border: 1px solid transparent;
     border-color: var(--color-border) !important;
     border-radius: var(--border-radius-base);
+    box-sizing: border-box;
     transition: var(--transition-base);
+
+    &--link {
+      text-decoration: none;
+      display: block;
+      position: relative;
+      color: inherit;
+    }
 
 
     &:hover,
@@ -32,6 +43,8 @@
       transition: var(--transition-base);
     }
   }
+
+  @include getBtnLinkColors($name);
 
   .is-default {
     border: 1px solid var(--color-border);
@@ -71,6 +84,11 @@
     border: none;
     outline: none;
     color: var(--color-link-primary);
+  }
+
+  .is-ghost {
+    border: none;
+    outline: none;
   }
 
   .is-small {
@@ -190,3 +208,5 @@ button[disabled] {
     padding: 0;
   }
 }
+
+.ww_button-group {}

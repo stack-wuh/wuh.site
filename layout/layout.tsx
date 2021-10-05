@@ -2,11 +2,14 @@ import * as React from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import MenuNav from '@/components/menu/nav'
+import LinkGroup from '@/components/button/link-group'
+
 import Response from './response'
 
 const BackgroundWrapper: React.FC = () => (<div className='background'></div>)
 const ConfigWrapper: React.FC = () => (<div className='config'>
   <BackgroundWrapper />
+  <LinkGroup />
 </div>)
 
 function Layout<T>(Component: React.ComponentType<T>) {

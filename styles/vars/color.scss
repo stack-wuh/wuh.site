@@ -8,6 +8,7 @@ $color_gitbook: #3a84ff;
 $color_twitter: #5ed7fc;
 $color_yuque_icon: #31cc79;
 $color_link: #181616;
+$color_qq: #faad14;
 
 $color_tag: ((github, $color_github),
   (yuque, $color_yuque),
@@ -21,3 +22,12 @@ $color_alert: ((success, var(--color-success-3), var(--color-success-7)),
   (warning, var(--color-warning-3), var(--color-warning-7)),
   (error, var(--color-danger-3), var(--color-danger-7)),
   (info, var(--color-link-3), var(--color-link-7)));
+
+$color_btn_link: ((zhihu, $color_zhihu),
+  (github, $color_github),
+  (qq, $color_qq),
+  (wechat, $color_wechat),
+  (weopen, $color_wechat),
+  (gitbook, $color_gitbook),
+  (twitter, $color_twitter),
+  (yuque, $color_yuque));

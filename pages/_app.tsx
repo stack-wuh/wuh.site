@@ -9,27 +9,31 @@ import "@/styles/index.scss";
 import { config } from '@/constant/config'
 
 Router.events.on("routeChangeStart", () => {
-	NProgress.start();
+  NProgress.start();
 });
-Router.events.on("routeChangeComplete", () => NProgress.done());
-Router.events.on("routeChangeError", () => NProgress.done());
+Router.events.on("routeChangeComplete", () => {
+  NProgress.done();
+});
+Router.events.on("routeChangeError", () => {
+  NProgress.done();
+});
 
 type NextPageWithLayout = NextPage & {
-	getLayout?: (Component: ReactElement) => ReactNode;
+  getLayout?: (Component: ReactElement) => ReactNode;
 };
 type NextPropsWithLayout = AppProps & {
-	Component: NextPageWithLayout;
+  Component: NextPageWithLayout;
 };
 
 function MyApp({ Component, pageProps }: NextPropsWithLayout) {
-	const getLayout = Component.getLayout ?? ((page) => page);
-	const layout = getLayout(<Component {...pageProps} />);
+  const getLayout = Component.getLayout ?? ((page) => page);
+  const layout = getLayout(<Component {...pageProps} />);
 
-	return (
-		<ErrorBoundary>
-			<ConfigProvider.Provider value={config}>{layout}</ConfigProvider.Provider>
-		</ErrorBoundary>
-	);
+  return (
+    <ErrorBoundary>
+      <ConfigProvider.Provider value={config}>{layout}</ConfigProvider.Provider>
+    </ErrorBoundary>
+  );
 }
 
 export default MyApp;
