@@ -1,15 +1,18 @@
 $color_yuque: #31cc79;
-$bg_yuque: #31cc79;
-$bd_yuque: #31cc79;
-$tt_yuque: #31cc79;
-
 $color_github: #6f42c1;
 $color_zhihu: #0d87ea;
 $color_qqzone: #30a5dd;
 $color_wechat: #69bb63;
-$color_wechat_open: #69bb63;
 $color_github_dark: #181616;
 $color_gitbook: #3a84ff;
 $color_twitter: #5ed7fc;
 $color_yuque_icon: #31cc79;
 $color_link: #181616;
+
+$color_tag: ((github, $color_github),
+  (yuque, $color_yuque),
+  (zhihu, $color_zhihu),
+  (qqzone, $color_qqzone),
+  (wechat, $color_wechat),
+  (gitbook, $color_gitbook),
+  (twitter, $color_twitter));

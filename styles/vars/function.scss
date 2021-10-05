@@ -1,0 +1,19 @@
+@import './color.scss';
+
+@mixin getTagColors($prefix) {
+
+  @each $label,
+  $color in $color_tag {
+    .#{$prefix}--#{$label} {
+      color: var(--color-base);
+      background-color: $color;
+      border-color: rgba($color, .7);
+    }
+
+    .#{$prefix}--#{$label}--ghost {
+      color: $color !important;
+      background-color: rgba($color, .1) !important;
+      border: 1px solid rgba($color, .8) !important;
+    }
+  }
+}

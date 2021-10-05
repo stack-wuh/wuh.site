@@ -15,7 +15,9 @@ const Tag: React.FC<TagTypeProps> = (props) => {
   const { children, ghost, color, icon, iconFamily } = props
   const innerClassnames = classnames('ww_tag__inner', {
     'is-ghost': ghost,
-    [`is-${color}`]: allowHexColor(color)
+    [`is-${color}`]: allowHexColor(color),
+    [`ww_tag--${color}`]: allowHexColor(color),
+    [`ww_tag--${color}--ghost`]: ghost && allowHexColor(color)
   })
   const node = React.Children.only(children)
 
