@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import useSWR from 'swr'
 import fetcher from '@/lib/fetch'
 import { useRouter } from 'next/router'
 import { API_ARTICLE_ITEM } from '@/constant/api'
 import { PostHeader, PostBody, PostContext } from '@/components/post'
+import Divider from '@/components/divider'
+import Alert from '@/components/alert/alert'
 import withLayout from '@/layout/layout'
 
 const Detail: React.FC<{}> = () => {
@@ -16,6 +18,9 @@ const Detail: React.FC<{}> = () => {
     <PostContext value={data.data}>
       <PostHeader />
       <PostBody />
+
+      <Divider />
+      <Alert type='info' />
     </PostContext>
   </div>
 }

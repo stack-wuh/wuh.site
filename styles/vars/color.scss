@@ -16,3 +16,8 @@ $color_tag: ((github, $color_github),
   (wechat, $color_wechat),
   (gitbook, $color_gitbook),
   (twitter, $color_twitter));
+
+$color_alert: ((success, var(--color-success-3), var(--color-success-7)),
+  (warning, var(--color-warning-3), var(--color-warning-7)),
+  (error, var(--color-danger-3), var(--color-danger-7)),
+  (info, var(--color-link-3), var(--color-link-7)));

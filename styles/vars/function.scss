@@ -17,3 +17,18 @@
     }
   }
 }
+
+@mixin getAlertColors ($prefix) {
+
+  @each $label,
+  $bg,
+  $color in $color_alert {
+    .#{$prefix}__inner--#{$label} {
+      background-color: $bg;
+
+      .#{$prefix}__icon {
+        color: $color;
+      }
+    }
+  }
+}
