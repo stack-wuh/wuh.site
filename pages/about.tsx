@@ -2,6 +2,7 @@ import withLayout from "@/layout/layout";
 import Space from "@/components/space/space";
 import AMap from "@/components/amap";
 import Divider from "@/components/divider";
+import Empty from "@/components/empty";
 
 const AboutPage = () => {
   return (
@@ -132,6 +133,10 @@ const AboutPage = () => {
       </div>
       <Divider />
       <AMap />
+      <Divider />
+      <Empty align='center' size='large'>
+        <p>Nothing About</p>
+      </Empty>
     </div>
   );
 };

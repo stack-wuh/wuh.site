@@ -1,5 +1,16 @@
 @import './color.scss';
 
+$row: flex-start;
+$col: flex-start;
+$wrap: wrap;
+
+@mixin getFlexbox ($row: $row, $col: $col, $wrap: $wrap) {
+  display: flex;
+  justify-content: $row;
+  align-items: $col;
+  flex-wrap: $wrap;
+}
+
 @mixin getTagColors($prefix) {
 
   @each $label,

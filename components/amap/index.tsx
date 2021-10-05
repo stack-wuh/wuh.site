@@ -20,6 +20,7 @@ const AMap = () => {
     <style jsx>{`
       .ww_amap {
         height: 25em;
+        padding: var(--padding-base) 0;
       }
     `}</style>
   </div>
