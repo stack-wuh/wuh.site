@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import useCopyToClipboard from '@/hooks/useCopyToClipboard'
 import { usePostContext } from '@/components/post/context'
 import Space from '@/components/space/space'
+import { useCounter } from 'ahooks'
 
 import { Button } from '.'
 
@@ -63,20 +64,36 @@ const createBtnHref = (key: createBtnName, ops: createBtnOps): string => {
   return current.href + '?' + queryStringify.toString()
 }
 
+/** 最大的连续点击次数 */
+const MAX_CLICK_COUNT = 5
+
 const ShareGroup: React.FC<ShareTypeProps> = (props) => {
   const { } = props
+  const [current, { inc, reset }] = useCounter(0, { min: 0, max: 10 })
   const info = usePostContext()
   const { title } = info
-  const [_, copy] = useCopyToClipboard(`https://wuh.site/post/${title}`)
+  const [isCopied, copy] = useCopyToClipboard(`https://wuh.site/post/${title}`)
 
   const qqzone = createBtnHref('qqzone', { btnOption: info })
   const qqperson = createBtnHref('qqperson', { btnOption: info })
   const twitter = createBtnHref('twitter', { btnOption: info })
   const weibo = createBtnHref('weibo', { btnOption: info })
-  // const qqzone = `https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://wuh.site/post/${title}&sharesource=qzone&title=${title}&pics=${coverImage}&summary=${subTitle}&desc=简单简单的描述`
-  // const qqperson = `http://connect.qq.com/widget/shareqq/index.html?url=https://wuh.site/post/${title}&sharesource=qzone&title=${title}&pics=${coverImage}&summary=${subTitle}&desc=简单描述`
-  // const twitter = `https://twitter.com/intent/tweet?text=${subTitle}&url=https://wuh.site/post/${title}`
-  // const weibo = `http://service.weibo.com/share/share.php?url=https://wuh.site/post/${title}&sharesource=weibo&title=${title}&pic=${coverImage}`
+
+  const handleClickCopy = () => {
+    if (!isCopied) {
+      copy()
+    }
+    if (current <= MAX_CLICK_COUNT) {
+      inc()
+    }
+  }
+
+  useEffect(() => {
+    if (current > MAX_CLICK_COUNT && isCopied) {
+      window.alert('别点了😭😁😄😭😞🌚, 链接已经复制到剪切板了。。。。')
+      reset()
+    }
+  }, [current, isCopied, reset])
 
   return <div className="ww_button ww_button-group ww_button-group__share">
     <Space>
@@ -85,7 +102,7 @@ const ShareGroup: React.FC<ShareTypeProps> = (props) => {
       <Button className='btn__item' htmlHref={twitter} hrefClassName='ww_button__share--twitter' icon='icon-ttww' ghost />
       <Button className='btn__item' htmlHref={weibo} hrefClassName='ww_button__share--weibo' icon='icon-weibo-circle-fill' ghost />
       <Button className='btn__item' hrefClassName='ww_button__share--zhihu' icon='icon-zhihu' ghost />
-      <Button className='btn__item' onClick={copy} hrefClassName='ww_button__share--link' icon='icon-insertlink' ghost />
+      <Button className='btn__item' onClick={handleClickCopy} hrefClassName='ww_button__share--link' icon='icon-insertlink' ghost />
     </Space>
   </div>
 }
