@@ -48,7 +48,7 @@ export { ConfigProvider }
 
 const getTarget = () => document.querySelector('html')
 
-export default function WithConfig () {
+export default function useConfig () {
   const config = useContext(ConfigProvider)
   const state = useReactive<configInterfaceProps | any>(config)
   const [_, setThemeMode] = useCookieState('data-theme-mode', config.stateLocale.options)
