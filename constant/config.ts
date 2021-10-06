@@ -43,5 +43,5 @@ export const config = {
       secure: false,
       sameSite: 'strict'
     }
-  }
+  },
 }

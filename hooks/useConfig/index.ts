@@ -1,9 +1,12 @@
-import { createContext, useContext } from 'react'
+import { createContext, useContext, useEffect } from 'react'
+import { useReactive, useCookieState } from 'ahooks'
 
+type languages = 'zh-cn' | 'en' | null
+type themes = 'light' | 'dark' | null
 export interface configInterfaceProps {
   key?: string,
-  themeMode: string,
-  language: string,
+  themeMode: themes,
+  language: languages,
   header: {
     title: string
   },
@@ -35,13 +38,48 @@ export interface configInterfaceProps {
       secure: boolean,
       sameSite: any
     }
-  }
+  },
+  toggleThemeMode?: () => void,
+  toggleLang?: () => void
 }
-const ConfigProvider = createContext<configInterfaceProps | null>(null)
+const ConfigProvider = createContext<configInterfaceProps | any>(null)
 
 export { ConfigProvider }
 
+const getTarget = () => document.querySelector('html')
+
 export default function WithConfig () {
   const config = useContext(ConfigProvider)
-  return config
+  const state = useReactive<configInterfaceProps | any>(config)
+  const [_, setThemeMode] = useCookieState('data-theme-mode', config.stateLocale.options)
+  const [__, setLang] = useCookieState('lang', config.stateLocale.options)
+
+  useEffect(() => {
+    state.themeMode = getTarget()?.getAttribute('data-theme-mode')
+    state.language = getTarget()?.getAttribute('lang')
+  }, [])
+
+  /** 切换文档主题 */
+  const toggleThemeMode = () => {
+    state.themeMode = state.themeMode === 'light' ? 'dark' : 'light'
+    getTarget()?.setAttribute('data-theme-mode', state.themeMode)
+    setThemeMode(state.themeMode)
+  }
+  /** 切换文档语言 */
+  const toggleLang = () => {
+    state.language = state.language === 'zh-cn' ? 'en' : 'zh-cn'
+    getTarget()?.setAttribute('lang', state.language)
+    setLang(state.language)
+  }
+
+  const actions = {
+    toggleThemeMode,
+    toggleLang
+  }
+
+
+  return {
+    ...state,
+    ...actions
+  }
 }
