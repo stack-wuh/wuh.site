@@ -2,13 +2,13 @@ import * as React from 'react'
 import type { ReactNode } from 'react'
 import { useResponsive } from 'ahooks'
 import classnames from 'classnames'
-import { ResponsiveProvider, responseInterfaceProps } from '@/hooks/withResponsive'
+import { ResponsiveProvider, responseInterfaceProps } from '@/hooks/useResponsive'
 
 type ResProps = {
   children: ReactNode
 }
 
-export default function Response(props: ResProps){
+export default function Response(props: ResProps) {
   const {
     children
   } = props
@@ -25,7 +25,7 @@ export default function Response(props: ResProps){
   const isPc = [lg, xl].includes(true);
   const responseValue: responseInterfaceProps = {
     isMobile: isMobile && !isTablet && !isPc,
-    isTablet: isTablet && !isPc, 
+    isTablet: isTablet && !isPc,
     isPc,
     ...responsive,
   }

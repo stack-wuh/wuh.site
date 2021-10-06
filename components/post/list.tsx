@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { IHomeProps, IHomeItemProps } from "@/pages/index";
 import Image from '@/components/image/image'
 import { LoadMoreButton } from '@/components/button'
-import withConfig from "@/hooks/withConfig";
+import withConfig from "@/hooks/useConfig";
 import fetcher from "@/lib/fetch";
 import useSWRInfinite from "swr/infinite";
 

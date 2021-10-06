@@ -1,4 +1,4 @@
-import withConfig from "@/hooks/withConfig"
+import withConfig from "@/hooks/useConfig"
 
 interface ServerInterface {
   config: any

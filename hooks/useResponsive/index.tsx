@@ -15,7 +15,7 @@ const ResponsiveProvider = createContext<responseInterfaceProps | null>(null)
 
 export { ResponsiveProvider }
 
-export default function WithRepsonse () {
+export default function useRepsonse() {
   const response = useContext(ResponsiveProvider)
   return response
 }

@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import Router from "next/router";
 import NProgress from "nprogress";
 import ErrorBoundary from "@/components/ErrorBoundary";
-import { ConfigProvider } from "@/hooks/withConfig";
+import { ConfigProvider } from "@/hooks/useConfig";
 import "@/styles/index.scss";
 import { config } from '@/constant/config'
 

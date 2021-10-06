@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import withConfig from '@/hooks/withConfig'
+import withConfig from '@/hooks/useConfig'
 
 const Header = () => {
   const config = withConfig()
