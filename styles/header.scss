@@ -21,6 +21,7 @@
     margin: 0 auto;
 
     .title {
+      margin-left: var(--margin-base);
       font-size: 14px;
       color: var(--color-default);
       font-weight: normal;

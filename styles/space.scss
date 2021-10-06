@@ -29,6 +29,10 @@
     }
   }
 
+  .is-ghost {
+    background: transparent !important;
+  }
+
   .is-small {
     padding: calc(var(--padding-base)/2);
   }

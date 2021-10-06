@@ -88,11 +88,13 @@ $wrap: wrap;
     .#{$prefix}__share {
       &--#{$label} {
         color: var(--color-base-5);
+        border-radius: 100%;
         outline: 1px solid transparent !important;
         transition: var(--transition-base);
 
 
         &:hover {
+          border-radius: var(--border-radius-base);
           background-color: rgba($color, .2);
           color: $color !important;
           outline: 1px solid rgba($color, .6) !important;
