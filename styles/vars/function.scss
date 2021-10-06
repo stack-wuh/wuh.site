@@ -80,3 +80,25 @@ $wrap: wrap;
     }
   }
 }
+
+@mixin getBtnShareColors($prefix) {
+
+  @each $label,
+  $color in $color_btn_share {
+    .#{$prefix}__share {
+      &--#{$label} {
+        color: var(--color-base-5);
+        outline: 1px solid transparent !important;
+        transition: var(--transition-base);
+
+
+        &:hover {
+          background-color: rgba($color, .2);
+          color: $color !important;
+          outline: 1px solid rgba($color, .6) !important;
+          transition: var(--transition-base);
+        }
+      }
+    }
+  }
+}

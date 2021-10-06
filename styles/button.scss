@@ -48,6 +48,8 @@ $name: 'ww_button';
 
   @include getBtnStateColors($name);
 
+  @include getBtnShareColors($name);
+
   .is-default {
     border: 1px solid var(--color-border);
     font-size: var(--font-size-regular);
@@ -233,6 +235,20 @@ button[disabled] {
           transform: rotateX(360deg);
           transition: var(--transition-base);
         }
+      }
+    }
+  }
+
+  &__share {
+    @include getBtnShareColors($name);
+
+    width: inherit;
+    background-color: var(--color-gray-1);
+    transition: var(--transition-base);
+
+    .btn__item {
+      .iconfont {
+        font-size: 22px;
       }
     }
   }

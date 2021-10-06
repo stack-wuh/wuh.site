@@ -6,7 +6,6 @@ import { Button } from '.'
 const StateGroup: React.FC<{}> = (props) => {
   const { } = props
 
-
   return (<Affix position='right' offsetY={120}>
     <div className="ww_button ww_button-group">
       <Space direction='vertical' size={0}>

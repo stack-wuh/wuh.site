@@ -41,7 +41,9 @@ export type ButtonTypeProps = {
   /** button改为幽灵模式，没有背景色，没有边框 */
   ghost?: boolean,
   /** button组件的重写类名 */
-  className?: string
+  className?: string,
+  /** React.ReactNode 只是一个简单的类型声明 */
+  children?: React.ReactNode
 }
 
 const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonTypeProps> = (props, ref) => {
