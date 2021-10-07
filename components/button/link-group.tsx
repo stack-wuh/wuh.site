@@ -81,8 +81,8 @@ const linkBtnMaps = [
 const LinkGroup: React.FC<{}> = () => {
   return (
     <Affix>
-      <div className="ww_button ww_button-group">
-        <Space size={0} direction="vertical">
+      <div className="ww_button ww_button-group ww_button-group__link">
+        <Space size={0} direction="vertical" ghost>
           {linkBtnMaps.map((item) => (
             <>
               <Button

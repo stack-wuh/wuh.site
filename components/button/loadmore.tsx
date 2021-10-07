@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import classnames from 'classnames'
+import * as gtag from '@/lib/gtag'
 
 type sizes = 'small' | 'middle' | 'large'
 
@@ -18,10 +19,20 @@ const LoadMore = (props: loadButtonTypeProps) => {
     'is-disabled': disabled
   })
 
+  const handleClick = () => {
+    onClick()
+    gtag.event({
+      action: 'click',
+      category: 'button',
+      label: 'btn__loadmore',
+      value: 10
+    })
+  }
+
   const iconClassnames = classnames('iconfont', icon)
 
   return (<div className={outerClassnames}>
-    <div onClick={onClick} className={innerClassnames}>
+    <div onClick={handleClick} className={innerClassnames}>
       <span className="lf transition-color">
         <i className={iconClassnames}></i>
       </span>

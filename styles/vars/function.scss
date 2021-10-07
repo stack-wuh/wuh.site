@@ -53,8 +53,8 @@ $wrap: wrap;
 
       &:hover {
         padding-left: 1.2em;
-        color: var(--color-base-2);
-        background-color: $bg;
+        color: var(--color-base-2) !important;
+        background-color: $bg !important;
         transition: var(--transition-base);
       }
     }

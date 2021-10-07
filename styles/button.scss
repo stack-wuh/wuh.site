@@ -214,7 +214,14 @@ button[disabled] {
 }
 
 .ww_button-group {
+  &__link {
+    @include getBtnLinkColors($name);
+
+  }
+
   &__state {
+    @include getBtnStateColors($name);
+
     background-color: #fff;
 
     .btn__item {
