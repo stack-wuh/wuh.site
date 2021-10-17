@@ -17,7 +17,7 @@ WORKDIR /usr/src/app
 
 COPY . /usr/src/app/
 COPY --from=deps /usr/src/app/node_modules ./node_modules
-RUN yarn build
+CMD [ "yarn", "build" ]
 
 # ============== Runing ===========
 # ============== 运行时 ===========
@@ -34,36 +34,8 @@ COPY --from=builder --chown=nextjs:nodejs /usr/src/app/.next ./.next
 COPY --from=builder /usr/src/app/node_modules ./node_modules
 COPY --from=builder /usr/src/app/package.json ./package.json
 
-# RUN addgroup -g 1001 -S nodejs &&\
-#   adduser -S nextjs -u 1001 &&\
-#   chown -R nextjs:nodejs /usr/src/app/.next
-
-
 USER nextjs
 
 EXPOSE 3000
 
 CMD ["yarn", "start"]
-
-# FROM mhart/alpine-node as builder
-
-# LABEL maintainer = "shadow <wuh131420@gmail.com>"
-
-# WORKDIR /usr/src/app
-
-# COPY package.json yarn.lock /usr/src/app/
-
-# RUN npm config set registry https://registry.npm.taobao.org
-# RUN yarn --cached --peer --mode=update-lockfile
-
-# COPY . /usr/src/app
-
-# RUN addgroup -g 1001 -S nodejs &&\
-#     adduser -S nextjs -u 1001 &&\
-#     chown -R nextjs:nodejs /usr/src/app/.next
-
-# USER nextjs
-
-# EXPOSE 3000
-
-# CMD ["node_modules/.bin/next", "start"]

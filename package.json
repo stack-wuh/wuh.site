@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "analysis": "cross-env ANALYZE=true & next build",
-    "build:docker": "sh -x ./bin/docker-push.sh"
+    "build:docker": "sh -x ./bin/docker-push.sh",
+    "build:deploy": "yarn build && yarn build:docker"
   },
   "dependencies": {
     "@babel/preset-env": "^7.15.6",

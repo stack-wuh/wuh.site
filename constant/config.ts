@@ -8,7 +8,7 @@ export const config = {
   themeMode: 'light',
   language: 'zh-cn',
   header: {
-    title: '去修去修,万事皆休'
+    title: '日积跬步,以致千里'
   },
   footer: {
     suffixTitle: '你也想起舞吗',
