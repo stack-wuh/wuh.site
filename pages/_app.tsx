@@ -9,6 +9,9 @@ import { ConfigProvider } from "@/hooks/useConfig";
 import "@/styles/index.scss";
 import { config } from '@/constant/config'
 import * as gtag from '@/lib/gtag'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
+
+
 
 Router.events.on("routeChangeStart", () => {
   NProgress.start();
@@ -31,7 +34,7 @@ type NextPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-function MyApp({ Component, pageProps }: NextPropsWithLayout) {
+function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
   const layout = getLayout(<Component {...pageProps} />);
 
@@ -54,7 +57,13 @@ function MyApp({ Component, pageProps }: NextPropsWithLayout) {
           `,
         }}
       />
-      <ConfigProvider.Provider value={config}>{layout}</ConfigProvider.Provider>
+      <ConfigProvider.Provider value={config}>
+        <SwitchTransition>
+          <CSSTransition key={router.asPath} classNames='page-transition' timeout={3000} addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}>
+            {layout}
+          </CSSTransition>
+        </SwitchTransition>
+      </ConfigProvider.Provider>
     </ErrorBoundary>
   );
 }

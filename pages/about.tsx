@@ -141,4 +141,4 @@ const AboutPage = () => {
   );
 };
 
-export default withLayout(AboutPage);
+export default withLayout(AboutPage)
