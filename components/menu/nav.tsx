@@ -14,14 +14,14 @@ export default function Nav() {
         <span >关于</span>
       </a>
     </ActiveLink>
-    <ActiveLink href="https://github.com/stack-wuh/react-router-config/tree/v2" activeClassName="is-active" passHref>
-      <a className='ww_menu-item is-link' role='menuitem' tabIndex={0}>
+    <ActiveLink href="https://github.com/stack-wuh/react-router-config" activeClassName="is-active" passHref>
+      <a className='ww_menu-item is-link' role='menuitem' tabIndex={0} target='_blank'>
         <i className='iconfont icon-github' />
         <span>源代码</span>
       </a>
     </ActiveLink>
     <ActiveLink href="https://docs.wuh.site" activeClassName="is-active" passHref>
-      <a className='ww_menu-item' role='menuitem' tabIndex={0}>
+      <a className='ww_menu-item' role='menuitem' tabIndex={0} target='_blank'>
         <i className='iconfont icon-insertlink' />
         <span>文档指南</span>
       </a>
