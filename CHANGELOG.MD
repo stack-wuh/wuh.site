@@ -1,0 +1,43 @@
+# [2.0.0](https://github.com/stack-wuh/wuh.site/compare/v1.6.3...v2.0.0) (2021-10-17)
+
+
+### Features
+
+* **app.dynamic:** 引入next的动态组件功能 ([e3f3ea1](https://github.com/stack-wuh/wuh.site/commit/e3f3ea1c49f786f6217fc3c8626bf51f99b9d493))
+* **CM.Alert:** :postal_horn: 仿写Andt.Alert组件 ([3c90e13](https://github.com/stack-wuh/wuh.site/commit/3c90e1341f7d0afe1c803a76939c326aa7f332b6))
+* **CM.Button:** :bulb: 发光发亮 ([93517be](https://github.com/stack-wuh/wuh.site/commit/93517beadae1f48320479afd7a66671dd1811b3e))
+* **cm.button:** :busstop: 仿写antd.Button组件 ([c710d1e](https://github.com/stack-wuh/wuh.site/commit/c710d1e673df7530e910eb970c65e843c69ebd87))
+* **CM.Button:** :moon: 简单的加入一些滚动事件 ([78baa92](https://github.com/stack-wuh/wuh.site/commit/78baa923fdc4ff5198cc7ed3f812afa48c69f212))
+* **CM.Button.behavior:** Button组件加入ref引用 ([696994e](https://github.com/stack-wuh/wuh.site/commit/696994e7dd57a7f556cc20de0b196777f1919745))
+* **CM.Button.Group.Behavior:** :station: 迁移行为相关的按钮组 ([bc14835](https://github.com/stack-wuh/wuh.site/commit/bc14835633014753d4779daee9fc42731e874417))
+* **CM.Button.Link:** :link: link组来啦 ([29a3b56](https://github.com/stack-wuh/wuh.site/commit/29a3b56ec121b0080554ad1c33d536c95edca04b))
+* **CM.Button.Share:**  share组件的提示信息修改 ([acf8dff](https://github.com/stack-wuh/wuh.site/commit/acf8dff073a997ed855949fdd4b2cba69fdc024a))
+* **Cm.Button.Share:** :smiley: 给复制按钮来一个简单的交互 ([2c36fdd](https://github.com/stack-wuh/wuh.site/commit/2c36fddb14d523e468fc2cf1d01d909866cd88b4))
+* **CM.Button.State:** :smile:  状态持久化 ([0450794](https://github.com/stack-wuh/wuh.site/commit/04507947a747e191746a264f8d4d8d09dbde7998))
+* **CM.ButtonGroup:** :smiley: 呦吼~~状态切换按钮组 ([bd706ca](https://github.com/stack-wuh/wuh.site/commit/bd706cab77b1178e29e10c99106a45beec168271))
+* **CM.Divider:** :moon: Divider样式调整 ([06714f7](https://github.com/stack-wuh/wuh.site/commit/06714f7342521b6d57c311dd9bc7cdc6800c5271))
+* **CM.Divider:** :waning_gibbous_moon: 呦吼给divider加一下动画渐变 ([da08c35](https://github.com/stack-wuh/wuh.site/commit/da08c3504242f2cf9abc626a7d3ca881119565b9))
+* **CM.Empty:** :smirk: Empty空状态 ([8f9594e](https://github.com/stack-wuh/wuh.site/commit/8f9594e7476fd4d815f7f9bf99c2011c2e124191))
+* **CM.Header:** :smiley: 改一下borderRadius的渐变交互 ([384b2cf](https://github.com/stack-wuh/wuh.site/commit/384b2cf5e37bf8059d039d214685da5195563e6d))
+* **CM.Loadmore:** :bulb: loadmore按钮的样式调整 ([a29a1b4](https://github.com/stack-wuh/wuh.site/commit/a29a1b4f5dccdecdf0db229adbe6fc4eb0652317))
+* **CM.Space:** :smile: space组件新加入背景色 ([42948e8](https://github.com/stack-wuh/wuh.site/commit/42948e8d7549f282c219cab5a43a4d8567b37d08))
+* **CM.Tag:** :crystal_ball: 来自于sass的函数改写一下 ([62d4277](https://github.com/stack-wuh/wuh.site/commit/62d42771474aa7cdde7d1cbd93f3710559b9bcc9))
+* **CM.Tag:** :star2: 呦吼，仿写antd.Tag组件 ([e5f8c19](https://github.com/stack-wuh/wuh.site/commit/e5f8c19f40abba125f17d952e4efb64ab6c2d5e0))
+* **config.SEO:** :+1: 引入next-seo库 ([4257883](https://github.com/stack-wuh/wuh.site/commit/42578831b06a48e40d3f2335297568d6e12dd99e))
+* **docker:** :100: 修复一下docker的配置项目 ([c418358](https://github.com/stack-wuh/wuh.site/commit/c418358a25139e3897df74bac8d59aae751c2f4b))
+* **Docker:** :traffic_light: docker config ([e07f1cd](https://github.com/stack-wuh/wuh.site/commit/e07f1cd9ff816ac9a48407b99ed66793aded2234))
+* **hooks:** :smiley: 改掉hooks名的前缀 ([fbe0137](https://github.com/stack-wuh/wuh.site/commit/fbe01378eeba04597d9f6d462b8e7ed485ba1ac6))
+* **next-api:** :+1: 更换之前的静态文件，使用next的api动态返回 ([8ef561b](https://github.com/stack-wuh/wuh.site/commit/8ef561bf5b3ac497d8837fd6ea7186612dbaa777))
+* **Page.About:** :pager: 新增About关于页面 ([a6ea841](https://github.com/stack-wuh/wuh.site/commit/a6ea841728b2f8d2a597c366bc05cd2153ad35ae))
+* **Page.transition:** :+1: 页面动画过渡 ([014bc7f](https://github.com/stack-wuh/wuh.site/commit/014bc7f23e775590875d8b1285ad4fabb4bbe881))
+* **Perfamance:** :hash: 生成一份网站报告 ([7bf5b87](https://github.com/stack-wuh/wuh.site/commit/7bf5b870cb88b681657f06fbbce4ea1bb194a614))
+* **PostInfo:** :page_facing_up: 文章详情页加入版权说明 ([dfdb209](https://github.com/stack-wuh/wuh.site/commit/dfdb209f2fcd4361d2104c67bb685380c23ae3a4))
+* **SEO:** 修改一下SEO配置的文章地址 ([b806da1](https://github.com/stack-wuh/wuh.site/commit/b806da1c53d42051670d6f6cbca59a1a5f5cb81f))
+* **style.space:** :moon: 🌝space组件的样式兼容 ([b691a4c](https://github.com/stack-wuh/wuh.site/commit/b691a4cbb3b7bfbb92f4c48f99042ca882e86600))
+* **style.theme.nav:** :star: 暗黑模式下导航栏的色彩 ([41c11b2](https://github.com/stack-wuh/wuh.site/commit/41c11b2baaf33f5fe11c0a44fb425404fe840d9e))
+* **styles:** :star:  更换css文件未scss文件 ([e31cab3](https://github.com/stack-wuh/wuh.site/commit/e31cab3f39b13ca108224642503a1606550dbd57))
+* **styles.Home:** :crescent_moon: 调整首页相关的样式 ([7998ca1](https://github.com/stack-wuh/wuh.site/commit/7998ca10976ecab6dd5fca336987c089646ab7cf))
+* **styles:** 更新menu部分的样式表 ([d7f1268](https://github.com/stack-wuh/wuh.site/commit/d7f12680698f3c2a8f2a8d89109fbfc878844f89))
+
+
+
