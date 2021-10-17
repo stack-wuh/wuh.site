@@ -9,14 +9,15 @@
 
 # wuh.site
 
-![](https://img.shields.io/github/v/release/stack-wuh/react-router-config)
-![GitHub last commit](https://img.shields.io/github/last-commit/stack-wuh/wuh.site)
-![](https://img.shields.io/github/languages/top/stack-wuh/react-router-config)
-![](https://img.shields.io/github/contributors/stack-wuh/react-router-config)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/stack-wuh/wuh.site)
-![](https://img.shields.io/github/package-json/version/stack-wuh/react-router-config/v2)
-![](https://img.shields.io/github/repo-size/stack-wuh/react-router-config)
-![](https://img.shields.io/github/package-json/keywords/stack-wuh/react-router-config/v2)
+![](https://img.shields.io/github/package-json/dependency-version/stack-wuh/wuh.site/react?style=social)
+![](https://img.shields.io/github/package-json/dependency-version/stack-wuh/wuh.site/next?style=social)
+![](https://img.shields.io/github/package-json/dependency-version/stack-wuh/wuh.site/preact?style=social)
+![](https://img.shields.io/github/package-json/v/stack-wuh/wuh.site/main?style=social)
+![](https://img.shields.io/github/v/release/stack-wuh/react-router-config?style=social)
+![](https://img.shields.io/github/last-commit/stack-wuh/wuh.site?style=social)
+![](https://img.shields.io/github/languages/top/stack-wuh/react-router-config?style=social)
+![](https://img.shields.io/github/commit-activity/m/stack-wuh/wuh.site?style=social)
+![](https://img.shields.io/github/repo-size/stack-wuh/react-router-config?style=social)
 ![](https://img.shields.io/docker/pulls/shadowu/wuh.site?color=red&label=%E4%BD%BF%E7%94%A8%E6%AC%A1%E6%95%B0&logo=docker&logoColor=lightblue)
 ![](https://img.shields.io/docker/image-size/shadowu/wuh.site?label=%E9%95%9C%E5%83%8F%E5%A4%A7%E5%B0%8F&logo=docker&logoColor=lightblue)
 ![](https://img.shields.io/docker/v/shadowu/wuh.site?color=red&label=docker%20version&logo=docker&logoColor=lightblue)
@@ -43,14 +44,15 @@ Docker 镜像: <a href='https://hub.docker.com/r/shadowu/wuh.site' target='_blan
 
 ## ScreenShot
 
-<!-- <div style="display: flex; align-items: flex-start;">
-  <img style="flex: 1;" src="https://src.wuh.site/2021-05/2021-08-07-wuh.site_.png" width='45%' />
-  <img style="flex: 1;" src='https://src.wuh.site/2021-05/2021-08-07-wuh.site_about.png' width='45%'/>
-  <img style="flex: 1;" src="https://src.wuh.site/2021-05/wuh.site_post_2021-06_empty.png" width='45%' />
-</div> -->
+<p style="display: flex;">
+  <img src='./screenshot/wuh.site_home.png' width='50%' alt='home' />
+  <img src='./screenshot/wuh.site_home_dark.png' width='50%' alt='home_dark' />
+</p>
 
-![home](/screenshop/wuh.site_home.png) | ![home.dark](/screenshop/wuh.site_home_dark.png) | ![home.hover](/screenshop/wuh.site_dark_hover.png)  
-![about](/screenshop/wuh.site_about.png) | ![post](/screenshop/wuh.site_post.png)
+<p style="display: flex;">
+  <img src='./screenshot/wuh.site_dark_hover.png' width='50%' alt='home_dark_hover' />
+  <img src='./screenshot/wuh.site_about.png' width='50%' alt='about' />
+</p>
 
 ## 开源许可
 
@@ -78,6 +80,9 @@ yarn run dev -p 5544
 docker pull shadowu/wuh.site:1.5.0
 
 docker-compose up -d
+
+# 制作镜像文件
+docker build -f Dockerfile -t shadowu/wuh.site:latest .
 
 # 或者使用docker指令启动镜像
 docker run --name nextjs_app_container -it -p 3100:3000 --restart=always shadowu/wuh.site:latest
