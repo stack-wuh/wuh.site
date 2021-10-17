@@ -3,6 +3,7 @@ import fetcher from '@/lib/fetch'
 import { API_ARTICLE_LIST } from '@/constant/api'
 import { PostList } from '@/components/post'
 import { SWRConfig } from 'swr'
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
 
 export interface IHomeItemProps {
   state: string,
@@ -32,6 +33,8 @@ export type IHomeProps = {
 const Home = (props: IHomeProps) => {
   const { initialData } = props
   return <div className="ww_home">
+    <NextSeo title='wuh.site' />
+    <BreadcrumbJsonLd itemListElements={[{ position: 1, name: '首页 | Home', item: 'https://wuh.site' }]} />
     <SWRConfig>
       <PostList initialData={initialData} />
     </SWRConfig>

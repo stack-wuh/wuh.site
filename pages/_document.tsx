@@ -18,7 +18,6 @@ export default class MyDocument extends Document {
     const { theme, lang } = this.props as any
     return (<Html lang={lang} data-theme-mode={theme}>
       <Head>
-        <meta name='author' content='吴尒红 <wuh131420@foxmail.com>' />
         <link rel="stylesheet external noreferrer" href="//at.alicdn.com/t/font_1587964_p560dxo4iei.css" />
         <link rel="stylesheet external noreferrer" href="//at.alicdn.com/t/font_2595178_wa25xow6jmp.css" />
         <link rel="stylesheet external noreferrer" href="//fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" />

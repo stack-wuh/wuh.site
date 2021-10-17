@@ -13,6 +13,7 @@
   "dependencies": {
     "@babel/preset-env": "^7.15.6",
     "next": "11.1.2",
+    "next-seo": "^4.28.1",
     "preact": "^10.5.14",
     "preact-render-to-string": "^5.1.19",
     "react": "npm:@preact/compat",

@@ -3,10 +3,14 @@ import Space from "@/components/space/space";
 import AMap from "@/components/amap";
 import Divider from "@/components/divider";
 import Empty from "@/components/empty";
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
 
 const AboutPage = () => {
   return (
     <div className="ww_about">
+      <NextSeo title='吴尒红·wuh.site' description="自小多才俊,向来志气高.别人有宝剑,我有笔如刀." />
+      <BreadcrumbJsonLd itemListElements={[{ position: 1, name: '关于 | About', item: 'https://wuh.site/about' }]} />
+
       <div className="ww_about__list">
         <ul>
           <li>

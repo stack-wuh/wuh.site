@@ -10,7 +10,8 @@ import "@/styles/index.scss";
 import { config } from '@/constant/config'
 import * as gtag from '@/lib/gtag'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
-
+import { DefaultSeo, FAQPageJsonLd, LogoJsonLd } from 'next-seo'
+import SEOConfig, { FAQConfig, LogoConfig } from '../next-seo.config'
 
 
 Router.events.on("routeChangeStart", () => {
@@ -40,6 +41,9 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
 
   return (
     <ErrorBoundary>
+      <DefaultSeo {...SEOConfig} />
+      <FAQPageJsonLd mainEntity={FAQConfig.mainEntity} />
+      <LogoJsonLd url={LogoConfig.url} logo={LogoConfig.logo} />
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`} />
