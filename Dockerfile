@@ -17,7 +17,7 @@ WORKDIR /usr/src/app
 
 COPY . /usr/src/app/
 COPY --from=deps /usr/src/app/node_modules ./node_modules
-CMD [ "yarn", "build" ]
+RUN yarn build
 
 # ============== Runing ===========
 # ============== 运行时 ===========
