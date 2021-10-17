@@ -11,7 +11,7 @@
     "analysis": "cross-env ANALYZE=true & next build",
     "build:docker": "sh -x ./bin/docker-push.sh",
     "build:deploy": "yarn build && yarn build:docker",
-    "relase": "conventional-changelog -i CHANGELOG.MD -s -p angular"
+    "release": "conventional-changelog -i CHANGELOG.MD -s -a -r -p angular"
   },
   "dependencies": {
     "@babel/preset-env": "^7.15.6",
