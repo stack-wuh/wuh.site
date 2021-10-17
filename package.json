@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "analysis": "cross-env ANALYZE=true & next build"
+    "analysis": "cross-env ANALYZE=true & next build",
+    "build:docker": "sh -x ./bin/docker-push.sh"
   },
   "dependencies": {
     "@babel/preset-env": "^7.15.6",
@@ -17,7 +18,8 @@
     "preact": "^10.5.14",
     "preact-render-to-string": "^5.1.19",
     "react": "npm:@preact/compat",
-    "react-dom": "npm:@preact/compat"
+    "react-dom": "npm:@preact/compat",
+    "react-slick": "^0.28.1"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
