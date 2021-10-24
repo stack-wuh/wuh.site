@@ -19,6 +19,7 @@ $name: 'ww_tag';
     color: var(--color-base);
     border-radius: var(--border-radius-base);
     background-color: var(--color-primary-4);
+    transition: var(--transition-base);
 
     &:hover {
       transition: var(--transition-base);
@@ -38,4 +39,5 @@ $name: 'ww_tag';
   }
 
   @include getTagColors($name);
+  @include getSizes();
 }

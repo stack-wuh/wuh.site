@@ -1,4 +1,5 @@
 @import './color.scss';
+@import './vars.scss';
 
 $row: flex-start;
 $col: flex-start;
@@ -101,6 +102,18 @@ $wrap: wrap;
           transition: var(--transition-base);
         }
       }
+    }
+  }
+}
+
+@mixin getSizes () {
+
+  @each $size,
+  $fontsize,
+  $padding in $sizes {
+    .is-#{$size} {
+      font-size: $fontsize;
+      padding: $padding;
     }
   }
 }

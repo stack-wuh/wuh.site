@@ -2,20 +2,24 @@ import React from 'react'
 import classnames from 'classnames'
 
 export type colors = 'yuque' | 'github' | 'zhihu' | 'qqzone' | 'wechat' | 'douban' | 'twitter' | 'default'
+export type sizes = 'small' | 'middle' | 'large'
 export type TagTypeProps = {
   icon?: string | null,
   color?: colors | string,
   ghost?: boolean,
-  iconFamily?: string
+  iconFamily?: string,
+  size?: sizes,
+  className?: string,
 }
 
 const allowHexColor = (value: string | any): boolean => ['yuque', 'github', 'zhihu', 'qqzone', 'wechat', 'douban', 'twitter'].includes(value)
 
 const Tag: React.FC<TagTypeProps> = (props) => {
-  const { children, ghost, color, icon, iconFamily } = props
-  const innerClassnames = classnames('ww_tag__inner', {
+  const { children, ghost, color, icon, iconFamily, size, className } = props
+  const innerClassnames = classnames('ww_tag__inner', className, {
     'is-ghost': ghost,
     [`is-${color}`]: allowHexColor(color),
+    [`is-${size}`]: size,
     [`ww_tag--${color}`]: allowHexColor(color),
     [`ww_tag--${color}--ghost`]: ghost && allowHexColor(color)
   })

@@ -1177,6 +1177,13 @@
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.4.tgz"
   integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
 
+"@types/react-slick@^0.23.7":
+  version "0.23.7"
+  resolved "https://registry.npmmirror.com/@types/react-slick/download/@types/react-slick-0.23.7.tgz#2ef4f42dd0e9be5633502c3563572c7d7584a368"
+  integrity sha1-LvT0LdDpvlYzUCw1Y1csfXWEo2g=
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-transition-group@^4.4.3":
   version "4.4.3"
   resolved "https://registry.nlark.com/@types/react-transition-group/download/@types/react-transition-group-4.4.3.tgz#b0994da0a7023d67dbb4a8910a62112bc00d5688"
