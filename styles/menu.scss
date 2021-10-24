@@ -1,4 +1,6 @@
-.ww_menu {
+$name: 'ww_menu';
+
+.#{$name} {
   display: flex;
   flex-direction: column;
   position: fixed;

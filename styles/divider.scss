@@ -1,4 +1,6 @@
-.ww_divider {
+$name: 'ww_divider';
+
+.#{$name} {
   position: relative;
   width: inherit;
   height: auto;

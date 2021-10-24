@@ -1,4 +1,6 @@
-.ww_space {
+$name: 'ww_space';
+
+.#{$name} {
   width: inherit;
   height: auto;
   outline: none;

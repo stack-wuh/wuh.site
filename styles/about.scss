@@ -1,4 +1,6 @@
-.ww_about {
+$name: 'ww_about';
+
+.#{$name} {
   position: relative;
   font-size: var(--font-size-base);
   overflow: hidden;

@@ -7,7 +7,7 @@ body,
   font-size: 14px;
   color: var(--color-base-9);
   background-color: var(--color-background-primary);
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto', 'Noto Sans SC', sans-serif;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
