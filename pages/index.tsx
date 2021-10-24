@@ -33,7 +33,7 @@ export type IHomeProps = {
 const Home = (props: IHomeProps) => {
   const { initialData } = props
   return <div className="ww_home">
-    <NextSeo title='wuh.site' />
+    <NextSeo title='wuh.site -- 日积跬步, 以致千里' />
     <BreadcrumbJsonLd itemListElements={[{ position: 1, name: '首页 | Home', item: 'https://wuh.site' }]} />
     <SWRConfig>
       <PostList initialData={initialData} />

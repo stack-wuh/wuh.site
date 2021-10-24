@@ -1,7 +1,7 @@
 import { NextSeoProps, FAQPageJsonLdProps, LogoJsonLdProps } from "next-seo";
 
 const config: NextSeoProps = {
-	title: "wuh.site",
+	title: "wuh.site -- 日积跬步, 以致千里",
 	description: "不要停步不前, 每一天都要做出一点点改变, 日积跬步, 以致千里.",
 	additionalMetaTags: [
     {
