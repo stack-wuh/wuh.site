@@ -15,6 +15,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
+      "@/*": ["."],
       "@/pages/*": ["pages/*"],
       "@/components/*": ["components/*"],
       "@/lib/*": ["lib/*"],
@@ -24,7 +25,8 @@
       "@/layout/*": ["layout/*"],
       "@/styles/*": ["styles/*"],
       "@/store/*": ["store/*"],
-      "@/constant/*": ["constant/*"]
+      "@/constant/*": ["constant/*"],
+      "@/__utils/*": ["__utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

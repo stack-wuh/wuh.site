@@ -1,9 +1,9 @@
 import React from 'react'
 import { IHomeItemProps } from '@/pages/index'
 
-export const PostContextKey = React.createContext(null)
+export const PostContextKey = React.createContext({})
 
-type valueTypeProps = any | IHomeItemProps | null
+type valueTypeProps = IHomeItemProps
 export type PostContextProps = {
   value: valueTypeProps
 }
