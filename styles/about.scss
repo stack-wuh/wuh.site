@@ -69,25 +69,44 @@
   .text-wave {
     text-decoration: underline wavy var(--color-primary-4);
     transition: var(--transition-base);
-  }
 
-  .text-wave:hover {
-    text-decoration: underline dotted var(--color-primary-4);
-    transition: var(--transition-base);
+    &:hover {
+      text-decoration: underline dotted var(--color-primary-4);
+      color: var(--color-primary-5);
+      transition: var(--transition-base);
+    }
   }
 
   .text-link {
     color: inherit;
     transition: var(--transition-base);
-  }
 
-  .text-link:hover {
-    color: var(--color-primary-5);
-    text-decoration: underline double var(--color-primary-5);
-    transition: var(--transition-base);
+    &:hover {
+      color: var(--color-primary-6);
+      text-decoration: underline double var(--color-primary-5);
+      transition: var(--transition-base);
+    }
   }
 
   .text-none {
     text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .text-bg-line {
+    background:
+      linear-gradient(90deg, #ffc53d, #fffbe6),
+      linear-gradient(90deg, #fffbe6, #faad14);
+    background-size: 100% 2px, 0 2px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    transition: var(--transition-base);
+
+    &:hover {
+      background-size: 0 2px, 100% 2px;
+      background-position: right bottom;
+      color: #faad14;
+      transition: var(--transition-base);
+    }
   }
 }

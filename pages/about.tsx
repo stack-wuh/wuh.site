@@ -21,7 +21,7 @@ const AboutPage = () => {
           </li>
           <li>
             <i className="iconfont-color iconbiaoqianA01_biji-94" />
-            <span>
+            <span className='text-bg-line'>
               他是一个男孩, 仍然活在理想的世界里, 因为现实世界里的月光太惨白。
             </span>
           </li>
