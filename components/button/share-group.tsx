@@ -96,7 +96,7 @@ const ShareGroup: React.FC<ShareTypeProps> = (props) => {
   }, [current, isCopied, reset])
 
   return <div className="ww_button ww_button-group ww_button-group__share">
-    <Space>
+    <Space block>
       <Button className='btn__item' htmlHref={qqzone} hrefClassName='ww_button__share--qqzone' icon='icon-QQkongjian' ghost />
       <Button className='btn__item' htmlHref={qqperson} hrefClassName='ww_button__share--qq' icon='icon-qq' ghost />
       <Button className='btn__item' htmlHref={twitter} hrefClassName='ww_button__share--twitter' icon='icon-ttww' ghost />

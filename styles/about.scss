@@ -27,6 +27,7 @@
     background-color: var(--color-gray-3);
     color: var(--color-base-8);
     border: 1px solid var(--color-gray-1);
+    text-decoration: none none var transparent;
     transition: all 0.5s ease;
   }
 
@@ -66,12 +67,12 @@
   }
 
   .text-wave {
-    text-decoration: underline wavy var(--color-4);
+    text-decoration: underline wavy var(--color-primary-4);
     transition: var(--transition-base);
   }
 
   .text-wave:hover {
-    text-decoration: underline dotted var(--color-5);
+    text-decoration: underline dotted var(--color-primary-4);
     transition: var(--transition-base);
   }
 
@@ -81,8 +82,8 @@
   }
 
   .text-link:hover {
-    color: var(--color-5);
-    text-decoration: underline double var(--color-5);
+    color: var(--color-primary-5);
+    text-decoration: underline double var(--color-primary-5);
     transition: var(--transition-base);
   }
 

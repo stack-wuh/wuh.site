@@ -82,7 +82,7 @@ const AboutPage = () => {
           </li>
           <li className="flex-align-center">
             <i className="iconfont-color iconxinhao" />
-            <Space size='small'>
+            <Space size='small' ghost>
               <a
                 href="https://www.github.com/stack-wuh"
                 rel="external noreferrer"

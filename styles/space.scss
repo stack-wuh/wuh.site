@@ -1,5 +1,5 @@
 .ww_space {
-  width: fit-content;
+  width: inherit;
   height: auto;
   outline: none;
   border: none;
@@ -11,6 +11,7 @@
     justify-content: flex-start;
     flex-direction: row;
     flex-wrap: nowrap;
+    width: fit-content;
     background-color: var(--color-background-primary);
     transition: var(--transition-base);
   }
@@ -31,6 +32,10 @@
 
   .is-ghost {
     background: transparent !important;
+  }
+
+  .is-block {
+    width: 100%;
   }
 
   .is-small {

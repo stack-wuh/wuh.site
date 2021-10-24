@@ -11,6 +11,7 @@ export type SpaceProps = {
   style?: React.CSSProperties;
   itemStyle?: React.CSSProperties;
   ghost?: boolean;
+  block?: boolean
 };
 
 const Space: React.FC<SpaceProps> = (props) => {
@@ -23,6 +24,7 @@ const Space: React.FC<SpaceProps> = (props) => {
     style,
     itemStyle,
     ghost,
+    block
   } = props;
   const outClassnames = classNames("ww_space");
   const innerClassnames = classNames("ww_space__inner", {
@@ -30,6 +32,7 @@ const Space: React.FC<SpaceProps> = (props) => {
     [`is-wrap`]: wrap,
     [`is-${direction}`]: direction,
     [`is-border`]: border,
+    'is-block': block,
     "is-ghost": ghost,
   });
   const innerStyle: React.CSSProperties = {};
