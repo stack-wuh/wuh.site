@@ -3,7 +3,7 @@ import fetcher from '@/lib/fetch'
 import { API_ARTICLE_LIST, API_BANNER_HOME } from '@/constant/api'
 import { PostList } from '@/components/post'
 import BannerPost from '@/components/banner/post'
-import { SWRConfig } from 'swr'
+import swr, { SWRConfig } from 'swr'
 import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
 import { rowItem } from '@/pages/api/banner'
 
@@ -33,14 +33,30 @@ export type IHomeProps = {
   bannerList: rowItem[]
 }
 
+type datasType = {
+  bannerList?: rowItem[]
+}
+const useFetchData = (): datasType => {
+  const { data } = swr(API_BANNER_HOME, fetcher)
+
+  if (!data || !data.data || data.error) return {}
+
+  return {
+    bannerList: data.data.rows
+  }
+}
+
 const Home = (props: IHomeProps) => {
-  const { initialData, bannerList } = props
+  const { initialData } = props
+  const datas = useFetchData()
 
   return <div className="ww_home">
     <NextSeo title='wuh.site -- 日积跬步, 以致千里·wuh.site' />
     <BreadcrumbJsonLd itemListElements={[{ position: 1, name: '首页 | Home', item: 'https://wuh.site' }]} />
     <SWRConfig>
-      <BannerPost data={bannerList} />
+      {
+        datas?.bannerList && (<BannerPost data={datas.bannerList} />)
+      }
       <PostList initialData={initialData} bannerList={[]} />
     </SWRConfig>
   </div>
@@ -48,12 +64,10 @@ const Home = (props: IHomeProps) => {
 
 export async function getStaticProps() {
   const data = await fetcher(API_ARTICLE_LIST)
-  const bannerRes = await fetcher(API_BANNER_HOME)
 
   return {
     props: {
       initialData: data,
-      bannerList: bannerRes.data.rows
     }
   }
 }
