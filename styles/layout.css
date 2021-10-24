@@ -1,10 +1,13 @@
 .layout {
   position: relative;
   width: 100%;
-  padding-top: 6.33rem;
+  padding-top: 5.33rem;
   box-sizing: border-box;
   overflow: hidden;
-  transition: width .5s cubic-bezier(0.075, 0.82, 0.165, 1) height .5s cubic-bezier(0.075, 0.82, 0.165, 1) border-radius .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 
+    width .5s cubic-bezier(0.075, 0.82, 0.165, 1),
+    height .5s cubic-bezier(0.075, 0.82, 0.165, 1),
+    border-radius .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .layout .app-root {
