@@ -56,28 +56,29 @@ Docker 镜像: <a href='https://hub.docker.com/r/shadowu/wuh.site' target='_blan
 
 ## 开源许可
 
-![](https://img.shields.io/github/license/stack-wuh/react-router-config)
+![](https://img.shields.io/github/license/stack-wuh/wuh.site)
 
 ## 启动项目
 
 ### 使用 git
 
-1. master 分支，有 create-react-app 创建的 react 项目
-2. v2 分支为 Nextjs 构建的 react 项目
+1. `main`分支, 由`Next11 + TypeScript + Webpack5 + SASS`构建的TS应用
+1. `master`分支, 由`create-react-app`创建的 react 项目
+2. `v2`分支为 `Nextjs` 构建的 react 项目
 
 ```bash
-git clone -b v2 https://github.com/stack-wuh/react-router-config.git next-blog
+git clone -b main https://github.com/stack-wuh/wuh.site.git wuh.site
 
-cd next-blog
+cd wuh.site
 yarn
 
-yarn run dev -p 5544
+yarn run dev
 ```
 
 ### 使用 docker
 
 ```bash
-docker pull shadowu/wuh.site:1.5.0
+docker pull shadowu/wuh.site:latest
 
 docker-compose up -d
 
