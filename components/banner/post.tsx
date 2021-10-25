@@ -17,7 +17,7 @@ const Post: React.FC<propsType> = (props) => {
     dots: true,
     fade: true,
     infinite: true,
-    autoplay: false,
+    autoplay: true,
     speed: 2000,
     autoplaySpeed: 5000,
     arrows: false,
