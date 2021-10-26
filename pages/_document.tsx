@@ -4,13 +4,8 @@ import { config } from '@/constant/config'
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx)
-    const cookies = ctx.req?.headers.cookie?.replace('; ', '&')
+    const cookies = ctx.req?.headers.cookie?.replace(/;./gi, '&')
     const cookieSchema = new URLSearchParams(cookies)
-    console.group('cookie')
-    console.log('cookies', ctx.req?.headers)
-    console.log('theme', cookieSchema.get('data-theme-mode'))
-    console.log('lang', cookieSchema.get('lang'))
-    console.groupEnd()
 
     return {
       ...initialProps,
