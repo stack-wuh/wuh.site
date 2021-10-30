@@ -5,6 +5,7 @@ import Router from "next/router";
 import Script from 'next/script';
 import NProgress from "nprogress";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import ThemeScript from '@/components/head/theme';
 import { ConfigProvider } from "@/hooks/useConfig";
 import "@/styles/index.scss";
 import { config } from '@/constant/config'
@@ -61,6 +62,7 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
           `,
         }}
       />
+      <ThemeScript />
       <ConfigProvider.Provider value={config}>
         <SwitchTransition>
           <CSSTransition key={router.asPath} classNames='page-transition' timeout={3000} addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}>
