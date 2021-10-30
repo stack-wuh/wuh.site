@@ -6,6 +6,7 @@ import Script from 'next/script';
 import NProgress from "nprogress";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ThemeScript from '@/components/head/theme';
+import BubbleScript from '@/components/head/bubble';
 import { ConfigProvider } from "@/hooks/useConfig";
 import "@/styles/index.scss";
 import { config } from '@/constant/config'
@@ -46,6 +47,7 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
       <FAQPageJsonLd mainEntity={FAQConfig.mainEntity} />
       <LogoJsonLd url={LogoConfig.url} logo={LogoConfig.logo} />
       <Script
+        id='gtag'
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`} />
       <Script
@@ -63,6 +65,7 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
         }}
       />
       <ThemeScript />
+      <BubbleScript />
       <ConfigProvider.Provider value={config}>
         <SwitchTransition>
           <CSSTransition key={router.asPath} classNames='page-transition' timeout={3000} addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}>
