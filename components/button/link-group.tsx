@@ -87,6 +87,7 @@ const LinkGroup: React.FC<{}> = () => {
             <>
               <Button
                 ghost
+                events={{ category: 'link', label: item.name }}
                 key={item.name}
                 htmlHref={item.href}
                 hrefClassName={item.hrefClassName}

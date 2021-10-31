@@ -17,8 +17,8 @@ const StateGroup: React.FC<{}> = () => {
   return (<Affix position='right' offsetY={120}>
     <div className="ww_button ww_button-group">
       <Space direction='vertical' size={0}>
-        <Button onClick={config.toggleLang} className={langClassnames} ghost size='small' icon={langIconName} />
-        <Button onClick={config.toggleThemeMode} className={themeClassnames} ghost size='small' icon={themeIconName} />
+        <Button events={{ category: 'button', label: 'btn_language' }} onClick={config.toggleLang} className={langClassnames} ghost size='small' icon={langIconName} />
+        <Button events={{ category: 'button', label: 'btn_theme' }} onClick={config.toggleThemeMode} className={themeClassnames} ghost size='small' icon={themeIconName} />
       </Space>
     </div>
   </Affix>)

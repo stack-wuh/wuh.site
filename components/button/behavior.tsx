@@ -55,10 +55,10 @@ const Behavior: React.FC<BehaviorTypeProps> = (props) => {
   return (<Affix position='right' offsetY={'70vh'} offsetX={'90vw'}>
     <div className="ww_button ww_button-group ww_button-group__state">
       <Space direction='vertical' size={0}>
-        <Button className='btn__item' ghost htmlHref='https://src.wuh.site/common/rss.xml' shape='rect' icon='icon-Rss' />
-        <Button onClick={scroller.scrollToTop} ref={btnUpRef} className='btn__item' ghost shape='rect' icon='icon-up' />
-        <Button onClick={scroller.scrollToBottom} ref={btnDownRef} className='btn__item' ghost shape='rect' icon='icon-down' />
-        <Button className='btn__item' ghost htmlHref='mailto:wuh131420@foxmail.com?subject=联系我吧&body=在这里写内容' shape='rect' icon='icon-email' />
+        <Button events={{ label: 'behavior-rss', category: 'link' }} className='btn__item' ghost htmlHref='https://src.wuh.site/common/rss.xml' shape='rect' icon='icon-Rss' />
+        <Button events={{ label: 'behavior-up', category: 'link' }} onClick={scroller.scrollToTop} ref={btnUpRef} className='btn__item' ghost shape='rect' icon='icon-up' />
+        <Button events={{ label: 'behavior-down', category: 'link' }} onClick={scroller.scrollToBottom} ref={btnDownRef} className='btn__item' ghost shape='rect' icon='icon-down' />
+        <Button events={{ label: 'behavior-contact', category: 'link' }} className='btn__item' ghost htmlHref='mailto:wuh131420@foxmail.com?subject=联系我吧&body=在这里写内容' shape='rect' icon='icon-email' />
       </Space>
     </div>
   </Affix>)

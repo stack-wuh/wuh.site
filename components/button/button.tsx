@@ -1,5 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
+import * as gtag from '@/lib/gtag'
 
 type sizes = 'small' | 'middle' | 'large'
 
@@ -43,7 +44,9 @@ export type ButtonTypeProps = {
   /** button组件的重写类名 */
   className?: string,
   /** React.ReactNode 只是一个简单的类型声明 */
-  children?: React.ReactNode
+  children?: React.ReactNode,
+  /** 置换gtag的event的label */
+  events?: gtag.normalEventTypeProps
 }
 
 const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonTypeProps> = (props, ref) => {
@@ -62,7 +65,8 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonTypeProps> =
     title,
     ghost,
     hrefClassName,
-    className
+    className,
+    events
   } = props
 
   const buttonRef = (ref as any) || React.createRef<HTMLElement>()
@@ -102,7 +106,19 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonTypeProps> =
   }
   const achonrClassnames = classnames('ww_button__link', 'ww_button__inner--link')
 
-  return (<div ref={buttonRef} onClick={onClick} className={classNames}>
+  const handleClick = () => {
+    if (onClick) {
+      onClick()
+    }
+    gtag.event({
+      action: events?.action ?? 'click',
+      category: events?.category ?? 'button',
+      label: events?.label ?? 'btn-normal',
+      value: 10
+    })
+  }
+
+  return (<div ref={buttonRef} onClick={handleClick} className={classNames}>
     <div className={btnClassNames}>
       {
         htmlHref ? <a className={achonrClassnames} {...hrefHtmlProps} href={htmlHref}>{node}</a> : node

@@ -11,7 +11,7 @@ export const pageview = (url: string) => {
   })
 }
 
-type normalEventTypeProps = {
+export type normalEventTypeProps = {
   action?: string,
   category?: string,
   label?: string,

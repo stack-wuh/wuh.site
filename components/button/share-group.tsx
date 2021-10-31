@@ -97,12 +97,12 @@ const ShareGroup: React.FC<ShareTypeProps> = (props) => {
 
   return <div className="ww_button ww_button-group ww_button-group__share">
     <Space block>
-      <Button className='btn__item' htmlHref={qqzone} hrefClassName='ww_button__share--qqzone' icon='icon-QQkongjian' ghost />
-      <Button className='btn__item' htmlHref={qqperson} hrefClassName='ww_button__share--qq' icon='icon-qq' ghost />
-      <Button className='btn__item' htmlHref={twitter} hrefClassName='ww_button__share--twitter' icon='icon-ttww' ghost />
-      <Button className='btn__item' htmlHref={weibo} hrefClassName='ww_button__share--weibo' icon='icon-weibo-circle-fill' ghost />
-      <Button className='btn__item' hrefClassName='ww_button__share--zhihu' icon='icon-zhihu' ghost />
-      <Button className='btn__item' onClick={handleClickCopy} hrefClassName='ww_button__share--link' icon='icon-insertlink' ghost />
+      <Button events={{ category: 'link', label: 'share-qqzone' }} className='btn__item' htmlHref={qqzone} hrefClassName='ww_button__share--qqzone' icon='icon-QQkongjian' ghost />
+      <Button events={{ category: 'link', label: 'share-qq' }} className='btn__item' htmlHref={qqperson} hrefClassName='ww_button__share--qq' icon='icon-qq' ghost />
+      <Button events={{ category: 'link', label: 'share-twitter' }} className='btn__item' htmlHref={twitter} hrefClassName='ww_button__share--twitter' icon='icon-ttww' ghost />
+      <Button events={{ category: 'link', label: 'share-weibo' }} className='btn__item' htmlHref={weibo} hrefClassName='ww_button__share--weibo' icon='icon-weibo-circle-fill' ghost />
+      <Button events={{ category: 'link', label: 'share-zhihu' }} className='btn__item' hrefClassName='ww_button__share--zhihu' icon='icon-zhihu' ghost />
+      <Button events={{ category: 'link', label: 'share-link' }} className='btn__item' onClick={handleClickCopy} hrefClassName='ww_button__share--link' icon='icon-insertlink' ghost />
     </Space>
   </div>
 }
