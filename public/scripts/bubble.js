@@ -21,33 +21,32 @@
     return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')'
   }
   const getClientRect = (event) => {
-    const { pageX, pageY } = event
+    const { clientX, clientY } = event
     const { innerWidth, innerHeight } = window
-    let top = pageY
-    let left = pageX
-    let arrowRight = pageX < innerWidth / 2
+    let top = clientY
+    let left = clientX
+    let arrowRight = clientX < innerWidth / 2
 
-    if (pageY < 70) {
-      top = pageY + MIX_POSITION_VALUE
+    if (clientY < 70) {
+      top = clientY + MIX_POSITION_VALUE
     }
-    if (pageX < MIX_POSITION_VALUE) {
-      left = pageX + MIX_POSITION_VALUE
+    if (clientX < MIX_POSITION_VALUE) {
+      left = clientX + MIX_POSITION_VALUE
     }
 
-    if (pageY > innerHeight) {
+    if (clientY > innerHeight) {
       top = innerHeight - MIX_POSITION_VALUE
     }
-    if (pageX > innerWidth - MIX_POSITION_VALUE) {
+    if (clientX > innerWidth - MIX_POSITION_VALUE) {
       left = innerWidth - MIX_POSITION_VALUE
     }
 
-    const poverX = (pageX < MIX_POSITION_VALUE || arrowRight) ? 0.1 : -1
+    const poverX = (clientX < MIX_POSITION_VALUE || arrowRight) ? 0.1 : -1
     const poverY = -1
 
     return { top, left, poverX, poverY }
   }
   const call = (event) => {
-    const { x, y } = event
     const ele = document.createElement('div')
     ele.className = 'ww_popupper ani_slide'
     const posi = getClientRect(event)
