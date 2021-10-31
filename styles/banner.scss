@@ -1,4 +1,5 @@
 $name: 'ww_banner';
+$gallery: 'ww_gallery';
 
 .#{$name} {
   position: relative;
@@ -132,5 +133,40 @@ $name: 'ww_banner';
         display: none;
       }
     }
+  }
+}
+
+.#{$gallery} {
+  position: relative;
+
+  &__item {
+    position: relative;
+    height: 40em;
+    width: 100%;
+    padding: var(--padding-base);
+    border-radius: var(--border-radius-base);
+    background-color: var(--color-base-2) !important;
+    z-index: 999 !important;
+    overflow: hidden;
+    transition: var(--transition-base);
+  }
+
+  &__bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: 100% !important;
+    background-position: center !important;
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 54px;
+    padding: var(--padding-base);
+    box-sizing: border-box;
+    background-color: rgba($color: #333, $alpha: 0.6);
   }
 }

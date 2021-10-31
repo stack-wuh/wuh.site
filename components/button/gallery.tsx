@@ -1,16 +1,21 @@
 import * as React from 'react'
 import Affix from '@/components/affix'
 import Modal from '@/components/modal'
+import ModalList from '@/components/banner/gallery'
 
 const Gallery = () => {
   const [visible, setvisible] = React.useState(false)
 
   return (<>
-    <Modal title='注意' visible={visible} onCancel={() => setvisible(false)} footer={false}>
-      <p style={{ height: '120vh' }}>hello world</p>
+    <Modal
+      title='故乡山川'
+      visible={visible}
+      innerStyle={{ padding: 0 }}
+      onCancel={() => setvisible(false)} footer={false}>
+      <ModalList data={[1, 2, 3, 4]} onClose={() => setvisible(false)} />
     </Modal>
     <Affix offsetY={'70vh'}>
-      <span onClick={() => setvisible(true)}>click</span>
+      <span onClick={() => setvisible(true)}>故乡山川</span>
     </Affix>
   </>)
 }

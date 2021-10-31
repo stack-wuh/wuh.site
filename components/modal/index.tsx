@@ -18,11 +18,13 @@ type ModalPropsTypes = {
   /** Modal.Footer */
   footer?: React.ReactNode | boolean,
   /** 外部容器的类名 */
-  wrapperClassName?: string
+  wrapperClassName?: string,
+  /** 内部样式表 */
+  innerStyle?: React.CSSProperties
 }
 
 const Modal: React.FC<ModalPropsTypes> = (props) => {
-  const { visible, title, allowFixedHeader, wrapperClassName } = props
+  const { visible, title, allowFixedHeader, wrapperClassName, innerStyle } = props
 
   const handleCancel = () => {
     if (props.onCancel) {
@@ -45,7 +47,7 @@ const Modal: React.FC<ModalPropsTypes> = (props) => {
             <i className='iconfont icon-searchclose'></i>
           </div>
         </div>
-        <div className='ww_modal__inner'>{visible && props.children}</div>
+        <div className='ww_modal__inner' style={innerStyle}>{visible && props.children}</div>
         {
           footer && (<div className='ww_modal__footer'>{footer}</div>)
         }
