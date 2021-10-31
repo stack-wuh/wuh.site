@@ -2,7 +2,7 @@ import * as React from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import MenuNav from '@/components/menu/nav'
-import { BehaviorButtonGroup, StateButtonGroup, LinkButtonGroup } from '@/components/button'
+import { BehaviorButtonGroup, StateButtonGroup, LinkButtonGroup, GalleryButton } from '@/components/button'
 
 import Response from './response'
 
@@ -12,6 +12,7 @@ const ConfigWrapper: React.FC = () => (<div className='config'>
   <LinkButtonGroup />
   <StateButtonGroup />
   <BehaviorButtonGroup />
+  <GalleryButton />
 </div>)
 
 function Layout<T>(Component: React.ComponentType<T>) {

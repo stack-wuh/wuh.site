@@ -3,6 +3,7 @@ import LoadMoreButton from './loadmore'
 import LinkButtonGroup from './link-group'
 import StateButtonGroup from './state-group'
 import BehaviorButtonGroup from './behavior'
+import GalleryButton from './gallery'
 
 
 export {
@@ -10,5 +11,6 @@ export {
   LoadMoreButton,
   LinkButtonGroup,
   StateButtonGroup,
-  BehaviorButtonGroup
+  BehaviorButtonGroup,
+  GalleryButton
 }
