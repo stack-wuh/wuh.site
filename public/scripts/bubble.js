@@ -1,6 +1,8 @@
 (function () {
   let $target = null
   let index = 0
+  let count = 0
+  const MAX_CLICKCOUNT_TIMEOUT = 2 * 1000
   const MIX_POSITION_VALUE = 40
   const labels = ["富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善", "富强"]
 
@@ -46,6 +48,32 @@
 
     return { top, left, poverX, poverY }
   }
+  const debounce = () => {
+    let start = new Date().getTime()
+    let totalstamp = 0
+    return function () {
+      let now = new Date().getTime()
+      let timestamp = now - start
+      start = new Date().getTime()
+
+      if (count >= 15) {
+        window.alert(`别点了, 我知道你的手速快, 你在${totalstamp}ms内, 一共点击了${count}次, 平均每次${totalstamp / count}ms.`)
+        count = 0
+        totalstamp = 0
+        return
+      }
+
+      if (timestamp < 1200) {
+        count++
+        totalstamp += timestamp
+      } else {
+        count = 0
+        start = new Date().getTime()
+      }
+    }
+  }
+  var logger = debounce()
+
   const call = (event) => {
     const ele = document.createElement('div')
     ele.className = 'ww_popupper ani_slide'
@@ -61,7 +89,7 @@
     ele.append(bubble)
     ele.id = index
     $target.append(ele)
-
+    logger()
     setTimeout(() => {
       $target.removeChild(ele)
     }, 2000)
