@@ -15,7 +15,7 @@ const Gallery = () => {
       <ModalList data={[1, 2, 3, 4]} onClose={() => setvisible(false)} />
     </Modal>
     <Affix offsetY={'70vh'}>
-      <span onClick={() => setvisible(true)}>故乡山川</span>
+      <button className='ww_button__gallery transition-fade-color' onClick={() => setvisible(true)}>故乡山川</button>
     </Affix>
   </>)
 }

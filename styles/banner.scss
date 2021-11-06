@@ -155,8 +155,9 @@ $gallery: 'ww_gallery';
     position: relative;
     width: 100%;
     height: 100%;
-    background-size: 100% !important;
+    background-size: 100% 100% !important;
     background-position: center !important;
+    background-repeat: no-repeat;
   }
 
   &__footer {
@@ -164,9 +165,40 @@ $gallery: 'ww_gallery';
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 54px;
+    height: 114px;
     padding: var(--padding-base);
     box-sizing: border-box;
     background-color: rgba($color: #333, $alpha: 0.6);
+    color: #fff;
+  }
+
+  &__desc {
+    p {
+      padding: 0;
+      margin: 0;
+    }
+
+    &--title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 2;
+    }
+
+    &--desc {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    margin-top: var(--margin-base);
+
+    &--item {
+      margin-right: var(--margin-base);
+      color: #fff;
+    }
   }
 }

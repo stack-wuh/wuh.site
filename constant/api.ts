@@ -8,3 +8,5 @@ export const API_ARTICLE_LIST = `${DOMAIN}${PREFIX}/articles`
 export const API_ARTICLE_ITEM = `${DOMAIN}${PREFIX}/articles/`
 
 export const API_BANNER_HOME = `${DOMAIN_STATIC}/api/banner`
+
+export const API_GALLERY_LIST = `${DOMAIN_STATIC}/api/gallery`

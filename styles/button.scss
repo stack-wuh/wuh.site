@@ -260,3 +260,17 @@ button[disabled] {
     }
   }
 }
+
+.ww_button__gallery {
+  display: block;
+  width: 2em;
+  padding: 1em 0;
+  text-align: center;
+  color: #fff;
+  background-color: blue;
+  border-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

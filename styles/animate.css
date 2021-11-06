@@ -56,3 +56,18 @@
     rotate-vert-center 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite,
     transition-color 1.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
 }
+
+@keyframes fade-background-color {
+  0% {
+    color: #f2f2f2;
+    background-color: var(--color-yellow-4);
+  }
+  100% {
+    color: #fff;
+    background-color: var(--color-yellow-8);
+  }
+}
+
+.transition-fade-color {
+  animation: fade-background-color 1.8s linear infinite;
+}

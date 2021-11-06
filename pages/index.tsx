@@ -34,15 +34,18 @@ export type IHomeProps = {
 }
 
 type datasType = {
-  bannerList?: rowItem[]
+  bannerList?: rowItem[],
 }
 const useFetchData = (): datasType => {
-  const { data } = swr(API_BANNER_HOME, fetcher)
+  const { data: banner } = swr(API_BANNER_HOME, fetcher)
+  const initRes = {
+    bannerList: [],
+  }
 
-  if (!data || !data.data || data.error) return {}
+  if (!banner || !banner.data || banner.error) return initRes
 
   return {
-    bannerList: data.data.rows
+    bannerList: banner.data.rows,
   }
 }
 
