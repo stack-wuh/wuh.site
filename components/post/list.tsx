@@ -18,9 +18,10 @@ const usePostPages = (initialData: any) => {
     fetcher,
     {
       revalidateOnFocus: false,
-      revalidateOnMount: false,
+      revalidateOnMount: true,
       initialSize: 1,
       persistSize: true,
+      dedupingInterval: 2500
     }
   );
   const isEmpty = initialData.data.rows.length;

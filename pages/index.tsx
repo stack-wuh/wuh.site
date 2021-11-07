@@ -37,7 +37,11 @@ type datasType = {
   bannerList?: rowItem[],
 }
 const useFetchData = (): datasType => {
-  const { data: banner } = swr(API_BANNER_HOME, fetcher)
+  const { data: banner } = swr(API_BANNER_HOME, fetcher, {
+    revalidateOnFocus: false,
+    revalidateOnMount: true,
+    focusThrottleInterval: 1 * 60 * 60 * 1000
+  })
   const initRes = {
     bannerList: [],
   }
