@@ -11,12 +11,25 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import withLayout from "@/layout/layout";
 import * as hljs from '@/lib/highlight';
 
+function useData(id: string | string[] | undefined) {
+  const { data, error } = useSWR(
+    id ? `${API_ARTICLE_ITEM}${id}` : null,
+    fetcher,
+    {
+      revalidateOnFocus: false,
+      revalidateOnMount: true
+    }
+  );
+
+  return {
+    data,
+    error
+  }
+}
+
 const Detail: React.FC<{}> = () => {
   const router = useRouter();
-  const { data, error } = useSWR(
-    `${API_ARTICLE_ITEM}${router.query.id}`,
-    fetcher
-  );
+  const { data, error } = useData(router.query.id)
   if (error) return <div className="error">ERROR</div>;
   if (!data || !data.data) return <div className="loading">Loading...</div>;
 
