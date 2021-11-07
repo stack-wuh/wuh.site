@@ -262,6 +262,7 @@ button[disabled] {
 }
 
 .ww_button__gallery {
+  position: relative;
   display: block;
   width: 2em;
   padding: 1em 0;
@@ -272,5 +273,17 @@ button[disabled] {
 
   &:hover {
     cursor: pointer;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 2em;
+    height: 6.5em;
+    position: absolute;
+    top: -0.5em;
+    left: 0.5em;
+    z-index: -99;
+    animation: fade-background-color 1.8s linear infinite alternate-reverse;
   }
 }

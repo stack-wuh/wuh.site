@@ -59,15 +59,15 @@
 
 @keyframes fade-background-color {
   0% {
-    color: #f2f2f2;
+    color: var(--color-yellow-8);
     background-color: var(--color-yellow-4);
   }
   100% {
-    color: #fff;
+    color: var(--color-yellow-4);
     background-color: var(--color-yellow-8);
   }
 }
 
 .transition-fade-color {
-  animation: fade-background-color 1.8s linear infinite;
+  animation: fade-background-color 1.8s linear infinite alternate;
 }

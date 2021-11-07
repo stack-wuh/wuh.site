@@ -138,6 +138,10 @@ $gallery: 'ww_gallery';
 
 .#{$gallery} {
   position: relative;
+  height: 40em;
+  background-image: url(https://src.wuh.site/cover.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
 
   &__item {
     position: relative;
@@ -155,7 +159,7 @@ $gallery: 'ww_gallery';
     position: relative;
     width: 100%;
     height: 100%;
-    background-size: 100% 100% !important;
+    background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat;
   }

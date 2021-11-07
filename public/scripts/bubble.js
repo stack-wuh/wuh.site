@@ -2,16 +2,19 @@
   let $target = null
   let index = 0
   let count = 0
-  const MAX_CLICKCOUNT_TIMEOUT = 2 * 1000
   const MIX_POSITION_VALUE = 40
   const labels = ["富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善", "富强"]
 
   const getTarget = () => { $target = document.querySelector('body') }
   const createStyle = (x) => {
     const $head = document.querySelector('head')
-    const style = document.createElement('style')
-    style.innerHTML = '.ww_popupper{position:fixed;padding:8px;min-width:fit-content;border-radius:3px;background-color:#fff;color:#333; transition: background .3s ease;}@keyframes slide{0%{transform:translateX(' + x + '%) translateY(-100%) rotateX(0deg);opacity:1}20%{transform:' + 'translateX(' + x + '%)' + ' translateY(100%) rotateX(0deg);opacity:1}100%{transform:translateX(' + x + '%) translateY(-400%) rotateX(-80deg);opacity:0}}.ani_slide{animation:slide 1.6s linear forwards}'
-    $head.append(style)
+    const hasAppend = document.querySelector('#style-bubble-id')
+    const $target = hasAppend ? document.querySelector('#style-bubble-id') : document.createElement('style')
+    const style = '.ww_popupper{position:fixed;padding:8px;min-width:fit-content;border-radius:3px;background-color:#fff;color:#333; transition: background .3s ease;}@keyframes slide{0%{transform:translateX(' + x + '%) translateY(-100%) rotateX(0deg);opacity:1}20%{transform:' + 'translateX(' + x + '%)' + ' translateY(100%) rotateX(0deg);opacity:1}100%{transform:translateX(' + x + '%) translateY(-400%) rotateX(-80deg);opacity:0}}.ani_slide{animation:slide 1.6s linear forwards}'
+    $target.setAttribute('id', 'style-bubble-id')
+    $target.setAttribute('data-id', Math.random().toString(32).slice(3))
+    $target.innerText = style
+    $head.append($target)
   }
   const getColor = () => {
     let r, g, b, a
