@@ -41,3 +41,36 @@
 
 
 
+## [2.1.5](https://git.zhlh6.cn/stack-wuh/wuh.site/compare/v2.0.0...v2.1.5) (2021-11-07)
+
+
+### Bug Fixes
+
+* **_document:** 修复cookie转换错误的问题 ([686488f](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/686488f6e483b37d74ee58d81075c0613137cd46))
+* **api.prefix:** :fire: 修复API路由的前缀错误 ([de6fcc2](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/de6fcc2012a9a688a3ab5f20b42dbb6de922a096))
+* **cm.space:** :fire: 修复space组件背景色突出的问题 ([7f9e232](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/7f9e2329b4ea6027c9ffc6424c6e1128bd1d5790))
+* **fetch.swr:** :fire: 修复fetch方式build报错问题 ([38b700d](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/38b700d27bc1ed6b20ccd7052dcf19e8b648d54b))
+* **page.HOME.Banner:** :four: 修复首页Banner区域不能自动播放问题 ([84e702d](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/84e702dec92c0cd0a2479a28620fe31c687b3862))
+* **postinfo:** 修复pagechange事件造成data为null的错误白屏 ([f467c2b](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/f467c2bcae200bdfd7d66768004718e674f47176))
+
+
+### Features
+
+* **about:** :aries: About页的交互动画 ([ac3eaca](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/ac3eacaefd4f943bf1ddd79713cb699b862c1231))
+* **bubble:** :aries: 不再重复新增bubble的样式文件，改为复用标签 ([70ea5a8](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/70ea5a8b4f3cc171984021bd743f0e953e015034))
+* **CM.Banner:** :helicopter:  首页新增Banner区间 ([9358dc5](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/9358dc59a1df628abd114eae3a133bfbe8d9eeb6))
+* **CM.Button.Gallery:** :aquarius: 新增故乡山川.Gallery模块 ([1875dc2](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/1875dc2e405aacc2653a184a56666e1af9a9fde8))
+* **CM.Gallery.Modal:** :bow: 新增故乡山川模块的预览 ([9b5acdf](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/9b5acdfed8a105663e952f456b36d5f57b0034f7))
+* **CM.Modal:** :top: 新增Modal对话框组件 ([3355f86](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/3355f86e02b07061a209fd6daa606e13906a2534))
+* **cookie:** :libra: 利用cookie的状态持久化 ([8acfcbe](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/8acfcbeea55711645b19f2cd92b6d13a5cc39248))
+* **JS.bubble:** :sheep: bubble泡泡改为使用js脚本 ([10242a3](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/10242a325798c86150d75d90572a3cc823c13d0e))
+* **js.highlight:**  兼容了ts版本的hljs代码格式化 ([027ecc4](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/027ecc449789d21184e8eb10a6df58d98d8904a2))
+* **js.highlight:** :speaker: 兼容了ts版本的hljs代码格式化 ([8d5b071](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/8d5b0712e0a39de81836bc1d924f446f0f782c4c))
+* **popup:** :clap: 新增快速点击的一点点交互 ([d8a95ff](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/d8a95ff4a4f77f4aa23ee268a10d79b9f2f13766))
+* **seo.title:** 更换首页title，优化seo配置 ([307a091](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/307a091323cb6bac12b2397dcdce4da48bebd1a2))
+* **styles:**  修改scss模块的前缀 ([7d75074](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/7d7507448e0495392885f357aac5e3f3967db623))
+* **styles:** :speak_no_evil: 修改scss模块的前缀 ([3ff603f](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/3ff603fbbe504a1debd4a77d111f6fccf2c1e004))
+* **WebWorkerTheme:** :alarm_clock: 新增webworker任务，根据时间切换web主题 ([b5c6fda](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/b5c6fda20fbb8664b00d7c2a71a83d66b9356491))
+
+
+
