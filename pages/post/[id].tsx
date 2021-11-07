@@ -9,6 +9,7 @@ import Alert from "@/components/alert/alert";
 import ShareGroup from "@/components/button/share-group";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import withLayout from "@/layout/layout";
+import * as hljs from '@/lib/highlight';
 
 const Detail: React.FC<{}> = () => {
   const router = useRouter();
@@ -18,6 +19,8 @@ const Detail: React.FC<{}> = () => {
   );
   if (error) return <div className="error">ERROR</div>;
   if (!data || !data.data) return <div className="loading">Loading...</div>;
+
+  hljs.formatter(router.asPath)
 
   return (
     <div className="ww_detail">
