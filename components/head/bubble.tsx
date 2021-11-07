@@ -1,9 +1,9 @@
 import Script from 'next/script'
 
-const Popupper = () => {
+const Bubble = () => {
   return (<>
-    <Script id='data-popupper-id' src='/scripts/bubble.js'></Script>
+    <Script id='data-popupper-id' src='https://src.wuh.site/scripts/bubble.js'></Script>
   </>)
 }
 
-export default Popupper
+export default Bubble

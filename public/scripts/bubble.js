@@ -77,6 +77,14 @@
   }
   var logger = debounce()
 
+  var trycatch = (fn, events) => {
+    try {
+      fn(events)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   const call = (event) => {
     const ele = document.createElement('div')
     ele.className = 'ww_popupper ani_slide'
@@ -99,5 +107,5 @@
   }
 
   window.addEventListener('load', getTarget, false)
-  window.addEventListener('click', call, false)
+  window.addEventListener('click', e => trycatch(call, e), false)
 })()

@@ -1,7 +1,7 @@
+import { useRouter } from 'next/router'
 import { NextSeo, BreadcrumbJsonLd, ArticleJsonLd } from 'next-seo'
 import Space from "@/components/space/space"
 import Tag from "@/components/tag"
-import { useRouter } from 'next/router'
 import * as utils from '@/__utils/formatter'
 import { usePostContext } from "."
 
@@ -48,6 +48,7 @@ const Header = () => {
       images={[cover_img]} />
     {/* google 结构化 面包屑 */}
     <BreadcrumbJsonLd itemListElements={[{ position: 1, name: '首页 | Home', item: 'https://wuh.site' }, { position: 2, name: '文章 | Article', item: artUrl }]} />
+
     <h2 className='ww_post__header--title'>{title}</h2>
     <p className='ww_post__header--head'>
       <Space style={{ paddingLeft: 0 }} ghost>

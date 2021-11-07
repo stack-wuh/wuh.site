@@ -7,10 +7,13 @@ import NProgress from "nprogress";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ThemeScript from '@/components/head/theme';
 import BubbleScript from '@/components/head/bubble';
+import HighlightScript from '@/components/head/highlight';
+import SlideHead from '@/components/head/slide';
 import { ConfigProvider } from "@/hooks/useConfig";
 import "@/styles/index.scss";
 import { config } from '@/constant/config'
 import * as gtag from '@/lib/gtag'
+import * as highlight from '@/lib/highlight'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { DefaultSeo, FAQPageJsonLd, LogoJsonLd } from 'next-seo'
 import SEOConfig, { FAQConfig, LogoConfig } from '../next-seo.config'
@@ -22,6 +25,7 @@ Router.events.on("routeChangeStart", () => {
 Router.events.on("routeChangeComplete", (url) => {
   NProgress.done();
   gtag.pageview(url);
+  highlight.formatter(url)
 });
 Router.events.off('routeChangeComplete', (url) => {
   gtag.pageview(url);
@@ -64,8 +68,10 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
           `,
         }}
       />
+      <SlideHead />
       <ThemeScript />
       <BubbleScript />
+      <HighlightScript />
       <ConfigProvider.Provider value={config}>
         <SwitchTransition>
           <CSSTransition key={router.asPath} classNames='page-transition' timeout={3000} addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}>
