@@ -1,3 +1,4 @@
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const nextComposePlugins = require('next-compose-plugins')
 const withPreact = require('next-plugin-preact')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
@@ -27,7 +28,17 @@ let config = {
   experimental: {
     pageDataCollectionTimeout: 120000
   },
-  webpack: (config) => {
+  webpack: (config, { dev }) => {
+    if (!dev) {
+      config.plugins.push(new CompressionWebpackPlugin({
+        algorithm: "gzip",
+        test: /\.js$|\.css$/,
+        threshold: 10240,
+        exclude: /\/node_modules/,
+        filename: '[base].gz',
+        deleteOriginalAssets: false
+      }))
+    }
     config.plugins.push(new ProgressBarPlugin({
       format: `build [:bar] ${green.bold(':percent')} (:elapsed s, :current / :total) :msg`,
       clear: false

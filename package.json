@@ -18,6 +18,7 @@
     "@types/react-slick": "^0.23.7",
     "ahooks": "^2.10.11",
     "classnames": "^2.3.1",
+    "compression-webpack-plugin": "^9.0.0",
     "dayjs": "^1.10.7",
     "isomorphic-fetch": "^3.0.0",
     "next": "11.1.2",
