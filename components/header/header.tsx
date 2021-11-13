@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import withConfig from '@/hooks/useConfig'
+import AudioControl from '@/components/audio/control'
 
 const Header = () => {
   const config = withConfig()
@@ -10,7 +11,9 @@ const Header = () => {
         <strong className='title'>{config?.header.title}</strong>
       </div>
       <div className='empty'></div>
-      <div className="rg"></div>
+      <div className="rg">
+        <AudioControl />
+      </div>
     </div>
   </header>
 }

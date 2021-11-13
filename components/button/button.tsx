@@ -1,5 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
+import { useDebounceFn } from 'ahooks'
 import * as gtag from '@/lib/gtag'
 
 type sizes = 'small' | 'middle' | 'large'
@@ -107,7 +108,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonTypeProps> =
   const achonrClassnames = classnames('ww_button__link', 'ww_button__inner--link')
 
   const handleClick = () => {
-    if (onClick) {
+    if (onClick && !disabled) {
       onClick()
     }
     gtag.event({
@@ -118,7 +119,9 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonTypeProps> =
     })
   }
 
-  return (<div ref={buttonRef} onClick={handleClick} className={classNames}>
+  const { run } = useDebounceFn(handleClick, { wait: 500 })
+
+  return (<div ref={buttonRef} onClick={run} className={classNames}>
     <div className={btnClassNames}>
       {
         htmlHref ? <a className={achonrClassnames} {...hrefHtmlProps} href={htmlHref}>{node}</a> : node
