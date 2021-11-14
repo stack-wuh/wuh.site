@@ -17,9 +17,9 @@ export const inititalAudioProps = {
 	isplaying: false,
 }
 
-const AudioContext = React.createContext<ICustomAudioProps | null>(null)
+export const AudioContext = React.createContext<ICustomAudioProps | null>(null)
 
-const AudioProvider: React.FC<{}> = (props) => {
+export const useAudioInstance = () => {
 	const audioRef = useRef<ICustomAudioProps | null>(audioInstance)
 	if (audioRef.current) {
 		audioRef.current.isInit =
@@ -35,12 +35,7 @@ const AudioProvider: React.FC<{}> = (props) => {
 				? audioRef.current.isplaying
 				: false
 	}
-
-	return (
-		<AudioContext.Provider value={audioRef.current}>
-			{props.children}
-		</AudioContext.Provider>
-	)
+	return audioRef.current
 }
 
 export const useAudioContext = () => {
@@ -48,5 +43,3 @@ export const useAudioContext = () => {
 
 	return context
 }
-
-export default React.memo(AudioProvider)

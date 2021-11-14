@@ -10,7 +10,7 @@ import BubbleScript from '@/components/head/bubble'
 import HighlightScript from '@/components/head/highlight'
 import SlideHead from '@/components/head/slide'
 import { ConfigProvider } from '@/hooks/useConfig'
-import AudioProvider from '@/hooks/useAudio'
+import { AudioContext, useAudioInstance } from '@/hooks/useAudio'
 import '@/styles/index.scss'
 import { config } from '@/constant/config'
 import * as gtag from '@/lib/gtag'
@@ -44,6 +44,7 @@ type NextPropsWithLayout = AppProps & {
 function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
 	const getLayout = Component.getLayout ?? ((page) => page)
 	const layout = getLayout(<Component {...pageProps} />)
+	const audioRef = useAudioInstance()
 
 	return (
 		<ErrorBoundary>
@@ -74,7 +75,7 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
 			<BubbleScript />
 			<HighlightScript />
 			<ConfigProvider.Provider value={config}>
-				<AudioProvider>
+				<AudioContext.Provider value={audioRef}>
 					<SwitchTransition>
 						<CSSTransition
 							key={router.asPath}
@@ -87,7 +88,7 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
 							{layout}
 						</CSSTransition>
 					</SwitchTransition>
-				</AudioProvider>
+				</AudioContext.Provider>
 			</ConfigProvider.Provider>
 		</ErrorBoundary>
 	)
