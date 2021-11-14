@@ -137,6 +137,7 @@ button[disabled] {
   background-color: var(--color-gray-1);
   outline: 1px solid transparent;
   border-radius: var(--border-radius-base);
+  user-select: none;
   overflow: hidden;
 
   &:hover {
