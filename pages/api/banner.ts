@@ -3,26 +3,26 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import config from '@/constant/res.json'
 
 export type rowItem = {
-  title: string,
-  cover: string,
-  href: string,
-  tag: string,
-  alt: string
+	title: string
+	cover: string
+	href: string
+	tag: string
+	alt: string
 }
 export type Data = {
-  msg: string,
-  code: number,
-  data: {
-    count: number,
-    current: number,
-    pageSize: number,
-    rows: rowItem[]
-  }
+	msg: string
+	code: number
+	data: {
+		count: number
+		current: number
+		pageSize: number
+		rows: rowItem[]
+	}
 }
 
 export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
+	req: NextApiRequest,
+	res: NextApiResponse<Data>
 ) {
-  res.status(200).json(config.banner)
+	res.status(200).json(config.banner)
 }

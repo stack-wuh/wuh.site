@@ -62,6 +62,7 @@
     color: var(--color-yellow-8);
     background-color: var(--color-yellow-4);
   }
+
   100% {
     color: var(--color-yellow-4);
     background-color: var(--color-yellow-8);

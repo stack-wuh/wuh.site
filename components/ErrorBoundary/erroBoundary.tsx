@@ -4,27 +4,27 @@ type ErrorBoundaryStateProps = {
   hasError: boolean
 }
 class ErrorBoundary extends React.Component<unknown, ErrorBoundaryStateProps> {
-  constructor (props: any) {
+  constructor(props: any) {
     super(props)
     this.state = {
       hasError: false
     }
   }
 
-  static getDerivedStateFromError () {
+  static getDerivedStateFromError() {
     return {
       hasError: true
     }
   }
 
-  componentDidCatch (error: any, errorInfo: React.ErrorInfo) {
+  componentDidCatch(error: any, errorInfo: React.ErrorInfo) {
     console.error(
       error,
       errorInfo
     )
   }
 
-  render () {
+  render() {
     if (this.state.hasError) {
       return <div>
         <h3>Error</h3>
