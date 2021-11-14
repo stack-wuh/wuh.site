@@ -65,7 +65,7 @@
       ]
     }
   },
-  "music": {
+  "playlist": {
     "msg": "操作成功",
     "code": 20000,
     "data": {

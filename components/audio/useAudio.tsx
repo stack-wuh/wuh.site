@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useReducer, useEffect } from 'react'
 import { useAudioContext } from '@/hooks/useAudio'
 import { useEventListener } from 'ahooks'
-import { music } from '@/constant/res.json'
+import config from '@/constant/res.json'
 
 interface IAudioStateProps extends HTMLAudioElement {}
 interface IAudioStateProps extends IAudioValueProps {}
@@ -19,7 +19,7 @@ const initalStateProps: Pick<IAudioStateProps, keyof IAudioValueProps> = {
 	currentTime: 0,
 	process: 0,
 	traceIndex: 0,
-	initialTrace: music.data.rows[0],
+	initialTrace: (config as any).playlist.data.rows[0],
 }
 
 type TPlayTypes = 'play' | 'pause' | 'pedding' | 'end'
