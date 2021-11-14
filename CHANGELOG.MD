@@ -74,3 +74,24 @@
 
 
 
+## [2.1.6](https://git.zhlh6.cn/stack-wuh/wuh.site/compare/v2.1.5...v2.1.6) (2021-11-14)
+
+
+### Bug Fixes
+
+* **Audio:** :basecamp: 修复playlist在json文件中的引用错误 ([f9ba925](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/f9ba925138e0a5adfb774fb36916e09a87cdc4a1))
+* **CM.AudioControl:** :fire: 压缩原音频文件，改为oss ([64d440b](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/64d440b6adc9b0f7ede6a8fa575b1325391de19e))
+* **CM.Button.loadmore:** :fire: 新增LoadMore 防抖处理 ([0916807](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/09168078e20981ff2ad4b0bf46f81443efa2e29d))
+* **hooks.useAudio:** :musical_note: 修复Audio的Provider的编译错误 ([7594e40](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/7594e407626c9f667be273ea5dae7d91f2cbdf50))
+* **Page.Home:** :fire: 只是一点点优化内容 ([c078470](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/c0784702f6e9f2976f9121d7c91e2760bb54e0aa))
+* **page.index:** :fire: 修复banner的查询接口调用多次的问题 ([c311668](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/c3116684998686016b7a1530ce35be37233e2f36))
+* **page.post:** :fist: 修复useSWR的key为undefined时，依旧发起请求的问题 ([39d67d3](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/39d67d39cfc58105635f97d720f1c2516959f04e))
+
+
+### Features
+
+* **CM.Header.Audio:** :airplane: 重构Header右侧区域的AudioControls组件 ([f037562](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/f037562206e57e7395bfee74cd38cfb425353815))
+* **CM.Header.Audio:** :musical_note: Header区域新增Music组件 ([2d18dea](https://git.zhlh6.cn/stack-wuh/wuh.site/commits/2d18dea12a8bba5266cd6b2f09b2af4d7e3a00b0))
+
+
+
