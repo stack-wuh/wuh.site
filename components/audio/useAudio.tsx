@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useReducer, useEffect } from 'react'
 import { useAudioContext } from '@/hooks/useAudio'
-import { useEventListener } from 'ahooks'
+import { useEventListener, useDebounceEffect } from 'ahooks'
 import config from '@/constant/res.json'
 
 interface IAudioStateProps extends HTMLAudioElement {}
@@ -297,9 +297,13 @@ const useAudio = (
 		}
 	}, [audioRef, ops.traceList.length])
 
-	useEffect(() => {
-		init()
-	}, [audioRef, ops.traceList.length])
+	useDebounceEffect(
+		() => {
+			init()
+		},
+		[audioRef, ops.traceList.length],
+		{ wait: 3000 }
+	)
 
 	return [
 		{ ...state, initialTrace },
