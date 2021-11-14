@@ -10,6 +10,7 @@ import BubbleScript from '@/components/head/bubble';
 import HighlightScript from '@/components/head/highlight';
 import SlideHead from '@/components/head/slide';
 import { ConfigProvider } from "@/hooks/useConfig";
+import AudioProvider from '@/hooks/useAudio'
 import "@/styles/index.scss";
 import { config } from '@/constant/config'
 import * as gtag from '@/lib/gtag'
@@ -73,11 +74,13 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
       <BubbleScript />
       <HighlightScript />
       <ConfigProvider.Provider value={config}>
-        <SwitchTransition>
-          <CSSTransition key={router.asPath} classNames='page-transition' timeout={3000} addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}>
-            {layout}
-          </CSSTransition>
-        </SwitchTransition>
+        <AudioProvider>
+          <SwitchTransition>
+            <CSSTransition key={router.asPath} classNames='page-transition' timeout={3000} addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}>
+              {layout}
+            </CSSTransition>
+          </SwitchTransition>
+        </AudioProvider>
       </ConfigProvider.Provider>
     </ErrorBoundary>
   );
