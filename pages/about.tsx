@@ -1,3 +1,4 @@
+import React from 'react'
 import withLayout from '@/layout/layout'
 import Space from '@/components/space/space'
 import AMap from '@/components/amap'
@@ -152,4 +153,4 @@ const AboutPage = () => {
 	)
 }
 
-export default withLayout(AboutPage)
+export default React.memo(withLayout(AboutPage))

@@ -63,4 +63,4 @@ const Detail: React.FC<{}> = () => {
 	)
 }
 
-export default withLayout(Detail)
+export default React.memo(withLayout(Detail))

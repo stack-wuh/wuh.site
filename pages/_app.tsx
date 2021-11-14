@@ -3,6 +3,7 @@ import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 import Router from 'next/router'
 import Script from 'next/script'
+import React from 'react'
 import NProgress from 'nprogress'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import ThemeScript from '@/components/head/theme'
@@ -76,11 +77,13 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
 			<HighlightScript />
 			<ConfigProvider.Provider value={config}>
 				<AudioContext.Provider value={audioRef}>
-					<SwitchTransition>
+					<SwitchTransition mode="in-out">
 						<CSSTransition
+							in={router.asPath !== '/'}
 							key={router.asPath}
 							classNames="page-transition"
 							timeout={3000}
+							unmountOnExit={false}
 							addEndListener={(node, done) =>
 								node.addEventListener('transitionend', done, false)
 							}
@@ -94,4 +97,4 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
 	)
 }
 
-export default MyApp
+export default React.memo(MyApp)
