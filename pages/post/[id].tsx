@@ -27,11 +27,16 @@ function useData(id: string | string[] | undefined) {
 	}
 }
 
+const Empty: React.FC<{}> = () => {
+	return <div className="loading">Loading...</div>
+}
+const EmptyPage = React.memo(withLayout(Empty))
+
 const Detail: React.FC<{}> = () => {
 	const router = useRouter()
 	const { data, error } = useData(router.query.id)
 	if (error) return <div className="error">ERROR</div>
-	if (!data || !data.data) return <div className="loading">Loading...</div>
+	if (!data) return <EmptyPage />
 
 	hljs.formatter(router.asPath)
 

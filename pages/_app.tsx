@@ -46,6 +46,7 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
 	const getLayout = Component.getLayout ?? ((page) => page)
 	const layout = getLayout(<Component {...pageProps} />)
 	const audioRef = useAudioInstance()
+	const homeRef = React.useRef<DOMRect>(null)
 
 	return (
 		<ErrorBoundary>
@@ -77,16 +78,37 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
 			<HighlightScript />
 			<ConfigProvider.Provider value={config}>
 				<AudioContext.Provider value={audioRef}>
-					<SwitchTransition mode="in-out">
+					<SwitchTransition mode="out-in">
 						<CSSTransition
-							in={router.asPath !== '/'}
+							in={router.asPath === '/'}
 							key={router.asPath}
 							classNames="page-transition"
-							timeout={3000}
-							unmountOnExit={false}
-							addEndListener={(node, done) =>
+							timeout={1000}
+							unmountOnExit
+							onEntered={() => {
+								if (router.asPath === '/') {
+									const target = document.querySelector('html')
+									const scrollTop = target?.getAttribute('scroll')
+									if (scrollTop) {
+										window.scrollTo(0, Math.abs(+scrollTop))
+
+										setTimeout(() => {
+											target?.setAttribute('scroll', ' ')
+										})
+									}
+								}
+							}}
+							onExiting={(node) => {
+								if (router.asPath.startsWith('/post')) {
+									const rect = node.getBoundingClientRect()
+									document
+										.querySelector('html')
+										?.setAttribute('scroll', `${rect.y}`)
+								}
+							}}
+							addEndListener={(node, done) => {
 								node.addEventListener('transitionend', done, false)
-							}
+							}}
 						>
 							{layout}
 						</CSSTransition>

@@ -1,29 +1,29 @@
 html,
 body,
 #__next {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  color: var(--color-base-9);
-  background-color: var(--color-background-primary);
-  font-family: 'Roboto', 'Noto Sans SC', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: var(--color-base-9);
+	background-color: var(--color-background-primary);
+	font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+	box-sizing: content-box;
+	/* 1 */
+	height: 0;
+	/* 1 */
+	overflow: visible;
+	/* 2 */
 }
 
 /**
@@ -32,14 +32,14 @@ hr {
  */
 
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+	font-family: monospace, monospace;
+	/* 1 */
+	font-size: 1em;
+	/* 2 */
 }
 
 a {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 /**
@@ -48,12 +48,12 @@ a {
  */
 
 abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  text-decoration: underline dotted;
-  /* 2 */
+	border-bottom: none;
+	/* 1 */
+	text-decoration: underline;
+	/* 2 */
+	text-decoration: underline dotted;
+	/* 2 */
 }
 
 /**
@@ -62,7 +62,7 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: bolder;
+	font-weight: bolder;
 }
 
 /**
@@ -73,10 +73,10 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+	font-family: monospace, monospace;
+	/* 1 */
+	font-size: 1em;
+	/* 2 */
 }
 
 /**
@@ -84,7 +84,7 @@ samp {
  */
 
 small {
-  font-size: 80%;
+	font-size: 80%;
 }
 
 /**
@@ -94,18 +94,18 @@ small {
 
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
 
 sub {
-  bottom: -0.25em;
+	bottom: -0.25em;
 }
 
 sup {
-  top: -0.5em;
+	top: -0.5em;
 }
 
 /* Embedded content
@@ -116,23 +116,22 @@ sup {
  */
 
 img {
-  border-style: none;
+	border-style: none;
 }
-
 
 button,
 input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+	font-family: inherit;
+	/* 1 */
+	font-size: 100%;
+	/* 1 */
+	line-height: 1.15;
+	/* 1 */
+	margin: 0;
+	/* 2 */
 }
 
 /**
@@ -142,14 +141,14 @@ textarea {
 
 button,
 input {
-  /* 1 */
-  overflow: visible;
+	/* 1 */
+	overflow: visible;
 }
 
 button,
 select {
-  /* 1 */
-  text-transform: none;
+	/* 1 */
+	text-transform: none;
 }
 
 /**
@@ -157,10 +156,10 @@ select {
  */
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	-webkit-appearance: button;
 }
 
 /**
@@ -168,18 +167,18 @@ button,
  */
 
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
 }
 
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+	outline: 1px dotted ButtonText;
 }
 
 /**
@@ -187,7 +186,7 @@ button:-moz-focusring,
  */
 
 fieldset {
-  padding: 0.35em 0.75em 0.625em;
+	padding: 0.35em 0.75em 0.625em;
 }
 
 /**
@@ -198,117 +197,114 @@ fieldset {
  */
 
 legend {
-  box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
+	box-sizing: border-box;
+	/* 1 */
+	color: inherit;
+	/* 2 */
+	display: table;
+	/* 1 */
+	max-width: 100%;
+	/* 1 */
+	padding: 0;
+	/* 3 */
+	white-space: normal;
+	/* 1 */
 }
 
 details {
-  display: block;
+	display: block;
 }
 
 summary {
-  display: list-item;
+	display: list-item;
 }
 
 [hidden] {
-  display: none;
+	display: none;
 }
 
 template {
-  display: none;
+	display: none;
 }
 
 strong {
-  font-weight: var(--font-weight-large);
+	font-weight: var(--font-weight-large);
 }
 
 small {
-  font-weight: var(--font-weight-regular);
+	font-weight: var(--font-weight-regular);
 }
 
 p {
-  margin: var(--margin-base-2) 0;
+	margin: var(--margin-base-2) 0;
 }
 
 .text-overflow {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .text-overflow-multi {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
 }
 
 .icon-symbol {
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
 }
-
-
 
 /** page transition */
 .page-transition {
-  position: relative;
+	position: relative;
 }
 
 .page-transition-enter .main {
-  opacity: 0;
-  transform: scale(1.1);
+	opacity: 0;
+	transform: scale(1.1);
 }
 
 .page-transition-enter-active .main {
-  opacity: 1;
+	opacity: 1;
 
-  transform: scale(1);
-  transition: opacity 300ms, transform 300ms;
+	transform: scale(1);
+	transition: opacity 0.6s, transform 0.5s;
 }
 
 .page-transition-exit .main {
-  opacity: 1;
+	opacity: 1;
 
-  transform: scale(1);
+	transform: scale(1);
 }
 
 .page-transition-exit-active .main {
-  opacity: 0;
+	opacity: 0;
 
-  transform: scale(0.9);
-  transition: opacity 300ms, transform 300ms;
+	transform: scale(0.9);
+	transition: opacity 0.6s, transform 0.5s;
 }
 
-
 .fade-enter {
-  opacity: 0;
+	opacity: 0;
 }
 
 .fade-exit {
-  opacity: 1;
+	opacity: 1;
 }
 
 .fade-enter-active {
-  opacity: 1;
+	opacity: 1;
 }
 
 .fade-exit-active {
-  opacity: 0;
+	opacity: 0;
 }
 
 .fade-enter-active,
 .fade-exit-active {
-  transition: opacity 500ms;
+	transition: opacity 500ms;
 }
