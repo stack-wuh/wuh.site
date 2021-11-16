@@ -1,6 +1,6 @@
 {
   "name": "wuh.site",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -11,7 +11,7 @@
     "analysis": "cross-env ANALYZE=true & next build",
     "build:docker": "sh -x ./bin/docker-push.sh",
     "build:deploy": "yarn build && yarn build:docker",
-    "release": "conventional-changelog -i CHANGELOG.MD -s -a -r -p angular"
+    "release": "conventional-changelog -i CHANGELOG.MD -s -r -t -p angular"
   },
   "dependencies": {
     "@babel/preset-env": "^7.15.6",
