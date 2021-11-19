@@ -5,12 +5,11 @@ import StateButtonGroup from './state-group'
 import BehaviorButtonGroup from './behavior'
 import GalleryButton from './gallery'
 
-
 export {
-  Button,
-  LoadMoreButton,
-  LinkButtonGroup,
-  StateButtonGroup,
-  BehaviorButtonGroup,
-  GalleryButton
+	Button,
+	LoadMoreButton,
+	LinkButtonGroup,
+	StateButtonGroup,
+	BehaviorButtonGroup,
+	GalleryButton,
 }

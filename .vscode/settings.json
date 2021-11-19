@@ -1,12 +1,17 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "HookyQR.beautify",
   "prettier.semi": false,
   "prettier.singleQuote": true,
+  "prettier.arrowParens": "always",
+  "prettier.bracketSpacing": true,
+  "prettier.embeddedLanguageFormatting": "auto",
+  "prettier.enable": true,
+  "prettier.quoteProps": "preserve",
+  "scss.lint.unknownVendorSpecificProperties": "error",
+  "eslint.enable": true,
   "prettier.tabWidth": 2,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.maxTokenizationLineLength": 2500
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
