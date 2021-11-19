@@ -46,7 +46,6 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
 	const getLayout = Component.getLayout ?? ((page) => page)
 	const layout = getLayout(<Component {...pageProps} />)
 	const audioRef = useAudioInstance()
-	const homeRef = React.useRef<DOMRect>(null)
 
 	return (
 		<ErrorBoundary>

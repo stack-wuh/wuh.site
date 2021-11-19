@@ -39,6 +39,7 @@ pre {
 }
 
 a {
+	color: var(--color-base-9);
 	background-color: transparent;
 }
 
