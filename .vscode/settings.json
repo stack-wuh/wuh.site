@@ -7,7 +7,7 @@
   "prettier.embeddedLanguageFormatting": "auto",
   "prettier.enable": true,
   "prettier.quoteProps": "preserve",
-  "scss.lint.unknownVendorSpecificProperties": "error",
+  "scss.lint.unknownVendorSpecificProperties": "warning",
   "eslint.enable": true,
   "prettier.tabWidth": 2,
   "[javascript]": {
