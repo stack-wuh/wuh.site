@@ -14,8 +14,14 @@ $name: 'ww_space';
     flex-direction: row;
     flex-wrap: nowrap;
     width: fit-content;
+    border-radius: var(--border-radius-base);
     background-color: var(--color-background-primary);
     transition: var(--transition-base);
+
+    &:hover {
+      background-color: var(--color-gray-2);
+      transition: all .5s ease;
+    }
   }
 
   &__item {

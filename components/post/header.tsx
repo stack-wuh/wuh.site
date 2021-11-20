@@ -67,7 +67,7 @@ const Header = () => {
 			<h2 className="ww_post__header--title">{title}</h2>
 			<p className="ww_post__header--head">
 				<Space style={{ paddingLeft: 0 }} ghost>
-					<time>{localeDateString}</time>
+					<time>{utils.localDateString(update_at)}</time>
 					<span>发布于</span>
 					<Tag icon={tagItem.icon} color={tagItem.color}>
 						{origin}

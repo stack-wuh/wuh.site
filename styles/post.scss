@@ -29,8 +29,74 @@ $name: ww_post__;
   }
 }
 
+.#{$name}info {
+  position: relative;
+  width: inherit;
+  color: var(--color-base-8);
+  font-weight: 400;
+  padding: var(--padding-base);
+  background-color: var(--color-background-primary);
+  border-radius: var(--border-radius-base);
+  transition: background-color .5s ease;
+  overflow: hidden;
+
+  &:hover {
+    background-color: var(--color-gray-2);
+    transition: background-color .5s ease;
+  }
+
+  .#{$name}list {
+    margin: 0;
+    padding-left: 0;
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
+  .#{$name}item {
+    height: 1.5em;
+    line-height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 4px;
+    border-radius: var(--border-radius-base);
+
+    &--label {
+      margin-right: 1em;
+
+      &::after {
+        content: ':';
+      }
+    }
+
+    &:hover {
+      &::before {
+        transform: rotate(360deg);
+        transition: transform .5s ease;
+      }
+    }
+
+    &::before {
+      content: '*';
+      display: inline-block;
+      width: .3em;
+      height: .3em;
+      line-height: .5;
+      margin-right: .5em;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: var(--margin-base);
+    }
+  }
+}
+
 .#{$name}body {
   position: relative;
+
+  .markdown-body article h2:first-of-type {
+    margin: 0;
+  }
 
   .markdown-body img {
     user-select: none;

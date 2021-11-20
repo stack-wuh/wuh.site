@@ -3,7 +3,12 @@ import useSWR from 'swr'
 import fetcher from '@/lib/fetch'
 import { useRouter } from 'next/router'
 import { API_ARTICLE_ITEM } from '@/constant/api'
-import { PostHeader, PostBody, PostContext } from '@/components/post'
+import {
+	PostHeader,
+	PostBody,
+	PostContext,
+	PostInfoList,
+} from '@/components/post'
 import Divider from '@/components/divider'
 import Alert from '@/components/alert/alert'
 import ShareGroup from '@/components/button/share-group'
@@ -51,12 +56,8 @@ const Detail: React.FC<{}> = () => {
 
 					{/* 版权声明 */}
 					<Divider />
-					<Alert
-						type="warning"
-						showIcon={false}
-						message="版权声明: 署名-非商业性使用-禁止演绎 3.0 中国大陆(CC BY-NC-ND 3.0 CN)"
-						description="文章首发于 Shadow's Blog, 转载文章请务必以超链接形式标明文章出处，作者信息及本版权声明。"
-					/>
+
+					<PostInfoList {...data.data} />
 
 					{/* 分享--按钮组 */}
 					<Divider size="small" />
