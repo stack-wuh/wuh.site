@@ -9,6 +9,8 @@ export interface ICustomAudioProps extends HTMLAudioElement {
 	traceIndex?: number
 	// Audio 实例当前的播放状态
 	isplaying?: boolean
+	// 按钮是否可以点击的状态
+	canplay?: boolean
 }
 
 export const inititalAudioProps = {

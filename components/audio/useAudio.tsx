@@ -162,7 +162,7 @@ const useAudio = (
 			setPlayStatus,
 			getPlayingProcess,
 		}
-	}, [])
+	}, [audioRef, state])
 
 	useEventListener(
 		'durationchange',
@@ -198,6 +198,7 @@ const useAudio = (
 						playStatus: 'play',
 					},
 				})
+				audioRef.canplay = true
 			}
 		},
 		{ target: audioRef }
@@ -215,6 +216,9 @@ const useAudio = (
 		'canplaythrough',
 		() => {
 			dispatch({ type: 'STATUS', payload: { ...state, canplay: true } })
+			if (audioRef) {
+				audioRef.canplay = true
+			}
 			console.log('可以播放')
 		},
 		{ target: audioRef }
@@ -231,12 +235,12 @@ const useAudio = (
 	const onPlay = useCallback(() => {
 		audioRef?.play()
 		actions.setPlayStatus(true, 'play')
-	}, [])
+	}, [actions, audioRef])
 
 	const onPause = useCallback(() => {
 		audioRef?.pause()
 		actions.setPlayStatus(false, 'pause')
-	}, [])
+	}, [audioRef, actions])
 
 	const onPrev = useCallback(() => {
 		if (audioRef) {
@@ -294,6 +298,11 @@ const useAudio = (
 			audioRef.traceIndex = initiValue.traceIndex
 			audioRef.autoplay = initiValue.autoplay
 			dispatch({ type: 'INIT', payload: { ...state, ...initiValue } })
+		}
+
+		if (audioRef && audioRef.canplay) {
+			const { canplay } = audioRef
+			dispatch({ type: 'STATUS', payload: { ...state, canplay } })
 		}
 	}, [audioRef, ops.traceList.length])
 
