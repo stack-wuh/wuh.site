@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 
 COPY package.json yarn.lock /usr/src/app/
 
-RUN yum install jq
+RUN apk install jq
 RUN npm config set registry https://registry.npmmirror.com
 RUN yarn
 
