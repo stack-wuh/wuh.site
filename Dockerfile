@@ -7,7 +7,8 @@ WORKDIR /usr/src/app
 
 COPY package.json yarn.lock /usr/src/app/
 
-RUN npm config set registry https://registry.npm.taobao.org
+RUN yum install jq
+RUN npm config set registry https://registry.npmmirror.com
 RUN yarn
 
 # ================== Builder ================
