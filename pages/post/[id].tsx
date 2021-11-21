@@ -10,9 +10,9 @@ import {
 	PostInfoList,
 } from '@/components/post'
 import Divider from '@/components/divider'
-import Alert from '@/components/alert/alert'
 import ShareGroup from '@/components/button/share-group'
 import ErrorBoundary from '@/components/ErrorBoundary'
+import Empty from '@/components/empty'
 import withLayout from '@/layout/layout'
 import * as hljs from '@/lib/highlight'
 
@@ -32,16 +32,11 @@ function useData(id: string | string[] | undefined) {
 	}
 }
 
-const Empty: React.FC<{}> = () => {
-	return <div className="loading">Loading...</div>
-}
-const EmptyPage = React.memo(withLayout(Empty))
-
 const Detail: React.FC<{}> = () => {
 	const router = useRouter()
 	const { data, error } = useData(router.query.id)
 	if (error) return <div className="error">ERROR</div>
-	if (!data) return <EmptyPage />
+	if (!data) return <Empty.Loading />
 
 	hljs.formatter(router.asPath)
 

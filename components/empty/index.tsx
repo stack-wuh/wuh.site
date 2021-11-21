@@ -1,15 +1,20 @@
 import React from 'react'
 import classnames from 'classnames'
+import Loading from './loading'
 
 import { sizes } from '../space/space'
 
 export type alignItems = 'start' | 'center' | 'end'
-export type EmptyTypeProps = {
+export interface EmptyTypeProps {
 	size?: sizes
 	align?: alignItems
 }
 
-const Empty: React.FC<EmptyTypeProps> = (props) => {
+export interface EmptyInterTypeProps extends React.FC<EmptyTypeProps> {
+	Loading: typeof Loading
+}
+
+const Empty: EmptyInterTypeProps = (props) => {
 	const { size, align, children } = props
 
 	const innerClassnames = classnames('ww_empty__inner', {
@@ -23,5 +28,7 @@ const Empty: React.FC<EmptyTypeProps> = (props) => {
 		</div>
 	)
 }
+
+Empty.Loading = Loading
 
 export default Empty
