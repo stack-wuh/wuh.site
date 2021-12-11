@@ -4,6 +4,8 @@ on:
   push: 
     branches:
       - main
+    tags:
+      - '*'
   pull_request:
     types: [opened, reopened, synchronize]
 
@@ -13,8 +15,24 @@ env:
 jobs:
   update_release_drafter:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: CREATE RELEASE
+      - name: Chekcout
+        uses: actions/checkout@v2
+      - name: Create Release
         uses: release-drafter/release-drafter@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generator Release Log
+        echo: echo "# Good things have arrived" > ${{ github.workspace }}-CHANGELOG_zh.md
+      - name: Build
+        uses: softprops/action-gh-release@v1
+        with:
+          from-tag: v1.0
+          to-tag: HEAD
+          body_path: ${{ github.workspace }}-CHANGELOG_zh.md
+          token: ${{ secrets.GITHUB_TOKEN }}
+          draft: false
+        env: 
+          GITHUB_REPOSITORY: stack-wuh/wuh.site
