@@ -2484,7 +2484,7 @@ conventional-changelog-atom@^2.0.8:
 
 conventional-changelog-cli@^2.1.1:
   version "2.1.1"
-  resolved "https://registry.npm.taobao.org/conventional-changelog-cli/download/conventional-changelog-cli-2.1.1.tgz#7a11980bc399938e0509d2adf8e7a0e213eb994e"
+  resolved "https://registry.npmmirror.com/conventional-changelog-cli/download/conventional-changelog-cli-2.1.1.tgz#7a11980bc399938e0509d2adf8e7a0e213eb994e"
   integrity sha1-ehGYC8OZk44FCdKt+Oeg4hPrmU4=
   dependencies:
     add-stream "^1.0.0"
