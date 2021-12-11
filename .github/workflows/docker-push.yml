@@ -37,3 +37,16 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+  # restart_docker:
+  #   name: restart docker container
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: executing remote ssh commands using password
+  #     uses: appleboy/ssh-action@master
+  #     with:
+  #       host: ${{ secrets.HOST }}
+  #       username: ${{ secrets.USERNAME }}
+  #       password: ${{ secrets.PASSTOKEN }}
+  #       port: ${{ secrets.PORT }}
+  #       script: |
+  #         whoami
