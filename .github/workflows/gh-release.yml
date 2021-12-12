@@ -32,5 +32,5 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -m "docs(changelog): 更新日志" -a
+          git commit -m "docs(changelog): :notebook: 更新日志" -a
           git push origin main
