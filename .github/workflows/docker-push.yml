@@ -51,6 +51,6 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           whoami
-          cd /home/next-web-app/frontend/bin
-          ./clear-docker.sh
-          ./build-container.sh
+          cd /home/next-web-app/frontend
+          ./bin/clear-docker.sh
+          ./bin/build-container.sh
