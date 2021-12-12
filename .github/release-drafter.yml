@@ -1,15 +1,18 @@
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
 categories:
-  - title: 'Features'
+  - title: '🚀 Features'
     labels:
       - 'feat'
       - 'styles'
-  - title: 'Bug Fixes'
+  - title: '🐛 Bug Fixes'
     labels:
       - 'bugfix'
       - 'bug'
-  - title: 'Maintenance'
+  - title: '📖 Document'
+    labels:
+      - 'document'
+  - title: '🔆 Maintenance'
     labels: 
       - 'chore'
       - 'build'
