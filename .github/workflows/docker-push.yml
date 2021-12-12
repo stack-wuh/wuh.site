@@ -74,4 +74,4 @@ jobs:
             echo "$GITHUB_CONTEXT"
             cd /home/next-web-app/frontend
             ./bin/clear-docker.sh
-            ./bin/build-container.sh ${{ steps.previoustag.outputs.tag }} hello world
+            ./bin/build-container.sh ${{ steps.previoustag.outputs.tag }}
