@@ -2,12 +2,10 @@
 
 set -e
 
-git reset --hard HEAD~~
-git pull origin main
-
 VERSION=$(jq -r '.version' package.json)
 
 echo '全部参数:' $@
+echo 'version:' $0
 
 echo '============== docker build contianer ==========='
 echo '构建container的版本号: ' $VERSION
