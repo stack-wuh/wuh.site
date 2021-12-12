@@ -20,23 +20,23 @@ jobs:
         uses: release-drafter/release-drafter@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  restart_docker_nginx:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Chekcout
-        uses: actions/checkout@v2
-      - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          port: ${{ secrets.PORT }}
-          script: |
-            whoami
-            echo '======== docker container clear============='
-            docker ps -a | grep 'frontend.v' | awk '{print $1}' | xargs docker stop
-            docker ps -a | grep 'Exit' | awk '{print $1}' | xargs docker rm
-            docker images|grep none|awk '{print $3 }'|xargs docker rmi
-            echo '========== 清理结束 ================'
+  # restart_docker_nginx:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Chekcout
+  #       uses: actions/checkout@v2
+  #     - name: executing remote ssh commands using password
+  #       uses: appleboy/ssh-action@master
+  #       with:
+  #         host: ${{ secrets.HOST }}
+  #         username: ${{ secrets.USERNAME }}
+  #         key: ${{ secrets.KEY }}
+  #         port: ${{ secrets.PORT }}
+  #         script: |
+  #           whoami
+  #           cd /home/next-web-app/frontend/
+
+  #           git reset --hard HEAD~~
+  #           git pull origin main
+
 
