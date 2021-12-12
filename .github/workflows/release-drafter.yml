@@ -20,7 +20,7 @@ jobs:
         uses: release-drafter/release-drafter@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  remote_build:
+  restart_docker_nginx:
     runs-on: ubuntu-latest
     steps:
       - name: Chekcout
@@ -34,5 +34,9 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             whoami
-            ls -al
+            echo '======== docker container clear============='
+            docker ps -a | grep 'frontend.v' | awk '{print $1}' | xargs docker stop
+            docker ps -a | grep 'Exit' | awk '{print $1}' | xargs docker rm
+            docker images|grep none|awk '{print $3 }'|xargs docker rmi
+            echo '========== 清理结束 ================'
 
