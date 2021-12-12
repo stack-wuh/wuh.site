@@ -37,20 +37,28 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-  restart_docker:
-    name: restart docker container
-    runs-on: ubuntu-latest
-    needs: [push_to_docker]
-    steps:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
-        port: ${{ secrets.PORT }}
-        script: |
-          whoami
-          cd /home/next-web-app/frontend
-          ./bin/clear-docker.sh
-          ./bin/build-container.sh
+          
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            whoami
+            git reset --hard HEAD~~
+            git pull origin main
+
+            echo '============== docker build contianer ==========='
+            echo '构建container的版本号: ' ${{ steps.meta.outputs.tags }}
+
+            docker ps -a | grep 'frontend.v' | awk '{print $1}' | xargs docker stop
+            docker ps -a | grep 'frontend.v' | awk '{print $1}' | xargs docker rm
+            docker pull shadowu/wuh.site:latest
+            docker run --name frontend.${{ steps.meta.outputs.tags }} -it -p 3100:3000 --restart=always shadowu/wuh.site:latest
+
+            systemctl status docker
+            systemctl restart nginx
+
+            echo '============== docker build successfully =================='
