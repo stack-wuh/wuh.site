@@ -7,6 +7,8 @@ git pull origin main
 
 VERSION=$(jq -r '.version' package.json)
 
+echo '全部参数:' $@
+
 echo '============== docker build contianer ==========='
 echo '构建container的版本号: ' $VERSION
 
