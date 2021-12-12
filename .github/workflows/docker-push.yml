@@ -37,7 +37,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          
+
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
@@ -46,17 +46,16 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            whoami
-            git reset --hard HEAD~~
-            git pull origin main
-
             echo '============== docker build contianer ==========='
             echo '构建container的版本号: ' ${{ steps.meta.outputs.tags }}
 
             docker ps -a | grep 'frontend.v' | awk '{print $1}' | xargs docker stop
             docker ps -a | grep 'frontend.v' | awk '{print $1}' | xargs docker rm
             docker pull shadowu/wuh.site:latest
-            docker run --name frontend.${{ steps.meta.outputs.tags }} -it -p 3100:3000 --restart=always shadowu/wuh.site:latest
+            docker run --name frontend.${{ steps.meta.outputs.tags }}\
+            -it\
+            -p 3100:3000\
+            --restart=always shadowu/wuh.site:latest
 
             systemctl status docker
             systemctl restart nginx
