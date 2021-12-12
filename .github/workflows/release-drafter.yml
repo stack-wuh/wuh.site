@@ -20,23 +20,4 @@ jobs:
         uses: release-drafter/release-drafter@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  # restart_docker_nginx:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Chekcout
-  #       uses: actions/checkout@v2
-  #     - name: executing remote ssh commands using password
-  #       uses: appleboy/ssh-action@master
-  #       with:
-  #         host: ${{ secrets.HOST }}
-  #         username: ${{ secrets.USERNAME }}
-  #         key: ${{ secrets.KEY }}
-  #         port: ${{ secrets.PORT }}
-  #         script: |
-  #           whoami
-  #           cd /home/next-web-app/frontend/
-
-  #           git reset --hard HEAD~~
-  #           git pull origin main
-
 
