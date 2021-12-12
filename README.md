@@ -21,6 +21,7 @@
 ![](https://img.shields.io/docker/pulls/shadowu/wuh.site?color=red&label=%E4%BD%BF%E7%94%A8%E6%AC%A1%E6%95%B0&logo=docker&logoColor=lightblue)
 ![](https://img.shields.io/docker/image-size/shadowu/wuh.site?label=%E9%95%9C%E5%83%8F%E5%A4%A7%E5%B0%8F&logo=docker&logoColor=lightblue)
 ![](https://img.shields.io/docker/v/shadowu/wuh.site?color=red&label=docker%20version&logo=docker&logoColor=lightblue)
+[![Lint Code Base](https://github.com/stack-wuh/wuh.site/actions/workflows/linter.yml/badge.svg)](https://github.com/stack-wuh/wuh.site/actions/workflows/linter.yml)[![Release Drafter](https://github.com/stack-wuh/wuh.site/actions/workflows/release-drafter.yml/badge.svg)](https://github.com/stack-wuh/wuh.site/actions/workflows/release-drafter.yml)[![Upload Release Asset](https://github.com/stack-wuh/wuh.site/actions/workflows/gh-release.yml/badge.svg)](https://github.com/stack-wuh/wuh.site/actions/workflows/gh-release.yml)[![Publish Docker image](https://github.com/stack-wuh/wuh.site/actions/workflows/docker-push.yml/badge.svg)](https://github.com/stack-wuh/wuh.site/actions/workflows/docker-push.yml)
 
 > 使用 Nextjs，Mongodb 和 Express 构建的个人网站
 
@@ -62,9 +63,9 @@ Docker 镜像: <a href='https://hub.docker.com/r/shadowu/wuh.site' target='_blan
 
 ### 使用 git
 
-1. `main`分支, 由`Next11 + TypeScript + Webpack5 + SASS`构建的TS应用
+1. `main`分支, 由`Next11 + TypeScript + Webpack5 + SASS`构建的 TS 应用
 1. `master`分支, 由`create-react-app`创建的 react 项目
-2. `v2`分支为 `Nextjs` 构建的 react 项目
+1. `v2`分支为 `Nextjs` 构建的 react 项目
 
 ```bash
 git clone -b main https://github.com/stack-wuh/wuh.site.git wuh.site
