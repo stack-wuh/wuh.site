@@ -24,5 +24,5 @@ export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse<TResData>
 ) {
-	res.status(200).json((config as any).playlist)
+	res.status(200).json(config.playlist)
 }
