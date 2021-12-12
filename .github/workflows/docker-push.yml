@@ -15,7 +15,7 @@ jobs:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     outputs:
-      tags: ${{ steps.meta.outputs.tags }}
+      tags: ${{ steps.release_head_tags.outputs.tags }}
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
@@ -39,6 +39,10 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      
+      - name: Output
+        id: release_head_tags
+        run: echo "::set-output name=tags::${{ steps.meta.outputs.tags }}"
 
   build_container:
     name: Build Container
@@ -58,26 +62,3 @@ jobs:
             cd /home/next-web-app/frontend
             ./bin/clear-docker.sh
             ./bin/build-container.sh ${{ needs.push_to_docker.outputs.tags }}
-      # - name: executing remote ssh commands using password
-      #   uses: appleboy/ssh-action@master
-      #   with:
-      #     host: ${{ secrets.HOST }}
-      #     username: ${{ secrets.USERNAME }}
-      #     key: ${{ secrets.KEY }}
-      #     port: ${{ secrets.PORT }}
-      #     script: |
-      #       echo '============== docker build contianer ==========='
-      #       echo '构建container的版本号: ' ${{ steps.meta.outputs.tags }}
-
-      #       docker ps -a | grep 'frontend.' | awk '{print $1}' | xargs docker stop
-      #       docker ps -a | grep 'frontend.' | awk '{print $1}' | xargs docker rm
-      #       docker pull shadowu/wuh.site:latest
-      #       docker container run --name frontend.${{ steps.meta.outputs.tags }}\
-      #       -it\
-      #       -p 3100:3000\
-      #       --restart=always shadowu/wuh.site:latest
-
-      #       systemctl status docker
-      #       systemctl restart nginx
-
-      #       echo '============== docker build successfully =================='
