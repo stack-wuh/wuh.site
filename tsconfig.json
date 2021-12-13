@@ -2,7 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -15,20 +19,51 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "@/*": ["."],
-      "@/pages/*": ["pages/*"],
-      "@/components/*": ["components/*"],
-      "@/lib/*": ["lib/*"],
-      "@/middlewares/*": ["middlewares/*"],
-      "@/hooks/*": ["hooks/*"],
-      "@/db/*": ["db/*"],
-      "@/layout/*": ["layout/*"],
-      "@/styles/*": ["styles/*"],
-      "@/store/*": ["store/*"],
-      "@/constant/*": ["constant/*"],
-      "@/__utils/*": ["__utils/*"]
-    }
+      "@/*": [
+        "."
+      ],
+      "@/pages/*": [
+        "pages/*"
+      ],
+      "@/components/*": [
+        "components/*"
+      ],
+      "@/lib/*": [
+        "lib/*"
+      ],
+      "@/middlewares/*": [
+        "middlewares/*"
+      ],
+      "@/hooks/*": [
+        "hooks/*"
+      ],
+      "@/db/*": [
+        "db/*"
+      ],
+      "@/layout/*": [
+        "layout/*"
+      ],
+      "@/styles/*": [
+        "styles/*"
+      ],
+      "@/store/*": [
+        "store/*"
+      ],
+      "@/constant/*": [
+        "constant/*"
+      ],
+      "@/__utils/*": [
+        "__utils/*"
+      ]
+    },
+    "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
