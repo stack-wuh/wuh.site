@@ -21,14 +21,27 @@ export interface IHomeItemProps {
 	location: string
 	id: null
 }
+
+export type THomeIntialProps = {
+	code: number
+	msg: string
+	data: {
+		count: number
+		rows: IHomeItemProps[]
+		current: number
+		pageSize: number
+	}
+}
+
 export type IHomeProps = {
 	articleList: IHomeItemProps[]
 	bannerList: rowItem[]
 	articleCount: number
+	initialData: THomeIntialProps
 }
 
 const Home = (props: IHomeProps) => {
-	const { articleList, articleCount, bannerList } = props
+	const { articleCount, bannerList, initialData } = props
 
 	return (
 		<div className="ww_home">
@@ -39,20 +52,19 @@ const Home = (props: IHomeProps) => {
 				]}
 			/>
 			{bannerList && <BannerPost data={bannerList} />}
-			<PostList data={articleList} count={articleCount} />
+			<PostList data={initialData} count={articleCount} />
 		</div>
 	)
 }
 
 export async function getStaticProps() {
-	const article = await fetcher(`${API_ARTICLE_LIST}?p=1`)
+	const article = await fetcher(`${API_ARTICLE_LIST}`)
 	const banner = await fetcher(`${API_BANNER_HOME}`)
 
 	return {
 		props: {
 			initialData: article,
 			articleCount: article.data.count || 0,
-			articleList: article.data.rows || [],
 			bannerList: banner.data.rows || [],
 		},
 	}

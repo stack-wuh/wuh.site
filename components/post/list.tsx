@@ -1,40 +1,40 @@
 import * as React from 'react'
 import Link from 'next/link'
-import { IHomeItemProps } from '@/pages/index'
+import { IHomeItemProps, THomeIntialProps } from '@/pages/index'
 import Image from '@/components/image/image'
 import { LoadMoreButton } from '@/components/button'
 import useConfig from '@/hooks/useConfig'
 import fetcher from '@/lib/fetch'
 import useSWRInfinite from 'swr/infinite'
+import { API_ARTICLE_LIST } from '@/constant/api'
 
 const PAGE_SIZE = 10
 
 interface IListProps {
-	data: IHomeItemProps[]
+	data: THomeIntialProps
 	count: number
 }
 
-const usePostPages = (initialData: IHomeItemProps[], count: number) => {
+const usePostPages = (initialData: THomeIntialProps, count: number) => {
 	const { data, size, setSize, error } = useSWRInfinite(
-		(index: number) => {
-			return `https://api.wuh.site/articles?p=${index + 1}`
-		},
+		(index: number) => `${API_ARTICLE_LIST}?p=${index + 1}`,
 		fetcher,
 		{
-			revalidateOnFocus: false,
-			revalidateOnMount: false,
+			revalidateOnFocus: true,
+			revalidateOnMount: true,
+			revalidateIfStale: true,
 			initialSize: 1,
-			persistSize: true,
-			dedupingInterval: 2500,
+			persistSize: false,
+			dedupingInterval: 5000,
+			fallbackData: [initialData],
 		}
 	)
-	const isEmpty = initialData.length
+	const isEmpty = data?.length
 	const allowLoadMore = size < Math.ceil(count / PAGE_SIZE)
-	const reduceAccValue = data ? [] : initialData
 
 	const hits = (data || []).reduce(
 		(acc: [], curr: any) => acc.concat(curr.data.rows),
-		reduceAccValue
+		[]
 	)
 
 	return {
@@ -79,6 +79,7 @@ const Item = (props: IHomeItemProps) => {
 
 const List: React.FC<IListProps> = (props) => {
 	const config = useConfig()
+
 	const { hits, size, setSize, allowLoadMore } = usePostPages(
 		props.data,
 		props.count
