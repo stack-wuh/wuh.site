@@ -11,7 +11,7 @@ body,
 	font-weight: 400;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
-	transition: background-color 0.5s ease;
+	transition: background-color 0.5s var(--transition-ease);
 }
 
 * {

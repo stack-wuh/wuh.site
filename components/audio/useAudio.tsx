@@ -301,8 +301,13 @@ const useAudio = (
 		}
 
 		if (audioRef && audioRef.canplay) {
-			const { canplay } = audioRef
-			dispatch({ type: 'STATUS', payload: { ...state, canplay } })
+			const { canplay, muted } = audioRef
+			const mutedStatus = muted ? 'open' : 'close'
+
+			dispatch({
+				type: 'STATUS',
+				payload: { ...state, canplay, muted, mutedStatus },
+			})
 		}
 	}, [audioRef, ops.traceList.length])
 
