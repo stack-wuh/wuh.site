@@ -1105,16 +1105,18 @@ $name: ww_post__;
     color: var(--color-base-8);
     font-size: calc(var(--font-size-base) + 2px);
     line-height: calc(var(--font-size-base) + 10px);
-    transition: var(--transition-base);
+    transition-property: color, font-size, line-height;
+    transition-timing-function: var(--transition-ease-in);
+    transition-duration: .5s;
 
     a {
       color: var(--color-link);
       text-decoration: underline;
-      transition: color .5s ease;
+      transition: color .5s var(--transition-ease);
 
       &:hover {
         color: var(--color-default);
-        transition: color .5s ease;
+        transition: color .5s var(--transition-ease);
       }
     }
   }

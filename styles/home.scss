@@ -37,20 +37,23 @@ $name: 'ww_home';
 
     img {
       transform: scale3d(1, 1, 1);
-      transition: var(--transition-base);
+      transition: transform .5s var(--transition-linear);
     }
 
     &:hover {
       & .lf img {
         transform: scale3d(1.3, 1.3, 1.3) rotateZ(-6deg);
-        transition: var(--transition-base);
+        transition: transform .5s var(--transition-linear);
+
       }
 
       & .title,
       & .description {
         transform: translateX(10px);
-        transition: var(--transition-base);
-        transition-delay: .1s;
+        transition-property: transform, background-size, color;
+        transition-timing-function: var(--transition-linear);
+        transition-duration: .5s;
+        transition-delay: .3s;
       }
 
       & .title {
@@ -59,7 +62,6 @@ $name: 'ww_home';
       }
 
       outline: 1px solid var(--color-primary-2);
-      transition: var(--transition-base);
     }
 
     &::before {
@@ -97,8 +99,11 @@ $name: 'ww_home';
       font-size: var(--font-size-medium);
       margin-bottom: 0;
       margin-top: 0;
+      color: inherit;
       line-height: var(--line-height-medium);
-      transition: var(--transition-base);
+      transition-property: background-size, transform, color;
+      transition-timing-function: var(--transition-linear);
+      transition-duration: .5s;
 
       &:hover {
         text-decoration: underline;
@@ -110,7 +115,9 @@ $name: 'ww_home';
       margin-top: var(--margin-base);
       font-size: 13px;
       line-height: 21px;
-      transition: var(--transition-base);
+      transition-property: background-size, transform, color;
+      transition-timing-function: var(--transition-linear);
+      transition-duration: .5s;
     }
   }
 }
