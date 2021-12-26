@@ -42,7 +42,7 @@ const useScroll = () => {
 	}
 }
 
-const Behavior: React.FC<BehaviorTypeProps> = (props) => {
+const Behavior: React.FC<BehaviorTypeProps> = props => {
 	const {} = props
 	const scroller = useScroll()
 	const btnDownRef = useRef<any>()

@@ -67,7 +67,7 @@ const createBtnHref = (key: createBtnName, ops: createBtnOps): string => {
 /** 最大的连续点击次数 */
 const MAX_CLICK_COUNT = 5
 
-const ShareGroup: React.FC<ShareTypeProps> = (props) => {
+const ShareGroup: React.FC<ShareTypeProps> = props => {
 	const {} = props
 	const [current, { inc, reset }] = useCounter(0, { min: 0, max: 10 })
 	const info = usePostContext()

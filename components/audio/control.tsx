@@ -47,8 +47,7 @@ const AudioControl = () => {
 						key={state.playStatus}
 						classNames="fade"
 						timeout={350}
-						unmountOnExit
-					>
+						unmountOnExit>
 						{state.isplaying ? (
 							<Button
 								disabled={!state.canplay}
@@ -76,8 +75,7 @@ const AudioControl = () => {
 						key={state.mutedStatus}
 						classNames="fade"
 						timeout={350}
-						unmountOnExit
-					>
+						unmountOnExit>
 						{state.muted ? (
 							<Button
 								onClick={() => actions.onToggleMuted(false)}

@@ -31,7 +31,7 @@ const allowHexColor = (value: string | any): boolean =>
 		'twitter',
 	].includes(value)
 
-const Tag: React.FC<TagTypeProps> = (props) => {
+const Tag: React.FC<TagTypeProps> = props => {
 	const { children, ghost, color, icon, iconFamily, size, className } = props
 	const innerClassnames = classnames('ww_tag__inner', className, {
 		'is-ghost': ghost,

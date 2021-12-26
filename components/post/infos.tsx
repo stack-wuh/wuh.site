@@ -7,7 +7,7 @@ export type TPropsType = {
 	update_at?: string
 	keywords?: string[]
 }
-const infoList: React.FC<TPropsType> = (props) => {
+const infoList: React.FC<TPropsType> = props => {
 	const { update_at, keywords } = props
 
 	return (
@@ -26,7 +26,7 @@ const infoList: React.FC<TPropsType> = (props) => {
 				<li className="ww_post__item">
 					<span className="ww_post__item--label">相关标签</span>
 					<Flex>
-						{(keywords || []).map((item) => (
+						{(keywords || []).map(item => (
 							<Tag key={item}>{item}</Tag>
 						))}
 					</Flex>

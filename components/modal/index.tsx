@@ -23,7 +23,7 @@ type ModalPropsTypes = {
 	innerStyle?: React.CSSProperties
 }
 
-const Modal: React.FC<ModalPropsTypes> = (props) => {
+const Modal: React.FC<ModalPropsTypes> = props => {
 	const { visible, title, allowFixedHeader, wrapperClassName, innerStyle } =
 		props
 
@@ -49,8 +49,7 @@ const Modal: React.FC<ModalPropsTypes> = (props) => {
 					<div
 						className={classnames('ww_modal__header', {
 							'ww_modal__header--fixed': allowFixedHeader,
-						})}
-					>
+						})}>
 						<div className="ww_modal__header--left">
 							<i className="iconfont-color icon-prefix iconhangkonghangtian-leidaradars" />
 							{title}

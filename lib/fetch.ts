@@ -8,5 +8,5 @@ export default function fetcher(url: string): Promise<any> {
 		headers: {
 			'Content-Type': 'application/json',
 		},
-	}).then((res) => res.json())
+	}).then(res => res.json())
 }

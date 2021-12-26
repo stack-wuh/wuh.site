@@ -23,12 +23,12 @@ import SEOConfig, { FAQConfig, LogoConfig } from '../next-seo.config'
 Router.events.on('routeChangeStart', () => {
 	NProgress.start()
 })
-Router.events.on('routeChangeComplete', (url) => {
+Router.events.on('routeChangeComplete', url => {
 	NProgress.done()
 	gtag.pageview(url)
 	highlight.formatter(url)
 })
-Router.events.off('routeChangeComplete', (url) => {
+Router.events.off('routeChangeComplete', url => {
 	gtag.pageview(url)
 })
 Router.events.on('routeChangeError', () => {
@@ -43,7 +43,7 @@ type NextPropsWithLayout = AppProps & {
 }
 
 function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
-	const getLayout = Component.getLayout ?? ((page) => page)
+	const getLayout = Component.getLayout ?? (page => page)
 	const layout = getLayout(<Component {...pageProps} />)
 	const audioRef = useAudioInstance()
 
@@ -97,7 +97,7 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
 									}
 								}
 							}}
-							onExiting={(node) => {
+							onExiting={node => {
 								if (router.asPath.startsWith('/post')) {
 									const rect = node.getBoundingClientRect()
 									document
@@ -107,8 +107,7 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
 							}}
 							addEndListener={(node, done) => {
 								node.addEventListener('transitionend', done, false)
-							}}
-						>
+							}}>
 							{layout}
 						</CSSTransition>
 					</SwitchTransition>

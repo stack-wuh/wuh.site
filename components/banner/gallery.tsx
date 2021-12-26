@@ -23,7 +23,7 @@ type galleryPropsType = {
 	data: any[]
 	onClose?: () => void
 }
-const Gallery: React.FC<galleryPropsType> = (props) => {
+const Gallery: React.FC<galleryPropsType> = props => {
 	const slideRef = useRef<Slider | null>(null)
 	const galleryData = useGalleryData()
 
@@ -51,7 +51,7 @@ const Gallery: React.FC<galleryPropsType> = (props) => {
 	return (
 		<div className="ww_gallery">
 			<Slider ref={slideRef} {...slideConfig}>
-				{galleryData.galleryList.map((item) => (
+				{galleryData.galleryList.map(item => (
 					<div key={item.url} className={innerClassnames}>
 						<div className="ww_gallery__bg">
 							<style jsx>{`

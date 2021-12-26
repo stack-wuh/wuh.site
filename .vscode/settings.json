@@ -2,7 +2,7 @@
   "editor.formatOnSave": true,
   "prettier.semi": false,
   "prettier.singleQuote": true,
-  "prettier.arrowParens": "always",
+  "prettier.arrowParens": "avoid",
   "prettier.bracketSpacing": true,
   "prettier.embeddedLanguageFormatting": "auto",
   "prettier.enable": true,

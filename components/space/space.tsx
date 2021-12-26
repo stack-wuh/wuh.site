@@ -15,7 +15,7 @@ export type SpaceProps = {
 	className?: string
 }
 
-const Space: React.FC<SpaceProps> = (props) => {
+const Space: React.FC<SpaceProps> = props => {
 	const {
 		size = 'middle',
 		wrap = true,
@@ -44,7 +44,7 @@ const Space: React.FC<SpaceProps> = (props) => {
 		innerStyle[paddingKey] = size + 'px'
 	}
 
-	const nodes = React.Children.map(children, (cm) => (
+	const nodes = React.Children.map(children, cm => (
 		<div className="ww_space__item" style={{ ...innerStyle, ...itemStyle }}>
 			{cm}
 		</div>
