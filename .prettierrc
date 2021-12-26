@@ -6,7 +6,7 @@
   "bracketSpacing": true,
   "bracketSameLine": true,
   "arrowParens": "avoid",
-  "useTabs": true,
+  "useTabs": false,
   "embeddedLanguageFormatting": "auto",
   "quoteProps": "preserve"
 }

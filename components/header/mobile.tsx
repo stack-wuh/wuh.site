@@ -1,5 +1,5 @@
 const Mobile = () => {
-	return <header className="header"></header>
+  return <header className="header"></header>
 }
 
 export default Mobile

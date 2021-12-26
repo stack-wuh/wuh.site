@@ -5,10 +5,10 @@ import PostContext, { usePostContext } from './context'
 import PostInfoList from './infos'
 
 export {
-	PostHeader,
-	PostBody,
-	PostList,
-	PostContext,
-	usePostContext,
-	PostInfoList,
+  PostHeader,
+  PostBody,
+  PostList,
+  PostContext,
+  usePostContext,
+  PostInfoList,
 }
