@@ -7,12 +7,18 @@ onmessage = function (e) {
   let theme = null
   let count = 0
 
-  const getTheme = (mode) => { return mode === 'light' ? 'dark' : 'light' }
+  const getTheme = mode => {
+    return mode === 'light' ? 'dark' : 'light'
+  }
 
-  if (!theme) { theme = getTheme(initTheme) }
+  if (!theme) {
+    theme = getTheme(initTheme)
+  }
 
   const clear = () => {
-    console.log(`======== [work.js][${originName}] 任务在第[${count}]轮被终结了`)
+    console.log(
+      `======== [work.js][${originName}] 任务在第[${count}]轮被终结了`
+    )
     this.clearInterval(timer)
   }
 
@@ -21,10 +27,19 @@ onmessage = function (e) {
       clear()
     }
     timer = this.setInterval(() => {
-      if (theme) { theme = getTheme(theme) }
+      if (theme) {
+        theme = getTheme(theme)
+      }
 
-      this.postMessage({ from: originName, theme, timerId: timer, tracetime: new Date().getTime() })
-      console.log(`========== [work.js][${originName}] 任务成功执行, 第${++count}次`)
+      this.postMessage({
+        from: originName,
+        theme,
+        timerId: timer,
+        tracetime: new Date().getTime(),
+      })
+      console.log(
+        `========== [work.js][${originName}] 任务成功执行, 第${++count}次`
+      )
     }, MAX_TIMEOUT)
   }
 

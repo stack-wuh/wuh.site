@@ -1,5 +1,5 @@
-(function () {
-  let count = 0;
+;(function () {
+  let count = 0
 
   function sleep(duration) {
     return new Promise(rs => setTimeout(rs, duration))
@@ -7,7 +7,7 @@
 
   function check() {
     if (window.hljs) {
-      hljs.highlightAll();
+      hljs.highlightAll()
     }
     return window.hljs
   }
@@ -25,4 +25,4 @@
   loop()
 
   window.addEventListener('load', loop, false)
-})();
+})()

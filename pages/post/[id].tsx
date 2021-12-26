@@ -4,10 +4,10 @@ import fetcher from '@/lib/fetch'
 import { useRouter } from 'next/router'
 import { API_ARTICLE_ITEM } from '@/constant/api'
 import {
-	PostHeader,
-	PostBody,
-	PostContext,
-	PostInfoList,
+  PostHeader,
+  PostBody,
+  PostContext,
+  PostInfoList,
 } from '@/components/post'
 import Divider from '@/components/divider'
 import ShareGroup from '@/components/button/share-group'
@@ -17,51 +17,51 @@ import withLayout from '@/layout/layout'
 import * as hljs from '@/lib/highlight'
 
 function useData(id: string | string[] | undefined) {
-	const { data, error } = useSWR(
-		id ? `${API_ARTICLE_ITEM}${id}` : null,
-		fetcher,
-		{
-			revalidateOnFocus: false,
-			revalidateOnMount: true,
-		}
-	)
+  const { data, error } = useSWR(
+    id ? `${API_ARTICLE_ITEM}${id}` : null,
+    fetcher,
+    {
+      revalidateOnFocus: false,
+      revalidateOnMount: true,
+    }
+  )
 
-	return {
-		data,
-		error,
-	}
+  return {
+    data,
+    error,
+  }
 }
 
 const Detail: React.FC<{}> = () => {
-	const router = useRouter()
-	const { data, error } = useData(router.query.id)
-	if (error) return <div className="error">ERROR</div>
-	if (!data) return <Empty.Loading />
+  const router = useRouter()
+  const { data, error } = useData(router.query.id)
+  if (error) return <div className="error">ERROR</div>
+  if (!data) return <Empty.Loading />
 
-	hljs.formatter(router.asPath)
+  hljs.formatter(router.asPath)
 
-	return (
-		<div className="ww_detail">
-			<ErrorBoundary>
-				<PostContext value={data.data}>
-					{/* 文章详情页--页头meta处理 */}
-					<PostHeader />
-					{/* 文章详情页--文章主体 */}
-					<PostBody />
+  return (
+    <div className="ww_detail">
+      <ErrorBoundary>
+        <PostContext value={data.data}>
+          {/* 文章详情页--页头meta处理 */}
+          <PostHeader />
+          {/* 文章详情页--文章主体 */}
+          <PostBody />
 
-					{/* 版权声明 */}
-					<Divider />
+          {/* 版权声明 */}
+          <Divider />
 
-					<PostInfoList {...data.data} />
+          <PostInfoList {...data.data} />
 
-					{/* 分享--按钮组 */}
-					<Divider size="small" />
-					<ShareGroup />
-					<Divider size="small" />
-				</PostContext>
-			</ErrorBoundary>
-		</div>
-	)
+          {/* 分享--按钮组 */}
+          <Divider size="small" />
+          <ShareGroup />
+          <Divider size="small" />
+        </PostContext>
+      </ErrorBoundary>
+    </div>
+  )
 }
 
 export default React.memo(withLayout(Detail))

@@ -21,47 +21,47 @@ import { DefaultSeo, FAQPageJsonLd, LogoJsonLd } from 'next-seo'
 import SEOConfig, { FAQConfig, LogoConfig } from '../next-seo.config'
 
 Router.events.on('routeChangeStart', () => {
-	NProgress.start()
+  NProgress.start()
 })
 Router.events.on('routeChangeComplete', url => {
-	NProgress.done()
-	gtag.pageview(url)
-	highlight.formatter(url)
+  NProgress.done()
+  gtag.pageview(url)
+  highlight.formatter(url)
 })
 Router.events.off('routeChangeComplete', url => {
-	gtag.pageview(url)
+  gtag.pageview(url)
 })
 Router.events.on('routeChangeError', () => {
-	NProgress.done()
+  NProgress.done()
 })
 
 type NextPageWithLayout = NextPage & {
-	getLayout?: (Component: ReactElement) => ReactNode
+  getLayout?: (Component: ReactElement) => ReactNode
 }
 type NextPropsWithLayout = AppProps & {
-	Component: NextPageWithLayout
+  Component: NextPageWithLayout
 }
 
 function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
-	const getLayout = Component.getLayout ?? (page => page)
-	const layout = getLayout(<Component {...pageProps} />)
-	const audioRef = useAudioInstance()
+  const getLayout = Component.getLayout ?? (page => page)
+  const layout = getLayout(<Component {...pageProps} />)
+  const audioRef = useAudioInstance()
 
-	return (
-		<ErrorBoundary>
-			<DefaultSeo {...SEOConfig} />
-			<FAQPageJsonLd mainEntity={FAQConfig.mainEntity} />
-			<LogoJsonLd url={LogoConfig.url} logo={LogoConfig.logo} />
-			<Script
-				id="gtag"
-				strategy="afterInteractive"
-				src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-			/>
-			<Script
-				id="gtag-init"
-				strategy="afterInteractive"
-				dangerouslySetInnerHTML={{
-					__html: `
+  return (
+    <ErrorBoundary>
+      <DefaultSeo {...SEOConfig} />
+      <FAQPageJsonLd mainEntity={FAQConfig.mainEntity} />
+      <LogoJsonLd url={LogoConfig.url} logo={LogoConfig.logo} />
+      <Script
+        id="gtag"
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -69,52 +69,52 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
               page_path: window.location.pathname,
             });
           `,
-				}}
-			/>
-			<SlideHead />
-			<ThemeScript />
-			<BubbleScript />
-			<HighlightScript />
-			<ConfigProvider.Provider value={config}>
-				<AudioContext.Provider value={audioRef}>
-					<SwitchTransition mode="out-in">
-						<CSSTransition
-							in={router.asPath === '/'}
-							key={router.asPath}
-							classNames="page-transition"
-							timeout={1000}
-							unmountOnExit
-							onEntered={() => {
-								if (router.asPath === '/') {
-									const target = document.querySelector('html')
-									const scrollTop = target?.getAttribute('scroll')
-									if (scrollTop) {
-										window.scrollTo(0, Math.abs(+scrollTop))
+        }}
+      />
+      <SlideHead />
+      <ThemeScript />
+      <BubbleScript />
+      <HighlightScript />
+      <ConfigProvider.Provider value={config}>
+        <AudioContext.Provider value={audioRef}>
+          <SwitchTransition mode="out-in">
+            <CSSTransition
+              in={router.asPath === '/'}
+              key={router.asPath}
+              classNames="page-transition"
+              timeout={1000}
+              unmountOnExit
+              onEntered={() => {
+                if (router.asPath === '/') {
+                  const target = document.querySelector('html')
+                  const scrollTop = target?.getAttribute('scroll')
+                  if (scrollTop) {
+                    window.scrollTo(0, Math.abs(+scrollTop))
 
-										setTimeout(() => {
-											target?.setAttribute('scroll', ' ')
-										})
-									}
-								}
-							}}
-							onExiting={node => {
-								if (router.asPath.startsWith('/post')) {
-									const rect = node.getBoundingClientRect()
-									document
-										.querySelector('html')
-										?.setAttribute('scroll', `${rect.y}`)
-								}
-							}}
-							addEndListener={(node, done) => {
-								node.addEventListener('transitionend', done, false)
-							}}>
-							{layout}
-						</CSSTransition>
-					</SwitchTransition>
-				</AudioContext.Provider>
-			</ConfigProvider.Provider>
-		</ErrorBoundary>
-	)
+                    setTimeout(() => {
+                      target?.setAttribute('scroll', ' ')
+                    })
+                  }
+                }
+              }}
+              onExiting={node => {
+                if (router.asPath.startsWith('/post')) {
+                  const rect = node.getBoundingClientRect()
+                  document
+                    .querySelector('html')
+                    ?.setAttribute('scroll', `${rect.y}`)
+                }
+              }}
+              addEndListener={(node, done) => {
+                node.addEventListener('transitionend', done, false)
+              }}>
+              {layout}
+            </CSSTransition>
+          </SwitchTransition>
+        </AudioContext.Provider>
+      </ConfigProvider.Provider>
+    </ErrorBoundary>
+  )
 }
 
 export default React.memo(MyApp)
