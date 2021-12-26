@@ -11,7 +11,7 @@ const Body = () => {
 	const data = usePostContext()
 	const [body, setbody] = useState(data.content)
 	useEffect(() => {
-		getBodyString(data.content).then((res) => setbody(res))
+		getBodyString(data.content).then(res => setbody(res))
 	}, [data])
 
 	useMount(() => {

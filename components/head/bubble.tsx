@@ -5,8 +5,7 @@ const Bubble = () => {
 		<>
 			<Script
 				id="data-popupper-id"
-				src="https://src.wuh.site/scripts/bubble.js"
-			></Script>
+				src="https://src.wuh.site/scripts/bubble.js"></Script>
 		</>
 	)
 }

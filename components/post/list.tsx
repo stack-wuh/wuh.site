@@ -52,8 +52,7 @@ const Item = (props: IHomeItemProps) => {
 		<>
 			<Link
 				href={{ pathname: '/post/[id]', query: { id: props.title } }}
-				passHref
-			>
+				passHref>
 				<a>
 					<li className="ww_home__item">
 						<div className="lf">
@@ -77,7 +76,7 @@ const Item = (props: IHomeItemProps) => {
 	)
 }
 
-const List: React.FC<IListProps> = (props) => {
+const List: React.FC<IListProps> = props => {
 	const config = useConfig()
 
 	const { hits, size, setSize, allowLoadMore } = usePostPages(
@@ -100,8 +99,7 @@ const List: React.FC<IListProps> = (props) => {
 				disabled={!allowLoadMore}
 				icon="icon-costoms-alearance"
 				size="small"
-				onClick={handleFetchNextPage}
-			>
+				onClick={handleFetchNextPage}>
 				{allowLoadMore ? config?.pager.nextText : config?.pager.disableNextText}
 			</LoadMoreButton>
 		</ul>

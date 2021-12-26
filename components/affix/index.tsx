@@ -14,7 +14,7 @@ export type AffixTypeProps = {
 	offsetX?: number | string
 }
 
-const Affix: React.FC<AffixTypeProps> = (props) => {
+const Affix: React.FC<AffixTypeProps> = props => {
 	const { children, position, offsetY, offsetX } = props
 
 	const node = React.Children.only(children)

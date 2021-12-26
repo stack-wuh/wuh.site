@@ -38,8 +38,7 @@ export default function Response(props: ResProps) {
 						layout_mobile: isMobile && !isTablet && !isPc,
 						layout_tablet: isTablet && !isPc,
 						layout_pc: isPc,
-					})}
-				>
+					})}>
 					<div className="app-root">{children}</div>
 				</div>
 			</ResponsiveProvider.Provider>

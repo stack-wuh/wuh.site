@@ -7,7 +7,7 @@ type valueTypeProps = IHomeItemProps
 export type PostContextProps = {
 	value: valueTypeProps
 }
-const Context: React.FC<PostContextProps> = (props) => {
+const Context: React.FC<PostContextProps> = props => {
 	const { value, children } = props
 	return (
 		<PostContextKey.Provider value={value}>{children}</PostContextKey.Provider>

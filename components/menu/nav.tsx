@@ -18,14 +18,12 @@ export default function Nav() {
 			<ActiveLink
 				href="https://github.com/stack-wuh/react-router-config"
 				activeClassName="is-active"
-				passHref
-			>
+				passHref>
 				<a
 					className="ww_menu-item is-link"
 					role="menuitem"
 					tabIndex={0}
-					target="_blank"
-				>
+					target="_blank">
 					<i className="iconfont icon-github" />
 					<span>源代码</span>
 				</a>
@@ -33,14 +31,12 @@ export default function Nav() {
 			<ActiveLink
 				href="https://docs.wuh.site"
 				activeClassName="is-active"
-				passHref
-			>
+				passHref>
 				<a
 					className="ww_menu-item"
 					role="menuitem"
 					tabIndex={0}
-					target="_blank"
-				>
+					target="_blank">
 					<i className="iconfont icon-insertlink" />
 					<span>文档指南</span>
 				</a>

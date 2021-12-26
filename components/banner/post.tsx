@@ -8,7 +8,7 @@ import Link from 'next/link'
 type propsType = {
 	data: rowItem[]
 }
-const Post: React.FC<propsType> = (props) => {
+const Post: React.FC<propsType> = props => {
 	const { data } = props
 
 	const innerClassnames = classnames('ww_banner__item', 'ww_banner__bg')
@@ -27,12 +27,11 @@ const Post: React.FC<propsType> = (props) => {
 	return (
 		<div className="ww_banner">
 			<Slider {...slideConfig}>
-				{data.map((item) => (
+				{data.map(item => (
 					<Link
 						key={item.title}
 						passHref
-						href={{ pathname: '/post/[id]', query: { id: item.title } }}
-					>
+						href={{ pathname: '/post/[id]', query: { id: item.title } }}>
 						<div key={item.title} className={innerClassnames}>
 							<style jsx>{`
 								.ww_banner__bg {

@@ -20,7 +20,7 @@ export const iconWithType = {
 const isPatchIcons = (str: string): boolean =>
 	['success', 'warning', 'error', 'info'].includes(str)
 
-const Alert: React.FC<AlertTypeProps> = (props) => {
+const Alert: React.FC<AlertTypeProps> = props => {
 	const { icon, showIcon, message, description, type = 'warning' } = props
 
 	const innerClassnames = classnames('ww_alert__inner', {

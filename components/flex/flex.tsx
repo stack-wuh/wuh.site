@@ -7,7 +7,7 @@ export type TFlexProps = {
 	direction?: 'vertical' | 'horizontal'
 }
 
-const Flex: React.FC<TFlexProps> = (props) => {
+const Flex: React.FC<TFlexProps> = props => {
 	const { size, direction } = props
 
 	const outerClassNames = classnames('ww_flex', props.className)
@@ -16,7 +16,7 @@ const Flex: React.FC<TFlexProps> = (props) => {
 		[`is-${direction}`]: direction,
 	})
 
-	const nodes = React.Children.map(props.children, (child) => {
+	const nodes = React.Children.map(props.children, child => {
 		return <div className="ww_flex__item">{child}</div>
 	})
 

@@ -268,7 +268,7 @@ const useAudio = (
 		}
 	}, [audioRef, ops.traceList.length])
 
-	const onToggleMuted = useCallback((val) => {
+	const onToggleMuted = useCallback(val => {
 		actions.setMuted(val)
 	}, [])
 

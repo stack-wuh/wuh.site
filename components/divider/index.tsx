@@ -13,7 +13,7 @@ export type DividerTypeProps = {
 	notAllowLinearGradient?: boolean
 }
 
-const Divider: React.FC<DividerTypeProps> = (props) => {
+const Divider: React.FC<DividerTypeProps> = props => {
 	const {
 		size = 'middle',
 		type,

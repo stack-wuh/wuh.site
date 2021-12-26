@@ -14,7 +14,7 @@ export interface EmptyInterTypeProps extends React.FC<EmptyTypeProps> {
 	Loading: typeof Loading
 }
 
-const Empty: EmptyInterTypeProps = (props) => {
+const Empty: EmptyInterTypeProps = props => {
 	const { size, align, children } = props
 
 	const innerClassnames = classnames('ww_empty__inner', {

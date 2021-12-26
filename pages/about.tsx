@@ -41,8 +41,7 @@ const AboutPage = () => {
 								className="text-link"
 								href="https://music.163.com/#/playlist?id=565717308"
 								target="_blank"
-								rel="external noreferrer"
-							>
+								rel="external noreferrer">
 								网抑云
 							</a>
 						</span>
@@ -54,8 +53,7 @@ const AboutPage = () => {
 								className="text-link margin-right-4 text-none"
 								rel="external noreferrer"
 								href="https://weread.qq.com/misc/booklist/74791710_7kPtxUxu0?code=021d5oFa1GAFQA0MHTIa1F8ayy1d5oF1&state=ok_userinfo"
-								target="_blank"
-							>
+								target="_blank">
 								阅读
 							</a>
 							,&nbsp;
@@ -63,8 +61,7 @@ const AboutPage = () => {
 								className="text-link margin-right-4 text-none"
 								rel="external noreferrer"
 								href="https://www.douban.com/people/wuh-site/notes"
-								target="_blank"
-							>
+								target="_blank">
 								日记
 							</a>
 							,&nbsp;
@@ -72,8 +69,7 @@ const AboutPage = () => {
 								className="text-link margin-right-4 text-none"
 								rel="external noreferrer"
 								href="https://www.douban.com/people/wuh-site/subject_doulists/book"
-								target="_blank"
-							>
+								target="_blank">
 								豆瓣-书/片单
 							</a>
 							,&nbsp;
@@ -95,8 +91,7 @@ const AboutPage = () => {
 								href="https://www.github.com/stack-wuh"
 								rel="external noreferrer"
 								target="_blank"
-								className="icon-outer icon-outer-github"
-							>
+								className="icon-outer icon-outer-github">
 								<i className="iconfont icon-github" />
 								<span>Github</span>
 							</a>
@@ -104,8 +99,7 @@ const AboutPage = () => {
 								href="https://twitter.com/wuh131420"
 								rel="external noreferrer"
 								target="_blank"
-								className="icon-outer icon-outer-twitter"
-							>
+								className="icon-outer icon-outer-twitter">
 								<i className="iconfont icon-twitter" />
 								<span>Twitter</span>
 							</a>
