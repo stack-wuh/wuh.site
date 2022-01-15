@@ -31,9 +31,8 @@ const usePostPages = (initialData: THomeIntialProps, count: number) => {
   )
   const isEmpty = data?.length
   const allowLoadMore = size < Math.ceil(count / PAGE_SIZE)
-
   const hits = (data || []).reduce(
-    (acc: [], curr: any) => acc.concat(curr.data.rows),
+    (acc: [], curr: any) => acc.concat(curr.hits),
     []
   )
 
