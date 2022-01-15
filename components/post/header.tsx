@@ -16,7 +16,7 @@ export const tagTypeMap: tagType = {
     color: 'yuque',
     icon: 'icon-yuque-fill1',
   },
-  Github: {
+  github: {
     color: 'github',
     icon: 'icon-github',
   },

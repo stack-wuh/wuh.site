@@ -64,7 +64,7 @@ export async function getStaticProps() {
   return {
     props: {
       initialData: article,
-      articleCount: article.data.count || 0,
+      articleCount: article.pager.count || 0,
       bannerList: banner.data.rows || [],
     },
   }

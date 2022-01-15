@@ -9,9 +9,9 @@ const getBodyString = async (str: string): Promise<any> =>
 const Body = () => {
   const postRef = useRef<any>(null)
   const data = usePostContext()
-  const [body, setbody] = useState(data.content)
+  const [body, setbody] = useState(data.body)
   useEffect(() => {
-    getBodyString(data.content).then(res => setbody(res))
+    getBodyString(data.body).then(res => setbody(res))
   }, [data])
 
   useMount(() => {

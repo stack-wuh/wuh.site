@@ -72,17 +72,20 @@ $name: ww_post__;
     &:hover {
       &::before {
         transform: rotate(360deg);
+        transform-origin: center;
         transition: transform .5s ease;
       }
     }
 
     &::before {
       content: '*';
-      display: inline-block;
-      width: .3em;
-      height: .3em;
-      line-height: .5;
+      display: block;
+      width: .5em;
+      height: .5em;
+      text-align: center;
+      line-height: 1;
       margin-right: .5em;
+      font-size: 1em;
     }
 
     &:not(:last-of-type) {

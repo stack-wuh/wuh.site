@@ -1,5 +1,6 @@
 import React from 'react'
 import useSWR from 'swr'
+import { useUpdateEffect } from 'ahooks'
 import fetcher from '@/lib/fetch'
 import { useRouter } from 'next/router'
 import { API_ARTICLE_ITEM } from '@/constant/api'
@@ -35,15 +36,18 @@ function useData(id: string | string[] | undefined) {
 const Detail: React.FC<{}> = () => {
   const router = useRouter()
   const { data, error } = useData(router.query.id)
+
+  useUpdateEffect(() => {
+    hljs.formatter(router.asPath)
+  }, [])
+
   if (error) return <div className="error">ERROR</div>
   if (!data) return <Empty.Loading />
-
-  hljs.formatter(router.asPath)
 
   return (
     <div className="ww_detail">
       <ErrorBoundary>
-        <PostContext value={data.data}>
+        <PostContext value={data.hits}>
           {/* 文章详情页--页头meta处理 */}
           <PostHeader />
           {/* 文章详情页--文章主体 */}
@@ -52,7 +56,7 @@ const Detail: React.FC<{}> = () => {
           {/* 版权声明 */}
           <Divider />
 
-          <PostInfoList {...data.data} />
+          <PostInfoList {...data.hits} />
 
           {/* 分享--按钮组 */}
           <Divider size="small" />
