@@ -19,9 +19,9 @@ const useMusicData = (): { playlist: ITraceItem[] } => {
   const { data } = swr(API_PLAY_LIST, fetcher, config)
 
   if (!data) return { playlist: [] }
-
+  const { tracks } = data.hits
   return {
-    playlist: data.data.rows,
+    playlist: tracks,
   }
 }
 
@@ -34,7 +34,7 @@ const AudioControl = () => {
     <div className="ww_audio">
       <div className="ww_audio__head">
         <span>
-          {initialTrace?.name} - {initialTrace?.by}
+          {initialTrace?.name} - {initialTrace?.author}
         </span>
       </div>
       <Space size="small" className="ww_audio__space">
