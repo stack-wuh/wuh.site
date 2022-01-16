@@ -264,7 +264,7 @@ const useAudio = (
         payload: { ...state, traceIndex: audioRef.traceIndex },
       })
 
-      audioRef.src = ops.traceList[state.traceIndex].url
+      audioRef.src = ops.traceList[audioRef.traceIndex].url
     }
   }, [audioRef, ops.traceList.length])
 
