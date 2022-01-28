@@ -6,7 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 const { green } = require('chalk')
-import dayjs from 'dayjs'
+const dayjs = require('dayjs')
 
 /** @type {import('next').NextConfig} */
 let config = {
