@@ -1,6 +1,7 @@
 import { init, RematchDispatch, RematchRootState } from '@rematch/core'
 import createPersistPlugin from '@rematch/persist'
-import storage from "redux-persist/lib/storage"
+import storage from 'redux-persist/lib/storage'
+import immer from '@rematch/immer'
 import { models, RootModel } from './models'
 
 const persistConfig = {
@@ -9,12 +10,15 @@ const persistConfig = {
   version: 1,
   storage,
   serialize: true,
-  whitelist: ['settings']
+  whitelist: ['settings', 'music'],
 }
 
 export const store = init({
   models,
-  plugins: [createPersistPlugin<unknown, RootModel>(persistConfig)]
+  plugins: [
+    createPersistPlugin<unknown, RootModel>(persistConfig),
+    immer({ whitelist: ['music', 'settings'] }),
+  ] as any[],
 })
 
 export type Store = typeof store

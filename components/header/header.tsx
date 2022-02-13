@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import withConfig from '@/hooks/useConfig'
-// import AudioControl from '@/components/audio/control'
+import AudioControl from '@/components/audio/control'
 
 const Header = () => {
   const config = withConfig()
@@ -19,7 +19,7 @@ const Header = () => {
         </div>
         <div className="empty"></div>
         <div className="rg">
-          {/* <AudioControl /> */}
+          <AudioControl />
         </div>
       </div>
     </header>

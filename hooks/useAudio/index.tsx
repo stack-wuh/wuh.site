@@ -3,6 +3,7 @@ import createAudio from '@/lib/createAudio'
 const audioInstance = new createAudio()._instance
 
 export interface ICustomAudioProps extends HTMLAudioElement {
+  [x: string]: any
   // Audio 的实例是否已加载, 初始化默认为true
   isInit?: boolean
   // Audio 实例当前缓存的播放列表序号
@@ -19,7 +20,9 @@ export const inititalAudioProps = {
   isplaying: false,
 }
 
-export const AudioContext = React.createContext<ICustomAudioProps | null>(null)
+export const AudioContext = React.createContext<ICustomAudioProps>(
+  {} as ICustomAudioProps
+)
 
 export const useAudioInstance = () => {
   const audioRef = useRef<ICustomAudioProps | null>(audioInstance)

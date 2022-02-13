@@ -14,3 +14,5 @@ export const API_BANNER_HOME = `${DOMAIN_STATIC}/api/banner`
 export const API_GALLERY_LIST = `${DOMAIN_STATIC}/api/gallery`
 
 export const API_PLAY_LIST = `${DOMAIN}${PREFIX}/music/songs`
+
+export const API_PLAY_ITEM = `${DOMAIN}${PREFIX}/music`
