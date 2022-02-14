@@ -100,8 +100,10 @@ const useControl = (ops?: TOptions): [ICustomAudioProps, TActionsProps] => {
   useEventListener(
     'durationchange',
     () => {
+      console.log('==== durationchange', audioRef)
       if (audioRef) {
         const { duration, currentTime } = audioRef
+        actions.onProcessChange(duration, currentTime)
       }
     },
     { target: audioRef }
@@ -112,6 +114,7 @@ const useControl = (ops?: TOptions): [ICustomAudioProps, TActionsProps] => {
     () => {
       if (audioRef) {
         const { duration, currentTime } = audioRef
+        actions.onProcessChange(duration, currentTime)
       }
     },
     { target: audioRef }
@@ -128,6 +131,22 @@ const useControl = (ops?: TOptions): [ICustomAudioProps, TActionsProps] => {
       onTogglePlay() {},
       onFetchPlayer(option: { id: number }) {
         dispatch.music.loadPlayerURL({ id: option.id })
+      },
+      onProcessChange(
+        duration: number,
+        currentTime: number
+      ): { procent: number; duration: number; currentTime: number } {
+        const procent = Math.floor((currentTime / duration) * 100)
+
+        const progress = {
+          procent,
+          duration,
+          currentTime,
+        }
+
+        dispatch.music.putChangeTrack(progress)
+
+        return progress
       },
     }),
     []

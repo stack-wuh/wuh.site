@@ -28,6 +28,12 @@ export type TTrack = {
   canplay: boolean
   /** 当前语音的播放状态 */
   audioStatus: 'ready' | 'pedding' | 'playing' | 'paused' | 'ended'
+  /** 音频总长 s */
+  duration: number
+  /** 当前播放进度 s */
+  currentTime: number
+  /** 进度条数据 % */
+  procent: number
 }
 
 export type TMusicProps = {
@@ -49,6 +55,9 @@ export const music = createModel<RootModel>()({
     track: {
       audioStatus: 'pedding',
       canplay: false,
+      duration: 0,
+      currentTime: 0,
+      procent: 0,
     },
   } as TMusicProps,
 

@@ -34,6 +34,7 @@ const Music: React.FC<TProps> = props => {
       <div>
         <p>是否可以播放: {JSON.stringify(track.canplay)}</p>
         <p>播放状态: {track.audioStatus}</p>
+        <p>播放进度: {track.procent}%</p>
       </div>
 
       <ul>
