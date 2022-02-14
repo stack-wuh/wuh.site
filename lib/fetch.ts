@@ -1,6 +1,12 @@
 import fetch from 'isomorphic-fetch'
 import { isDev } from './index'
 
+export type TResProps = {
+  code: number
+  data: {}
+  message: string
+}
+
 export default async function fetcher(url: string): Promise<any> {
   try {
     const res = await fetch(url, {

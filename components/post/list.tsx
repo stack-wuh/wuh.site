@@ -20,11 +20,11 @@ const usePostPages = (initialData: THomeIntialProps, count: number) => {
     (index: number) => `${API_ARTICLE_LIST}?p=${index + 1}`,
     fetcher,
     {
-      revalidateOnFocus: true,
+      revalidateOnFocus: false,
       revalidateOnMount: true,
       revalidateIfStale: true,
       initialSize: 1,
-      persistSize: false,
+      persistSize: true,
       dedupingInterval: 5000,
       fallbackData: [initialData],
     }

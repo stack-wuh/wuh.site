@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
         <Head>
           <link
             rel="stylesheet external noreferrer"
-            href="//at.alicdn.com/t/font_1587964_p560dxo4iei.css"
+            href="//at.alicdn.com/t/font_1587964_ap06iu717e5.css"
           />
           <link
             rel="stylesheet external noreferrer"

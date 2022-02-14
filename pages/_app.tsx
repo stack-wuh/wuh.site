@@ -10,6 +10,7 @@ import ThemeScript from '@/components/head/theme'
 import BubbleScript from '@/components/head/bubble'
 import HighlightScript from '@/components/head/highlight'
 import SlideHead from '@/components/head/slide'
+import ReduxProvider from '@/components/ReduxProvider'
 import { ConfigProvider } from '@/hooks/useConfig'
 import { AudioContext, useAudioInstance } from '@/hooks/useAudio'
 import '@/styles/index.scss'
@@ -18,6 +19,7 @@ import * as gtag from '@/lib/gtag'
 import * as highlight from '@/lib/highlight'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { DefaultSeo, FAQPageJsonLd, LogoJsonLd } from 'next-seo'
+
 import SEOConfig, { FAQConfig, LogoConfig } from '../next-seo.config'
 
 Router.events.on('routeChangeStart', () => {
@@ -48,72 +50,74 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
   const audioRef = useAudioInstance()
 
   return (
-    <ErrorBoundary>
-      <DefaultSeo {...SEOConfig} />
-      <FAQPageJsonLd mainEntity={FAQConfig.mainEntity} />
-      <LogoJsonLd url={LogoConfig.url} logo={LogoConfig.logo} />
-      <Script
-        id="gtag"
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-      />
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${gtag.GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-        }}
-      />
-      <SlideHead />
-      <ThemeScript />
-      <BubbleScript />
-      <HighlightScript />
-      <ConfigProvider.Provider value={config}>
-        <AudioContext.Provider value={audioRef}>
-          <SwitchTransition mode="out-in">
-            <CSSTransition
-              in={router.asPath === '/'}
-              key={router.asPath}
-              classNames="page-transition"
-              timeout={1000}
-              unmountOnExit
-              onEntered={() => {
-                if (router.asPath === '/') {
-                  const target = document.querySelector('html')
-                  const scrollTop = target?.getAttribute('scroll')
-                  if (scrollTop) {
-                    window.scrollTo(0, Math.abs(+scrollTop))
+    <ReduxProvider>
+      <ErrorBoundary>
+        <DefaultSeo {...SEOConfig} />
+        <FAQPageJsonLd mainEntity={FAQConfig.mainEntity} />
+        <LogoJsonLd url={LogoConfig.url} logo={LogoConfig.logo} />
+        <Script
+          id="gtag"
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gtag.GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+        <SlideHead />
+        <ThemeScript />
+        <BubbleScript />
+        <HighlightScript />
+        <ConfigProvider.Provider value={config}>
+          <AudioContext.Provider value={audioRef}>
+            <SwitchTransition mode="out-in">
+              <CSSTransition
+                in={router.asPath === '/'}
+                key={router.asPath}
+                classNames="page-transition"
+                timeout={1000}
+                unmountOnExit
+                onEntered={() => {
+                  if (router.asPath === '/') {
+                    const target = document.querySelector('html')
+                    const scrollTop = target?.getAttribute('scroll')
+                    if (scrollTop) {
+                      window.scrollTo(0, Math.abs(+scrollTop))
 
-                    setTimeout(() => {
-                      target?.setAttribute('scroll', ' ')
-                    })
+                      setTimeout(() => {
+                        target?.setAttribute('scroll', ' ')
+                      })
+                    }
                   }
-                }
-              }}
-              onExiting={node => {
-                if (router.asPath.startsWith('/post')) {
-                  const rect = node.getBoundingClientRect()
-                  document
-                    .querySelector('html')
-                    ?.setAttribute('scroll', `${rect.y}`)
-                }
-              }}
-              addEndListener={(node, done) => {
-                node.addEventListener('transitionend', done, false)
-              }}>
-              {layout}
-            </CSSTransition>
-          </SwitchTransition>
-        </AudioContext.Provider>
-      </ConfigProvider.Provider>
-    </ErrorBoundary>
+                }}
+                onExiting={node => {
+                  if (router.asPath.startsWith('/post')) {
+                    const rect = node.getBoundingClientRect()
+                    document
+                      .querySelector('html')
+                      ?.setAttribute('scroll', `${rect.y}`)
+                  }
+                }}
+                addEndListener={(node, done) => {
+                  node.addEventListener('transitionend', done, false)
+                }}>
+                {layout}
+              </CSSTransition>
+            </SwitchTransition>
+          </AudioContext.Provider>
+        </ConfigProvider.Provider>
+      </ErrorBoundary>
+    </ReduxProvider>
   )
 }
 

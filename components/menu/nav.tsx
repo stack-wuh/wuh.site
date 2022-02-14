@@ -15,6 +15,12 @@ export default function Nav() {
           <span>关于</span>
         </a>
       </ActiveLink>
+      <ActiveLink href="/music" activeClassName="is-active" passHref scroll>
+        <a className="ww_menu-item" role="menuitem" tabIndex={0}>
+          <i className="iconfont icon-netease-cloud-music-line" />
+          <span>音</span>
+        </a>
+      </ActiveLink>
       <ActiveLink
         href="https://github.com/stack-wuh/react-router-config"
         activeClassName="is-active"

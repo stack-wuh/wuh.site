@@ -54,6 +54,9 @@
       ],
       "@/__utils/*": [
         "__utils/*"
+      ],
+      "@/redux/*": [
+        "redux/*"
       ]
     },
     "incremental": true

@@ -6,6 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 const { green } = require('chalk')
+const dayjs = require('dayjs')
 
 /** @type {import('next').NextConfig} */
 let config = {
@@ -49,6 +50,13 @@ let config = {
     )
 
     return config
+  },
+  generateBuildId: async () => {
+    return dayjs().format('YYYYMMDD.HHmmss')
+  },
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 4
   },
   eslint: {
     ignoreDuringBuilds: true,

@@ -1,13 +1,17 @@
 import * as React from 'react'
 
 type ErrorBoundaryStateProps = {
-  hasError: boolean
+  hasError: boolean,
+  errorInfo: string,
+  error: string
 }
 class ErrorBoundary extends React.Component<unknown, ErrorBoundaryStateProps> {
   constructor(props: any) {
     super(props)
     this.state = {
       hasError: false,
+      error: '',
+      errorInfo: ''
     }
   }
 
@@ -17,8 +21,11 @@ class ErrorBoundary extends React.Component<unknown, ErrorBoundaryStateProps> {
     }
   }
 
-  componentDidCatch(error: any, errorInfo: React.ErrorInfo) {
-    console.error(error, errorInfo)
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    this.setState({
+      error: error.toString(),
+      errorInfo: errorInfo.componentStack
+    })
   }
 
   render() {
@@ -27,6 +34,10 @@ class ErrorBoundary extends React.Component<unknown, ErrorBoundaryStateProps> {
         <div>
           <h3>Error</h3>
           <p>服务器渲染错误!</p>
+          <details>
+            <p>{this.state.error}</p>
+            <p>{this.state.errorInfo}</p>
+          </details>
         </div>
       )
     }
