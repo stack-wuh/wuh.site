@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useMount, useUpdateEffect, useEventListener } from 'ahooks'
-import { useAudioContext, ICustomAudioProps } from '.'
+import { useAudioContext } from './AudioProvider'
 import { RootModel } from '@/redux/models'
 import { TMusicProps } from '@/redux/models/music'
 
@@ -10,6 +10,7 @@ type TActionsProps = {
   onPause: () => void
   onTogglePlay: () => void
   onFetchPlayer: (p: { id: number }) => void
+  onToggleMuted: () => void
 }
 
 type TOptions = {
@@ -21,9 +22,9 @@ const options: TOptions = {
   allowFetchList: true,
 }
 
-const useControl = (ops?: TOptions): [ICustomAudioProps, TActionsProps] => {
+const useControl = (ops?: TOptions): [HTMLAudioElement, TActionsProps] => {
   const initOps = { ...options, ops }
-  const audioRef = useAudioContext()
+  const { audio: audioRef, actions: audioActions } = useAudioContext()
   const dispatch = useDispatch()
   const store = useSelector((state: RootModel) => state.music)
   const { player, track } = store as unknown as TMusicProps
@@ -55,7 +56,7 @@ const useControl = (ops?: TOptions): [ICustomAudioProps, TActionsProps] => {
       if (track) {
         const _track = {
           ...track,
-          audioStatus: 'pedding',
+          audioStatus: 'ready',
           canplay: false,
         }
         dispatch.music.putChangeTrack(_track)
@@ -114,7 +115,13 @@ const useControl = (ops?: TOptions): [ICustomAudioProps, TActionsProps] => {
     () => {
       if (audioRef) {
         const { duration, currentTime } = audioRef
-        actions.onProcessChange(duration, currentTime)
+        const __track = { ...track }
+        __track.audioStatus = 'playing'
+        __track.currentTime = currentTime
+        __track.duration = duration
+        const process = actions.onProcessChange(duration, currentTime)
+        __track.procent = process.procent
+        dispatch.music.putChangeTrack(__track)
       }
     },
     { target: audioRef }
@@ -123,10 +130,20 @@ const useControl = (ops?: TOptions): [ICustomAudioProps, TActionsProps] => {
   const actions = React.useMemo(
     () => ({
       onPlay() {
+        const __track = { ...track }
+        __track.audioStatus = 'playing'
         audioRef.play()
+        setTimeout(() => {
+          dispatch.music.putChangeTrack(__track)
+        })
       },
       onPause() {
+        const __track = { ...track }
+        __track.audioStatus = 'paused'
         audioRef.pause()
+        setTimeout(() => {
+          dispatch.music.putChangeTrack(__track)
+        })
       },
       onTogglePlay() {},
       onFetchPlayer(option: { id: number }) {
@@ -136,7 +153,7 @@ const useControl = (ops?: TOptions): [ICustomAudioProps, TActionsProps] => {
         duration: number,
         currentTime: number
       ): { procent: number; duration: number; currentTime: number } {
-        const procent = Math.floor((currentTime / duration) * 100)
+        const procent = Math.floor((currentTime / duration) * 100) || 0
 
         const progress = {
           procent,
@@ -144,9 +161,13 @@ const useControl = (ops?: TOptions): [ICustomAudioProps, TActionsProps] => {
           currentTime,
         }
 
-        dispatch.music.putChangeTrack(progress)
-
         return progress
+      },
+      onToggleMuted() {
+        const val = audioActions.onToggleMuted()
+        const __track = { ...track }
+        __track.muted = val
+        dispatch.music.putChangeTrack(__track)
       },
     }),
     []

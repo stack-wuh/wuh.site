@@ -34,6 +34,8 @@ export type TTrack = {
   currentTime: number
   /** 进度条数据 % */
   procent: number
+  /** 是否禁用声音 */
+  muted: boolean
 }
 
 export type TMusicProps = {
@@ -58,6 +60,7 @@ export const music = createModel<RootModel>()({
       duration: 0,
       currentTime: 0,
       procent: 0,
+      muted: true,
     },
   } as TMusicProps,
 
