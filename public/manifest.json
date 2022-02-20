@@ -1,6 +1,7 @@
 {
-  "short_name": "wuh.site -- 日积跬步,以致千里 -- wuh.site",
+  "short_name": "wuh.site",
   "name": "wuh.site -- 日积跬步,以致千里 -- wuh.site",
+  "description": "嗯嗯~~不要停步不前,每一天都要做出改变",
   "icons": [
     {
       "src": "/icons/favicon-192.png",
@@ -20,6 +21,8 @@
   ],
   "display": "standalone",
   "scope": "/",
+  "start_url": "/",
   "theme_color": "#005af0",
-  "background_color": "#fff"
+  "background_color": "#fff",
+  "orientation": "portrait"
 }
