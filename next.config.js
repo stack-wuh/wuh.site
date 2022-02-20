@@ -5,6 +5,8 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
+const withPWA = require('next-pwa')
+const runtimeCaching = require('next-pwa/cache')
 const { green } = require('chalk')
 const dayjs = require('dayjs')
 
@@ -26,6 +28,7 @@ let config = {
   },
   experimental: {
     pageDataCollectionTimeout: 120000,
+    modern: true,
   },
   webpack: (config, { dev }) => {
     if (!dev) {
@@ -56,11 +59,20 @@ let config = {
   },
   onDemandEntries: {
     maxInactiveAge: 25 * 1000,
-    pagesBufferLength: 4
+    pagesBufferLength: 4,
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
+  pwa: {
+    dest: 'public',
+    disable: process.env.NODE_ENV === 'development',
+    register: process.env.NODE_ENV === 'production',
+    runtimeCaching,
+  },
 }
 
-module.exports = nextComposePlugins([withPreact, withBundleAnalyzer], config)
+module.exports = nextComposePlugins(
+  [withPreact, withPWA, withBundleAnalyzer],
+  config
+)

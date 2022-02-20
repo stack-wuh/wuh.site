@@ -27,6 +27,7 @@ export default class MyDocument extends Document {
             rel="stylesheet external noreferrer"
             href="//at.alicdn.com/t/font_2595178_wa25xow6jmp.css"
           />
+          <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>
           <Main />
