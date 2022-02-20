@@ -10,7 +10,7 @@ const persistConfig = {
   version: 1,
   storage,
   serialize: true,
-  whitelist: ['settings', 'music'],
+  whitelist: ['settings'],
 }
 
 export const store = init({
