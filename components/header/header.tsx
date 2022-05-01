@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import withConfig from '@/hooks/useConfig'
+import Image from 'next/image'
 // import AudioControl from '@/components/audio/control'
 
 const Header = () => {
@@ -9,7 +9,7 @@ const Header = () => {
       <div className="container">
         <div className="lf">
           <Image
-            src="/icons/favicon-192.png"
+            src="/icons/64.png"
             width="32px"
             height="32px"
             layout="fixed"
