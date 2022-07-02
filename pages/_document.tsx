@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="zh-cn" data-theme-mode="light">
+      <Html lang="zh-cn" data-theme-mode="default">
         <Head>
           <link
             rel="stylesheet external noreferrer"

@@ -17,7 +17,8 @@ const StateGroup: React.FC<{}> = () => {
     `ww_button__state--${config.language}`
   )
 
-  const themeIconName = config.themeMode === 'light' ? 'icon-Moon' : 'icon-Sun'
+  const themeIconName =
+    config.themeMode === 'default' ? 'icon-Moon' : 'icon-Sun'
   const langIconName =
     config.language === 'en' ? 'icon-yingwen' : 'icon-zhongwen'
 

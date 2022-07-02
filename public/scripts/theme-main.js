@@ -52,7 +52,7 @@
   if (window.Worker) {
     const worker = new Worker('/scripts/theme-worker.js')
     const $target = document.querySelector('html')
-    const cookieTheme = docCookies.getItem('data-theme-mode') || 'light'
+    const cookieTheme = docCookies.getItem('data-theme-mode') || 'default'
 
     /**
      * 文档加载完成之后立即开始任务

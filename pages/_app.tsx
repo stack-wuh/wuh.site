@@ -17,6 +17,7 @@ import '@/styles/index.scss'
 import { config } from '@/constant/config'
 import * as gtag from '@/lib/gtag'
 import * as highlight from '@/lib/highlight'
+import { themeGenerator } from '@/lib/themeGenerator'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { DefaultSeo, FAQPageJsonLd, LogoJsonLd } from 'next-seo'
 
@@ -47,6 +48,8 @@ type NextPropsWithLayout = AppProps & {
 function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
   const getLayout = Component.getLayout ?? (page => page)
   const layout = getLayout(<Component {...pageProps} />)
+
+  themeGenerator()
 
   return (
     <ReduxProvider>

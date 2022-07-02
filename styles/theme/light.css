@@ -1,6 +1,6 @@
-[data-theme-mode='light'] {
+[data-theme-mode='default'] {
 	/** 
-    Color Light List 
+    Color default List 
     定义全局使用的色彩，包括 文字，border
   **/
 	--color-base: #ebecec;

@@ -3,7 +3,7 @@ import { useReactive, useCookieState } from 'ahooks'
 import * as hljs from '@/lib/highlight'
 
 type languages = 'zh-cn' | 'en' | null
-type themes = 'light' | 'dark' | null
+type themes = 'default' | 'dark' | null
 export interface configInterfaceProps {
   key?: string
   themeMode: themes
@@ -65,7 +65,7 @@ export default function useConfig() {
 
   /** 切换文档主题 */
   const toggleThemeMode = () => {
-    state.themeMode = state.themeMode === 'light' ? 'dark' : 'light'
+    state.themeMode = state.themeMode === 'default' ? 'dark' : 'default'
     getTarget()?.setAttribute('data-theme-mode', state.themeMode)
     setThemeMode(state.themeMode)
     hljs.toggleTheme()

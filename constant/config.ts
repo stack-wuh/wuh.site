@@ -3,7 +3,7 @@ import { isDev } from '@/lib/index'
 const isdev = isDev()
 
 export const config = {
-  themeMode: 'light',
+  themeMode: 'default',
   language: 'zh-cn',
   header: {
     title: '日积跬步,以致千里',

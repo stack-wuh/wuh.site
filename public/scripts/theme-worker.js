@@ -8,7 +8,7 @@ onmessage = function (e) {
   let count = 0
 
   const getTheme = mode => {
-    return mode === 'light' ? 'dark' : 'light'
+    return mode === 'default' ? 'dark' : 'default'
   }
 
   if (!theme) {
