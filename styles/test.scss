@@ -1,0 +1,19 @@
+@import './vars/theme.scss';
+$name: 'ww_test';
+
+.#{$name} {
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid red;
+
+
+  color: $primary-color;
+
+
+  .box {
+    width: 200px;
+    height: 200px;
+    border: $border-width solid $primary-color;
+    background-color: $background-color;
+  }
+}

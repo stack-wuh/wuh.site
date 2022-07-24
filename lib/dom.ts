@@ -8,7 +8,7 @@ export const createElem = (
   tag: keyof HTMLElementTagNameMap = 'div',
   innerHtml: string,
   target: keyof HTMLElementTagNameMap = 'body'
-): void => {
+): Element | undefined => {
   if (typeof document !== 'object') return
   const el = document.createElement(tag)
   const parentEl = document.querySelector(target)
@@ -19,6 +19,8 @@ export const createElem = (
 
   if (!parentEl) return
   parentEl.append(el)
+
+  return parentEl
 }
 
 /**

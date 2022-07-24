@@ -5,8 +5,8 @@ import { createElem, getDocumentThemeMode } from './dom'
 export const PRESET_COLORS = ['grey', 'blue', 'green', 'yellow', 'orange']
 
 export type TDefaultThemeMode = 'default' | 'dark'
-export const LIGHT_THTME_COLOR = '#fff'
-export const DARK_THEME_COLOR = '#000'
+export const LIGHT_THTME_COLOR = '#e6e6e6'
+export const DARK_THEME_COLOR = '#141313'
 export const DEFALT_THEME_MODE: TDefaultThemeMode = 'default'
 
 export type TGeneratorColorOps = {
@@ -28,27 +28,30 @@ const generatorColors = (
 
   groups.map((g: string) => {
     const colorObj = presetPalettes[g]
+    str += `;--color-${g}-primary: ${colorObj.primary}`
 
     colorObj.map((c, idx) => {
-      str += `;--color-${g}-${idx}: ${c}`
+      str += `;--color-${g}-${idx}:${c}`
     })
   })
 
   const primary = generate('#58a6ff', { theme: ops.mode })
-  const white = generate('#ffffff', { theme: ops.mode })
-  const black = generate('#333', { theme: ops.mode })
+  const white = generate(LIGHT_THTME_COLOR, { theme: ops.mode })
+  const black = generate(DARK_THEME_COLOR, { theme: ops.mode })
 
   primary.map((c, idx) => {
-    str += `;--color-primary-${idx}: ${c}`
+    str += `;--color-primary-${idx}:${c}`
   })
 
   white.map((c, idx) => {
-    str += `;--color-white-${idx}: ${c}`
+    str += `;--color-white-${idx}:${c}`
   })
 
   black.map((c, idx) => {
-    str += `;--color-black-${idx}: ${c}`
+    str += `;--color-black-${idx}:${c}`
   })
+
+  str += `;--color-primary-primary: ${primary[5]}; --color-white-primary: ${white[5]}; --color-black-primary: ${black[5]}`
 
   return str
 }
