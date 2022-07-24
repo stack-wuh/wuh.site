@@ -43,6 +43,16 @@ let config = {
         })
       )
     }
+
+    if (dev) {
+      config.watchOptions = {
+        ignored: ['**/node_modules'],
+        poll: 100000,
+        stdin: true,
+        aggregateTimeout: 10000,
+      }
+    }
+
     config.plugins.push(
       new ProgressBarPlugin({
         format: `build [:bar] ${green.bold(
