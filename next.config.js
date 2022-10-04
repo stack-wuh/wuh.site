@@ -1,5 +1,6 @@
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const nextComposePlugins = require('next-compose-plugins')
+const forkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const withPreact = require('next-plugin-preact')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
@@ -83,6 +84,6 @@ let config = {
 }
 
 module.exports = nextComposePlugins(
-  [withPreact, withPWA, withBundleAnalyzer],
+  [new forkTsCheckerWebpackPlugin(), withPreact, withPWA, withBundleAnalyzer],
   config
 )
