@@ -19,14 +19,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="zh-cn" data-theme-mode="light">
         <Head>
-          {/* <link
-            rel="stylesheet external noreferrer"
-            href="//at.alicdn.com/t/font_1587964_ap06iu717e5.css"
-          />
-          <link
-            rel="stylesheet external noreferrer"
-            href="//at.alicdn.com/t/font_2595178_wa25xow6jmp.css"
-          /> */}
           <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>
