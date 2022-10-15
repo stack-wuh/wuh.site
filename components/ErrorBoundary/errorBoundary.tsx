@@ -3,9 +3,9 @@ import * as React from 'react'
 type ErrorBoundaryStateProps = {
   hasError: boolean,
   errorInfo: string,
-  error: string
+  error: string,
 }
-class ErrorBoundary extends React.Component<unknown, ErrorBoundaryStateProps> {
+class ErrorBoundary extends React.Component<{}, ErrorBoundaryStateProps> {
   constructor(props: any) {
     super(props)
     this.state = {
@@ -41,6 +41,7 @@ class ErrorBoundary extends React.Component<unknown, ErrorBoundaryStateProps> {
         </div>
       )
     }
+
     return this.props.children
   }
 }
