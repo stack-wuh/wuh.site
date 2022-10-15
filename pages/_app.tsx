@@ -19,6 +19,7 @@ import * as gtag from '@/lib/gtag'
 import * as highlight from '@/lib/highlight'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { DefaultSeo, FAQPageJsonLd, LogoJsonLd } from 'next-seo'
+import WithDynamic from '@/layout/withDynamic'
 
 import SEOConfig, { FAQConfig, LogoConfig } from '../next-seo.config'
 
@@ -110,7 +111,8 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
                 addEndListener={(node, done) => {
                   node.addEventListener('transitionend', done, false)
                 }}>
-                {layout}
+
+                <WithDynamic>{layout}</WithDynamic>
               </CSSTransition>
             </SwitchTransition>
           </AudioProvider>

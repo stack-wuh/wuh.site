@@ -48,9 +48,9 @@ let config = {
     if (dev) {
       config.watchOptions = {
         ignored: ['**/node_modules'],
-        poll: 100000,
+        poll: 1000,
         stdin: true,
-        aggregateTimeout: 10000,
+        aggregateTimeout: 1000,
       }
     }
 
