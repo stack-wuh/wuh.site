@@ -48,7 +48,7 @@ const List: React.FC<IListProps> = props => {
   const config = useConfig()
   const cacheDataListRef = React.useRef<{ dataMaps: { [key: string]: never[]}, page: number }>({ dataMaps: {}, page: 1 })
   
-  if (cacheDataListRef.current) {
+  if (cacheDataListRef.current && cacheDataListRef.current.dataMaps) {
     cacheDataListRef.current.dataMaps[1] = props.data
   }
   
