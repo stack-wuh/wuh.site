@@ -95,7 +95,7 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
         <Script
           id="gtag"
           strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+          src={`https://src.wuh.site/scripts/google-tag-manager.js?id=${gtag.GA_TRACKING_ID}`}
         />
         <Script
           id="gtag-init"
