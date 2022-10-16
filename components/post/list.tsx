@@ -46,7 +46,7 @@ const Item = (props: IHomeItemProps) => {
 
 const List: React.FC<IListProps> = props => {
   const config = useConfig()
-  const cacheDataListRef = React.useRef<{ dataMaps: { [key: string]: never[]}, page: number }>({ dataMaps: {
+  const cacheDataListRef = React.useRef<{ dataMaps: { [key: string]: []}, page: number }>({ dataMaps: {
     1: (props.data || [])
   }, page: 1 })
   
