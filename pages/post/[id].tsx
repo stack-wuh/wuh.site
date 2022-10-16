@@ -1,6 +1,5 @@
 import * as React from 'react'
-import useSWR from 'swr'
-import { useEventListener, useExternal, useDocumentVisibility } from 'ahooks'
+import { useExternal, useRequest } from 'ahooks'
 import fetcher from '@/lib/fetch'
 import { useRouter } from 'next/router'
 import { API_ARTICLE_ITEM } from '@/constant/api'
@@ -17,14 +16,11 @@ import Empty from '@/components/empty'
 import withLayout from '@/layout/layout'
 
 function useData(id: string | string[] | undefined) {
-  const { data, error } = useSWR(
-    id ? `${API_ARTICLE_ITEM}${id}` : null,
-    fetcher,
-    {
-      revalidateOnFocus: false,
-      revalidateOnMount: true,
-    }
-  )
+  const {data, error} = useRequest(params => {
+    return fetcher(`${API_ARTICLE_ITEM}${params.id}`)
+  }, {
+    defaultParams: [{ id }]
+  })
 
   return {
     data,
