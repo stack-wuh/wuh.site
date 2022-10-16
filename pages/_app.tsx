@@ -6,7 +6,6 @@ import Script from 'next/script'
 import React from 'react'
 import NProgress from 'nprogress'
 import ErrorBoundary from '@/components/ErrorBoundary'
-import SlideHead from '@/components/head/slide'
 import ReduxProvider from '@/components/ReduxProvider'
 import { ConfigProvider } from '@/hooks/useConfig'
 import { AudioProvider } from '@/hooks/useAudio'
@@ -14,7 +13,6 @@ import { useExternal, useEventListener } from 'ahooks'
 import '@/styles/index.scss'
 import { config } from '@/constant/config'
 import * as gtag from '@/lib/gtag'
-import * as highlight from '@/lib/highlight'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { DefaultSeo, FAQPageJsonLd, LogoJsonLd } from 'next-seo'
 import WithDynamic from '@/layout/withDynamic'
@@ -27,7 +25,6 @@ Router.events.on('routeChangeStart', () => {
 Router.events.on('routeChangeComplete', url => {
   NProgress.done()
   gtag.pageview(url)
-  highlight.formatter(url)
 })
 Router.events.off('routeChangeComplete', url => {
   gtag.pageview(url)
@@ -62,9 +59,13 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
    */
   const [slidePath, setSlidePath] = React.useState('')
   const [slideThemePath, setSlideThemePath] = React.useState('')
+  const [googleFontPath, setGoogleFontPath] = React.useState('')
+  const [googleFontNormalPath, setGoogleFontNormalPath] = React.useState('')
 
   useExternal(bubblePath, { type: 'js' })
   useExternal(themePath, { type: 'js' })
+  useExternal(googleFontPath, { type: 'css' })
+  useExternal(googleFontNormalPath, { type: 'css' })
 
   useExternal(slidePath, { type: 'css' })
   useExternal(slideThemePath, { type: 'css' })
@@ -76,6 +77,9 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
 
     setSlidePath('https://src.wuh.site/stylesheet/slick.min.css')
     setSlideThemePath('https://src.wuh.site/stylesheet/slick-theme.min.css')
+
+    setGoogleFontPath('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
+    setGoogleFontNormalPath('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
   })
 
   return (
@@ -103,7 +107,7 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
             `,
           }}
         />
-        {/* <SlideHead /> */}
+        
         <ConfigProvider.Provider value={config}>
           <AudioProvider>
             <SwitchTransition mode="out-in">

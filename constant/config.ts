@@ -38,15 +38,6 @@ export const config = {
     prefix: '-- wuh.site',
     suffix: 'shadow * ',
   },
-  external: {
-    icons: [
-      '//at.alicdn.com/t/font_1587964_7d319bqcbhx.css',
-      '//at.alicdn.com/t/font_2595178_wa25xow6jmp.css',
-    ],
-    fonts: [
-      '//fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap',
-    ],
-  },
   stateLocale: {
     options: {
       expires: new Date('9999-12-31 23:59:59'),
