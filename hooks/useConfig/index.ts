@@ -68,7 +68,6 @@ export default function useConfig() {
     state.themeMode = state.themeMode === 'light' ? 'dark' : 'light'
     getTarget()?.setAttribute('data-theme-mode', state.themeMode)
     setThemeMode(state.themeMode)
-    hljs.toggleTheme()
   }
   /** 切换文档语言 */
   const toggleLang = () => {

@@ -8,7 +8,6 @@ import NProgress from 'nprogress'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import ThemeScript from '@/components/head/theme'
 import BubbleScript from '@/components/head/bubble'
-import HighlightScript from '@/components/head/highlight'
 import SlideHead from '@/components/head/slide'
 import ReduxProvider from '@/components/ReduxProvider'
 import { ConfigProvider } from '@/hooks/useConfig'
@@ -77,7 +76,6 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
         <SlideHead />
         <ThemeScript />
         <BubbleScript />
-        <HighlightScript />
         <ConfigProvider.Provider value={config}>
           <AudioProvider>
             <SwitchTransition mode="out-in">

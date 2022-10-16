@@ -1,4 +1,5 @@
 import React from 'react'
+import { useExternal, useGetState } from 'ahooks'
 import Space from '@/components/space/space'
 import Affix from '@/components/affix'
 import useConfig from '@/hooks/useConfig'
@@ -7,6 +8,9 @@ import { Button } from '.'
 
 const StateGroup: React.FC<{}> = () => {
   const config = useConfig()
+  
+  const [hlThemeMode, setHlThemeMode] = useGetState('https://src.wuh.site/stylesheet/github.min.css')
+  useExternal(hlThemeMode)
 
   const themeClassnames = classnames(
     'ww_button__state',
@@ -20,6 +24,12 @@ const StateGroup: React.FC<{}> = () => {
   const themeIconName = config.themeMode === 'light' ? 'icon-Moon' : 'icon-Sun'
   const langIconName =
     config.language === 'en' ? 'icon-yingwen' : 'icon-zhongwen'
+
+  const handleToggleTheme = () => {
+    config.toggleThemeMode()
+    const hrefStr = hlThemeMode.includes('dark') ? 'https://src.wuh.site/stylesheet/github.min.css' : 'https://src.wuh.site/stylesheet/github-dark.min.css'
+    setHlThemeMode(hrefStr)
+  }
 
   return (
     <Affix position="right" offsetY={120}>
@@ -35,7 +45,7 @@ const StateGroup: React.FC<{}> = () => {
           />
           <Button
             events={{ category: 'button', label: 'btn_theme' }}
-            onClick={config.toggleThemeMode}
+            onClick={handleToggleTheme}
             className={themeClassnames}
             ghost
             size="small"

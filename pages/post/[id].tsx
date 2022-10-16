@@ -1,6 +1,6 @@
-import React from 'react'
+import * as React from 'react'
 import useSWR from 'swr'
-import { useUpdateEffect } from 'ahooks'
+import { useEventListener, useExternal, useDocumentVisibility } from 'ahooks'
 import fetcher from '@/lib/fetch'
 import { useRouter } from 'next/router'
 import { API_ARTICLE_ITEM } from '@/constant/api'
@@ -15,7 +15,6 @@ import ShareGroup from '@/components/button/share-group'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import Empty from '@/components/empty'
 import withLayout from '@/layout/layout'
-import * as hljs from '@/lib/highlight'
 
 function useData(id: string | string[] | undefined) {
   const { data, error } = useSWR(
@@ -37,12 +36,14 @@ const Detail: React.FC<{}> = () => {
   const router = useRouter()
   const { data, error } = useData(router.query.id)
 
-  useUpdateEffect(() => {
-    hljs.formatter(router.asPath)
-  }, [])
+  useExternal('https://src.wuh.site/scripts/highlight.min.js', { type: 'js' })
+  useExternal('https://src.wuh.site/scripts/highlight.js', { type: 'js' })
+  useExternal('https://src.wuh.site/stylesheet/github.min.css', { type: 'css' })
+
 
   if (error) return <div className="error">ERROR</div>
   if (!data) return <Empty.Loading />
+
 
   return (
     <div className="ww_detail">
