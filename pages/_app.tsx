@@ -52,10 +52,18 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
    * @NOTE bubble 气泡框的脚本链接
    */
   const [bubblePath, setBubblePath] = React.useState('')
+
+  /**
+   * @NOTE web worker 引入的脚本链接
+   */
+  const [themePath, setThemePath] = React.useState('')
+
   useExternal(bubblePath)
 
   useEventListener('load', () => {
-    setBubblePath('https://src.wuh.site/scripts/bubble.js')
+    setBubblePath('/scripts/bubble.js')
+
+    setThemePath('/scripts/theme-main.js')
   })
 
   return (

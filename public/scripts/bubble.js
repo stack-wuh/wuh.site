@@ -137,6 +137,7 @@
     createStyle(posi.poverX * 100)
     ele.append(bubble)
     ele.id = index
+    getTarget()
     $target.append(ele)
     logger()
     setTimeout(() => {
@@ -144,6 +145,6 @@
     }, 2000)
   }
 
-  window.addEventListener('load', getTarget, false)
+  // window.addEventListener('load', getTarget, false)
   window.addEventListener('click', e => trycatch(call, e), false)
 })()
