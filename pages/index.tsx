@@ -57,7 +57,9 @@ const Home = (props: IHomeProps) => {
         ]}
       />
       <DynamicBanner data={bannerList} />
-      <PostList data={initialData} />
+      {
+        initialData && <PostList data={initialData} />
+      }
     </div>
   )
 }
