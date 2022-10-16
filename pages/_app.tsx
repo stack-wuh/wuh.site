@@ -95,7 +95,7 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
     
     setThemePath('/scripts/theme-main.js')
     
-    setIconColorPath('at.alicdn.com/t/font_2595178_wa25xow6jmp.css')
+    setIconColorPath('//at.alicdn.com/t/font_2595178_wa25xow6jmp.css')
     setSlidePath('https://src.wuh.site/stylesheet/slick.min.css')
     setSlideThemePath('https://src.wuh.site/stylesheet/slick-theme.min.css')
 
