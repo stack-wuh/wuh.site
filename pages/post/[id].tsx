@@ -19,7 +19,8 @@ function useData(id: string | string[] | undefined) {
   const {data, error} = useRequest(params => {
     return fetcher(`${API_ARTICLE_ITEM}${params.id}`)
   }, {
-    defaultParams: [{ id }]
+    defaultParams: [{ id }],
+    cacheKey: API_ARTICLE_ITEM
   })
 
   return {
