@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <div className="ww_post ww_post__header">
       <NextSeo
-        title={title}
+        title={`wuh.site -- ${title} · 三思齐身 · wuh.site`}
         description={sub_title}
         openGraph={{
           type: 'article',

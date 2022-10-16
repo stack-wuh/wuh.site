@@ -10,7 +10,7 @@ const AboutPage = () => {
   return (
     <div className="ww_about">
       <NextSeo
-        title="吴尒红·wuh.site"
+        title="wuh.site -- 吴尒红 · wuh.site"
         description="自小多才俊,向来志气高.别人有宝剑,我有笔如刀."
       />
       <BreadcrumbJsonLd
