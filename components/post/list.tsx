@@ -1,49 +1,19 @@
 import * as React from 'react'
 import Link from 'next/link'
-import { IHomeItemProps, THomeIntialProps } from '@/pages/index'
+import { IHomeItemProps, THomeInitialProps } from '@/pages/index'
 import Image from '@/components/image/image'
 import { LoadMoreButton } from '@/components/button'
 import useConfig from '@/hooks/useConfig'
 import fetcher from '@/lib/fetch'
 import useSWRInfinite from 'swr/infinite'
 import { API_ARTICLE_LIST } from '@/constant/api'
+import { useRequest } from 'ahooks'
 
 const PAGE_SIZE = 10
 
 interface IListProps {
-  data: THomeIntialProps
+  data: THomeInitialProps
   count: number
-}
-
-const usePostPages = (initialData: THomeIntialProps, count: number) => {
-  const { data, size, setSize, error } = useSWRInfinite(
-    (index: number) => `${API_ARTICLE_LIST}?p=${index + 1}`,
-    fetcher,
-    {
-      revalidateOnFocus: false,
-      revalidateOnMount: true,
-      revalidateIfStale: true,
-      initialSize: 1,
-      persistSize: true,
-      dedupingInterval: 5000,
-      fallbackData: [initialData],
-    }
-  )
-  const isEmpty = data?.length
-  const allowLoadMore = size < Math.ceil(count / PAGE_SIZE)
-  const hits = (data || []).reduce(
-    (acc: [], curr: any) => acc.concat(curr.hits),
-    []
-  )
-
-  return {
-    size,
-    setSize,
-    error,
-    isEmpty,
-    allowLoadMore,
-    hits,
-  }
 }
 
 const Item = (props: IHomeItemProps) => {
@@ -77,17 +47,44 @@ const Item = (props: IHomeItemProps) => {
 
 const List: React.FC<IListProps> = props => {
   const config = useConfig()
+  const cacheDataListRef = React.useRef<{ dataMaps: { [key: string]: never[]}, page: number }>({ dataMaps: {}, page: 1 })
 
-  const { hits, size, setSize, allowLoadMore } = usePostPages(
-    props.data,
-    props.count
-  )
-
-  const handleFetchNextPage = () => {
-    if (allowLoadMore) {
-      setSize(size + 1)
+  const result = useRequest((params) => {
+    return fetcher(`${API_ARTICLE_LIST}?p=${params.page}&pageSize=${PAGE_SIZE}`)
+  }, {
+    defaultParams: [{ page: 1 }],
+    cacheKey: API_ARTICLE_LIST,
+    onSuccess: (data, [params]) => {
+      cacheDataListRef.current.dataMaps[params.page] = data
     }
+  })
+
+  const handleNextPage = async () => {
+    const page = ++cacheDataListRef.current.page
+    await result.runAsync({ page })
   }
+
+  const hits = React.useMemo(() => {
+    const memo = Object.entries(cacheDataListRef.current.dataMaps).reduce((acc, curr) => {
+      const [, d] = curr
+  
+      acc = [].concat(acc, d.hits)
+  
+      return acc
+    }, [])
+
+    return memo
+
+  }, [JSON.stringify(cacheDataListRef.current.dataMaps)])
+
+  const allowFetchNextDisabled = React.useMemo(() => {
+    if (!result.data) return true
+    const { data } = result
+
+    const disabled = data.pager.count < data.pager.page * PAGE_SIZE
+
+    return disabled
+  }, [result])
 
   return (
     <ul className="ww_home__list">
@@ -95,11 +92,11 @@ const List: React.FC<IListProps> = props => {
         <Item {...item} key={item.title} />
       ))}
       <LoadMoreButton
-        disabled={!allowLoadMore}
+        disabled={allowFetchNextDisabled}
+        onClick={handleNextPage}
         icon="icon-costoms-alearance"
-        size="small"
-        onClick={handleFetchNextPage}>
-        {allowLoadMore ? config?.pager.nextText : config?.pager.disableNextText}
+        size="small">
+        {allowFetchNextDisabled ? config?.pager.disableNextText : config?.pager.nextText}
       </LoadMoreButton>
     </ul>
   )

@@ -22,7 +22,7 @@ export interface IHomeItemProps {
   id: null
 }
 
-export type THomeIntialProps = {
+export type THomeInitialProps = {
   code: number
   msg: string
   data: {
@@ -37,7 +37,7 @@ export type IHomeProps = {
   articleList: IHomeItemProps[]
   bannerList: rowItem[]
   articleCount: number
-  initialData: THomeIntialProps
+  initialData: THomeInitialProps
 }
 
 const Home = (props: IHomeProps) => {
@@ -61,10 +61,11 @@ export async function getStaticProps() {
   const article = await fetcher(`${API_ARTICLE_LIST}`)
   const banner = await fetcher(`${API_BANNER_HOME}`)
 
+
   return {
     props: {
       initialData: article,
-      articleCount: article.pager.count || 0,
+      articleCount: article?.pager?.count || 0,
       bannerList: banner.hits || [],
     },
   }
