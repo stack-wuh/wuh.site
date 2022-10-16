@@ -44,10 +44,10 @@ const Item = (props: IHomeItemProps) => {
   )
 }
 
-const List: React.FC<{}> = props => {
+const List: React.FC<{ data: any }> = props => {
   const config = useConfig()
   const cacheDataListRef = React.useRef<{ dataMaps: { [key: string]: []}, page: number }>({ dataMaps: {}, page: 1 })
-  
+  console.log('props', props)
   if (cacheDataListRef.current && cacheDataListRef.current.dataMaps) {
     cacheDataListRef.current.dataMaps[1] = props.data
   }
