@@ -7,11 +7,11 @@ import React from 'react'
 import NProgress from 'nprogress'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import ThemeScript from '@/components/head/theme'
-import BubbleScript from '@/components/head/bubble'
 import SlideHead from '@/components/head/slide'
 import ReduxProvider from '@/components/ReduxProvider'
 import { ConfigProvider } from '@/hooks/useConfig'
 import { AudioProvider } from '@/hooks/useAudio'
+import { useExternal, useEventListener } from 'ahooks'
 import '@/styles/index.scss'
 import { config } from '@/constant/config'
 import * as gtag from '@/lib/gtag'
@@ -48,6 +48,16 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
   const getLayout = Component.getLayout ?? (page => page)
   const layout = getLayout(<Component {...pageProps} />)
 
+  /**
+   * @NOTE bubble 气泡框的脚本链接
+   */
+  const [bubblePath, setBubblePath] = React.useState('')
+  useExternal(bubblePath)
+
+  useEventListener('load', () => {
+    setBubblePath('https://src.wuh.site/scripts/bubble.js')
+  })
+
   return (
     <ReduxProvider>
       <ErrorBoundary>
@@ -75,7 +85,6 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
         />
         <SlideHead />
         <ThemeScript />
-        <BubbleScript />
         <ConfigProvider.Provider value={config}>
           <AudioProvider>
             <SwitchTransition mode="out-in">
