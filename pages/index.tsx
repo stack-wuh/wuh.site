@@ -57,7 +57,7 @@ const Home = (props: IHomeProps) => {
         ]}
       />
       <DynamicBanner data={bannerList} />
-      <PostList data={initialData} count={articleCount} />
+      <PostList data={initialData} />
     </div>
   )
 }
@@ -66,11 +66,9 @@ export async function getStaticProps() {
   const article = await fetcher(`${API_ARTICLE_LIST}`)
   const banner = await fetcher(`${API_BANNER_HOME}`)
 
-
   return {
     props: {
       initialData: article,
-      articleCount: article?.pager?.count || 0,
       bannerList: banner.hits || [],
     },
   }

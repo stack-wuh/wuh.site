@@ -13,7 +13,6 @@ const PAGE_SIZE = 10
 
 interface IListProps {
   data: THomeInitialProps
-  count: number
 }
 
 const Item = (props: IHomeItemProps) => {
@@ -48,7 +47,9 @@ const Item = (props: IHomeItemProps) => {
 const List: React.FC<IListProps> = props => {
   const config = useConfig()
   const cacheDataListRef = React.useRef<{ dataMaps: { [key: string]: never[]}, page: number }>({ dataMaps: {}, page: 1 })
-
+  
+  cacheDataListRef.current.dataMaps[1] = props.data
+  
   const result = useRequest((params) => {
     return fetcher(`${API_ARTICLE_LIST}?p=${params.page}&pageSize=${PAGE_SIZE}`)
   }, {
