@@ -6,7 +6,6 @@ import Script from 'next/script'
 import React from 'react'
 import NProgress from 'nprogress'
 import ErrorBoundary from '@/components/ErrorBoundary'
-import ThemeScript from '@/components/head/theme'
 import SlideHead from '@/components/head/slide'
 import ReduxProvider from '@/components/ReduxProvider'
 import { ConfigProvider } from '@/hooks/useConfig'
@@ -58,12 +57,25 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
    */
   const [themePath, setThemePath] = React.useState('')
 
-  useExternal(bubblePath)
+  /**
+   * @NOTE Banner 区域的样式表
+   */
+  const [slidePath, setSlidePath] = React.useState('')
+  const [slideThemePath, setSlideThemePath] = React.useState('')
+
+  useExternal(bubblePath, { type: 'js' })
+  useExternal(themePath, { type: 'js' })
+
+  useExternal(slidePath, { type: 'css' })
+  useExternal(slideThemePath, { type: 'css' })
 
   useEventListener('load', () => {
     setBubblePath('/scripts/bubble.js')
 
     setThemePath('/scripts/theme-main.js')
+
+    setSlidePath('https://src.wuh.site/stylesheet/slick.min.css')
+    setSlideThemePath('https://src.wuh.site/stylesheet/slick-theme.min.css')
   })
 
   return (
@@ -91,8 +103,7 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
             `,
           }}
         />
-        <SlideHead />
-        <ThemeScript />
+        {/* <SlideHead /> */}
         <ConfigProvider.Provider value={config}>
           <AudioProvider>
             <SwitchTransition mode="out-in">

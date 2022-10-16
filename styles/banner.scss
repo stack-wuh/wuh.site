@@ -37,6 +37,33 @@ $gallery: 'ww_gallery';
     }
   }
 
+  // Hack 兼容异步加载样式表
+  .slick-list {
+      overflow: hidden;
+      margin: 0;
+      padding: 0
+  }
+
+  .slick-list:focus {
+      outline: 0
+  }
+
+  .slick-list.dragging {
+      cursor: pointer;
+      cursor: hand
+  }
+
+  .slick-slide {
+      float: left;
+      height: 100%;
+      min-height: 1px
+  }
+
+  [dir=rtl] .slick-slide {
+      float: right
+  }
+  // Hack--end 兼容异步加载样式表
+
   &__bg {
     background-size: 100% !important;
     background-position: center !important;

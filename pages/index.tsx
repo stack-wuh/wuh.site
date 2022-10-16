@@ -1,11 +1,16 @@
 import React from 'react'
+import dynamic from 'next/dynamic'
 import withLayout from '@/layout/layout'
 import fetcher from '@/lib/fetch'
 import { API_ARTICLE_LIST, API_BANNER_HOME } from '@/constant/api'
 import { PostList } from '@/components/post'
-import BannerPost from '@/components/banner/post'
 import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
 import { rowItem } from '@/pages/api/banner'
+
+const DynamicBanner = dynamic(() => import ('@/components/banner/post'), {
+  loading: () => (<>Loading....</>)
+})
+
 
 export interface IHomeItemProps {
   state: string
@@ -51,7 +56,7 @@ const Home = (props: IHomeProps) => {
           { position: 1, name: '首页 | Home', item: 'https://wuh.site' },
         ]}
       />
-      {bannerList && <BannerPost data={bannerList} />}
+      <DynamicBanner data={bannerList} />
       <PostList data={initialData} count={articleCount} />
     </div>
   )
