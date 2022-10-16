@@ -66,6 +66,21 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
   const [googleFontPath, setGoogleFontPath] = React.useState('')
   const [googleFontNormalPath, setGoogleFontNormalPath] = React.useState('')
 
+  /**
+   * @NOTE ali font 链接
+   */
+  const [iconNormalPath, setIconNormalPath] = React.useState('')
+  const [iconColorPath, setIconColorPath] = React.useState('')
+
+  /**
+   * @NOTE 普通字体图标的链接
+   */
+  useExternal(iconNormalPath, { type: 'css' })
+  /**
+    * @NOTE 带色彩的字体图标库
+    */
+  useExternal(iconColorPath, { type: 'css' })
+
   useExternal(bubblePath, { type: 'js' })
   useExternal(themePath, { type: 'js' })
   useExternal(googleFontPath, { type: 'css' })
@@ -75,10 +90,12 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
   useExternal(slideThemePath, { type: 'css' })
 
   useEventListener('load', () => {
+    setIconNormalPath('//at.alicdn.com/t/font_1587964_ap06iu717e5.css')
     setBubblePath('/scripts/bubble.js')
-
+    
     setThemePath('/scripts/theme-main.js')
-
+    
+    setIconColorPath('at.alicdn.com/t/font_2595178_wa25xow6jmp.css')
     setSlidePath('https://src.wuh.site/stylesheet/slick.min.css')
     setSlideThemePath('https://src.wuh.site/stylesheet/slick-theme.min.css')
 
