@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import classnames from 'classnames'
 import Slider, { Settings } from 'react-slick'
 import { Button } from '@/components/button'
-import swr from 'swr'
+import { useRequest } from 'ahooks'
 import fetcher from '@/lib/fetch'
 import { API_GALLERY_LIST } from '@/constant/api'
 import { rowItem } from '@/pages/api/gallery'
@@ -11,7 +11,12 @@ type galleryDataType = {
   galleryList: rowItem[]
 }
 const useGalleryData = (): galleryDataType => {
-  const { data: gallery } = swr(API_GALLERY_LIST, fetcher)
+  const { data: gallery } = useRequest(() => {
+    return fetcher(`${API_GALLERY_LIST}`)
+  }, {
+    cacheKey: API_GALLERY_LIST
+  })
+
   if (!gallery || !gallery.data || gallery.error) return { galleryList: [] }
 
   return {

@@ -5,7 +5,6 @@ import Image from '@/components/image/image'
 import { LoadMoreButton } from '@/components/button'
 import useConfig from '@/hooks/useConfig'
 import fetcher from '@/lib/fetch'
-import useSWRInfinite from 'swr/infinite'
 import { API_ARTICLE_LIST } from '@/constant/api'
 import { useRequest } from 'ahooks'
 
