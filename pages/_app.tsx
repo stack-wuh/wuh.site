@@ -59,6 +59,10 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
    */
   const [slidePath, setSlidePath] = React.useState('')
   const [slideThemePath, setSlideThemePath] = React.useState('')
+
+  /**
+   * @NOTE 用到的Google Font 字体库
+   */
   const [googleFontPath, setGoogleFontPath] = React.useState('')
   const [googleFontNormalPath, setGoogleFontNormalPath] = React.useState('')
 
