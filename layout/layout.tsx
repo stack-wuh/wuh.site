@@ -8,6 +8,7 @@ import {
   LinkButtonGroup,
   GalleryButton,
 } from '@/components/button'
+import useSystemColorSchema from '@/hooks/useSystemColorSchema'
 
 import Response from './response'
 
@@ -22,8 +23,15 @@ const ConfigWrapper: React.FC = () => (
   </div>
 )
 
-function Layout<T>(Component: React.ComponentType<T>) {
-  const inner = (props: T) => {
+function Layout<T>(Component: React.FC<T>) {
+  useSystemColorSchema({
+    change(e) {
+      const themeMode = e.matches ? 'dark' : 'light'
+      const parentEl = document.querySelector('html')
+      parentEl?.setAttribute('data-theme-mode', themeMode)
+    }
+  })
+  const inner: React.FC<T> = (props) => {
     return (
       <Response>
         <ConfigWrapper />

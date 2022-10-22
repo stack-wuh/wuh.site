@@ -50,11 +50,6 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
   const [bubblePath, setBubblePath] = React.useState('')
 
   /**
-   * @NOTE web worker 引入的脚本链接
-   */
-  const [themePath, setThemePath] = React.useState('')
-
-  /**
    * @NOTE Banner 区域的样式表
    */
   const [slidePath, setSlidePath] = React.useState('')
@@ -82,7 +77,6 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
   useExternal(iconColorPath, { type: 'css' })
 
   useExternal(bubblePath, { type: 'js' })
-  useExternal(themePath, { type: 'js' })
   useExternal(googleFontPath, { type: 'css' })
   useExternal(googleFontNormalPath, { type: 'css' })
 
@@ -93,7 +87,6 @@ function MyApp({ Component, pageProps, router }: NextPropsWithLayout) {
     setIconNormalPath('//at.alicdn.com/t/font_1587964_ap06iu717e5.css')
     setBubblePath('/scripts/bubble.js')
     
-    setThemePath('/scripts/theme-main.js')
     
     setIconColorPath('//at.alicdn.com/t/font_2595178_wa25xow6jmp.css')
     setSlidePath('https://src.wuh.site/stylesheet/slick.min.css')

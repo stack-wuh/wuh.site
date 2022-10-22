@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect } from 'react'
 import { useReactive, useCookieState } from 'ahooks'
-import * as hljs from '@/lib/highlight'
 
 type languages = 'zh-cn' | 'en' | null
 type themes = 'light' | 'dark' | null
