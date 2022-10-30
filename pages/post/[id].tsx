@@ -31,6 +31,11 @@ function useData(id: string | string[] | undefined) {
 
 const Detail: React.FC<{}> = () => {
   const router = useRouter()
+  const [externalUrls, setExternalUrls] = React.useState({
+    hljs: '',
+    hlmjs: '',
+    github: ''
+  })
   /**
    * !FIXED 刷新页面 router.query.id 会出现一个空对象
    */
@@ -38,12 +43,20 @@ const Detail: React.FC<{}> = () => {
 
   const { data, error } = useData(router.query.id)
 
-  useExternal('https://src.wuh.site/scripts/highlight.min.js', { type: 'js' })
-  useExternal('https://src.wuh.site/scripts/highlight.js', { type: 'js' })
-  useExternal('https://src.wuh.site/stylesheet/github.min.css', { type: 'css' })
+  useExternal(externalUrls.hljs, { type: 'js' })
+  useExternal(externalUrls.hlmjs, { type: 'js' })
+  useExternal(externalUrls.github, { type: 'css' })
 
   if (error) return <div className="error">ERROR</div>
   if (!data) return <Empty.Loading />
+
+  React.useEffect(() => {
+    setExternalUrls({
+      hljs: 'https://src.wuh.site/scripts/highlight.min.js',
+      hlmjs: 'https://src.wuh.site/scripts/highlight.js',
+      github: 'https://src.wuh.site/stylesheet/github.min.css'
+    })
+  }, [])
 
 
   return (
