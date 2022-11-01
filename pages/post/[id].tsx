@@ -20,7 +20,7 @@ function useData(id: string | string[] | undefined) {
       return fetcher(`${API_ARTICLE_ITEM}${params.id}`)
   }, {
     defaultParams: [{ id }],
-    cacheKey: API_ARTICLE_ITEM,
+    cacheKey: `${API_ARTICLE_ITEM}_${id}`,
   })
 
   return {
