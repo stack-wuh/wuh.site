@@ -1,0 +1,23 @@
+{
+  "name": "x.wuh.site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:web": "pnpm -C ./packages/v3.wuh.site dev",
+    "build:web": "pnpm -C ./packages/v3.wuh.site build",
+    "clean": "rm -rf node_modules **/*/node_modules"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "create-nuxt-app": "^5.0.0",
+    "react": "^18",
+    "sass": "^1.69.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18"
+  }
+}

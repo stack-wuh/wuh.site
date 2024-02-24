@@ -1,0 +1,36 @@
+.wCarousel {
+  border: 1px solid red;
+  ul {
+    position: relative;
+    animation: move calc(var(--speed) * var(--s)) steps(var(--s)) infinite;
+
+    li {
+      position: absolute;
+      white-space: nowrap;
+      cursor: pointer;
+      border: 1px solid red;
+      animation: move1 calc(var(--speed)) infinite;
+      z-index: 999 !important;
+    }
+  }
+
+  @keyframes move {
+    0% {
+      transform: translate(0, 0px);
+    }
+    100% {
+      transform: translate(calc(var(--s) * var(--w) * -1px), 0);
+    }
+  }
+  
+  @keyframes move1 {
+    0% {
+      transform: translate(0, 0px);
+    }
+    80%,
+    100%  {
+      transform: translate(calc(var(--w) * -1px), 0);
+    }
+  }
+  
+}
