@@ -1,13 +1,13 @@
 {
   "name": "x.wuh.site",
   "version": "1.0.0",
-  "description": "",
+  "description": "wuh.site 博客相关的项目全部在这里啦",
   "main": "index.js",
   "scripts": {
     "start:web": "pnpm -C ./packages/v3.wuh.site dev",
     "build:web": "pnpm -C ./packages/v3.wuh.site build",
     "clean": "rm -rf node_modules **/*/node_modules",
-    "commit": "git-cz"
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -19,20 +19,14 @@
     "sass": "^1.69.7"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.6.1",
-    "@commitlint/config-conventional": "^18.6.2",
+    "@commitlint/config-angular": "^18.6.1",
     "@types/react": "^18",
-    "cz-conventional-changelog": "^3.3.0",
-    "husky": "^9.0.11"
+    "commitlint-config-cz": "^0.13.3",
+    "cz-customizable": "^7.0.0"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    },
-    "husky": {
-      "hooks": {
-        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-      }
+  "husky": {
+    "hooks": {
+      "pre-commit": "commitlint -E"
     }
   }
 }
