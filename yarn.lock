@@ -3660,9 +3660,9 @@ eastasianwidth@^0.2.0:
   integrity sha1-aWzi7Aqg5uqTo5f/zySqeEDIJ8s=
 
 ejs@^3.1.6:
-  version "3.1.7"
-  resolved "https://registry.yarnpkg.com/ejs/-/ejs-3.1.7.tgz#c544d9c7f715783dd92f0bddcf73a59e6962d006"
-  integrity sha512-BIar7R6abbUxDA3bfXrO4DSgwo8I+fB5/1zgujl3HLLjwd6+9iOnrT+t3grn2qbk9vOgBubXOFwX2m9axoFaGw==
+  version "3.1.10"
+  resolved "https://registry.yarnpkg.com/ejs/-/ejs-3.1.10.tgz#69ab8358b14e896f80cc39e62087b88500c3ac3b"
+  integrity sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==
   dependencies:
     jake "^10.8.5"
 
@@ -6074,7 +6074,7 @@ react-amap@^1.2.8:
   resolved "https://registry.npm.taobao.org/react-amap/download/react-amap-1.2.8.tgz"
   integrity sha1-y1pkQcXoOssNey6KGyDcU5t1nZs=
 
-"react-dom@npm:@preact/compat", "react@npm:@preact/compat":
+"react-dom@npm:@preact/compat":
   version "17.0.2"
   resolved "https://registry.nlark.com/@preact/compat/download/@preact/compat-17.0.2.tgz"
   integrity sha1-wbl6TQrdYPwHiYolBEj6WFR5qSA=
@@ -6121,6 +6121,11 @@ react-transition-group@^4.4.2:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+"react@npm:@preact/compat":
+  version "17.0.2"
+  resolved "https://registry.nlark.com/@preact/compat/download/@preact/compat-17.0.2.tgz"
+  integrity sha1-wbl6TQrdYPwHiYolBEj6WFR5qSA=
 
 read-pkg-up@^3.0.0:
   version "3.0.0"
