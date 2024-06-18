@@ -6074,7 +6074,7 @@ react-amap@^1.2.8:
   resolved "https://registry.npm.taobao.org/react-amap/download/react-amap-1.2.8.tgz"
   integrity sha1-y1pkQcXoOssNey6KGyDcU5t1nZs=
 
-"react-dom@npm:@preact/compat", "react@npm:@preact/compat":
+"react-dom@npm:@preact/compat":
   version "17.0.2"
   resolved "https://registry.nlark.com/@preact/compat/download/@preact/compat-17.0.2.tgz"
   integrity sha1-wbl6TQrdYPwHiYolBEj6WFR5qSA=
@@ -6121,6 +6121,11 @@ react-transition-group@^4.4.2:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+"react@npm:@preact/compat":
+  version "17.0.2"
+  resolved "https://registry.nlark.com/@preact/compat/download/@preact/compat-17.0.2.tgz"
+  integrity sha1-wbl6TQrdYPwHiYolBEj6WFR5qSA=
 
 read-pkg-up@^3.0.0:
   version "3.0.0"
@@ -7527,9 +7532,9 @@ wrappy@1:
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 
 ws@^7.3.1:
-  version "7.5.5"
-  resolved "https://registry.nlark.com/ws/download/ws-7.5.5.tgz?cache=0&sync_timestamp=1631130711705&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fws%2Fdownload%2Fws-7.5.5.tgz"
-  integrity sha1-i0vEr1GM+r0Ec65PmRRCh7M+uIE=
+  version "7.5.10"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.10.tgz#58b5c20dc281633f6c19113f39b349bd8bd558d9"
+  integrity sha512-+dbF1tHwZpXcbOJdVOkzLDxZP1ailvSxM6ZweXTegylPny803bFhA+vqBYw4s31NSAk4S2Qz+AKXK9a4wkdjcQ==
 
 xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.2"
